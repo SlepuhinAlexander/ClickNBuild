@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+<StackPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.jjd.ui.controller.LandingController">
+    <ImageView>
+        <Image url="@../icon/ic_builder_512.png"/>
+    </ImageView>
+    <Text text="Click'N'Build" fill="coral" stroke="white" strokeWidth="1.5" StackPane.alignment="BOTTOM_CENTER"
+          style="-fx-font-weight: 700; -fx-font-size: 42">
+    </Text>
+</StackPane>
