@@ -44,7 +44,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.1</version>
                 <configuration>
-                    <mainClass>org.jjd.App</mainClass>
+                    <mainClass>org.jjd.clicknbuild.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>
