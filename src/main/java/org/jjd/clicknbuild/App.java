@@ -4,10 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import org.jjd.clicknbuild.res.L10nHandler;
-import org.jjd.clicknbuild.res.R;
+import org.jjd.clicknbuild.sources.L10nHandler;
+import org.jjd.clicknbuild.sources.R;
+import org.jjd.clicknbuild.sources.Size;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -27,7 +27,7 @@ public class App extends Application {
     public void start(Stage primaryStage) throws IOException {
         L10nHandler.inst().setLang(Locale.ENGLISH);
         primaryStage.setTitle(R.getL10n("game.title"));
-        primaryStage.getIcons().add(R.getImg("builder_16"));
+        primaryStage.getIcons().add(R.getImg("headquarter", Size.TINY));
         Scene scene = new Scene(loadFXML("landing"));
         primaryStage.setScene(scene);
         primaryStage.sizeToScene();
