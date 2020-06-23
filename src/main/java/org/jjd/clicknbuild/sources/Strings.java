@@ -1,0 +1,94 @@
+package org.jjd.clicknbuild.sources;
+
+import org.jjd.clicknbuild.util.string.Str;
+
+/**
+ * Global holder of string keys for L10nHandler
+ */
+public enum Strings {
+    EMPTY(""),
+
+    GAME_TITLE("game.title"),
+
+    RES_ENERGY("res.energy"),
+    RES_STEEL("res.steel"),
+    RES_CONCRETE("res.concrete"),
+    RES_BRICK("res.brick"),
+    RES_WOOD("res.wood"),
+    RES_GLASS("res.glass"),
+    RES_MONEY("res.money"),
+    RES_UPKEEP("res.upkeep"),
+    RES_POWER("res.power"),
+    RES_POWER_CONSUMPTION("res.power_consumption"),
+    RES_POWER_EXCESS("res.power_excess"),
+    RES_CITIZEN("res.citizen"),
+    RES_JOB("res.job"),
+    RES_WORKER("res.worker"),
+    RES_UNEMPLOYMENT("res.unemployment"),
+    RES_BENEFIT("res.benefit"),
+    RES_OBEDIENCE("res.obedience"),
+    RES_CRIME("res.crime"),
+    RES_EMIGRATION("res.emigration"),
+    RES_IGNITABILITY("res.ignitability"),
+    RES_FIRE_HAZARD("res.fire_hazard"),
+
+    PLAYER_EXPERIENCE("res.experience"),
+    PLAYER_EXPERIENCE_LEVEL("res.experience_level"),
+
+    TILE_LAND("tile.land"),
+    TILE_ROCK("tile.rock"),
+    TILE_RUIN("tile.ruin"),
+    TILE_SEA("tile.sea"),
+    TILE_TRASH("tile.trash"),
+    TILE_TREE("tile.tree"),
+
+    BLD_AIRPORT("bld.airport"),
+    BLD_APARTMENT("bld.apartment"),
+    BLD_BANK("bld.bank"),
+    BLD_CITY_PLANNING("bld.city_planning"),
+    BLD_CONSTRUCTION_SITE("bld.construction_site"),
+    BLD_ENGINEERING_CENTER("bld.engineering_center"),
+    BLD_EXCHANGE("bld.exchange"),
+    BLD_FACTORY("bld.factory"),
+    BLD_FACTORY_BRICK("bld.factory_brick"),
+    BLD_FACTORY_CONCRETE("bld.factory_concrete"),
+    BLD_FACTORY_GLASS("bld.factory_glass"),
+    BLD_FACTORY_STEEL("bld.factory_steel"),
+    BLD_FACTORY_WOOD("bld.factory_wood"),
+    BLD_FIRE_STATION("bld.fire_station"),
+    BLD_GYM("bld.gym"),
+    BLD_HEADQUARTER("bld.headquarter"),
+    BLD_HOTEL("bld.hotel"),
+    BLD_MALL("bld.mall"),
+    BLD_NUCLEAR_PLANT("bld.nuclear_plant"),
+    BLD_OFFICE("bld.office"),
+    BLD_POLICE("bld.police"),
+    BLD_PORT("bld.port"),
+    BLD_POWER_PLANT("bld.power_plant"),
+    BLD_ROAD("bld.road"),
+    BLD_WAREHOUSE("bld.warehouse"),
+    BLD_WAREHOUSE_BRICK("bld.warehouse_brick"),
+    BLD_WAREHOUSE_CONCRETE("bld.warehouse_concrete"),
+    BLD_WAREHOUSE_GLASS("bld.warehouse_glass"),
+    BLD_WAREHOUSE_STEEL("bld.warehouse_steel"),
+    BLD_WAREHOUSE_WOOD("bld.warehouse_wood"),
+    ;
+
+    final String value;
+
+    Strings(String value) {
+        this.value = Str.nonNull(value);
+    }
+
+    public static Strings get(String value) {
+        for (Strings strings : Strings.values()) {
+            if (strings.value.equalsIgnoreCase(Str.nonNull(value).trim())) return strings;
+        }
+        return EMPTY;
+    }
+
+    public static Strings get(int ordinal) {
+        for (Strings strings : Strings.values()) if (strings.ordinal() == ordinal) return strings;
+        return EMPTY;
+    }
+    }

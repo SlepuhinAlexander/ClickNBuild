@@ -2,11 +2,11 @@ package org.jjd.clicknbuild.engine.model;
 
 import org.jjd.clicknbuild.util.string.Str;
 
-public enum InGameResource {
+public enum ResourceType {
     STEEL("steel", "res.steel", "res_steel");
 
     // lowercased equivalent for enum element itself.
-    final String value;
+    final String type;
 
     // localized name: the key to get the localized representation from the resource handler.
     final String name;
@@ -14,8 +14,8 @@ public enum InGameResource {
     // the key to get the corresponding icon from the resource handler.
     final String icon;
 
-    InGameResource(String value, String name, String icon) {
-        this.value = Str.nonNull(value);
+    ResourceType(String type, String name, String icon) {
+        this.type = Str.nonNull(type);
         this.name = Str.nonNull(name);
         this.icon = Str.nonNull(icon);
     }

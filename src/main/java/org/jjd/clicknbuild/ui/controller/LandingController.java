@@ -4,8 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import org.jjd.clicknbuild.sources.ImgHandler;
-import org.jjd.clicknbuild.sources.R;
+import org.jjd.clicknbuild.sources.*;
 
 public class LandingController {
     @FXML
@@ -19,8 +18,8 @@ public class LandingController {
 
     @FXML
     private void initialize() {
-        rootNode.getStylesheets().addAll(R.getCss("landing"));
-        sLandingGreeting.setText(R.getL10n("game.title"));
-        icLandingBackground.setImage(R.getImg("headquarter", ImgHandler.Size.FULL));
+        rootNode.getStylesheets().addAll(Src.getCss(Csses.LANDING));
+        sLandingGreeting.setText(Src.getL10n(Strings.GAME_TITLE));
+        icLandingBackground.setImage(Src.getImg(Images.BLD_HEADQUARTER));
     }
 }

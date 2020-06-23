@@ -1,5 +1,7 @@
 package org.jjd.clicknbuild.sources;
 
+import org.jjd.clicknbuild.config.ConfigLoader;
+import org.jjd.clicknbuild.config.Configs;
 import org.jjd.clicknbuild.util.io.PathWalker;
 import org.jjd.clicknbuild.util.string.Str;
 
@@ -7,14 +9,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Set;
 
 public class FxmlHandler {
+    private static final String SOURCE_PATH = ConfigLoader.get(Configs.FXML_SOURCE_PATH);
+
+    private static final String FILE_EXTENSION = ConfigLoader.get(Configs.FXML_FILE_EXTENSION);
+
     private static final FxmlHandler INST = new FxmlHandler();
-
-    private static final String SOURCE_PATH = "/static/scene";
-
-    private static final String FILE_EXTENSION = ".fxml";
 
     private final HashMap<String, URL> sources = new HashMap<>();
 
@@ -24,6 +27,10 @@ public class FxmlHandler {
 
     public static URL get(String key) {
         return INST.sources.get(Str.nonNull(key));
+    }
+
+    public static URL get(Fxmls key) {
+        return get(Objects.requireNonNull(key).value);
     }
 
     public static FxmlHandler inst() {

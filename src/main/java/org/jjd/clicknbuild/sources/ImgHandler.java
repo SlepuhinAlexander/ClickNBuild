@@ -1,6 +1,8 @@
 package org.jjd.clicknbuild.sources;
 
 import javafx.scene.image.Image;
+import org.jjd.clicknbuild.config.ConfigLoader;
+import org.jjd.clicknbuild.config.Configs;
 import org.jjd.clicknbuild.util.io.PathWalker;
 import org.jjd.clicknbuild.util.math.M;
 import org.jjd.clicknbuild.util.string.Str;
@@ -10,16 +12,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Set;
 
 public class ImgHandler {
+    private static final String SOURCE_PATH = ConfigLoader.get(Configs.IMG_SOURCE_PATH);
+
+    private static final String FILE_EXTENSION = ConfigLoader.get(Configs.IMG_FILE_EXTENSION);
+
+    private static final String DEFAULT_IMAGE_NAME = ConfigLoader.get(Configs.IMG_DEFAULT_IMAGE_NAME);
+
     private static final ImgHandler INST = new ImgHandler();
-
-    private static final String SOURCE_PATH = "/static/icon";
-
-    private static final String FILE_EXTENSION = ".png";
-
-    private static final String DEFAULT_IMAGE_NAME = "dummy";
 
     private final HashMap<String, Image> images = new HashMap<>();
 
@@ -48,19 +51,33 @@ public class ImgHandler {
         return get(Str.nonNull(key) + Size.get(size).source_suffix);
     }
 
+    public static Image get(Images key) {
+        return get(Objects.requireNonNull(key).value);
+    }
+
+    public static Image get(Images key, Size size) {
+        return get(Objects.requireNonNull(key).value, size);
+    }
+
+    public static Image get(Images key, String size) {
+        return get(Objects.requireNonNull(key).value, size);
+    }
+
+    public static Image get(Images key, int size) {
+        return get(Objects.requireNonNull(key).value, size);
+    }
+
     private void initialize() {
         Set<Path> paths = PathWalker.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();
             filename = filename.substring(0, filename.length() - FILE_EXTENSION.length());
-            Image image;
             try {
-                image = new Image(Files.newInputStream(path));
+                Image image = new Image(Files.newInputStream(path));
+                images.put(filename, image);
             } catch (IOException e) {
                 e.printStackTrace();
-                continue;
             }
-            images.put(filename, image);
         }
     }
 
@@ -95,10 +112,8 @@ public class ImgHandler {
         }
 
         public static Size get(String value) {
-            for (Size size : values()) {
-                if (size.name.equalsIgnoreCase(value)) return size;
-            }
-            return SMALL;
+            for (Size size : values()) if (size.name.equalsIgnoreCase(value)) return size;
+            return FULL;
         }
 
         public static Size get(int value) {
@@ -123,10 +138,8 @@ public class ImgHandler {
                     }
                 }
             }
-            for (Size size : values()) {
-                if (size.size == sizes[index]) return size;
-            }
-            return SMALL;
+            for (Size size : values()) if (size.size == sizes[index]) return size;
+            return FULL;
         }
     }
 }

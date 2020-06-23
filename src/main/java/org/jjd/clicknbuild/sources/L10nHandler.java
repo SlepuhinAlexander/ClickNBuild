@@ -1,5 +1,7 @@
 package org.jjd.clicknbuild.sources;
 
+import org.jjd.clicknbuild.config.ConfigLoader;
+import org.jjd.clicknbuild.config.Configs;
 import org.jjd.clicknbuild.util.string.Str;
 
 import java.io.IOException;
@@ -9,13 +11,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class L10nHandler {
+    private static final String SOURCE_PATH = ConfigLoader.get(Configs.L10N_SOURCE_PATH);
+
+    private static final String FILE_EXTENSION = ConfigLoader.get(Configs.L10N_FILE_EXTENSION);
+
     private static final L10nHandler INST = new L10nHandler();
-
-    private static final String SOURCE_PATH = "/static/string/locale";
-
-    private static final String URL_PATH_SEPARATOR = "/";
-
-    private static final String FILE_EXTENSION = ".properties";
 
     private final HashMap<Lang, Properties> locales = new HashMap<>();
 
@@ -37,6 +37,10 @@ public class L10nHandler {
                 Str.nonNull(INST.locales.get(Lang.DEF).getProperty(Str.nonNull(key)))));
     }
 
+    public static String get(Strings key) {
+        return get(key.value);
+    }
+
     public static L10nHandler inst() {
         return INST;
     }
@@ -44,7 +48,7 @@ public class L10nHandler {
     private void initialize() {
         setLang(Locale.getDefault());
         for (Lang lang : Lang.values()) {
-            try (InputStream langReader = getClass().getResourceAsStream(SOURCE_PATH + URL_PATH_SEPARATOR
+            try (InputStream langReader = getClass().getResourceAsStream(SOURCE_PATH
                                                                          + lang.name + FILE_EXTENSION)) {
                 Properties langProperties = new Properties();
                 langProperties.load(langReader);
@@ -73,8 +77,7 @@ public class L10nHandler {
         }
 
         static Lang get(String name) {
-            for (Lang lang : Lang.values())
-                if (lang.name.equalsIgnoreCase(Str.nonNull(name).trim())) return lang;
+            for (Lang lang : Lang.values()) if (lang.name.equalsIgnoreCase(Str.nonNull(name).trim())) return lang;
             return DEF;
         }
 
