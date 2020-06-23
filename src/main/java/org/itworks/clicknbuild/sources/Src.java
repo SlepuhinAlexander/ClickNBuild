@@ -1,7 +1,7 @@
-package org.jjd.clicknbuild.sources;
+package org.itworks.clicknbuild.sources;
 
 import javafx.scene.image.Image;
-import org.jjd.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.Str;
 
 import java.net.URL;
 import java.util.Objects;

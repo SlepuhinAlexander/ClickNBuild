@@ -1,11 +1,11 @@
-package org.jjd.clicknbuild.sources;
+package org.itworks.clicknbuild.sources;
 
 import javafx.scene.image.Image;
-import org.jjd.clicknbuild.config.ConfigLoader;
-import org.jjd.clicknbuild.config.Configs;
-import org.jjd.clicknbuild.util.io.PathWalker;
-import org.jjd.clicknbuild.util.math.M;
-import org.jjd.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.config.ConfigLoader;
+import org.itworks.clicknbuild.config.Configs;
+import org.itworks.clicknbuild.util.io.PathWalker;
+import org.itworks.clicknbuild.util.math.M;
+import org.itworks.clicknbuild.util.string.Str;
 
 import java.io.IOException;
 import java.nio.file.Files;

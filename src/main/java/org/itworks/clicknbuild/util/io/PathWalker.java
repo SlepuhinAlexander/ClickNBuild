@@ -1,6 +1,6 @@
-package org.jjd.clicknbuild.util.io;
+package org.itworks.clicknbuild.util.io;
 
-import org.jjd.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.Str;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

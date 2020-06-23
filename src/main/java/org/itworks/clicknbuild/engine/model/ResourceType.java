@@ -1,6 +1,6 @@
-package org.jjd.clicknbuild.engine.model;
+package org.itworks.clicknbuild.engine.model;
 
-import org.jjd.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.Str;
 
 public enum ResourceType {
     STEEL("steel", "res.steel", "res_steel");

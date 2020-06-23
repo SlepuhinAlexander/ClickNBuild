@@ -1,6 +1,6 @@
-package org.jjd.clicknbuild.config;
+package org.itworks.clicknbuild.config;
 
-import org.jjd.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.Str;
 
 public enum Configs {
     MAIN_CONFIG_PATH("/config/config.properties"),

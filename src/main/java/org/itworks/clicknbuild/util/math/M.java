@@ -1,4 +1,4 @@
-package org.jjd.clicknbuild.util.math;
+package org.itworks.clicknbuild.util.math;
 
 public class M {
     public static int clamp(int value, int min, int max) {

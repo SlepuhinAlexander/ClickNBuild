@@ -1,4 +1,4 @@
-package org.jjd.clicknbuild.util.string;
+package org.itworks.clicknbuild.util.string;
 
 public class Str {
     private static final String DEFAULT_STRING = "";

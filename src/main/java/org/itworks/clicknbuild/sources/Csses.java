@@ -1,6 +1,6 @@
-package org.jjd.clicknbuild.sources;
+package org.itworks.clicknbuild.sources;
 
-import org.jjd.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.Str;
 
 /** Global hangler of string keys for CssHandler */
 public enum Csses {

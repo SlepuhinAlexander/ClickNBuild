@@ -1,6 +1,6 @@
-package org.jjd.clicknbuild.config;
+package org.itworks.clicknbuild.config;
 
-import org.jjd.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.Str;
 
 import java.io.IOException;
 import java.io.InputStream;

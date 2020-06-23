@@ -1,6 +1,6 @@
-package org.jjd.clicknbuild.ui.scene;
+package org.itworks.clicknbuild.ui.scene;
 
-import org.jjd.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.Str;
 
 public enum Scenes {
     LANDING("landing");

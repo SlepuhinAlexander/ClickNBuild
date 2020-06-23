@@ -1,10 +1,10 @@
-package org.jjd.clicknbuild.ui.controller;
+package org.itworks.clicknbuild.ui.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import org.jjd.clicknbuild.sources.*;
+import org.itworks.clicknbuild.sources.*;
 
 public class LandingController {
     @FXML

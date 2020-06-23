@@ -1,13 +1,12 @@
-package org.jjd.clicknbuild;
+package org.itworks.clicknbuild;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.jjd.clicknbuild.config.ConfigLoader;
-import org.jjd.clicknbuild.sources.*;
-import org.jjd.clicknbuild.ui.scene.Scenes;
+import org.itworks.clicknbuild.sources.*;
+import org.itworks.clicknbuild.ui.scene.Scenes;
 
 import java.io.IOException;
 import java.util.Locale;
