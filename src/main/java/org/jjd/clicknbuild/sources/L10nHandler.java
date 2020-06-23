@@ -11,9 +11,11 @@ import java.util.regex.Pattern;
 public class L10nHandler {
     private static final L10nHandler INST = new L10nHandler();
 
-    private final Properties def = new Properties();
-    private final Properties en = new Properties();
-    private final Properties ru = new Properties();
+    private static final String SOURCE_PATH = "/static/string/locale";
+
+    private static final String URL_PATH_SEPARATOR = "/";
+
+    private static final String FILE_EXTENSION = ".properties";
 
     private final HashMap<Lang, Properties> locales = new HashMap<>();
 
@@ -40,22 +42,17 @@ public class L10nHandler {
     }
 
     private void initialize() {
-        String pref = "/static/string/locale";
-        try (
-                InputStream defReader = getClass().getResourceAsStream(pref + "/def.properties");
-                InputStream enReader = getClass().getResourceAsStream(pref + "/en.properties");
-                InputStream ruReader = getClass().getResourceAsStream(pref + "/ru.properties")
-        ) {
-            def.load(defReader);
-            en.load(enReader);
-            ru.load(ruReader);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         setLang(Locale.getDefault());
-        locales.put(Lang.DEF, def);
-        locales.put(Lang.EN, en);
-        locales.put(Lang.RU, ru);
+        for (Lang lang : Lang.values()) {
+            try (InputStream langReader = getClass().getResourceAsStream(SOURCE_PATH + URL_PATH_SEPARATOR
+                                                                         + lang.name + FILE_EXTENSION)) {
+                Properties langProperties = new Properties();
+                langProperties.load(langReader);
+                locales.put(lang, langProperties);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void setLang(Locale lang) {
@@ -69,15 +66,15 @@ public class L10nHandler {
     private enum Lang {
         DEF("def"), EN("en"), RU("ru");
 
-        final String value;
+        final String name;
 
-        Lang(String val) {
-            this.value = Str.nonNull(val);
+        Lang(String name) {
+            this.name = Str.nonNull(name);
         }
 
-        static Lang get(String value) {
+        static Lang get(String name) {
             for (Lang lang : Lang.values())
-                if (lang.value.equalsIgnoreCase(Str.nonNull(value).toLowerCase().trim())) return lang;
+                if (lang.name.equalsIgnoreCase(Str.nonNull(name).trim())) return lang;
             return DEF;
         }
 
@@ -101,8 +98,23 @@ public class L10nHandler {
      * result of <code>L10nHandler.get("foo")</code> would be <code>foo bar buz</code>
      */
     private static class Resolver {
+        /**
+         * regex string value to resolve / replace
+         */
+        private static final String REGEX_PATTERN = "\\$\\{.*?}";
+
+        /**
+         * string value defining pattern beginning
+         */
+        private static final String PATTERN_BEGIN = "${";
+
+        /**
+         * string value defining pattern ending
+         */
+        private static final String PATTERN_END = "}";
+
         private static Set<String> tokenize(String input) {
-            Pattern toReplace = Pattern.compile("\\$\\{.*?}");
+            Pattern toReplace = Pattern.compile(REGEX_PATTERN);
             Matcher matcher = toReplace.matcher(Str.nonNull(input));
             Set<String> tokens = new HashSet<>();
             while (matcher.find()) {
@@ -115,7 +127,8 @@ public class L10nHandler {
             String parsed = Str.nonNull(nonParsed);
             Set<String> tokens = tokenize(parsed);
             for (String token : tokens) {
-                parsed = parsed.replace(token, get(token.substring(2, token.length() - 1)));
+                parsed = parsed.replace(token, get(token.substring(PATTERN_BEGIN.length(),
+                        token.length() - PATTERN_END.length())));
             }
             return parsed;
         }

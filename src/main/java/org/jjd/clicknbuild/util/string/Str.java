@@ -1,8 +1,10 @@
 package org.jjd.clicknbuild.util.string;
 
 public class Str {
+    private static final String DEFAULT_STRING = "";
+
     public static String nonNull(String value) {
-        return value == null ? "" : value;
+        return value == null ? DEFAULT_STRING : value;
     }
 
     public static String nonNull(String value, String def) {

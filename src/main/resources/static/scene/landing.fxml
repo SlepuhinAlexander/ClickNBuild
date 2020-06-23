@@ -10,7 +10,7 @@
     <ImageView fx:id="icLandingBackground"/>
     <Text fx:id="sLandingGreeting" styleClass="landing__greeting" text="dummy" StackPane.alignment="BOTTOM_CENTER">
         <StackPane.margin>
-            <Insets bottom="50.0"/>
+            <Insets bottom="200.0"/>
         </StackPane.margin>
     </Text>
 </StackPane>

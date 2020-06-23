@@ -5,9 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.jjd.clicknbuild.sources.ImgHandler;
 import org.jjd.clicknbuild.sources.L10nHandler;
 import org.jjd.clicknbuild.sources.R;
-import org.jjd.clicknbuild.sources.Size;
+import org.jjd.clicknbuild.ui.scene.Scenes;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -15,8 +16,7 @@ import java.util.Locale;
 public class App extends Application {
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/static/scene/" + fxml + ".fxml"));
-        return fxmlLoader.load();
+        return new FXMLLoader(R.getFxml(fxml)).load();
     }
 
     public static void main(String[] args) {
@@ -27,8 +27,8 @@ public class App extends Application {
     public void start(Stage primaryStage) throws IOException {
         L10nHandler.inst().setLang(Locale.ENGLISH);
         primaryStage.setTitle(R.getL10n("game.title"));
-        primaryStage.getIcons().add(R.getImg("headquarter", Size.TINY));
-        Scene scene = new Scene(loadFXML("landing"));
+        primaryStage.getIcons().add(R.getImg("headquarter", ImgHandler.Size.TINY));
+        Scene scene = new Scene(loadFXML(Scenes.LANDING.name));
         primaryStage.setScene(scene);
         primaryStage.sizeToScene();
         primaryStage.show();

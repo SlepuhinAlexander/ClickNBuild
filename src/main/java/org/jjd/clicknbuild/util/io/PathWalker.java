@@ -16,7 +16,7 @@ public class PathWalker {
     /**
      * Recursively walks down the file tree starting from the <code>root</code> position.
      * Collects all regular files (Paths to them) ending with the given <code>extension</code>.
-     * <b>DO NOT</b> use the dot sign for <code>extension</code> param
+     * <b>USE</b> the dot sign for <code>extension</code> param: e.g. <code>walk(root, ".txt")</code>
      */
     public static Set<Path> walk(URL root, String extension) {
         Set<Path> paths = new HashSet<>();
@@ -25,7 +25,7 @@ public class PathWalker {
             paths = Files.walk(Paths.get(root.toURI()))
                     .filter(Files::isRegularFile)
                     .filter(Files::isReadable)
-                    .filter(path -> Str.endsWithIgnoreCase(path.toFile().getName(), "." + Str.nonNull(extension)))
+                    .filter(path -> Str.endsWithIgnoreCase(path.toFile().getName(), Str.nonNull(extension)))
                     .collect(Collectors.toSet());
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
