@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.itworks.clicknbuild.config.stats.StatsLoader;
 import org.itworks.clicknbuild.sources.*;
 import org.itworks.clicknbuild.ui.scene.Scenes;
 
@@ -24,6 +25,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         L10nHandler.inst().setLang(Locale.ENGLISH);
+        StatsLoader.inst().loadResourceStats();
         primaryStage.setTitle(Src.getL10n(Strings.GAME_TITLE));
         primaryStage.getIcons().add(Src.getImg(Images.BLD_HEADQUARTER, ImgHandler.Size.TINY));
         Scene scene = new Scene(loadFXML(Scenes.LANDING.name));

@@ -1,5 +1,32 @@
 [
   {
-
+    "type": "steel",
+    "tradable": true,
+    "price": 50
+  },
+  {
+    "type": "concrete",
+    "tradable": true,
+    "price": 15
+  },
+  {
+    "type": "brick",
+    "tradable": true,
+    "price": 20
+  },
+  {
+    "type": "wood",
+    "tradable": true,
+    "price": 60
+  },
+  {
+    "type": "glass",
+    "tradable": true,
+    "price": 30
+  },
+  {
+    "type": "money",
+    "tradable": true,
+    "price": 1
   }
 ]

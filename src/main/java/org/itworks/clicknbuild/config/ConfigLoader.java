@@ -15,7 +15,7 @@ public class ConfigLoader {
     private final Properties configs = new Properties();
 
     private ConfigLoader() {
-        initialize();
+        loadConfigs();
     }
 
     public static ConfigLoader inst() {
@@ -30,7 +30,7 @@ public class ConfigLoader {
         return get(Objects.requireNonNull(config).value);
     }
 
-    private void initialize() {
+    private void loadConfigs() {
         try (InputStream in = getClass().getResourceAsStream(CONFIG_PATH)) {
             configs.load(in);
         } catch (IOException e) {

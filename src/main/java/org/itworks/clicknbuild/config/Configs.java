@@ -13,7 +13,10 @@ public enum Configs {
     IMG_DEFAULT_IMAGE_NAME("img.default_image_name"),
     L10N_SOURCE_PATH("l10n.source_path"),
     L10N_FILE_EXTENSION("l10n.file_extension"),
-    RES_SOURCE_PATH("res.source_path")
+    STATS_SOURCE_PATH("stats.source_path"),
+    STATS_RESOURCE_FILE("stats.resource_file"),
+    STATS_TILE_FILE("stats.tile_file"),
+    STATS_BUILDING_FILE("stats.building_file"),
     ;
 
     final String value;
