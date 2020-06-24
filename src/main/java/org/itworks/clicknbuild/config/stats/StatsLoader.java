@@ -1,12 +1,17 @@
 package org.itworks.clicknbuild.config.stats;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
 import org.itworks.clicknbuild.config.stats.model.ResourceModel;
+import org.itworks.clicknbuild.config.stats.model.TileModel;
 import org.itworks.clicknbuild.engine.model.ResourceType;
+import org.itworks.clicknbuild.engine.model.TileType;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class StatsLoader {
     private static final String STATS_PATH = ConfigLoader.get(Configs.STATS_SOURCE_PATH);
@@ -36,7 +41,14 @@ public class StatsLoader {
     }
 
     public void loadTileStats() {
-        applyTileStats();
+        ObjectMapper mapper = new ObjectMapper();
+        TileModel[] tiles = null;
+        try {
+            tiles = mapper.readValue(getClass().getResource(STATS_PATH + TILE_FILE), TileModel[].class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        applyTileStats(tiles);
     }
 
     public void loadBuildingStats() {
@@ -53,8 +65,14 @@ public class StatsLoader {
         }
     }
 
-    private void applyTileStats() {
-
+    private void applyTileStats(TileModel... tiles) {
+        if (tiles == null) return;
+        for (TileModel loaded : tiles) {
+            TileType tile = TileType.get(loaded.getType());
+            if (tile == null) continue;
+            if (loaded.getStructure() != null) tile.setStructure(loaded.getStructure());
+        }
+        Arrays.stream(TileType.values()).forEach(System.out::println);
     }
 
     private void applyBuildingStats() {

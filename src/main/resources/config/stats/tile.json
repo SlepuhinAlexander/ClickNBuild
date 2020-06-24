@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "type": "sea",
+    "structure": 10000
+  },
+  {
+    "type": "land",
+    "structure": 10000
+  },
+  {
+    "type": "rock",
+    "structure": 2000
+  },
+  {
+    "type": "tree",
+    "structure": 1000
+  },
+  {
+    "type": "trash",
+    "structure": 500
+  },
+  {
+    "type": "ruin",
+    "structure": 5000
+  }
+]

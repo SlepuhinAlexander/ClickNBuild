@@ -5,6 +5,8 @@ import org.itworks.clicknbuild.sources.Strings;
 import org.itworks.clicknbuild.util.math.M;
 import org.itworks.clicknbuild.util.string.Str;
 
+import java.util.Objects;
+
 public enum ResourceType {
     ENERGY("energy",
             Strings.RES_ENERGY,
@@ -126,11 +128,11 @@ public enum ResourceType {
     private double price;
 
     ResourceType(String type, Strings l10nKey, Images imgKey, boolean tradable, double price) {
-        this.type = type;
-        this.l10nKey = l10nKey;
-        this.imgKey = imgKey;
+        this.type = Str.nonNull(type);
+        this.l10nKey = Objects.requireNonNull(l10nKey);
+        this.imgKey = Objects.requireNonNull(imgKey);
         this.tradable = tradable;
-        this.price = price;
+        this.price = M.clamp(price, -1, 1000);
     }
 
     public static ResourceType get(String type) {
@@ -170,16 +172,5 @@ public enum ResourceType {
 
     public void setPrice(double price) {
         this.price = isTradable() ? M.clamp(price, 1000) : -1;
-    }
-
-    @Override
-    public String toString() {
-        return "ResourceType{" +
-               "type='" + type + '\'' +
-               ", l10nKey=" + l10nKey +
-               ", imgKey=" + imgKey +
-               ", tradable=" + tradable +
-               ", price=" + price +
-               '}';
     }
 }

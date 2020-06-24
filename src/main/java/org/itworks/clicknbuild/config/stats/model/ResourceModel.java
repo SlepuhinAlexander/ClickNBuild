@@ -28,13 +28,4 @@ public class ResourceModel {
     public void setPrice(Double price) {
         this.price = price;
     }
-
-    @Override
-    public String toString() {
-        return "ResourceModel{" +
-               "type='" + type + '\'' +
-               ", tradable=" + tradable +
-               ", price=" + price +
-               '}';
-    }
 }
