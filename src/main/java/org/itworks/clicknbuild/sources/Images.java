@@ -6,6 +6,8 @@ import org.itworks.clicknbuild.util.string.Str;
 public enum Images {
     DUMMY("dummy"),
 
+    RES_ACTION("action"),
+    RES_CONSTRUCTION("construction"),
     RES_ENERGY("energy"),
     RES_STEEL("steel"),
     RES_CONCRETE("concrete"),

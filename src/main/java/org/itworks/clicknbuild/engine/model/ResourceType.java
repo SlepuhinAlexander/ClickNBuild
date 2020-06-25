@@ -8,6 +8,16 @@ import org.itworks.clicknbuild.util.string.Str;
 import java.util.Objects;
 
 public enum ResourceType {
+    ACTION("action",
+            Strings.RES_ACTION,
+            Images.RES_ACTION,
+            false,
+            -1),
+    CONSTRUCTION("construction",
+            Strings.RES_CONSTRUCTION,
+            Images.RES_CONSTRUCTION,
+            false,
+            -1),
     ENERGY("energy",
             Strings.RES_ENERGY,
             Images.RES_ENERGY,

@@ -10,6 +10,8 @@ public enum Strings {
 
     GAME_TITLE("game.title"),
 
+    RES_ACTION("res.action"),
+    RES_CONSTRUCTION("res.construction"),
     RES_ENERGY("res.energy"),
     RES_STEEL("res.steel"),
     RES_CONCRETE("res.concrete"),

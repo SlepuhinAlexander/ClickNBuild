@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.config.stats.model;
 
-public class ResourceModel {
+public class ResourceTypeModel {
     private String type;
     private Boolean tradable;
     private Double price;

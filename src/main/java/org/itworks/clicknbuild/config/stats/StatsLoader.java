@@ -1,11 +1,9 @@
 package org.itworks.clicknbuild.config.stats;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
-import org.itworks.clicknbuild.config.stats.model.ResourceModel;
+import org.itworks.clicknbuild.config.stats.model.ResourceTypeModel;
 import org.itworks.clicknbuild.config.stats.model.TileModel;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 import org.itworks.clicknbuild.engine.model.TileType;
@@ -30,10 +28,10 @@ public class StatsLoader {
 
     public void loadResourceStats() {
         ObjectMapper mapper = new ObjectMapper();
-        ResourceModel[] resources = null;
+        ResourceTypeModel[] resources = null;
         try {
             resources = mapper.readValue(getClass().getResource(STATS_PATH + RESOURCE_FILE),
-                    ResourceModel[].class);
+                    ResourceTypeModel[].class);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -55,9 +53,9 @@ public class StatsLoader {
         applyBuildingStats();
     }
 
-    private void applyResourceStats(ResourceModel... resources) {
+    private void applyResourceStats(ResourceTypeModel... resources) {
         if (resources == null) return;
-        for (ResourceModel loaded : resources) {
+        for (ResourceTypeModel loaded : resources) {
             ResourceType resource = ResourceType.get(loaded.getType());
             if (resource == null) continue;
             if (loaded.getTradable() != null) resource.setTradable(loaded.getTradable());
@@ -72,7 +70,6 @@ public class StatsLoader {
             if (tile == null) continue;
             if (loaded.getStructure() != null) tile.setStructure(loaded.getStructure());
         }
-        Arrays.stream(TileType.values()).forEach(System.out::println);
     }
 
     private void applyBuildingStats() {
