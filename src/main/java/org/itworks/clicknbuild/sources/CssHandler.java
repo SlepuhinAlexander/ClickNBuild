@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Set;
 
-public class CssHandler {
+public final class CssHandler {
     private static final String SOURCE_PATH = ConfigLoader.get(Configs.CSS_SOURCE_PATH);
 
     private static final String FILE_EXTENSION = ConfigLoader.get(Configs.CSS_FILE_EXTENSION);
@@ -21,7 +21,7 @@ public class CssHandler {
     private final HashMap<String, String> stylesheets = new HashMap<>();
 
     private CssHandler() {
-        initialize();
+        load();
     }
 
     public static String get(String key) {
@@ -36,7 +36,7 @@ public class CssHandler {
         return INST;
     }
 
-    private void initialize() {
+    private void load() {
         Set<Path> paths = PathWalker.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();

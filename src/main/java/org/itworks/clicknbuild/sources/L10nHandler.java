@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class L10nHandler {
+public final class L10nHandler {
     private static final String SOURCE_PATH = ConfigLoader.get(Configs.L10N_SOURCE_PATH);
 
     private static final String FILE_EXTENSION = ConfigLoader.get(Configs.L10N_FILE_EXTENSION);
@@ -22,7 +22,7 @@ public class L10nHandler {
     private Lang lang = Lang.DEF;
 
     private L10nHandler() {
-        initialize();
+        load();
     }
 
     /**
@@ -45,7 +45,7 @@ public class L10nHandler {
         return INST;
     }
 
-    private void initialize() {
+    private void load() {
         setLang(Locale.getDefault());
         for (Lang lang : Lang.values()) {
             try (InputStream langReader = getClass().getResourceAsStream(SOURCE_PATH

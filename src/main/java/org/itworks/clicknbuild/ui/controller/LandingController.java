@@ -6,7 +6,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import org.itworks.clicknbuild.sources.*;
 
-public class LandingController {
+public final class LandingController {
     @FXML
     private StackPane rootNode;
 

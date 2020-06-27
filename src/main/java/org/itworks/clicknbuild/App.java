@@ -12,7 +12,7 @@ import org.itworks.clicknbuild.ui.scene.Scenes;
 import java.io.IOException;
 import java.util.Locale;
 
-public class App extends Application {
+public final class App extends Application {
 
     private static Parent loadFXML(String fxml) throws IOException {
         return new FXMLLoader(Src.getFxml(fxml)).load();

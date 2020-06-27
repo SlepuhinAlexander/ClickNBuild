@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Set;
 
-public class ImgHandler {
+public final class ImgHandler {
     private static final String SOURCE_PATH = ConfigLoader.get(Configs.IMG_SOURCE_PATH);
 
     private static final String FILE_EXTENSION = ConfigLoader.get(Configs.IMG_FILE_EXTENSION);
@@ -27,7 +27,7 @@ public class ImgHandler {
     private final HashMap<String, Image> images = new HashMap<>();
 
     private ImgHandler() {
-        initialize();
+        load();
     }
 
     public static ImgHandler inst() {
@@ -67,7 +67,7 @@ public class ImgHandler {
         return get(Objects.requireNonNull(key).value, size);
     }
 
-    private void initialize() {
+    private void load() {
         Set<Path> paths = PathWalker.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();

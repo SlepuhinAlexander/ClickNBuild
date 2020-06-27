@@ -9,16 +9,15 @@ import org.itworks.clicknbuild.engine.model.ResourceType;
 import org.itworks.clicknbuild.engine.model.TileType;
 
 import java.io.IOException;
-import java.util.Arrays;
 
-public class StatsLoader {
+public final class StatsLoader {
     private static final String STATS_PATH = ConfigLoader.get(Configs.STATS_SOURCE_PATH);
 
     private static final String RESOURCE_FILE = ConfigLoader.get(Configs.STATS_RESOURCE_FILE);
 
     private static final String TILE_FILE = ConfigLoader.get(Configs.STATS_TILE_FILE);
 
-    private static final String BUILDING_FILE = ConfigLoader.get(Configs.STATS_BUILDING_FILE);
+    private static final String BUILDING_PATH = ConfigLoader.get(Configs.STATS_BUILDING_PATH);
 
     private static final StatsLoader INST = new StatsLoader();
 

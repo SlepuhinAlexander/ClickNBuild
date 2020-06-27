@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.Objects;
 import java.util.Properties;
 
-public class ConfigLoader {
+public final class ConfigLoader {
     private static final String CONFIG_PATH = Configs.MAIN_CONFIG_PATH.value;
 
     private static final ConfigLoader INST = new ConfigLoader();

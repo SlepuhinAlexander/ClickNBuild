@@ -6,7 +6,7 @@ import org.itworks.clicknbuild.util.string.Str;
 import java.net.URL;
 import java.util.Objects;
 
-public class Src {
+public final class Src {
     public static URL getFxml(String key) {
         return FxmlHandler.get(key);
     }

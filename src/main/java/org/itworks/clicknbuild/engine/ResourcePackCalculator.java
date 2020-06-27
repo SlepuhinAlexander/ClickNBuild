@@ -3,7 +3,7 @@ package org.itworks.clicknbuild.engine;
 import org.itworks.clicknbuild.engine.model.ResourceChunk;
 import org.itworks.clicknbuild.engine.model.ResourcePack;
 
-public class ResourcePackCalculator {
+public final class ResourcePackCalculator {
     public static ResourcePack sum(ResourcePack first, ResourcePack second) {
         ResourcePack result = first == null ? new ResourcePack() : first.copy();
         if (second != null) result.add(second.pack);

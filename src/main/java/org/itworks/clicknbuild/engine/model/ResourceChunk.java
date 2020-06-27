@@ -5,7 +5,7 @@ import org.itworks.clicknbuild.util.math.M;
 
 import java.util.Objects;
 
-public class ResourceChunk implements Comparable<ResourceChunk> {
+public final class ResourceChunk implements Comparable<ResourceChunk> {
     public final ResourceType type;
     private double amount;
 

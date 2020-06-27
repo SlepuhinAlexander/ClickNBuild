@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class ResourcePack {
+public final class ResourcePack {
     public final Set<ResourceChunk> pack = new TreeSet<>();
 
     public ResourcePack() {

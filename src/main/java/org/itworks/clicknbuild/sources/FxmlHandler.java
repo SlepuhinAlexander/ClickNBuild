@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Set;
 
-public class FxmlHandler {
+public final class FxmlHandler {
     private static final String SOURCE_PATH = ConfigLoader.get(Configs.FXML_SOURCE_PATH);
 
     private static final String FILE_EXTENSION = ConfigLoader.get(Configs.FXML_FILE_EXTENSION);
@@ -22,7 +22,7 @@ public class FxmlHandler {
     private final HashMap<String, URL> sources = new HashMap<>();
 
     private FxmlHandler() {
-        initialize();
+        load();
     }
 
     public static URL get(String key) {
@@ -37,7 +37,7 @@ public class FxmlHandler {
         return INST;
     }
 
-    private void initialize() {
+    private void load() {
         Set<Path> paths = PathWalker.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();
