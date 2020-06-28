@@ -40,7 +40,7 @@ public final class GymStats extends BuildingStats {
                 94320, // 17
                 109440, // 18
                 126000, // 19
-                144000, // 20
+                144000 // 20
         });
         setBuildCost(new ResourcePack[]{
                 new ResourcePack( // 1

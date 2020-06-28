@@ -76,6 +76,22 @@ public abstract class BuildingStats {
     private ResourcePack[] buildCost;
 
     /**
+     * Amount of resources produced by a building of this type in an hour. Steady idle production.
+     * Ranged by building level correspondingly.
+     * Directly affected by the building's productivity: these values correspond to 100% productivity.
+     */
+    private ResourcePack[] production;
+
+    /**
+     * Some buildings could provide global effects on production amounts.
+     * These values mean that the production of resources of this resource type would be increased by given percent in
+     * all buildings producing this resource type.
+     * Values are ranged by building level correspondingly.
+     * Directly affected by the building's productivity: these values correspond to 100% productivity.
+     */
+    private ResourcePack[] productionMultiplier;
+
+    /**
      * Amount of resources taken from the player to get the corresponding <code>jobReward</code> for completing a
      * "production intensification" job.
      * Ranged by building level correspondingly.
@@ -98,22 +114,6 @@ public abstract class BuildingStats {
      * Directly affected by the building's productivity: these values correspond to 100% productivity.
      */
     private ResourcePack[] jobRewardMultiplier;
-
-    /**
-     * Amount of resources produced by a building of this type in an hour. Steady idle production.
-     * Ranged by building level correspondingly.
-     * Directly affected by the building's productivity: these values correspond to 100% productivity.
-     */
-    private ResourcePack[] production;
-
-    /**
-     * Some buildings could provide global effects on production amounts.
-     * These values mean that the production of resources of this resource type would be increased by given percent in
-     * all buildings producing this resource type.
-     * Values are ranged by building level correspondingly.
-     * Directly affected by the building's productivity: these values correspond to 100% productivity.
-     */
-    private ResourcePack[] productionMultiplier;
 
     /**
      * Amount of supplement resources constantly provided by this building. Those resources are not collected or stored
@@ -257,7 +257,7 @@ public abstract class BuildingStats {
     }
 
     public final void setJobPrice(ResourcePack[] jobPrice) {
-        if (buildCost == null) {
+        if (jobPrice == null) {
             this.jobPrice = new ResourcePack[maxLevel];
             return;
         }
@@ -378,7 +378,7 @@ public abstract class BuildingStats {
         setJobReward(null);
         setJobRewardMultiplier(null);
         setSupply(null);
-        setStoreMultiplier(null);
+        setSupplyMultiplier(null);
         setDemand(null);
         setHold(null);
         setStore(null);

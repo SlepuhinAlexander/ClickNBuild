@@ -47,6 +47,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 600),
                         new ResourceChunk(ResourceType.STEEL, 204),
                         new ResourceChunk(ResourceType.CONCRETE, 1020),
+                        new ResourceChunk(ResourceType.BRICK, 510),
                         new ResourceChunk(ResourceType.GLASS, 102),
                         new ResourceChunk(ResourceType.MONEY, 30600)
                 ),
@@ -54,6 +55,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 1800),
                         new ResourceChunk(ResourceType.STEEL, 620),
                         new ResourceChunk(ResourceType.CONCRETE, 3100),
+                        new ResourceChunk(ResourceType.BRICK, 1550),
                         new ResourceChunk(ResourceType.GLASS, 310),
                         new ResourceChunk(ResourceType.MONEY, 93000)
                 ),
@@ -61,6 +63,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 3600),
                         new ResourceChunk(ResourceType.STEEL, 1256),
                         new ResourceChunk(ResourceType.CONCRETE, 6280),
+                        new ResourceChunk(ResourceType.BRICK, 3140),
                         new ResourceChunk(ResourceType.GLASS, 628),
                         new ResourceChunk(ResourceType.MONEY, 188400)
                 ),
@@ -68,6 +71,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 6000),
                         new ResourceChunk(ResourceType.STEEL, 2120),
                         new ResourceChunk(ResourceType.CONCRETE, 10600),
+                        new ResourceChunk(ResourceType.BRICK, 5300),
                         new ResourceChunk(ResourceType.GLASS, 1060),
                         new ResourceChunk(ResourceType.MONEY, 318000)
                 ),
@@ -75,6 +79,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 9000),
                         new ResourceChunk(ResourceType.STEEL, 3220),
                         new ResourceChunk(ResourceType.CONCRETE, 16100),
+                        new ResourceChunk(ResourceType.BRICK, 8050),
                         new ResourceChunk(ResourceType.GLASS, 1610),
                         new ResourceChunk(ResourceType.MONEY, 483000)
                 ),
@@ -82,6 +87,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 13200),
                         new ResourceChunk(ResourceType.STEEL, 4816),
                         new ResourceChunk(ResourceType.CONCRETE, 24080),
+                        new ResourceChunk(ResourceType.BRICK, 12040),
                         new ResourceChunk(ResourceType.GLASS, 2408),
                         new ResourceChunk(ResourceType.MONEY, 722400)
                 ),
@@ -89,6 +95,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 18600),
                         new ResourceChunk(ResourceType.STEEL, 6940),
                         new ResourceChunk(ResourceType.CONCRETE, 34700),
+                        new ResourceChunk(ResourceType.BRICK, 17350),
                         new ResourceChunk(ResourceType.GLASS, 3470),
                         new ResourceChunk(ResourceType.MONEY, 1041000)
                 ),
@@ -96,6 +103,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 25200),
                         new ResourceChunk(ResourceType.STEEL, 9624),
                         new ResourceChunk(ResourceType.CONCRETE, 48120),
+                        new ResourceChunk(ResourceType.BRICK, 24060),
                         new ResourceChunk(ResourceType.GLASS, 4812),
                         new ResourceChunk(ResourceType.MONEY, 1443600)
                 ),
@@ -103,6 +111,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 33000),
                         new ResourceChunk(ResourceType.STEEL, 12900),
                         new ResourceChunk(ResourceType.CONCRETE, 64500),
+                        new ResourceChunk(ResourceType.BRICK, 32250),
                         new ResourceChunk(ResourceType.GLASS, 6450),
                         new ResourceChunk(ResourceType.MONEY, 1935000)
                 ),
@@ -110,6 +119,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 42000),
                         new ResourceChunk(ResourceType.STEEL, 16800),
                         new ResourceChunk(ResourceType.CONCRETE, 84000),
+                        new ResourceChunk(ResourceType.BRICK, 42000),
                         new ResourceChunk(ResourceType.GLASS, 8400),
                         new ResourceChunk(ResourceType.MONEY, 2520000)
                 ),
@@ -117,6 +127,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 52800),
                         new ResourceChunk(ResourceType.STEEL, 21696),
                         new ResourceChunk(ResourceType.CONCRETE, 108480),
+                        new ResourceChunk(ResourceType.BRICK, 54240),
                         new ResourceChunk(ResourceType.GLASS, 10848),
                         new ResourceChunk(ResourceType.MONEY, 3254400)
                 ),
@@ -124,6 +135,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 65400),
                         new ResourceChunk(ResourceType.STEEL, 27660),
                         new ResourceChunk(ResourceType.CONCRETE, 138300),
+                        new ResourceChunk(ResourceType.BRICK, 69150),
                         new ResourceChunk(ResourceType.GLASS, 13830),
                         new ResourceChunk(ResourceType.MONEY, 4149000)
                 ),
@@ -131,6 +143,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 79800),
                         new ResourceChunk(ResourceType.STEEL, 34764),
                         new ResourceChunk(ResourceType.CONCRETE, 173820),
+                        new ResourceChunk(ResourceType.BRICK, 86910),
                         new ResourceChunk(ResourceType.GLASS, 17382),
                         new ResourceChunk(ResourceType.MONEY, 5214600)
                 ),
@@ -138,6 +151,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 96000),
                         new ResourceChunk(ResourceType.STEEL, 43080),
                         new ResourceChunk(ResourceType.CONCRETE, 215400),
+                        new ResourceChunk(ResourceType.BRICK, 107700),
                         new ResourceChunk(ResourceType.GLASS, 21540),
                         new ResourceChunk(ResourceType.MONEY, 6462000)
                 ),
@@ -145,6 +159,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 114000),
                         new ResourceChunk(ResourceType.STEEL, 52680),
                         new ResourceChunk(ResourceType.CONCRETE, 263400),
+                        new ResourceChunk(ResourceType.BRICK, 131700),
                         new ResourceChunk(ResourceType.GLASS, 26340),
                         new ResourceChunk(ResourceType.MONEY, 7902000)
                 ),
@@ -152,6 +167,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 134400),
                         new ResourceChunk(ResourceType.STEEL, 64104),
                         new ResourceChunk(ResourceType.CONCRETE, 320520),
+                        new ResourceChunk(ResourceType.BRICK, 160260),
                         new ResourceChunk(ResourceType.GLASS, 32052),
                         new ResourceChunk(ResourceType.MONEY, 9615600)
                 ),
@@ -159,6 +175,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 157200),
                         new ResourceChunk(ResourceType.STEEL, 77480),
                         new ResourceChunk(ResourceType.CONCRETE, 387400),
+                        new ResourceChunk(ResourceType.BRICK, 193700),
                         new ResourceChunk(ResourceType.GLASS, 38740),
                         new ResourceChunk(ResourceType.MONEY, 11622000)
                 ),
@@ -166,6 +183,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 182400),
                         new ResourceChunk(ResourceType.STEEL, 92936),
                         new ResourceChunk(ResourceType.CONCRETE, 464680),
+                        new ResourceChunk(ResourceType.BRICK, 232340),
                         new ResourceChunk(ResourceType.GLASS, 46468),
                         new ResourceChunk(ResourceType.MONEY, 13940400)
                 ),
@@ -173,6 +191,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 210000),
                         new ResourceChunk(ResourceType.STEEL, 110600),
                         new ResourceChunk(ResourceType.CONCRETE, 553000),
+                        new ResourceChunk(ResourceType.BRICK, 276500),
                         new ResourceChunk(ResourceType.GLASS, 55300),
                         new ResourceChunk(ResourceType.MONEY, 16590000)
                 ),
@@ -180,6 +199,7 @@ public final class PowerPlantStats extends BuildingStats {
                         new ResourceChunk(ResourceType.CONSTRUCTION, 240000),
                         new ResourceChunk(ResourceType.STEEL, 130600),
                         new ResourceChunk(ResourceType.CONCRETE, 653000),
+                        new ResourceChunk(ResourceType.BRICK, 326500),
                         new ResourceChunk(ResourceType.GLASS, 65300),
                         new ResourceChunk(ResourceType.MONEY, 19590000)
                 )
