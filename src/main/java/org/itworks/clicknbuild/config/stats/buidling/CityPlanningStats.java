@@ -1,7 +1,7 @@
 package org.itworks.clicknbuild.config.stats.buidling;
 
-import org.itworks.clicknbuild.engine.model.ResourceChunk;
-import org.itworks.clicknbuild.engine.model.ResourcePack;
+import org.itworks.clicknbuild.engine.model.ResChunk;
+import org.itworks.clicknbuild.engine.model.ResPack;
 import org.itworks.clicknbuild.engine.model.ResType;
 
 public final class CityPlanningStats extends BuildingStats {
@@ -32,21 +32,21 @@ public final class CityPlanningStats extends BuildingStats {
         setBuildLimit(1);
         setPriceMultiplier(100);
         setStructure(new int[]{10000});
-        setBuildCost(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResType.CONSTRUCTION, 10000),
-                new ResourceChunk(ResType.STEEL, 4320),
-                new ResourceChunk(ResType.CONCRETE, 14400),
-                new ResourceChunk(ResType.MONEY, 540000)
+        setBuildCost(new ResPack[]{new ResPack(
+                new ResChunk(ResType.CONSTRUCTION, 10000),
+                new ResChunk(ResType.STEEL, 4320),
+                new ResChunk(ResType.CONCRETE, 14400),
+                new ResChunk(ResType.MONEY, 540000)
         )});
-        setDemand(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResType.UPKEEP, 1800),
-                new ResourceChunk(ResType.POWER_CONSUMPTION, 150),
-                new ResourceChunk(ResType.JOB, 3000),
-                new ResourceChunk(ResType.IGNITABILITY, 1)
+        setDemand(new ResPack[]{new ResPack(
+                new ResChunk(ResType.UPKEEP, 1800),
+                new ResChunk(ResType.POWER_CONSUMPTION, 150),
+                new ResChunk(ResType.JOB, 3000),
+                new ResChunk(ResType.IGNITABILITY, 1)
         )});
-        setHold(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResType.POWER, 150),
-                new ResourceChunk(ResType.WORKER, 3000)
+        setHold(new ResPack[]{new ResPack(
+                new ResChunk(ResType.POWER, 150),
+                new ResChunk(ResType.WORKER, 3000)
         )});
     }
 }

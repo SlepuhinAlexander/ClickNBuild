@@ -1,28 +1,28 @@
 package org.itworks.clicknbuild.engine.model;
 
-import org.itworks.clicknbuild.config.stats.model.ResourceChunkModel;
+import org.itworks.clicknbuild.config.stats.model.ResChunkModel;
 import org.itworks.clicknbuild.util.math.M;
 
 import java.util.Objects;
 
-public final class ResourceChunk implements Comparable<ResourceChunk> {
+public final class ResChunk {
     public final ResType type;
     private double amount;
 
-    public ResourceChunk(ResType type, double amount) {
+    public ResChunk(ResType type, double amount) {
         this.type = Objects.requireNonNull(type);
         setAmount(amount);
     }
 
-    public ResourceChunk(ResType type) {
+    public ResChunk(ResType type) {
         this(type, 0);
     }
 
-    public static ResourceChunk valueOf(ResourceChunkModel value) {
+    public static ResChunk valueOf(ResChunkModel value) {
         if (value == null) return null;
         ResType type = ResType.get(value.getType());
         if (type == null) return null;
-        ResourceChunk result = new ResourceChunk(type);
+        ResChunk result = new ResChunk(type);
         if (value.getAmount() != null) result.setAmount(value.getAmount());
         return result;
     }
@@ -43,25 +43,24 @@ public final class ResourceChunk implements Comparable<ResourceChunk> {
         setAmount(this.amount - amount);
     }
 
-    public ResourceChunk copy() {
-        return new ResourceChunk(this.type, this.amount);
+    public void mul(double multiplier) {
+        setAmount(this.amount * multiplier);
+    }
+
+    public ResChunk copy() {
+        return new ResChunk(this.type, this.amount);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ResourceChunk)) return false;
-        ResourceChunk resourceChunk = (ResourceChunk) o;
-        return type == resourceChunk.type;
+        if (!(o instanceof ResChunk)) return false;
+        ResChunk resChunk = (ResChunk) o;
+        return type == resChunk.type;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(type, amount);
-    }
-
-    @Override
-    public int compareTo(ResourceChunk o) {
-        return this.type.ordinal() - o.type.ordinal();
     }
 }

@@ -1,25 +1,25 @@
 package org.itworks.clicknbuild.engine;
 
-import org.itworks.clicknbuild.engine.model.ResourceChunk;
-import org.itworks.clicknbuild.engine.model.ResourcePack;
+import org.itworks.clicknbuild.engine.model.ResChunk;
+import org.itworks.clicknbuild.engine.model.ResPack;
 
 public final class ResourcePackCalculator {
-    public static ResourcePack sum(ResourcePack first, ResourcePack second) {
-        ResourcePack result = first == null ? new ResourcePack() : first.copy();
-        if (second != null) result.add(second.pack);
+    public static ResPack sum(ResPack first, ResPack second) {
+        ResPack result = first == null ? new ResPack() : first.copy();
+        result.add(second);
         return result;
     }
 
-    public static ResourcePack diff(ResourcePack first, ResourcePack second) {
-        ResourcePack result = first == null ? new ResourcePack() : first.copy();
-        if (second != null) result.sub(second.pack);
+    public static ResPack diff(ResPack first, ResPack second) {
+        ResPack result = first == null ? new ResPack() : first.copy();
+        result.sub(second);
         return result;
     }
 
-    public static ResourcePack mul(ResourcePack pack, double multiplier) {
-        if (pack == null) return null;
-        ResourcePack result = new ResourcePack();
-        for (ResourceChunk res : pack.pack) result.add(res.copy());
+    public static ResPack mul(ResPack pack, double multiplier) {
+        if (pack == null) return new ResPack();
+        ResPack result = new ResPack();
+        result.mul(multiplier);
         return result;
     }
 }

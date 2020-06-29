@@ -1,7 +1,7 @@
 package org.itworks.clicknbuild.config.stats.buidling;
 
-import org.itworks.clicknbuild.engine.model.ResourceChunk;
-import org.itworks.clicknbuild.engine.model.ResourcePack;
+import org.itworks.clicknbuild.engine.model.ResChunk;
+import org.itworks.clicknbuild.engine.model.ResPack;
 import org.itworks.clicknbuild.engine.model.ResType;
 
 public final class AirportStats extends BuildingStats {
@@ -53,514 +53,514 @@ public final class AirportStats extends BuildingStats {
                 350000, // 19
                 400000 // 20
         });
-        setBuildCost(new ResourcePack[]{
-                new ResourcePack( // 1
-                        new ResourceChunk(ResType.CONSTRUCTION, 1000),
-                        new ResourceChunk(ResType.STEEL, 92),
-                        new ResourceChunk(ResType.CONCRETE, 1632),
-                        new ResourceChunk(ResType.BRICK, 306),
-                        new ResourceChunk(ResType.WOOD, 51),
-                        new ResourceChunk(ResType.GLASS, 510),
-                        new ResourceChunk(ResType.MONEY, 45900)
+        setBuildCost(new ResPack[]{
+                new ResPack( // 1
+                        new ResChunk(ResType.CONSTRUCTION, 1000),
+                        new ResChunk(ResType.STEEL, 92),
+                        new ResChunk(ResType.CONCRETE, 1632),
+                        new ResChunk(ResType.BRICK, 306),
+                        new ResChunk(ResType.WOOD, 51),
+                        new ResChunk(ResType.GLASS, 510),
+                        new ResChunk(ResType.MONEY, 45900)
                 ),
-                new ResourcePack( // 2
-                        new ResourceChunk(ResType.CONSTRUCTION, 3000),
-                        new ResourceChunk(ResType.STEEL, 279),
-                        new ResourceChunk(ResType.CONCRETE, 4960),
-                        new ResourceChunk(ResType.BRICK, 930),
-                        new ResourceChunk(ResType.WOOD, 155),
-                        new ResourceChunk(ResType.GLASS, 1550),
-                        new ResourceChunk(ResType.MONEY, 139500)
+                new ResPack( // 2
+                        new ResChunk(ResType.CONSTRUCTION, 3000),
+                        new ResChunk(ResType.STEEL, 279),
+                        new ResChunk(ResType.CONCRETE, 4960),
+                        new ResChunk(ResType.BRICK, 930),
+                        new ResChunk(ResType.WOOD, 155),
+                        new ResChunk(ResType.GLASS, 1550),
+                        new ResChunk(ResType.MONEY, 139500)
                 ),
-                new ResourcePack( // 3
-                        new ResourceChunk(ResType.CONSTRUCTION, 6000),
-                        new ResourceChunk(ResType.STEEL, 565),
-                        new ResourceChunk(ResType.CONCRETE, 10048),
-                        new ResourceChunk(ResType.BRICK, 1884),
-                        new ResourceChunk(ResType.WOOD, 314),
-                        new ResourceChunk(ResType.GLASS, 3140),
-                        new ResourceChunk(ResType.MONEY, 282600)
+                new ResPack( // 3
+                        new ResChunk(ResType.CONSTRUCTION, 6000),
+                        new ResChunk(ResType.STEEL, 565),
+                        new ResChunk(ResType.CONCRETE, 10048),
+                        new ResChunk(ResType.BRICK, 1884),
+                        new ResChunk(ResType.WOOD, 314),
+                        new ResChunk(ResType.GLASS, 3140),
+                        new ResChunk(ResType.MONEY, 282600)
                 ),
-                new ResourcePack( // 4
-                        new ResourceChunk(ResType.CONSTRUCTION, 10000),
-                        new ResourceChunk(ResType.STEEL, 954),
-                        new ResourceChunk(ResType.CONCRETE, 16960),
-                        new ResourceChunk(ResType.BRICK, 3180),
-                        new ResourceChunk(ResType.WOOD, 530),
-                        new ResourceChunk(ResType.GLASS, 5300),
-                        new ResourceChunk(ResType.MONEY, 477000)
+                new ResPack( // 4
+                        new ResChunk(ResType.CONSTRUCTION, 10000),
+                        new ResChunk(ResType.STEEL, 954),
+                        new ResChunk(ResType.CONCRETE, 16960),
+                        new ResChunk(ResType.BRICK, 3180),
+                        new ResChunk(ResType.WOOD, 530),
+                        new ResChunk(ResType.GLASS, 5300),
+                        new ResChunk(ResType.MONEY, 477000)
                 ),
-                new ResourcePack( // 5
-                        new ResourceChunk(ResType.CONSTRUCTION, 15000),
-                        new ResourceChunk(ResType.STEEL, 1449),
-                        new ResourceChunk(ResType.CONCRETE, 25760),
-                        new ResourceChunk(ResType.BRICK, 4830),
-                        new ResourceChunk(ResType.WOOD, 805),
-                        new ResourceChunk(ResType.GLASS, 8050),
-                        new ResourceChunk(ResType.MONEY, 724500)
+                new ResPack( // 5
+                        new ResChunk(ResType.CONSTRUCTION, 15000),
+                        new ResChunk(ResType.STEEL, 1449),
+                        new ResChunk(ResType.CONCRETE, 25760),
+                        new ResChunk(ResType.BRICK, 4830),
+                        new ResChunk(ResType.WOOD, 805),
+                        new ResChunk(ResType.GLASS, 8050),
+                        new ResChunk(ResType.MONEY, 724500)
                 ),
-                new ResourcePack( // 6
-                        new ResourceChunk(ResType.CONSTRUCTION, 22000),
-                        new ResourceChunk(ResType.STEEL, 2167),
-                        new ResourceChunk(ResType.CONCRETE, 38528),
-                        new ResourceChunk(ResType.BRICK, 7224),
-                        new ResourceChunk(ResType.WOOD, 1204),
-                        new ResourceChunk(ResType.GLASS, 12040),
-                        new ResourceChunk(ResType.MONEY, 1083600)
+                new ResPack( // 6
+                        new ResChunk(ResType.CONSTRUCTION, 22000),
+                        new ResChunk(ResType.STEEL, 2167),
+                        new ResChunk(ResType.CONCRETE, 38528),
+                        new ResChunk(ResType.BRICK, 7224),
+                        new ResChunk(ResType.WOOD, 1204),
+                        new ResChunk(ResType.GLASS, 12040),
+                        new ResChunk(ResType.MONEY, 1083600)
                 ),
-                new ResourcePack( // 7
-                        new ResourceChunk(ResType.CONSTRUCTION, 31000),
-                        new ResourceChunk(ResType.STEEL, 3123),
-                        new ResourceChunk(ResType.CONCRETE, 55520),
-                        new ResourceChunk(ResType.BRICK, 10410),
-                        new ResourceChunk(ResType.WOOD, 1735),
-                        new ResourceChunk(ResType.GLASS, 17350),
-                        new ResourceChunk(ResType.MONEY, 1561500)
+                new ResPack( // 7
+                        new ResChunk(ResType.CONSTRUCTION, 31000),
+                        new ResChunk(ResType.STEEL, 3123),
+                        new ResChunk(ResType.CONCRETE, 55520),
+                        new ResChunk(ResType.BRICK, 10410),
+                        new ResChunk(ResType.WOOD, 1735),
+                        new ResChunk(ResType.GLASS, 17350),
+                        new ResChunk(ResType.MONEY, 1561500)
                 ),
-                new ResourcePack( // 8
-                        new ResourceChunk(ResType.CONSTRUCTION, 42000),
-                        new ResourceChunk(ResType.STEEL, 4331),
-                        new ResourceChunk(ResType.CONCRETE, 76992),
-                        new ResourceChunk(ResType.BRICK, 14436),
-                        new ResourceChunk(ResType.WOOD, 2406),
-                        new ResourceChunk(ResType.GLASS, 24060),
-                        new ResourceChunk(ResType.MONEY, 2165400)
+                new ResPack( // 8
+                        new ResChunk(ResType.CONSTRUCTION, 42000),
+                        new ResChunk(ResType.STEEL, 4331),
+                        new ResChunk(ResType.CONCRETE, 76992),
+                        new ResChunk(ResType.BRICK, 14436),
+                        new ResChunk(ResType.WOOD, 2406),
+                        new ResChunk(ResType.GLASS, 24060),
+                        new ResChunk(ResType.MONEY, 2165400)
                 ),
-                new ResourcePack( // 9
-                        new ResourceChunk(ResType.CONSTRUCTION, 55000),
-                        new ResourceChunk(ResType.STEEL, 5805),
-                        new ResourceChunk(ResType.CONCRETE, 103200),
-                        new ResourceChunk(ResType.BRICK, 19350),
-                        new ResourceChunk(ResType.WOOD, 3225),
-                        new ResourceChunk(ResType.GLASS, 32250),
-                        new ResourceChunk(ResType.MONEY, 2902500)
+                new ResPack( // 9
+                        new ResChunk(ResType.CONSTRUCTION, 55000),
+                        new ResChunk(ResType.STEEL, 5805),
+                        new ResChunk(ResType.CONCRETE, 103200),
+                        new ResChunk(ResType.BRICK, 19350),
+                        new ResChunk(ResType.WOOD, 3225),
+                        new ResChunk(ResType.GLASS, 32250),
+                        new ResChunk(ResType.MONEY, 2902500)
                 ),
-                new ResourcePack( // 10
-                        new ResourceChunk(ResType.CONSTRUCTION, 70000),
-                        new ResourceChunk(ResType.STEEL, 7560),
-                        new ResourceChunk(ResType.CONCRETE, 134400),
-                        new ResourceChunk(ResType.BRICK, 25200),
-                        new ResourceChunk(ResType.WOOD, 4200),
-                        new ResourceChunk(ResType.GLASS, 42000),
-                        new ResourceChunk(ResType.MONEY, 3780000)
+                new ResPack( // 10
+                        new ResChunk(ResType.CONSTRUCTION, 70000),
+                        new ResChunk(ResType.STEEL, 7560),
+                        new ResChunk(ResType.CONCRETE, 134400),
+                        new ResChunk(ResType.BRICK, 25200),
+                        new ResChunk(ResType.WOOD, 4200),
+                        new ResChunk(ResType.GLASS, 42000),
+                        new ResChunk(ResType.MONEY, 3780000)
                 ),
-                new ResourcePack( // 11
-                        new ResourceChunk(ResType.CONSTRUCTION, 88000),
-                        new ResourceChunk(ResType.STEEL, 9763),
-                        new ResourceChunk(ResType.CONCRETE, 173568),
-                        new ResourceChunk(ResType.BRICK, 32544),
-                        new ResourceChunk(ResType.WOOD, 5424),
-                        new ResourceChunk(ResType.GLASS, 54240),
-                        new ResourceChunk(ResType.MONEY, 4881600)
+                new ResPack( // 11
+                        new ResChunk(ResType.CONSTRUCTION, 88000),
+                        new ResChunk(ResType.STEEL, 9763),
+                        new ResChunk(ResType.CONCRETE, 173568),
+                        new ResChunk(ResType.BRICK, 32544),
+                        new ResChunk(ResType.WOOD, 5424),
+                        new ResChunk(ResType.GLASS, 54240),
+                        new ResChunk(ResType.MONEY, 4881600)
                 ),
-                new ResourcePack( // 12
-                        new ResourceChunk(ResType.CONSTRUCTION, 109000),
-                        new ResourceChunk(ResType.STEEL, 12447),
-                        new ResourceChunk(ResType.CONCRETE, 221280),
-                        new ResourceChunk(ResType.BRICK, 41490),
-                        new ResourceChunk(ResType.WOOD, 6915),
-                        new ResourceChunk(ResType.GLASS, 69150),
-                        new ResourceChunk(ResType.MONEY, 6223500)
+                new ResPack( // 12
+                        new ResChunk(ResType.CONSTRUCTION, 109000),
+                        new ResChunk(ResType.STEEL, 12447),
+                        new ResChunk(ResType.CONCRETE, 221280),
+                        new ResChunk(ResType.BRICK, 41490),
+                        new ResChunk(ResType.WOOD, 6915),
+                        new ResChunk(ResType.GLASS, 69150),
+                        new ResChunk(ResType.MONEY, 6223500)
                 ),
-                new ResourcePack( // 13
-                        new ResourceChunk(ResType.CONSTRUCTION, 133000),
-                        new ResourceChunk(ResType.STEEL, 15644),
-                        new ResourceChunk(ResType.CONCRETE, 278112),
-                        new ResourceChunk(ResType.BRICK, 52146),
-                        new ResourceChunk(ResType.WOOD, 8691),
-                        new ResourceChunk(ResType.GLASS, 86910),
-                        new ResourceChunk(ResType.MONEY, 7821900)
+                new ResPack( // 13
+                        new ResChunk(ResType.CONSTRUCTION, 133000),
+                        new ResChunk(ResType.STEEL, 15644),
+                        new ResChunk(ResType.CONCRETE, 278112),
+                        new ResChunk(ResType.BRICK, 52146),
+                        new ResChunk(ResType.WOOD, 8691),
+                        new ResChunk(ResType.GLASS, 86910),
+                        new ResChunk(ResType.MONEY, 7821900)
                 ),
-                new ResourcePack( // 14
-                        new ResourceChunk(ResType.CONSTRUCTION, 160000),
-                        new ResourceChunk(ResType.STEEL, 19386),
-                        new ResourceChunk(ResType.CONCRETE, 344640),
-                        new ResourceChunk(ResType.BRICK, 64620),
-                        new ResourceChunk(ResType.WOOD, 10770),
-                        new ResourceChunk(ResType.GLASS, 107700),
-                        new ResourceChunk(ResType.MONEY, 9693000)
+                new ResPack( // 14
+                        new ResChunk(ResType.CONSTRUCTION, 160000),
+                        new ResChunk(ResType.STEEL, 19386),
+                        new ResChunk(ResType.CONCRETE, 344640),
+                        new ResChunk(ResType.BRICK, 64620),
+                        new ResChunk(ResType.WOOD, 10770),
+                        new ResChunk(ResType.GLASS, 107700),
+                        new ResChunk(ResType.MONEY, 9693000)
                 ),
-                new ResourcePack( // 15
-                        new ResourceChunk(ResType.CONSTRUCTION, 190000),
-                        new ResourceChunk(ResType.STEEL, 23706),
-                        new ResourceChunk(ResType.CONCRETE, 421440),
-                        new ResourceChunk(ResType.BRICK, 79020),
-                        new ResourceChunk(ResType.WOOD, 13170),
-                        new ResourceChunk(ResType.GLASS, 131700),
-                        new ResourceChunk(ResType.MONEY, 11853000)
+                new ResPack( // 15
+                        new ResChunk(ResType.CONSTRUCTION, 190000),
+                        new ResChunk(ResType.STEEL, 23706),
+                        new ResChunk(ResType.CONCRETE, 421440),
+                        new ResChunk(ResType.BRICK, 79020),
+                        new ResChunk(ResType.WOOD, 13170),
+                        new ResChunk(ResType.GLASS, 131700),
+                        new ResChunk(ResType.MONEY, 11853000)
                 ),
-                new ResourcePack( // 16
-                        new ResourceChunk(ResType.CONSTRUCTION, 224000),
-                        new ResourceChunk(ResType.STEEL, 28847),
-                        new ResourceChunk(ResType.CONCRETE, 512832),
-                        new ResourceChunk(ResType.BRICK, 96156),
-                        new ResourceChunk(ResType.WOOD, 16026),
-                        new ResourceChunk(ResType.GLASS, 160260),
-                        new ResourceChunk(ResType.MONEY, 14423400)
+                new ResPack( // 16
+                        new ResChunk(ResType.CONSTRUCTION, 224000),
+                        new ResChunk(ResType.STEEL, 28847),
+                        new ResChunk(ResType.CONCRETE, 512832),
+                        new ResChunk(ResType.BRICK, 96156),
+                        new ResChunk(ResType.WOOD, 16026),
+                        new ResChunk(ResType.GLASS, 160260),
+                        new ResChunk(ResType.MONEY, 14423400)
                 ),
-                new ResourcePack( // 17
-                        new ResourceChunk(ResType.CONSTRUCTION, 262000),
-                        new ResourceChunk(ResType.STEEL, 34866),
-                        new ResourceChunk(ResType.CONCRETE, 619840),
-                        new ResourceChunk(ResType.BRICK, 116220),
-                        new ResourceChunk(ResType.WOOD, 19370),
-                        new ResourceChunk(ResType.GLASS, 193700),
-                        new ResourceChunk(ResType.MONEY, 17433000)
+                new ResPack( // 17
+                        new ResChunk(ResType.CONSTRUCTION, 262000),
+                        new ResChunk(ResType.STEEL, 34866),
+                        new ResChunk(ResType.CONCRETE, 619840),
+                        new ResChunk(ResType.BRICK, 116220),
+                        new ResChunk(ResType.WOOD, 19370),
+                        new ResChunk(ResType.GLASS, 193700),
+                        new ResChunk(ResType.MONEY, 17433000)
                 ),
-                new ResourcePack( // 18
-                        new ResourceChunk(ResType.CONSTRUCTION, 304000),
-                        new ResourceChunk(ResType.STEEL, 41821),
-                        new ResourceChunk(ResType.CONCRETE, 743488),
-                        new ResourceChunk(ResType.BRICK, 139404),
-                        new ResourceChunk(ResType.WOOD, 23234),
-                        new ResourceChunk(ResType.GLASS, 232340),
-                        new ResourceChunk(ResType.MONEY, 20910600)
+                new ResPack( // 18
+                        new ResChunk(ResType.CONSTRUCTION, 304000),
+                        new ResChunk(ResType.STEEL, 41821),
+                        new ResChunk(ResType.CONCRETE, 743488),
+                        new ResChunk(ResType.BRICK, 139404),
+                        new ResChunk(ResType.WOOD, 23234),
+                        new ResChunk(ResType.GLASS, 232340),
+                        new ResChunk(ResType.MONEY, 20910600)
                 ),
-                new ResourcePack( // 19
-                        new ResourceChunk(ResType.CONSTRUCTION, 350000),
-                        new ResourceChunk(ResType.STEEL, 49770),
-                        new ResourceChunk(ResType.CONCRETE, 884800),
-                        new ResourceChunk(ResType.BRICK, 165900),
-                        new ResourceChunk(ResType.WOOD, 27650),
-                        new ResourceChunk(ResType.GLASS, 276500),
-                        new ResourceChunk(ResType.MONEY, 24885000)
+                new ResPack( // 19
+                        new ResChunk(ResType.CONSTRUCTION, 350000),
+                        new ResChunk(ResType.STEEL, 49770),
+                        new ResChunk(ResType.CONCRETE, 884800),
+                        new ResChunk(ResType.BRICK, 165900),
+                        new ResChunk(ResType.WOOD, 27650),
+                        new ResChunk(ResType.GLASS, 276500),
+                        new ResChunk(ResType.MONEY, 24885000)
                 ),
-                new ResourcePack( // 20
-                        new ResourceChunk(ResType.CONSTRUCTION, 400000),
-                        new ResourceChunk(ResType.STEEL, 58770),
-                        new ResourceChunk(ResType.CONCRETE, 1044800),
-                        new ResourceChunk(ResType.BRICK, 195900),
-                        new ResourceChunk(ResType.WOOD, 32650),
-                        new ResourceChunk(ResType.GLASS, 326500),
-                        new ResourceChunk(ResType.MONEY, 29385000)
+                new ResPack( // 20
+                        new ResChunk(ResType.CONSTRUCTION, 400000),
+                        new ResChunk(ResType.STEEL, 58770),
+                        new ResChunk(ResType.CONCRETE, 1044800),
+                        new ResChunk(ResType.BRICK, 195900),
+                        new ResChunk(ResType.WOOD, 32650),
+                        new ResChunk(ResType.GLASS, 326500),
+                        new ResChunk(ResType.MONEY, 29385000)
                 )
         });
-        setProductionMultiplier(new ResourcePack[]{
-                new ResourcePack( // 1
-                        new ResourceChunk(ResType.CITIZEN, 2)
+        setProductionMultiplier(new ResPack[]{
+                new ResPack( // 1
+                        new ResChunk(ResType.CITIZEN, 2)
                 ),
-                new ResourcePack( // 2
-                        new ResourceChunk(ResType.CITIZEN, 4)
+                new ResPack( // 2
+                        new ResChunk(ResType.CITIZEN, 4)
                 ),
-                new ResourcePack( // 3
-                        new ResourceChunk(ResType.CITIZEN, 6)
+                new ResPack( // 3
+                        new ResChunk(ResType.CITIZEN, 6)
                 ),
-                new ResourcePack( // 4
-                        new ResourceChunk(ResType.CITIZEN, 8)
+                new ResPack( // 4
+                        new ResChunk(ResType.CITIZEN, 8)
                 ),
-                new ResourcePack( // 5
-                        new ResourceChunk(ResType.CITIZEN, 10)
+                new ResPack( // 5
+                        new ResChunk(ResType.CITIZEN, 10)
                 ),
-                new ResourcePack( // 6
-                        new ResourceChunk(ResType.CITIZEN, 14)
+                new ResPack( // 6
+                        new ResChunk(ResType.CITIZEN, 14)
                 ),
-                new ResourcePack( // 7
-                        new ResourceChunk(ResType.CITIZEN, 18)
+                new ResPack( // 7
+                        new ResChunk(ResType.CITIZEN, 18)
                 ),
-                new ResourcePack( // 8
-                        new ResourceChunk(ResType.CITIZEN, 22)
+                new ResPack( // 8
+                        new ResChunk(ResType.CITIZEN, 22)
                 ),
-                new ResourcePack( // 9
-                        new ResourceChunk(ResType.CITIZEN, 26)
+                new ResPack( // 9
+                        new ResChunk(ResType.CITIZEN, 26)
                 ),
-                new ResourcePack( // 10
-                        new ResourceChunk(ResType.CITIZEN, 30)
+                new ResPack( // 10
+                        new ResChunk(ResType.CITIZEN, 30)
                 ),
-                new ResourcePack( // 11
-                        new ResourceChunk(ResType.CITIZEN, 36)
+                new ResPack( // 11
+                        new ResChunk(ResType.CITIZEN, 36)
                 ),
-                new ResourcePack( // 12
-                        new ResourceChunk(ResType.CITIZEN, 42)
+                new ResPack( // 12
+                        new ResChunk(ResType.CITIZEN, 42)
                 ),
-                new ResourcePack( // 13
-                        new ResourceChunk(ResType.CITIZEN, 48)
+                new ResPack( // 13
+                        new ResChunk(ResType.CITIZEN, 48)
                 ),
-                new ResourcePack( // 14
-                        new ResourceChunk(ResType.CITIZEN, 54)
+                new ResPack( // 14
+                        new ResChunk(ResType.CITIZEN, 54)
                 ),
-                new ResourcePack( // 15
-                        new ResourceChunk(ResType.CITIZEN, 60)
+                new ResPack( // 15
+                        new ResChunk(ResType.CITIZEN, 60)
                 ),
-                new ResourcePack( // 16
-                        new ResourceChunk(ResType.CITIZEN, 68)
+                new ResPack( // 16
+                        new ResChunk(ResType.CITIZEN, 68)
                 ),
-                new ResourcePack( // 17
-                        new ResourceChunk(ResType.CITIZEN, 76)
+                new ResPack( // 17
+                        new ResChunk(ResType.CITIZEN, 76)
                 ),
-                new ResourcePack( // 18
-                        new ResourceChunk(ResType.CITIZEN, 84)
+                new ResPack( // 18
+                        new ResChunk(ResType.CITIZEN, 84)
                 ),
-                new ResourcePack( // 19
-                        new ResourceChunk(ResType.CITIZEN, 92)
+                new ResPack( // 19
+                        new ResChunk(ResType.CITIZEN, 92)
                 ),
-                new ResourcePack( // 20
-                        new ResourceChunk(ResType.CITIZEN, 100)
+                new ResPack( // 20
+                        new ResChunk(ResType.CITIZEN, 100)
                 )
         });
-        setJobRewardMultiplier(new ResourcePack[]{
-                new ResourcePack( // 1
-                        new ResourceChunk(ResType.CITIZEN, 2)
+        setJobRewardMultiplier(new ResPack[]{
+                new ResPack( // 1
+                        new ResChunk(ResType.CITIZEN, 2)
                 ),
-                new ResourcePack( // 2
-                        new ResourceChunk(ResType.CITIZEN, 4)
+                new ResPack( // 2
+                        new ResChunk(ResType.CITIZEN, 4)
                 ),
-                new ResourcePack( // 3
-                        new ResourceChunk(ResType.CITIZEN, 6)
+                new ResPack( // 3
+                        new ResChunk(ResType.CITIZEN, 6)
                 ),
-                new ResourcePack( // 4
-                        new ResourceChunk(ResType.CITIZEN, 8)
+                new ResPack( // 4
+                        new ResChunk(ResType.CITIZEN, 8)
                 ),
-                new ResourcePack( // 5
-                        new ResourceChunk(ResType.CITIZEN, 10)
+                new ResPack( // 5
+                        new ResChunk(ResType.CITIZEN, 10)
                 ),
-                new ResourcePack( // 6
-                        new ResourceChunk(ResType.CITIZEN, 14)
+                new ResPack( // 6
+                        new ResChunk(ResType.CITIZEN, 14)
                 ),
-                new ResourcePack( // 7
-                        new ResourceChunk(ResType.CITIZEN, 18)
+                new ResPack( // 7
+                        new ResChunk(ResType.CITIZEN, 18)
                 ),
-                new ResourcePack( // 8
-                        new ResourceChunk(ResType.CITIZEN, 22)
+                new ResPack( // 8
+                        new ResChunk(ResType.CITIZEN, 22)
                 ),
-                new ResourcePack( // 9
-                        new ResourceChunk(ResType.CITIZEN, 26)
+                new ResPack( // 9
+                        new ResChunk(ResType.CITIZEN, 26)
                 ),
-                new ResourcePack( // 10
-                        new ResourceChunk(ResType.CITIZEN, 30)
+                new ResPack( // 10
+                        new ResChunk(ResType.CITIZEN, 30)
                 ),
-                new ResourcePack( // 11
-                        new ResourceChunk(ResType.CITIZEN, 36)
+                new ResPack( // 11
+                        new ResChunk(ResType.CITIZEN, 36)
                 ),
-                new ResourcePack( // 12
-                        new ResourceChunk(ResType.CITIZEN, 42)
+                new ResPack( // 12
+                        new ResChunk(ResType.CITIZEN, 42)
                 ),
-                new ResourcePack( // 13
-                        new ResourceChunk(ResType.CITIZEN, 48)
+                new ResPack( // 13
+                        new ResChunk(ResType.CITIZEN, 48)
                 ),
-                new ResourcePack( // 14
-                        new ResourceChunk(ResType.CITIZEN, 54)
+                new ResPack( // 14
+                        new ResChunk(ResType.CITIZEN, 54)
                 ),
-                new ResourcePack( // 15
-                        new ResourceChunk(ResType.CITIZEN, 60)
+                new ResPack( // 15
+                        new ResChunk(ResType.CITIZEN, 60)
                 ),
-                new ResourcePack( // 16
-                        new ResourceChunk(ResType.CITIZEN, 68)
+                new ResPack( // 16
+                        new ResChunk(ResType.CITIZEN, 68)
                 ),
-                new ResourcePack( // 17
-                        new ResourceChunk(ResType.CITIZEN, 76)
+                new ResPack( // 17
+                        new ResChunk(ResType.CITIZEN, 76)
                 ),
-                new ResourcePack( // 18
-                        new ResourceChunk(ResType.CITIZEN, 84)
+                new ResPack( // 18
+                        new ResChunk(ResType.CITIZEN, 84)
                 ),
-                new ResourcePack( // 19
-                        new ResourceChunk(ResType.CITIZEN, 92)
+                new ResPack( // 19
+                        new ResChunk(ResType.CITIZEN, 92)
                 ),
-                new ResourcePack( // 20
-                        new ResourceChunk(ResType.CITIZEN, 100)
+                new ResPack( // 20
+                        new ResChunk(ResType.CITIZEN, 100)
                 )
         });
-        setDemand(new ResourcePack[]{
-                new ResourcePack( // 1
-                        new ResourceChunk(ResType.UPKEEP, 300),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 4),
-                        new ResourceChunk(ResType.JOB, 80),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+        setDemand(new ResPack[]{
+                new ResPack( // 1
+                        new ResChunk(ResType.UPKEEP, 300),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 4),
+                        new ResChunk(ResType.JOB, 80),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 2
-                        new ResourceChunk(ResType.UPKEEP, 600),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 8),
-                        new ResourceChunk(ResType.JOB, 160),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 2
+                        new ResChunk(ResType.UPKEEP, 600),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 8),
+                        new ResChunk(ResType.JOB, 160),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 3
-                        new ResourceChunk(ResType.UPKEEP, 900),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 12),
-                        new ResourceChunk(ResType.JOB, 240),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 3
+                        new ResChunk(ResType.UPKEEP, 900),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 12),
+                        new ResChunk(ResType.JOB, 240),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 4
-                        new ResourceChunk(ResType.UPKEEP, 1200),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 16),
-                        new ResourceChunk(ResType.JOB, 320),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 4
+                        new ResChunk(ResType.UPKEEP, 1200),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 16),
+                        new ResChunk(ResType.JOB, 320),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 5
-                        new ResourceChunk(ResType.UPKEEP, 1500),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 20),
-                        new ResourceChunk(ResType.JOB, 400),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 5
+                        new ResChunk(ResType.UPKEEP, 1500),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 20),
+                        new ResChunk(ResType.JOB, 400),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 6
-                        new ResourceChunk(ResType.UPKEEP, 2100),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 28),
-                        new ResourceChunk(ResType.JOB, 560),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 6
+                        new ResChunk(ResType.UPKEEP, 2100),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 28),
+                        new ResChunk(ResType.JOB, 560),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 7
-                        new ResourceChunk(ResType.UPKEEP, 2700),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 36),
-                        new ResourceChunk(ResType.JOB, 720),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 7
+                        new ResChunk(ResType.UPKEEP, 2700),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 36),
+                        new ResChunk(ResType.JOB, 720),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 8
-                        new ResourceChunk(ResType.UPKEEP, 3300),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 44),
-                        new ResourceChunk(ResType.JOB, 880),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 8
+                        new ResChunk(ResType.UPKEEP, 3300),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 44),
+                        new ResChunk(ResType.JOB, 880),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 9
-                        new ResourceChunk(ResType.UPKEEP, 3900),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 52),
-                        new ResourceChunk(ResType.JOB, 1040),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 9
+                        new ResChunk(ResType.UPKEEP, 3900),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 52),
+                        new ResChunk(ResType.JOB, 1040),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 10
-                        new ResourceChunk(ResType.UPKEEP, 4500),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 60),
-                        new ResourceChunk(ResType.JOB, 1200),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 10
+                        new ResChunk(ResType.UPKEEP, 4500),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 60),
+                        new ResChunk(ResType.JOB, 1200),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 11
-                        new ResourceChunk(ResType.UPKEEP, 5400),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 72),
-                        new ResourceChunk(ResType.JOB, 1440),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 11
+                        new ResChunk(ResType.UPKEEP, 5400),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 72),
+                        new ResChunk(ResType.JOB, 1440),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 12
-                        new ResourceChunk(ResType.UPKEEP, 6300),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 84),
-                        new ResourceChunk(ResType.JOB, 1680),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 12
+                        new ResChunk(ResType.UPKEEP, 6300),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 84),
+                        new ResChunk(ResType.JOB, 1680),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 13
-                        new ResourceChunk(ResType.UPKEEP, 7200),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 96),
-                        new ResourceChunk(ResType.JOB, 1920),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 13
+                        new ResChunk(ResType.UPKEEP, 7200),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 96),
+                        new ResChunk(ResType.JOB, 1920),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 14
-                        new ResourceChunk(ResType.UPKEEP, 8100),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 108),
-                        new ResourceChunk(ResType.JOB, 2160),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 14
+                        new ResChunk(ResType.UPKEEP, 8100),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 108),
+                        new ResChunk(ResType.JOB, 2160),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 15
-                        new ResourceChunk(ResType.UPKEEP, 9000),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 120),
-                        new ResourceChunk(ResType.JOB, 2400),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 15
+                        new ResChunk(ResType.UPKEEP, 9000),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 120),
+                        new ResChunk(ResType.JOB, 2400),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 16
-                        new ResourceChunk(ResType.UPKEEP, 10200),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 136),
-                        new ResourceChunk(ResType.JOB, 2720),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 16
+                        new ResChunk(ResType.UPKEEP, 10200),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 136),
+                        new ResChunk(ResType.JOB, 2720),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 17
-                        new ResourceChunk(ResType.UPKEEP, 11400),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 152),
-                        new ResourceChunk(ResType.JOB, 3040),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 17
+                        new ResChunk(ResType.UPKEEP, 11400),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 152),
+                        new ResChunk(ResType.JOB, 3040),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 18
-                        new ResourceChunk(ResType.UPKEEP, 12600),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 168),
-                        new ResourceChunk(ResType.JOB, 3360),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 18
+                        new ResChunk(ResType.UPKEEP, 12600),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 168),
+                        new ResChunk(ResType.JOB, 3360),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 19
-                        new ResourceChunk(ResType.UPKEEP, 13800),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 184),
-                        new ResourceChunk(ResType.JOB, 3680),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 19
+                        new ResChunk(ResType.UPKEEP, 13800),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 184),
+                        new ResChunk(ResType.JOB, 3680),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 ),
-                new ResourcePack( // 20
-                        new ResourceChunk(ResType.UPKEEP, 15000),
-                        new ResourceChunk(ResType.POWER_CONSUMPTION, 200),
-                        new ResourceChunk(ResType.JOB, 4000),
-                        new ResourceChunk(ResType.IGNITABILITY, 1)
+                new ResPack( // 20
+                        new ResChunk(ResType.UPKEEP, 15000),
+                        new ResChunk(ResType.POWER_CONSUMPTION, 200),
+                        new ResChunk(ResType.JOB, 4000),
+                        new ResChunk(ResType.IGNITABILITY, 1)
                 )
         });
-        setHold(new ResourcePack[]{
-                new ResourcePack( // 1
-                        new ResourceChunk(ResType.POWER, 4),
-                        new ResourceChunk(ResType.WORKER, 80)
+        setHold(new ResPack[]{
+                new ResPack( // 1
+                        new ResChunk(ResType.POWER, 4),
+                        new ResChunk(ResType.WORKER, 80)
                 ),
-                new ResourcePack( // 2
-                        new ResourceChunk(ResType.POWER, 8),
-                        new ResourceChunk(ResType.WORKER, 160)
+                new ResPack( // 2
+                        new ResChunk(ResType.POWER, 8),
+                        new ResChunk(ResType.WORKER, 160)
                 ),
-                new ResourcePack( // 3
-                        new ResourceChunk(ResType.POWER, 12),
-                        new ResourceChunk(ResType.WORKER, 240)
+                new ResPack( // 3
+                        new ResChunk(ResType.POWER, 12),
+                        new ResChunk(ResType.WORKER, 240)
                 ),
-                new ResourcePack( // 4
-                        new ResourceChunk(ResType.POWER, 16),
-                        new ResourceChunk(ResType.WORKER, 320)
+                new ResPack( // 4
+                        new ResChunk(ResType.POWER, 16),
+                        new ResChunk(ResType.WORKER, 320)
                 ),
-                new ResourcePack( // 5
-                        new ResourceChunk(ResType.POWER, 20),
-                        new ResourceChunk(ResType.WORKER, 400)
+                new ResPack( // 5
+                        new ResChunk(ResType.POWER, 20),
+                        new ResChunk(ResType.WORKER, 400)
                 ),
-                new ResourcePack( // 6
-                        new ResourceChunk(ResType.POWER, 28),
-                        new ResourceChunk(ResType.WORKER, 560)
+                new ResPack( // 6
+                        new ResChunk(ResType.POWER, 28),
+                        new ResChunk(ResType.WORKER, 560)
                 ),
-                new ResourcePack( // 7
-                        new ResourceChunk(ResType.POWER, 36),
-                        new ResourceChunk(ResType.WORKER, 720)
+                new ResPack( // 7
+                        new ResChunk(ResType.POWER, 36),
+                        new ResChunk(ResType.WORKER, 720)
                 ),
-                new ResourcePack( // 8
-                        new ResourceChunk(ResType.POWER, 44),
-                        new ResourceChunk(ResType.WORKER, 880)
+                new ResPack( // 8
+                        new ResChunk(ResType.POWER, 44),
+                        new ResChunk(ResType.WORKER, 880)
                 ),
-                new ResourcePack( // 9
-                        new ResourceChunk(ResType.POWER, 52),
-                        new ResourceChunk(ResType.WORKER, 1040)
+                new ResPack( // 9
+                        new ResChunk(ResType.POWER, 52),
+                        new ResChunk(ResType.WORKER, 1040)
                 ),
-                new ResourcePack( // 10
-                        new ResourceChunk(ResType.POWER, 60),
-                        new ResourceChunk(ResType.WORKER, 1200)
+                new ResPack( // 10
+                        new ResChunk(ResType.POWER, 60),
+                        new ResChunk(ResType.WORKER, 1200)
                 ),
-                new ResourcePack( // 11
-                        new ResourceChunk(ResType.POWER, 72),
-                        new ResourceChunk(ResType.WORKER, 1440)
+                new ResPack( // 11
+                        new ResChunk(ResType.POWER, 72),
+                        new ResChunk(ResType.WORKER, 1440)
                 ),
-                new ResourcePack( // 12
-                        new ResourceChunk(ResType.POWER, 84),
-                        new ResourceChunk(ResType.WORKER, 1680)
+                new ResPack( // 12
+                        new ResChunk(ResType.POWER, 84),
+                        new ResChunk(ResType.WORKER, 1680)
                 ),
-                new ResourcePack( // 13
-                        new ResourceChunk(ResType.POWER, 96),
-                        new ResourceChunk(ResType.WORKER, 1920)
+                new ResPack( // 13
+                        new ResChunk(ResType.POWER, 96),
+                        new ResChunk(ResType.WORKER, 1920)
                 ),
-                new ResourcePack( // 14
-                        new ResourceChunk(ResType.POWER, 108),
-                        new ResourceChunk(ResType.WORKER, 2160)
+                new ResPack( // 14
+                        new ResChunk(ResType.POWER, 108),
+                        new ResChunk(ResType.WORKER, 2160)
                 ),
-                new ResourcePack( // 15
-                        new ResourceChunk(ResType.POWER, 120),
-                        new ResourceChunk(ResType.WORKER, 2400)
+                new ResPack( // 15
+                        new ResChunk(ResType.POWER, 120),
+                        new ResChunk(ResType.WORKER, 2400)
                 ),
-                new ResourcePack( // 16
-                        new ResourceChunk(ResType.POWER, 136),
-                        new ResourceChunk(ResType.WORKER, 2720)
+                new ResPack( // 16
+                        new ResChunk(ResType.POWER, 136),
+                        new ResChunk(ResType.WORKER, 2720)
                 ),
-                new ResourcePack( // 17
-                        new ResourceChunk(ResType.POWER, 152),
-                        new ResourceChunk(ResType.WORKER, 3040)
+                new ResPack( // 17
+                        new ResChunk(ResType.POWER, 152),
+                        new ResChunk(ResType.WORKER, 3040)
                 ),
-                new ResourcePack( // 18
-                        new ResourceChunk(ResType.POWER, 168),
-                        new ResourceChunk(ResType.WORKER, 3360)
+                new ResPack( // 18
+                        new ResChunk(ResType.POWER, 168),
+                        new ResChunk(ResType.WORKER, 3360)
                 ),
-                new ResourcePack( // 19
-                        new ResourceChunk(ResType.POWER, 184),
-                        new ResourceChunk(ResType.WORKER, 3680)
+                new ResPack( // 19
+                        new ResChunk(ResType.POWER, 184),
+                        new ResChunk(ResType.WORKER, 3680)
                 ),
-                new ResourcePack( // 20
-                        new ResourceChunk(ResType.POWER, 200),
-                        new ResourceChunk(ResType.WORKER, 4000)
+                new ResPack( // 20
+                        new ResChunk(ResType.POWER, 200),
+                        new ResChunk(ResType.WORKER, 4000)
                 )
         });
     }

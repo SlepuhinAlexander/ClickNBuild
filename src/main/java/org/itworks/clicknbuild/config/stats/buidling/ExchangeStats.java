@@ -1,7 +1,7 @@
 package org.itworks.clicknbuild.config.stats.buidling;
 
-import org.itworks.clicknbuild.engine.model.ResourceChunk;
-import org.itworks.clicknbuild.engine.model.ResourcePack;
+import org.itworks.clicknbuild.engine.model.ResChunk;
+import org.itworks.clicknbuild.engine.model.ResPack;
 import org.itworks.clicknbuild.engine.model.ResType;
 
 public final class ExchangeStats extends BuildingStats {
@@ -32,23 +32,23 @@ public final class ExchangeStats extends BuildingStats {
         setBuildLimit(1);
         setPriceMultiplier(100);
         setStructure(new int[]{9000});
-        setBuildCost(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResType.CONSTRUCTION, 9000),
-                new ResourceChunk(ResType.STEEL, 4500),
-                new ResourceChunk(ResType.CONCRETE, 15000),
-                new ResourceChunk(ResType.BRICK, 11250),
-                new ResourceChunk(ResType.WOOD, 3750),
-                new ResourceChunk(ResType.GLASS, 7500),
-                new ResourceChunk(ResType.MONEY, 450000)
+        setBuildCost(new ResPack[]{new ResPack(
+                new ResChunk(ResType.CONSTRUCTION, 9000),
+                new ResChunk(ResType.STEEL, 4500),
+                new ResChunk(ResType.CONCRETE, 15000),
+                new ResChunk(ResType.BRICK, 11250),
+                new ResChunk(ResType.WOOD, 3750),
+                new ResChunk(ResType.GLASS, 7500),
+                new ResChunk(ResType.MONEY, 450000)
         )});
-        setDemand(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResType.POWER_CONSUMPTION, 100),
-                new ResourceChunk(ResType.JOB, 2000),
-                new ResourceChunk(ResType.IGNITABILITY, 1)
+        setDemand(new ResPack[]{new ResPack(
+                new ResChunk(ResType.POWER_CONSUMPTION, 100),
+                new ResChunk(ResType.JOB, 2000),
+                new ResChunk(ResType.IGNITABILITY, 1)
         )});
-        setHold(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResType.POWER, 100),
-                new ResourceChunk(ResType.WORKER, 2000)
+        setHold(new ResPack[]{new ResPack(
+                new ResChunk(ResType.POWER, 100),
+                new ResChunk(ResType.WORKER, 2000)
         )});
     }
 }

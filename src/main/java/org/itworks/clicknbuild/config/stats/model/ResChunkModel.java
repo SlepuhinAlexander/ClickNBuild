@@ -1,14 +1,14 @@
 package org.itworks.clicknbuild.config.stats.model;
 
-import org.itworks.clicknbuild.engine.model.ResourceChunk;
+import org.itworks.clicknbuild.engine.model.ResChunk;
 
-public class ResourceChunkModel {
+public class ResChunkModel {
     private String type;
     private Double amount;
 
-    public static ResourceChunkModel valueOf(ResourceChunk value) {
+    public static ResChunkModel valueOf(ResChunk value) {
         if (value == null) return null;
-        ResourceChunkModel result = new ResourceChunkModel();
+        ResChunkModel result = new ResChunkModel();
         result.setType(value.type.type);
         result.setAmount(value.getAmount());
         return result;

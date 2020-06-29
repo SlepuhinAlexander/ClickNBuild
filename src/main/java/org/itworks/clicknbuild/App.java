@@ -6,8 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.itworks.clicknbuild.config.stats.StatsLoader;
-import org.itworks.clicknbuild.engine.model.BuildingType;
-import org.itworks.clicknbuild.engine.model.ResType;
 import org.itworks.clicknbuild.sources.*;
 import org.itworks.clicknbuild.ui.scene.Scenes;
 
@@ -27,7 +25,7 @@ public final class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         L10nHandler.inst().setLang(Locale.ENGLISH);
-        StatsLoader.inst().loadResourceStats();
+        StatsLoader.inst().loadResStats();
         StatsLoader.inst().loadTileStats();
         StatsLoader.inst().loadBuildingStats();
         primaryStage.setTitle(Src.getL10n(Strings.GAME_TITLE));

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
 import org.itworks.clicknbuild.config.stats.model.BuildingStatsModel;
-import org.itworks.clicknbuild.config.stats.model.ResourceTypeModel;
+import org.itworks.clicknbuild.config.stats.model.ResTypeModel;
 import org.itworks.clicknbuild.config.stats.model.TileModel;
 import org.itworks.clicknbuild.engine.model.BuildingType;
 import org.itworks.clicknbuild.engine.model.ResType;
@@ -44,16 +44,16 @@ public final class StatsLoader {
         return local;
     }
 
-    public void loadResourceStats() {
+    public void loadResStats() {
         ObjectMapper mapper = new ObjectMapper();
-        ResourceTypeModel[] resources = null;
+        ResTypeModel[] resources = null;
         try {
             resources = mapper.readValue(getClass().getResource(STATS_PATH + RESOURCE_FILE),
-                    ResourceTypeModel[].class);
+                    ResTypeModel[].class);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        applyResourceStats(resources);
+        applyResStats(resources);
     }
 
     public void loadTileStats() {
@@ -85,13 +85,13 @@ public final class StatsLoader {
         }
     }
 
-    private void applyResourceStats(ResourceTypeModel... resources) {
+    private void applyResStats(ResTypeModel... resources) {
         if (resources == null) return;
-        for (ResourceTypeModel loaded : resources) {
-            ResType resource = ResType.get(loaded.getType());
-            if (resource == null) continue;
-            if (loaded.getTradable() != null) resource.setTradable(loaded.getTradable());
-            if (loaded.getPrice() != null) resource.setPrice(loaded.getPrice());
+        for (ResTypeModel loaded : resources) {
+            ResType res = ResType.get(loaded.getType());
+            if (res == null) continue;
+            if (loaded.getTradable() != null) res.setTradable(loaded.getTradable());
+            if (loaded.getPrice() != null) res.setPrice(loaded.getPrice());
         }
     }
 
