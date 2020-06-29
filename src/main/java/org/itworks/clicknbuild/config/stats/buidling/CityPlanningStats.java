@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.config.stats.buidling;
 
 import org.itworks.clicknbuild.engine.model.ResourceChunk;
 import org.itworks.clicknbuild.engine.model.ResourcePack;
-import org.itworks.clicknbuild.engine.model.ResourceType;
+import org.itworks.clicknbuild.engine.model.ResType;
 
 public final class CityPlanningStats extends BuildingStats {
     private static volatile CityPlanningStats inst;
@@ -33,20 +33,20 @@ public final class CityPlanningStats extends BuildingStats {
         setPriceMultiplier(100);
         setStructure(new int[]{10000});
         setBuildCost(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.CONSTRUCTION, 10000),
-                new ResourceChunk(ResourceType.STEEL, 4320),
-                new ResourceChunk(ResourceType.CONCRETE, 14400),
-                new ResourceChunk(ResourceType.MONEY, 540000)
+                new ResourceChunk(ResType.CONSTRUCTION, 10000),
+                new ResourceChunk(ResType.STEEL, 4320),
+                new ResourceChunk(ResType.CONCRETE, 14400),
+                new ResourceChunk(ResType.MONEY, 540000)
         )});
         setDemand(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.UPKEEP, 1800),
-                new ResourceChunk(ResourceType.POWER_CONSUMPTION, 150),
-                new ResourceChunk(ResourceType.JOB, 3000),
-                new ResourceChunk(ResourceType.IGNITABILITY, 1)
+                new ResourceChunk(ResType.UPKEEP, 1800),
+                new ResourceChunk(ResType.POWER_CONSUMPTION, 150),
+                new ResourceChunk(ResType.JOB, 3000),
+                new ResourceChunk(ResType.IGNITABILITY, 1)
         )});
         setHold(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.POWER, 150),
-                new ResourceChunk(ResourceType.WORKER, 3000)
+                new ResourceChunk(ResType.POWER, 150),
+                new ResourceChunk(ResType.WORKER, 3000)
         )});
     }
 }

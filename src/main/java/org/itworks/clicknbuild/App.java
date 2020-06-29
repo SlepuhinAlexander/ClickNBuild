@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.itworks.clicknbuild.config.stats.StatsLoader;
 import org.itworks.clicknbuild.engine.model.BuildingType;
-import org.itworks.clicknbuild.engine.model.ResourceType;
+import org.itworks.clicknbuild.engine.model.ResType;
 import org.itworks.clicknbuild.sources.*;
 import org.itworks.clicknbuild.ui.scene.Scenes;
 

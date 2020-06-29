@@ -31,13 +31,15 @@ public enum TileType {
     }
 
     public static TileType get(String type) {
-        for (TileType tile : TileType.values()) if (tile.type.equalsIgnoreCase(Str.nonNull(type).trim())) return tile;
+        TileType[] tiles = values();
+        for (TileType tile : tiles) if (tile.type.equalsIgnoreCase(Str.nonNull(type).trim())) return tile;
         return null;
     }
 
     public static TileType get(int ordinal) {
-        for (TileType tile : TileType.values()) if (tile.ordinal() == ordinal) return tile;
-        return null;
+        TileType[] tiles = values();
+        if (ordinal < 0 || ordinal >= tiles.length) return null;
+        return tiles[ordinal];
     }
 
     public double getStructure() {

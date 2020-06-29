@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.config.stats.buidling;
 
 import org.itworks.clicknbuild.engine.model.ResourceChunk;
 import org.itworks.clicknbuild.engine.model.ResourcePack;
-import org.itworks.clicknbuild.engine.model.ResourceType;
+import org.itworks.clicknbuild.engine.model.ResType;
 
 public final class ExchangeStats extends BuildingStats {
     private static volatile ExchangeStats inst;
@@ -33,22 +33,22 @@ public final class ExchangeStats extends BuildingStats {
         setPriceMultiplier(100);
         setStructure(new int[]{9000});
         setBuildCost(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.CONSTRUCTION, 9000),
-                new ResourceChunk(ResourceType.STEEL, 4500),
-                new ResourceChunk(ResourceType.CONCRETE, 15000),
-                new ResourceChunk(ResourceType.BRICK, 11250),
-                new ResourceChunk(ResourceType.WOOD, 3750),
-                new ResourceChunk(ResourceType.GLASS, 7500),
-                new ResourceChunk(ResourceType.MONEY, 450000)
+                new ResourceChunk(ResType.CONSTRUCTION, 9000),
+                new ResourceChunk(ResType.STEEL, 4500),
+                new ResourceChunk(ResType.CONCRETE, 15000),
+                new ResourceChunk(ResType.BRICK, 11250),
+                new ResourceChunk(ResType.WOOD, 3750),
+                new ResourceChunk(ResType.GLASS, 7500),
+                new ResourceChunk(ResType.MONEY, 450000)
         )});
         setDemand(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.POWER_CONSUMPTION, 100),
-                new ResourceChunk(ResourceType.JOB, 2000),
-                new ResourceChunk(ResourceType.IGNITABILITY, 1)
+                new ResourceChunk(ResType.POWER_CONSUMPTION, 100),
+                new ResourceChunk(ResType.JOB, 2000),
+                new ResourceChunk(ResType.IGNITABILITY, 1)
         )});
         setHold(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.POWER, 100),
-                new ResourceChunk(ResourceType.WORKER, 2000)
+                new ResourceChunk(ResType.POWER, 100),
+                new ResourceChunk(ResType.WORKER, 2000)
         )});
     }
 }

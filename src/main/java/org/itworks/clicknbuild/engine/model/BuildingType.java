@@ -153,14 +153,14 @@ public enum BuildingType {
     }
 
     public static BuildingType get(String type) {
-        for (BuildingType building : BuildingType.values()) {
-            if (building.type.equalsIgnoreCase(Str.nonNull(type))) return building;
-        }
+        BuildingType[] buildings = values();
+        for (BuildingType building : buildings) if (building.type.equalsIgnoreCase(Str.nonNull(type))) return building;
         return null;
     }
 
     public static BuildingType get(int ordinal) {
-        for (BuildingType building : BuildingType.values()) if (building.ordinal() == ordinal) return building;
-        return null;
+        BuildingType[] buildings = values();
+        if (ordinal < 0 || ordinal >= buildings.length) return null;
+        return buildings[ordinal];
     }
 }

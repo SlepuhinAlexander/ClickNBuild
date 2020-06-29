@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.config.stats.buidling;
 
 import org.itworks.clicknbuild.engine.model.ResourceChunk;
 import org.itworks.clicknbuild.engine.model.ResourcePack;
-import org.itworks.clicknbuild.engine.model.ResourceType;
+import org.itworks.clicknbuild.engine.model.ResType;
 
 public final class RoadStats extends BuildingStats {
     private static volatile RoadStats inst;
@@ -33,8 +33,8 @@ public final class RoadStats extends BuildingStats {
         setPriceMultiplier(105);
         setStructure(new int[]{500});
         setBuildCost(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.CONSTRUCTION, 500),
-                new ResourceChunk(ResourceType.CONCRETE, 50),
-                new ResourceChunk(ResourceType.MONEY, 500))});
+                new ResourceChunk(ResType.CONSTRUCTION, 500),
+                new ResourceChunk(ResType.CONCRETE, 50),
+                new ResourceChunk(ResType.MONEY, 500))});
     }
 }

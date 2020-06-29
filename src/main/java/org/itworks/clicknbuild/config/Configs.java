@@ -17,8 +17,7 @@ public enum Configs {
     STATS_RESOURCE_FILE("stats.resource_file"),
     STATS_TILE_FILE("stats.tile_file"),
     STATS_BUILDING_PATH("stats.building_path"),
-    STATS_BUILDING_FILE_EXTENSION("stats.building_file_extension")
-    ;
+    STATS_BUILDING_FILE_EXTENSION("stats.building_file_extension");
 
     final String value;
 
@@ -27,15 +26,15 @@ public enum Configs {
     }
 
     public static Configs get(String value) {
-        for (Configs config : Configs.values()) {
-            if (config.value.equalsIgnoreCase(Str.nonNull(value).trim())) return config;
-        }
+        Configs[] configs = values();
+        for (Configs config : configs) if (config.value.equalsIgnoreCase(Str.nonNull(value).trim())) return config;
         return null;
     }
 
     public static Configs get(int ordinal) {
-        for (Configs config : Configs.values()) if (config.ordinal() == ordinal) return config;
-        return null;
+        Configs[] configs = values();
+        if (ordinal < 0 || ordinal >= configs.length) return null;
+        return configs[ordinal];
     }
 }
 

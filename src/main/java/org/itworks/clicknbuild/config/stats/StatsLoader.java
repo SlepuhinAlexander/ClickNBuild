@@ -7,7 +7,7 @@ import org.itworks.clicknbuild.config.stats.model.BuildingStatsModel;
 import org.itworks.clicknbuild.config.stats.model.ResourceTypeModel;
 import org.itworks.clicknbuild.config.stats.model.TileModel;
 import org.itworks.clicknbuild.engine.model.BuildingType;
-import org.itworks.clicknbuild.engine.model.ResourceType;
+import org.itworks.clicknbuild.engine.model.ResType;
 import org.itworks.clicknbuild.engine.model.TileType;
 import org.itworks.clicknbuild.util.io.PathWalker;
 
@@ -88,7 +88,7 @@ public final class StatsLoader {
     private void applyResourceStats(ResourceTypeModel... resources) {
         if (resources == null) return;
         for (ResourceTypeModel loaded : resources) {
-            ResourceType resource = ResourceType.get(loaded.getType());
+            ResType resource = ResType.get(loaded.getType());
             if (resource == null) continue;
             if (loaded.getTradable() != null) resource.setTradable(loaded.getTradable());
             if (loaded.getPrice() != null) resource.setPrice(loaded.getPrice());

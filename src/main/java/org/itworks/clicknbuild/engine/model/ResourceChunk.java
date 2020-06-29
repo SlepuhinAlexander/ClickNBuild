@@ -6,21 +6,21 @@ import org.itworks.clicknbuild.util.math.M;
 import java.util.Objects;
 
 public final class ResourceChunk implements Comparable<ResourceChunk> {
-    public final ResourceType type;
+    public final ResType type;
     private double amount;
 
-    public ResourceChunk(ResourceType type, double amount) {
+    public ResourceChunk(ResType type, double amount) {
         this.type = Objects.requireNonNull(type);
         setAmount(amount);
     }
 
-    public ResourceChunk(ResourceType type) {
+    public ResourceChunk(ResType type) {
         this(type, 0);
     }
 
     public static ResourceChunk valueOf(ResourceChunkModel value) {
         if (value == null) return null;
-        ResourceType type = ResourceType.get(value.getType());
+        ResType type = ResType.get(value.getType());
         if (type == null) return null;
         ResourceChunk result = new ResourceChunk(type);
         if (value.getAmount() != null) result.setAmount(value.getAmount());

@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.config.stats.buidling;
 
 import org.itworks.clicknbuild.engine.model.ResourceChunk;
 import org.itworks.clicknbuild.engine.model.ResourcePack;
-import org.itworks.clicknbuild.engine.model.ResourceType;
+import org.itworks.clicknbuild.engine.model.ResType;
 
 public class HeadquarterStats extends BuildingStats {
     private static volatile HeadquarterStats inst;
@@ -33,34 +33,34 @@ public class HeadquarterStats extends BuildingStats {
         setPriceMultiplier(100);
         setBuildCost(null);
         setProduction(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.ENERGY,1000),
-                new ResourceChunk(ResourceType.STEEL, 120),
-                new ResourceChunk(ResourceType.CONCRETE,400),
-                new ResourceChunk(ResourceType.BRICK,300),
-                new ResourceChunk(ResourceType.WOOD, 100),
-                new ResourceChunk(ResourceType.GLASS, 200),
-                new ResourceChunk(ResourceType.MONEY, 1000),
-                new ResourceChunk(ResourceType.CITIZEN, 50)
+                new ResourceChunk(ResType.ENERGY,1000),
+                new ResourceChunk(ResType.STEEL, 120),
+                new ResourceChunk(ResType.CONCRETE,400),
+                new ResourceChunk(ResType.BRICK,300),
+                new ResourceChunk(ResType.WOOD, 100),
+                new ResourceChunk(ResType.GLASS, 200),
+                new ResourceChunk(ResType.MONEY, 1000),
+                new ResourceChunk(ResType.CITIZEN, 50)
         )});
         setHold(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.POWER_CONSUMPTION, Integer.MAX_VALUE),
-                new ResourceChunk(ResourceType.POWER_EXCESS, Integer.MAX_VALUE),
-                new ResourceChunk(ResourceType.JOB, Integer.MAX_VALUE),
-                new ResourceChunk(ResourceType.UNEMPLOYMENT, Integer.MAX_VALUE),
-                new ResourceChunk(ResourceType.BENEFIT, Integer.MAX_VALUE),
-                new ResourceChunk(ResourceType.CRIME, Integer.MAX_VALUE),
-                new ResourceChunk(ResourceType.EMIGRATION, Integer.MAX_VALUE),
-                new ResourceChunk(ResourceType.FIRE_HAZARD, Integer.MAX_VALUE)
+                new ResourceChunk(ResType.POWER_CONSUMPTION, Integer.MAX_VALUE),
+                new ResourceChunk(ResType.POWER_EXCESS, Integer.MAX_VALUE),
+                new ResourceChunk(ResType.JOB, Integer.MAX_VALUE),
+                new ResourceChunk(ResType.UNEMPLOYMENT, Integer.MAX_VALUE),
+                new ResourceChunk(ResType.BENEFIT, Integer.MAX_VALUE),
+                new ResourceChunk(ResType.CRIME, Integer.MAX_VALUE),
+                new ResourceChunk(ResType.EMIGRATION, Integer.MAX_VALUE),
+                new ResourceChunk(ResType.FIRE_HAZARD, Integer.MAX_VALUE)
         )});
         setStore(new ResourcePack[]{new ResourcePack(
-                new ResourceChunk(ResourceType.ENERGY, 500),
-                new ResourceChunk(ResourceType.STEEL, 3000),
-                new ResourceChunk(ResourceType.CONCRETE, 10000),
-                new ResourceChunk(ResourceType.BRICK, 7500),
-                new ResourceChunk(ResourceType.WOOD, 2500),
-                new ResourceChunk(ResourceType.GLASS, 5000),
-                new ResourceChunk(ResourceType.MONEY, 200000),
-                new ResourceChunk(ResourceType.CITIZEN, 5000)
+                new ResourceChunk(ResType.ENERGY, 500),
+                new ResourceChunk(ResType.STEEL, 3000),
+                new ResourceChunk(ResType.CONCRETE, 10000),
+                new ResourceChunk(ResType.BRICK, 7500),
+                new ResourceChunk(ResType.WOOD, 2500),
+                new ResourceChunk(ResType.GLASS, 5000),
+                new ResourceChunk(ResType.MONEY, 200000),
+                new ResourceChunk(ResType.CITIZEN, 5000)
         )});
     }
 }

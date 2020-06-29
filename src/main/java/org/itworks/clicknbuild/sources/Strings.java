@@ -83,14 +83,14 @@ public enum Strings {
     }
 
     public static Strings get(String value) {
-        for (Strings strings : Strings.values()) {
-            if (strings.value.equalsIgnoreCase(Str.nonNull(value).trim())) return strings;
-        }
+        Strings[] strings = values();
+        for (Strings string : strings) if (string.value.equalsIgnoreCase(Str.nonNull(value).trim())) return string;
         return EMPTY;
     }
 
     public static Strings get(int ordinal) {
-        for (Strings strings : Strings.values()) if (strings.ordinal() == ordinal) return strings;
-        return EMPTY;
+        Strings[] strings = values();
+        if (ordinal < 0 || ordinal >= strings.length) return EMPTY;
+        return strings[ordinal];
     }
-    }
+}

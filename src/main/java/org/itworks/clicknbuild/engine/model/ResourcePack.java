@@ -39,7 +39,7 @@ public final class ResourcePack {
         return result;
     }
 
-    public void add(ResourceType type, double amount) {
+    public void add(ResType type, double amount) {
         if (type == null) return;
         add(new ResourceChunk(type, amount));
     }
@@ -72,7 +72,7 @@ public final class ResourcePack {
         for (ResourceChunk res : pack.pack) add(res);
     }
 
-    public void sub(ResourceType type, double amount) {
+    public void sub(ResType type, double amount) {
         if (type == null) return;
         sub(new ResourceChunk(type, amount));
     }
@@ -113,13 +113,13 @@ public final class ResourcePack {
         return result;
     }
 
-    public double get(ResourceType type) {
+    public double get(ResType type) {
         if (type == null) return 0;
         for (ResourceChunk res : pack) if (res.type.equals(type)) return res.getAmount();
         return 0;
     }
 
     public double get(String type) {
-        return get(ResourceType.get(type));
+        return get(ResType.get(type));
     }
 }

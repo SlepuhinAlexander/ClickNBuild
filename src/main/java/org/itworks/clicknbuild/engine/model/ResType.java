@@ -7,7 +7,7 @@ import org.itworks.clicknbuild.util.string.Str;
 
 import java.util.Objects;
 
-public enum ResourceType {
+public enum ResType {
     ACTION("action",
             Strings.RES_ACTION,
             Images.RES_ACTION,
@@ -137,7 +137,7 @@ public enum ResourceType {
 
     private double price;
 
-    ResourceType(String type, Strings l10nKey, Images imgKey, boolean tradable, double price) {
+    ResType(String type, Strings l10nKey, Images imgKey, boolean tradable, double price) {
         this.type = Str.nonNull(type);
         this.l10nKey = Objects.requireNonNull(l10nKey);
         this.imgKey = Objects.requireNonNull(imgKey);
@@ -145,16 +145,16 @@ public enum ResourceType {
         this.price = M.clamp(price, -1, 1000);
     }
 
-    public static ResourceType get(String type) {
-        for (ResourceType res : ResourceType.values()) {
-            if (res.type.equalsIgnoreCase(Str.nonNull(type).trim())) return res;
-        }
+    public static ResType get(String type) {
+        ResType[] resources = values();
+        for (ResType res : resources) if (res.type.equalsIgnoreCase(Str.nonNull(type).trim())) return res;
         return null;
     }
 
-    public static ResourceType get(int ordinal) {
-        for (ResourceType res : ResourceType.values()) if (res.ordinal() == ordinal) return res;
-        return null;
+    public static ResType get(int ordinal) {
+        ResType[] resources = values();
+        if (ordinal < 0 || ordinal >= resources.length) return null;
+        return resources[ordinal];
     }
 
     public boolean isTradable() {

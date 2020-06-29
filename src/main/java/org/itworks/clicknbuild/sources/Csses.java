@@ -2,11 +2,11 @@ package org.itworks.clicknbuild.sources;
 
 import org.itworks.clicknbuild.util.string.Str;
 
-/** Global hangler of string keys for CssHandler */
+/**
+ * Global hangler of string keys for CssHandler
+ */
 public enum Csses {
-    EMPTY(""),
-    LANDING("landing")
-    ;
+    LANDING("landing");
 
     final String value;
 
@@ -15,12 +15,14 @@ public enum Csses {
     }
 
     public static Csses get(String value) {
-        for (Csses css : Csses.values()) if (css.value.equalsIgnoreCase(Str.nonNull(value).trim())) return css;
-        return EMPTY;
+        Csses[] csses = values();
+        for (Csses css : csses) if (css.value.equalsIgnoreCase(Str.nonNull(value).trim())) return css;
+        return null;
     }
 
     public static Csses get(int ordinal) {
-        for (Csses css : Csses.values()) if (css.ordinal() == ordinal) return css;
-        return EMPTY;
+        Csses[] csses = values();
+        if (ordinal < 0 || ordinal >= csses.length) return null;
+        return csses[ordinal];
     }
 }

@@ -2,7 +2,9 @@ package org.itworks.clicknbuild.sources;
 
 import org.itworks.clicknbuild.util.string.Str;
 
-/** Global holder of string keys for FxmlHandler */
+/**
+ * Global holder of string keys for FxmlHandler
+ */
 public enum Fxmls {
     LANDING("landing"),
     ;
@@ -14,12 +16,14 @@ public enum Fxmls {
     }
 
     public static Fxmls get(String value) {
-        for (Fxmls fxml : Fxmls.values()) if (fxml.value.equalsIgnoreCase(Str.nonNull(value).trim())) return fxml;
+        Fxmls[] fxmls = values();
+        for (Fxmls fxml : fxmls) if (fxml.value.equalsIgnoreCase(Str.nonNull(value).trim())) return fxml;
         return null;
     }
 
     public static Fxmls get(int ordinal) {
-        for (Fxmls fxml : Fxmls.values()) if (fxml.ordinal() == ordinal) return fxml;
-        return null;
+        Fxmls[] fxmls = values();
+        if (ordinal < 0 || ordinal >= fxmls.length) return null;
+        return fxmls[ordinal];
     }
 }

@@ -2,7 +2,9 @@ package org.itworks.clicknbuild.sources;
 
 import org.itworks.clicknbuild.util.string.Str;
 
-/** Global holder of string keys for ImgHandler */
+/**
+ * Global holder of string keys for ImgHandler
+ */
 public enum Images {
     DUMMY("dummy"),
 
@@ -81,12 +83,14 @@ public enum Images {
     }
 
     public static Images get(String value) {
-        for (Images image : Images.values()) if (image.value.equalsIgnoreCase(Str.nonNull(value).trim())) return image;
+        Images[] images = values();
+        for (Images image : images) if (image.value.equalsIgnoreCase(Str.nonNull(value).trim())) return image;
         return DUMMY;
     }
 
     public static Images get(int ordinal) {
-        for (Images image : Images.values()) if (image.ordinal() == ordinal) return image;
-        return DUMMY;
+        Images[] images = values();
+        if (ordinal < 0 || ordinal >= images.length) return DUMMY;
+        return images[ordinal];
     }
 }
