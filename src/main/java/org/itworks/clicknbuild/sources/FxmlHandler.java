@@ -17,16 +17,16 @@ public final class FxmlHandler {
 
     private static final String FILE_EXTENSION = ConfigLoader.get(Configs.FXML_FILE_EXTENSION);
 
-    private static final FxmlHandler INST = new FxmlHandler();
+    private static volatile FxmlHandler inst;
 
     private final HashMap<String, URL> sources = new HashMap<>();
 
     private FxmlHandler() {
-        load();
+        loadFxmls();
     }
 
     public static URL get(String key) {
-        return INST.sources.get(Str.nonNull(key));
+        return inst().sources.get(Str.nonNull(key));
     }
 
     public static URL get(Fxmls key) {
@@ -34,10 +34,20 @@ public final class FxmlHandler {
     }
 
     public static FxmlHandler inst() {
-        return INST;
+        FxmlHandler local = inst;
+        if (local == null) {
+            synchronized (FxmlHandler.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new FxmlHandler();
+                    local.loadFxmls();
+                }
+            }
+        }
+        return local;
     }
 
-    private void load() {
+    private void loadFxmls() {
         Set<Path> paths = PathWalker.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();

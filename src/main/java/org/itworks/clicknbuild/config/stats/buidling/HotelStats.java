@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class HotelStats extends BuildingStats {
-    private static final HotelStats INST = new HotelStats();
+    private static volatile HotelStats inst;
 
     private HotelStats() {
     }
 
     public static HotelStats inst() {
-        return INST;
+        HotelStats local = inst;
+        if (local == null) {
+            synchronized (HotelStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new HotelStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

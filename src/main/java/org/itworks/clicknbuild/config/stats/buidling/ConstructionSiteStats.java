@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class ConstructionSiteStats extends BuildingStats {
-    private static final ConstructionSiteStats INST = new ConstructionSiteStats();
+    private static volatile ConstructionSiteStats inst;
 
     private ConstructionSiteStats() {
     }
 
     public static ConstructionSiteStats inst() {
-        return INST;
+        ConstructionSiteStats local = inst;
+        if (local == null) {
+            synchronized (ConstructionSiteStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new ConstructionSiteStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

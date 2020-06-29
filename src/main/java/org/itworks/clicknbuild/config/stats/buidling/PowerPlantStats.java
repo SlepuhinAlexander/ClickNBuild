@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class PowerPlantStats extends BuildingStats {
-    private static final PowerPlantStats INST = new PowerPlantStats();
+    private static volatile PowerPlantStats inst;
 
     private PowerPlantStats() {
     }
 
     public static PowerPlantStats inst() {
-        return INST;
+        PowerPlantStats local = inst;
+        if (local == null) {
+            synchronized (PowerPlantStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new PowerPlantStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class AirportStats extends BuildingStats {
-    private static final AirportStats INST = new AirportStats();
+    private static volatile AirportStats inst;
 
     private AirportStats() {
     }
 
     public static AirportStats inst() {
-        return INST;
+        AirportStats local = inst;
+        if (local == null) {
+            synchronized (AirportStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new AirportStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

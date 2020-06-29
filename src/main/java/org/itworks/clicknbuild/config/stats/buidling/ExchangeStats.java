@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class ExchangeStats extends BuildingStats {
-    private static final ExchangeStats INST = new ExchangeStats();
+    private static volatile ExchangeStats inst;
 
     private ExchangeStats() {
     }
 
     public static ExchangeStats inst() {
-        return INST;
+        ExchangeStats local = inst;
+        if (local == null) {
+            synchronized (ExchangeStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new ExchangeStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

@@ -154,17 +154,12 @@ public abstract class BuildingStats {
     private ResourcePack[] store;
 
     /**
-     * Some buildings could provide global effect on storage ammount.
+     * Some buildings could provide global effect on storage amount.
      * These values mean that the store of resources of this resource type would be increase by given percent in all
      * buildings storing this resource type.
      * Values are ranged by the building's productivity: these values correspond to 100% productivity.
      */
     private ResourcePack[] storeMultiplier;
-
-    public BuildingStats() {
-        initArrays();
-        initValues();
-    }
 
     public final int getRequiredPlayerLevel() {
         return requiredPlayerLevel;
@@ -369,7 +364,7 @@ public abstract class BuildingStats {
         this.storeMultiplier = storeMultiplier;
     }
 
-    private void initArrays() {
+    protected final void initArrays() {
         setStructure(null);
         setBuildCost(null);
         setProduction(null);
@@ -385,7 +380,5 @@ public abstract class BuildingStats {
         setStoreMultiplier(null);
     }
 
-    protected void initValues() {
-
-    }
+    protected abstract void initValues();
 }

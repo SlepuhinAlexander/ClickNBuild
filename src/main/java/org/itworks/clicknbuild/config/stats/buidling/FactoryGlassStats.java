@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class FactoryGlassStats extends BuildingStats {
-    private static final FactoryGlassStats INST = new FactoryGlassStats();
+    private static volatile FactoryGlassStats inst;
 
     private FactoryGlassStats() {
     }
 
     public static FactoryGlassStats inst() {
-        return INST;
+        FactoryGlassStats local = inst;
+        if (local == null) {
+            synchronized (FactoryGlassStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new FactoryGlassStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

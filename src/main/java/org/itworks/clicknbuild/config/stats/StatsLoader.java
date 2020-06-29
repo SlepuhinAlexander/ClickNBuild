@@ -19,13 +19,28 @@ public final class StatsLoader {
 
     private static final String BUILDING_PATH = ConfigLoader.get(Configs.STATS_BUILDING_PATH);
 
-    private static final StatsLoader INST = new StatsLoader();
+    private static volatile StatsLoader inst;
 
-    public static StatsLoader inst() {
-        return INST;
+    private StatsLoader() {
     }
 
-    public void loadResourceStats() {
+    public static StatsLoader inst() {
+        StatsLoader local = inst;
+        if (local == null) {
+            synchronized (StatsLoader.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new StatsLoader();
+                    local.loadResourceStats();
+                    local.loadTileStats();
+                    local.loadBuildingStats();
+                }
+            }
+        }
+        return local;
+    }
+
+    private void loadResourceStats() {
         ObjectMapper mapper = new ObjectMapper();
         ResourceTypeModel[] resources = null;
         try {
@@ -37,7 +52,7 @@ public final class StatsLoader {
         applyResourceStats(resources);
     }
 
-    public void loadTileStats() {
+    private void loadTileStats() {
         ObjectMapper mapper = new ObjectMapper();
         TileModel[] tiles = null;
         try {
@@ -48,7 +63,7 @@ public final class StatsLoader {
         applyTileStats(tiles);
     }
 
-    public void loadBuildingStats() {
+    private void loadBuildingStats() {
         applyBuildingStats();
     }
 

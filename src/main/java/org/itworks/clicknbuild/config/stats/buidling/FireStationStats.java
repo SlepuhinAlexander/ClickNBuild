@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class FireStationStats extends BuildingStats {
-    private static final FireStationStats INST = new FireStationStats();
+    private static volatile FireStationStats inst;
 
     private FireStationStats() {
     }
 
     public static FireStationStats inst() {
-        return INST;
+        FireStationStats local = inst;
+        if (local == null) {
+            synchronized (FireStationStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new FireStationStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class PoliceStats extends BuildingStats {
-    private static final PoliceStats INST = new PoliceStats();
+    private static volatile PoliceStats inst;
 
     private PoliceStats() {
     }
 
     public static PoliceStats inst() {
-        return INST;
+        PoliceStats local = inst;
+        if (local == null) {
+            synchronized (PoliceStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new PoliceStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

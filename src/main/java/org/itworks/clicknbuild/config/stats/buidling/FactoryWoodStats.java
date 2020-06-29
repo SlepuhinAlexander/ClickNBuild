@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class FactoryWoodStats extends BuildingStats {
-    private static final FactoryWoodStats INST = new FactoryWoodStats();
+    private static volatile FactoryWoodStats inst;
 
     private FactoryWoodStats() {
     }
 
     public static FactoryWoodStats inst() {
-        return INST;
+        FactoryWoodStats local = inst;
+        if (local == null) {
+            synchronized (FactoryWoodStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new FactoryWoodStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

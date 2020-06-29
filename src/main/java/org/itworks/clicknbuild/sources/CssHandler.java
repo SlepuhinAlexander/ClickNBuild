@@ -16,16 +16,15 @@ public final class CssHandler {
 
     private static final String FILE_EXTENSION = ConfigLoader.get(Configs.CSS_FILE_EXTENSION);
 
-    private static final CssHandler INST = new CssHandler();
+    private static volatile CssHandler inst;
 
     private final HashMap<String, String> stylesheets = new HashMap<>();
 
     private CssHandler() {
-        load();
     }
 
     public static String get(String key) {
-        return Str.nonNull(INST.stylesheets.get(Str.nonNull(key)));
+        return Str.nonNull(inst().stylesheets.get(Str.nonNull(key)));
     }
 
     public static String get(Csses key) {
@@ -33,10 +32,20 @@ public final class CssHandler {
     }
 
     public static CssHandler inst() {
-        return INST;
+        CssHandler local = inst;
+        if (local == null) {
+            synchronized (CssHandler.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new CssHandler();
+                    local.loadCsses();
+                }
+            }
+        }
+        return local;
     }
 
-    private void load() {
+    private void loadCsses() {
         Set<Path> paths = PathWalker.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();

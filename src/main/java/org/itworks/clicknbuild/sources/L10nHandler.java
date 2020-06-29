@@ -15,14 +15,13 @@ public final class L10nHandler {
 
     private static final String FILE_EXTENSION = ConfigLoader.get(Configs.L10N_FILE_EXTENSION);
 
-    private static final L10nHandler INST = new L10nHandler();
+    private static volatile L10nHandler inst;
 
     private final HashMap<Lang, Properties> locales = new HashMap<>();
 
     private Lang lang = Lang.DEF;
 
     private L10nHandler() {
-        load();
     }
 
     /**
@@ -33,8 +32,8 @@ public final class L10nHandler {
      * Parses the received result to resolve possible embedded links to other resource strings.
      */
     public static String get(String key) {
-        return Resolver.resolve(Str.nonNull(INST.locales.get(INST.lang).getProperty(Str.nonNull(key)),
-                Str.nonNull(INST.locales.get(Lang.DEF).getProperty(Str.nonNull(key)))));
+        return Resolver.resolve(Str.nonNull(inst().locales.get(inst().lang).getProperty(Str.nonNull(key)),
+                Str.nonNull(inst().locales.get(Lang.DEF).getProperty(Str.nonNull(key)))));
     }
 
     public static String get(Strings key) {
@@ -42,10 +41,20 @@ public final class L10nHandler {
     }
 
     public static L10nHandler inst() {
-        return INST;
+        L10nHandler local = inst;
+        if (local == null) {
+            synchronized (L10nHandler.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new L10nHandler();
+                    local.loadL10ns();
+                }
+            }
+        }
+        return local;
     }
 
-    private void load() {
+    private void loadL10ns() {
         setLang(Locale.getDefault());
         for (Lang lang : Lang.values()) {
             try (InputStream langReader = getClass().getResourceAsStream(SOURCE_PATH

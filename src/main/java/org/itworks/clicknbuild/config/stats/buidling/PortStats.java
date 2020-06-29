@@ -5,13 +5,24 @@ import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.engine.model.ResourceType;
 
 public final class PortStats extends BuildingStats {
-    private static final PortStats INST = new PortStats();
+    private static volatile PortStats inst;
 
     private PortStats() {
     }
 
     public static PortStats inst() {
-        return INST;
+        PortStats local = inst;
+        if (local == null) {
+            synchronized (PortStats.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new PortStats();
+                    local.initArrays();
+                    local.initValues();
+                }
+            }
+        }
+        return local;
     }
 
     @Override

@@ -22,21 +22,30 @@ public final class ImgHandler {
 
     private static final String DEFAULT_IMAGE_NAME = ConfigLoader.get(Configs.IMG_DEFAULT_IMAGE_NAME);
 
-    private static final ImgHandler INST = new ImgHandler();
+    private static volatile ImgHandler inst;
 
     private final HashMap<String, Image> images = new HashMap<>();
 
     private ImgHandler() {
-        load();
     }
 
     public static ImgHandler inst() {
-        return INST;
+        ImgHandler local = inst;
+        if (local == null) {
+            synchronized (ImgHandler.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new ImgHandler();
+                    local.loadImgs();
+                }
+            }
+        }
+        return local;
     }
 
     public static Image get(String key) {
-        Image result = INST.images.get(Str.nonNull(key, DEFAULT_IMAGE_NAME));
-        return result == null ? INST.images.get(DEFAULT_IMAGE_NAME) : result;
+        Image result = inst().images.get(Str.nonNull(key, DEFAULT_IMAGE_NAME));
+        return result == null ? inst().images.get(DEFAULT_IMAGE_NAME) : result;
     }
 
     public static Image get(String key, Size size) {
@@ -67,7 +76,7 @@ public final class ImgHandler {
         return get(Objects.requireNonNull(key).value, size);
     }
 
-    private void load() {
+    private void loadImgs() {
         Set<Path> paths = PathWalker.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();

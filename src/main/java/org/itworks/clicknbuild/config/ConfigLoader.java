@@ -10,20 +10,29 @@ import java.util.Properties;
 public final class ConfigLoader {
     private static final String CONFIG_PATH = Configs.MAIN_CONFIG_PATH.value;
 
-    private static final ConfigLoader INST = new ConfigLoader();
+    private static volatile ConfigLoader inst;
 
     private final Properties configs = new Properties();
 
     private ConfigLoader() {
-        loadConfigs();
     }
 
     public static ConfigLoader inst() {
-        return INST;
+        ConfigLoader local = inst;
+        if (local == null) {
+            synchronized (ConfigLoader.class) {
+                local = inst;
+                if (local == null) {
+                    inst = local = new ConfigLoader();
+                    local.loadConfigs();
+                }
+            }
+        }
+        return local;
     }
 
     public static String get(String key) {
-        return INST.configs.getProperty(Str.nonNull(key));
+        return inst().configs.getProperty(Str.nonNull(key));
     }
 
     public static String get(Configs config) {
