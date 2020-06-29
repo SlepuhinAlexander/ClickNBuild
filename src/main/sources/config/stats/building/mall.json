@@ -1,0 +1,1552 @@
+{
+  "requiredPlayerLevel" : 1,
+  "maxLevel" : 20,
+  "buildLimit" : 1000,
+  "priceMultiplier" : 115,
+  "structure" : [
+    300,
+    900,
+    1800,
+    3000,
+    4500,
+    6600,
+    9300,
+    12600,
+    16500,
+    21000,
+    26400,
+    32700,
+    39900,
+    48000,
+    57000,
+    67200,
+    78600,
+    91200,
+    105000,
+    120000
+  ],
+  "buildCost" : [
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 300
+        },
+        {
+          "type" : "steel",
+          "amount" : 92
+        },
+        {
+          "type" : "concrete",
+          "amount" : 153
+        },
+        {
+          "type" : "glass",
+          "amount" : 306
+        },
+        {
+          "type" : "money",
+          "amount" : 21420
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 900
+        },
+        {
+          "type" : "steel",
+          "amount" : 279
+        },
+        {
+          "type" : "concrete",
+          "amount" : 465
+        },
+        {
+          "type" : "glass",
+          "amount" : 930
+        },
+        {
+          "type" : "money",
+          "amount" : 65100
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 1800
+        },
+        {
+          "type" : "steel",
+          "amount" : 565
+        },
+        {
+          "type" : "concrete",
+          "amount" : 942
+        },
+        {
+          "type" : "glass",
+          "amount" : 1884
+        },
+        {
+          "type" : "money",
+          "amount" : 131880
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 3000
+        },
+        {
+          "type" : "steel",
+          "amount" : 954
+        },
+        {
+          "type" : "concrete",
+          "amount" : 1590
+        },
+        {
+          "type" : "glass",
+          "amount" : 3180
+        },
+        {
+          "type" : "money",
+          "amount" : 222600
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 4500
+        },
+        {
+          "type" : "steel",
+          "amount" : 1449
+        },
+        {
+          "type" : "concrete",
+          "amount" : 2415
+        },
+        {
+          "type" : "glass",
+          "amount" : 4830
+        },
+        {
+          "type" : "money",
+          "amount" : 338100
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 6600
+        },
+        {
+          "type" : "steel",
+          "amount" : 2167
+        },
+        {
+          "type" : "concrete",
+          "amount" : 3612
+        },
+        {
+          "type" : "glass",
+          "amount" : 7224
+        },
+        {
+          "type" : "money",
+          "amount" : 505680
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 9300
+        },
+        {
+          "type" : "steel",
+          "amount" : 3123
+        },
+        {
+          "type" : "concrete",
+          "amount" : 5205
+        },
+        {
+          "type" : "glass",
+          "amount" : 10410
+        },
+        {
+          "type" : "money",
+          "amount" : 728700
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 12600
+        },
+        {
+          "type" : "steel",
+          "amount" : 4331
+        },
+        {
+          "type" : "concrete",
+          "amount" : 7218
+        },
+        {
+          "type" : "glass",
+          "amount" : 14436
+        },
+        {
+          "type" : "money",
+          "amount" : 1010520
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 16500
+        },
+        {
+          "type" : "steel",
+          "amount" : 5805
+        },
+        {
+          "type" : "concrete",
+          "amount" : 9675
+        },
+        {
+          "type" : "glass",
+          "amount" : 19350
+        },
+        {
+          "type" : "money",
+          "amount" : 1354500
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 21000
+        },
+        {
+          "type" : "steel",
+          "amount" : 7560
+        },
+        {
+          "type" : "concrete",
+          "amount" : 12600
+        },
+        {
+          "type" : "glass",
+          "amount" : 25200
+        },
+        {
+          "type" : "money",
+          "amount" : 1764000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 26400
+        },
+        {
+          "type" : "steel",
+          "amount" : 9763
+        },
+        {
+          "type" : "concrete",
+          "amount" : 16272
+        },
+        {
+          "type" : "glass",
+          "amount" : 32544
+        },
+        {
+          "type" : "money",
+          "amount" : 2278080
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 32700
+        },
+        {
+          "type" : "steel",
+          "amount" : 12447
+        },
+        {
+          "type" : "concrete",
+          "amount" : 20745
+        },
+        {
+          "type" : "glass",
+          "amount" : 41490
+        },
+        {
+          "type" : "money",
+          "amount" : 2904300
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 39900
+        },
+        {
+          "type" : "steel",
+          "amount" : 15644
+        },
+        {
+          "type" : "concrete",
+          "amount" : 26073
+        },
+        {
+          "type" : "glass",
+          "amount" : 52146
+        },
+        {
+          "type" : "money",
+          "amount" : 3650220
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 48000
+        },
+        {
+          "type" : "steel",
+          "amount" : 19386
+        },
+        {
+          "type" : "concrete",
+          "amount" : 32310
+        },
+        {
+          "type" : "glass",
+          "amount" : 64620
+        },
+        {
+          "type" : "money",
+          "amount" : 4523400
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 57000
+        },
+        {
+          "type" : "steel",
+          "amount" : 23706
+        },
+        {
+          "type" : "concrete",
+          "amount" : 39510
+        },
+        {
+          "type" : "glass",
+          "amount" : 79020
+        },
+        {
+          "type" : "money",
+          "amount" : 5531400
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 67200
+        },
+        {
+          "type" : "steel",
+          "amount" : 28847
+        },
+        {
+          "type" : "concrete",
+          "amount" : 48079
+        },
+        {
+          "type" : "glass",
+          "amount" : 96156
+        },
+        {
+          "type" : "money",
+          "amount" : 6730920
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 78600
+        },
+        {
+          "type" : "steel",
+          "amount" : 34866
+        },
+        {
+          "type" : "concrete",
+          "amount" : 58110
+        },
+        {
+          "type" : "glass",
+          "amount" : 116220
+        },
+        {
+          "type" : "money",
+          "amount" : 8135400
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 91200
+        },
+        {
+          "type" : "steel",
+          "amount" : 41821
+        },
+        {
+          "type" : "concrete",
+          "amount" : 69702
+        },
+        {
+          "type" : "glass",
+          "amount" : 139404
+        },
+        {
+          "type" : "money",
+          "amount" : 9758280
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 105000
+        },
+        {
+          "type" : "steel",
+          "amount" : 49770
+        },
+        {
+          "type" : "concrete",
+          "amount" : 82950
+        },
+        {
+          "type" : "glass",
+          "amount" : 165900
+        },
+        {
+          "type" : "money",
+          "amount" : 11613000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 120000
+        },
+        {
+          "type" : "steel",
+          "amount" : 58770
+        },
+        {
+          "type" : "concrete",
+          "amount" : 97950
+        },
+        {
+          "type" : "glass",
+          "amount" : 195900
+        },
+        {
+          "type" : "money",
+          "amount" : 13713000
+        }
+      ]
+    }
+  ],
+  "production" : [
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 120
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 240
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 360
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 480
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 600
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 840
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 1080
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 1320
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 1560
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 1800
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 2160
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 2520
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 2880
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 3240
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 3600
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 4080
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 4560
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 5040
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 5520
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 6000
+        }
+      ]
+    }
+  ],
+  "productionMultiplier" : [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "jobPrice" : [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "jobReward" : [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "jobRewardMultiplier" : [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "supply" : [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "supplyMultiplier" : [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "demand" : [
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 5
+        },
+        {
+          "type" : "job",
+          "amount" : 100
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 10
+        },
+        {
+          "type" : "job",
+          "amount" : 200
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 15
+        },
+        {
+          "type" : "job",
+          "amount" : 300
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 20
+        },
+        {
+          "type" : "job",
+          "amount" : 400
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 25
+        },
+        {
+          "type" : "job",
+          "amount" : 500
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 35
+        },
+        {
+          "type" : "job",
+          "amount" : 700
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 45
+        },
+        {
+          "type" : "job",
+          "amount" : 900
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 55
+        },
+        {
+          "type" : "job",
+          "amount" : 1100
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 65
+        },
+        {
+          "type" : "job",
+          "amount" : 1300
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 75
+        },
+        {
+          "type" : "job",
+          "amount" : 1500
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 90
+        },
+        {
+          "type" : "job",
+          "amount" : 1800
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 105
+        },
+        {
+          "type" : "job",
+          "amount" : 2100
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 120
+        },
+        {
+          "type" : "job",
+          "amount" : 2400
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 135
+        },
+        {
+          "type" : "job",
+          "amount" : 2700
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 150
+        },
+        {
+          "type" : "job",
+          "amount" : 3000
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 170
+        },
+        {
+          "type" : "job",
+          "amount" : 3400
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 190
+        },
+        {
+          "type" : "job",
+          "amount" : 3800
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 210
+        },
+        {
+          "type" : "job",
+          "amount" : 4200
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 230
+        },
+        {
+          "type" : "job",
+          "amount" : 4600
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 250
+        },
+        {
+          "type" : "job",
+          "amount" : 5000
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    }
+  ],
+  "hold" : [
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 5
+        },
+        {
+          "type" : "worker",
+          "amount" : 100
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 10
+        },
+        {
+          "type" : "worker",
+          "amount" : 200
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 15
+        },
+        {
+          "type" : "worker",
+          "amount" : 300
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 20
+        },
+        {
+          "type" : "worker",
+          "amount" : 400
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 25
+        },
+        {
+          "type" : "worker",
+          "amount" : 500
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 35
+        },
+        {
+          "type" : "worker",
+          "amount" : 700
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 45
+        },
+        {
+          "type" : "worker",
+          "amount" : 900
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 55
+        },
+        {
+          "type" : "worker",
+          "amount" : 1100
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 65
+        },
+        {
+          "type" : "worker",
+          "amount" : 1300
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 75
+        },
+        {
+          "type" : "worker",
+          "amount" : 1500
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 90
+        },
+        {
+          "type" : "worker",
+          "amount" : 1800
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 105
+        },
+        {
+          "type" : "worker",
+          "amount" : 2100
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 120
+        },
+        {
+          "type" : "worker",
+          "amount" : 2400
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 135
+        },
+        {
+          "type" : "worker",
+          "amount" : 2700
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 150
+        },
+        {
+          "type" : "worker",
+          "amount" : 3000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 170
+        },
+        {
+          "type" : "worker",
+          "amount" : 3400
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 190
+        },
+        {
+          "type" : "worker",
+          "amount" : 3800
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 210
+        },
+        {
+          "type" : "worker",
+          "amount" : 4200
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 230
+        },
+        {
+          "type" : "worker",
+          "amount" : 4600
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 250
+        },
+        {
+          "type" : "worker",
+          "amount" : 5000
+        }
+      ]
+    }
+  ],
+  "store" : [
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 15000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 30000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 45000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 60000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 75000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 105000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 135000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 165000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 195000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 225000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 270000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 315000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 360000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 405000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 450000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 510000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 570000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 630000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 690000
+        }
+      ]
+    },
+    {
+      "pack" : [
+        {
+          "type" : "money",
+          "amount" : 750000
+        }
+      ]
+    }
+  ],
+  "storeMultiplier" : [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}

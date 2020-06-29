@@ -30,6 +30,15 @@ public final class ResourcePack {
         return result;
     }
 
+    public static ResourcePack[] valueOf(ResourcePackModel... values) {
+        if (values == null) return null;
+        ResourcePack[] result = new ResourcePack[values.length];
+        for (int i = 0; i < values.length; i++) {
+            result[i] = valueOf(values[i]);
+        }
+        return result;
+    }
+
     public void add(ResourceType type, double amount) {
         if (type == null) return;
         add(new ResourceChunk(type, amount));

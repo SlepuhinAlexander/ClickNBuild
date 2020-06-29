@@ -1,0 +1,150 @@
+{
+  "requiredPlayerLevel" : 1,
+  "maxLevel" : 1,
+  "buildLimit" : 1,
+  "priceMultiplier" : 100,
+  "structure" : [
+    0
+  ],
+  "buildCost" : [
+    null
+  ],
+  "production" : [
+    {
+      "pack" : [
+        {
+          "type" : "energy",
+          "amount" : 1000
+        },
+        {
+          "type" : "steel",
+          "amount" : 120
+        },
+        {
+          "type" : "concrete",
+          "amount" : 400
+        },
+        {
+          "type" : "brick",
+          "amount" : 300
+        },
+        {
+          "type" : "wood",
+          "amount" : 100
+        },
+        {
+          "type" : "glass",
+          "amount" : 200
+        },
+        {
+          "type" : "money",
+          "amount" : 1000
+        },
+        {
+          "type" : "citizen",
+          "amount" : 50
+        }
+      ]
+    }
+  ],
+  "productionMultiplier" : [
+    null
+  ],
+  "jobPrice" : [
+    null
+  ],
+  "jobReward" : [
+    null
+  ],
+  "jobRewardMultiplier" : [
+    null
+  ],
+  "supply" : [
+    null
+  ],
+  "supplyMultiplier" : [
+    null
+  ],
+  "demand" : [
+    null
+  ],
+  "hold" : [
+    {
+      "pack" : [
+        {
+          "type" : "power_consumption",
+          "amount" : 2147483647
+        },
+        {
+          "type" : "power_excess",
+          "amount" : 2147483647
+        },
+        {
+          "type" : "job",
+          "amount" : 2147483647
+        },
+        {
+          "type" : "unemployment",
+          "amount" : 2147483647
+        },
+        {
+          "type" : "benefit",
+          "amount" : 2147483647
+        },
+        {
+          "type" : "crime",
+          "amount" : 2147483647
+        },
+        {
+          "type" : "emigration",
+          "amount" : 2147483647
+        },
+        {
+          "type" : "fire_hazard",
+          "amount" : 2147483647
+        }
+      ]
+    }
+  ],
+  "store" : [
+    {
+      "pack" : [
+        {
+          "type" : "energy",
+          "amount" : 500
+        },
+        {
+          "type" : "steel",
+          "amount" : 3000
+        },
+        {
+          "type" : "concrete",
+          "amount" : 10000
+        },
+        {
+          "type" : "brick",
+          "amount" : 7500
+        },
+        {
+          "type" : "wood",
+          "amount" : 2500
+        },
+        {
+          "type" : "glass",
+          "amount" : 5000
+        },
+        {
+          "type" : "money",
+          "amount" : 200000
+        },
+        {
+          "type" : "citizen",
+          "amount" : 5000
+        }
+      ]
+    }
+  ],
+  "storeMultiplier" : [
+    null
+  ]
+}

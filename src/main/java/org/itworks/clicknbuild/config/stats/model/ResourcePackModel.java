@@ -16,6 +16,15 @@ public class ResourcePackModel {
         return result;
     }
 
+    public static ResourcePackModel[] valueOf(ResourcePack... values) {
+        if (values == null) return null;
+        ResourcePackModel[] result = new ResourcePackModel[values.length];
+        for (int i = 0; i < values.length; i++) {
+            result[i] = valueOf(values[i]);
+        }
+        return result;
+    }
+
     public List<ResourceChunkModel> getPack() {
         return pack;
     }

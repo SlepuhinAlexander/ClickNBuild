@@ -1,5 +1,6 @@
 package org.itworks.clicknbuild.config.stats.buidling;
 
+import org.itworks.clicknbuild.config.stats.model.BuildingStatsModel;
 import org.itworks.clicknbuild.engine.model.ResourcePack;
 import org.itworks.clicknbuild.util.math.M;
 
@@ -166,7 +167,7 @@ public abstract class BuildingStats {
     }
 
     public final void setRequiredPlayerLevel(int requiredPlayerLevel) {
-        this.requiredPlayerLevel = M.clamp(1, MAX_REQUIRED_PLAYER_LEVEL);
+        this.requiredPlayerLevel = M.clamp(requiredPlayerLevel, 1, MAX_REQUIRED_PLAYER_LEVEL);
     }
 
     public final int getMaxLevel() {
@@ -174,7 +175,7 @@ public abstract class BuildingStats {
     }
 
     public final void setMaxLevel(int maxLevel) {
-        int clamped = M.clamp(1, MAX_ALLOWED_BUILDING_LEVEL);
+        int clamped = M.clamp(maxLevel, 1, MAX_ALLOWED_BUILDING_LEVEL);
         if (this.maxLevel == clamped && this.structure != null && this.structure.length == this.maxLevel) return;
         this.maxLevel = clamped;
         initArrays();
@@ -185,7 +186,7 @@ public abstract class BuildingStats {
     }
 
     public final void setBuildLimit(int buildLimit) {
-        this.buildLimit = M.clamp(1, MAX_BUILD_LIMIT);
+        this.buildLimit = M.clamp(buildLimit, 1, MAX_BUILD_LIMIT);
     }
 
     public final int getPriceMultiplier() {
@@ -193,7 +194,7 @@ public abstract class BuildingStats {
     }
 
     public final void setPriceMultiplier(int priceMultiplier) {
-        this.priceMultiplier = M.clamp(1, MAX_PRICE_MULTIPLIER);
+        this.priceMultiplier = M.clamp(priceMultiplier, MAX_PRICE_MULTIPLIER);
     }
 
     public final int[] getStructure() {
@@ -218,9 +219,10 @@ public abstract class BuildingStats {
             this.buildCost = new ResourcePack[maxLevel];
             return;
         }
-        if (buildCost.length != maxLevel)
-            this.buildCost = buildCost;
+        if (buildCost.length != maxLevel) return;
+        this.buildCost = buildCost;
     }
+
     public final ResourcePack[] getProduction() {
         return production;
     }
@@ -381,4 +383,40 @@ public abstract class BuildingStats {
     }
 
     protected abstract void initValues();
+
+    //@formatter:off
+    public final void applyModelValues(BuildingStatsModel model) {
+        if (model == null) return;
+                  setRequiredPlayerLevel(                                model.getRequiredPlayerLevel());
+                  setMaxLevel(                                           model.getMaxLevel());
+                  setBuildLimit(                                         model.getBuildLimit());
+                  setPriceMultiplier(                                    model.getPriceMultiplier());
+        if (model.getStructure() != null)
+                  setStructure(                                          model.getStructure());
+        if (model.getBuildCost() != null)
+                  setBuildCost(                     ResourcePack.valueOf(model.getBuildCost()));
+        if (model.getProduction() != null)
+                  setProduction(                    ResourcePack.valueOf(model.getProduction()));
+        if (model.getProductionMultiplier() != null)
+                  setProductionMultiplier(          ResourcePack.valueOf(model.getProductionMultiplier()));
+        if (model.getJobPrice() != null)
+                  setJobPrice(                      ResourcePack.valueOf(model.getJobPrice()));
+        if (model.getJobReward() != null)
+                  setJobReward(                     ResourcePack.valueOf(model.getJobReward()));
+        if (model.getJobRewardMultiplier() != null)
+                  setJobRewardMultiplier(           ResourcePack.valueOf(model.getJobRewardMultiplier()));
+        if (model.getSupply() != null)
+                  setSupply(                        ResourcePack.valueOf(model.getSupply()));
+        if (model.getSupplyMultiplier() != null)
+                  setSupplyMultiplier(              ResourcePack.valueOf(model.getSupplyMultiplier()));
+        if (model.getDemand() != null)
+                  setDemand(                        ResourcePack.valueOf(model.getDemand()));
+        if (model.getHold() != null)
+                  setHold(                          ResourcePack.valueOf(model.getHold()));
+        if (model.getStore() != null)
+                  setStore(                         ResourcePack.valueOf(model.getStore()));
+        if (model.getStoreMultiplier() != null)
+                  setStoreMultiplier(               ResourcePack.valueOf(model.getStoreMultiplier()));
+    }
+    //@formatter:on
 }

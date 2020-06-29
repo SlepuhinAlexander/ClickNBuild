@@ -1,0 +1,60 @@
+{
+  "requiredPlayerLevel" : 1,
+  "maxLevel" : 1,
+  "buildLimit" : 1000,
+  "priceMultiplier" : 105,
+  "structure" : [
+    500
+  ],
+  "buildCost" : [
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 500
+        },
+        {
+          "type" : "concrete",
+          "amount" : 50
+        },
+        {
+          "type" : "money",
+          "amount" : 500
+        }
+      ]
+    }
+  ],
+  "production" : [
+    null
+  ],
+  "productionMultiplier" : [
+    null
+  ],
+  "jobPrice" : [
+    null
+  ],
+  "jobReward" : [
+    null
+  ],
+  "jobRewardMultiplier" : [
+    null
+  ],
+  "supply" : [
+    null
+  ],
+  "supplyMultiplier" : [
+    null
+  ],
+  "demand" : [
+    null
+  ],
+  "hold" : [
+    null
+  ],
+  "store" : [
+    null
+  ],
+  "storeMultiplier" : [
+    null
+  ]
+}

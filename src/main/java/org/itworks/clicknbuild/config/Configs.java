@@ -17,6 +17,7 @@ public enum Configs {
     STATS_RESOURCE_FILE("stats.resource_file"),
     STATS_TILE_FILE("stats.tile_file"),
     STATS_BUILDING_PATH("stats.building_path"),
+    STATS_BUILDING_FILE_EXTENSION("stats.building_file_extension")
     ;
 
     final String value;

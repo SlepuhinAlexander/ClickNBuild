@@ -1,0 +1,94 @@
+{
+  "requiredPlayerLevel" : 1,
+  "maxLevel" : 1,
+  "buildLimit" : 1,
+  "priceMultiplier" : 100,
+  "structure" : [
+    10000
+  ],
+  "buildCost" : [
+    {
+      "pack" : [
+        {
+          "type" : "construction",
+          "amount" : 10000
+        },
+        {
+          "type" : "steel",
+          "amount" : 4320
+        },
+        {
+          "type" : "concrete",
+          "amount" : 14400
+        },
+        {
+          "type" : "money",
+          "amount" : 540000
+        }
+      ]
+    }
+  ],
+  "production" : [
+    null
+  ],
+  "productionMultiplier" : [
+    null
+  ],
+  "jobPrice" : [
+    null
+  ],
+  "jobReward" : [
+    null
+  ],
+  "jobRewardMultiplier" : [
+    null
+  ],
+  "supply" : [
+    null
+  ],
+  "supplyMultiplier" : [
+    null
+  ],
+  "demand" : [
+    {
+      "pack" : [
+        {
+          "type" : "upkeep",
+          "amount" : 1800
+        },
+        {
+          "type" : "power_consumption",
+          "amount" : 150
+        },
+        {
+          "type" : "job",
+          "amount" : 3000
+        },
+        {
+          "type" : "ignitability",
+          "amount" : 1
+        }
+      ]
+    }
+  ],
+  "hold" : [
+    {
+      "pack" : [
+        {
+          "type" : "power",
+          "amount" : 150
+        },
+        {
+          "type" : "worker",
+          "amount" : 3000
+        }
+      ]
+    }
+  ],
+  "store" : [
+    null
+  ],
+  "storeMultiplier" : [
+    null
+  ]
+}
