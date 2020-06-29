@@ -1,7 +1,7 @@
 package org.itworks.clicknbuild.config.stats.buidling;
 
 import org.itworks.clicknbuild.config.stats.model.BuildingStatsModel;
-import org.itworks.clicknbuild.engine.model.ResPack;
+import org.itworks.clicknbuild.engine.model.ResStatPack;
 import org.itworks.clicknbuild.util.math.M;
 
 public abstract class BuildingStats {
@@ -74,14 +74,14 @@ public abstract class BuildingStats {
      * Consider also that <code>priceMultiplier</code> property multiplies these costs for subsequent buildings of the
      * same type.
      */
-    private ResPack[] buildCost;
+    private ResStatPack[] buildCost;
 
     /**
      * Amount of resources produced by a building of this type in an hour. Steady idle production.
      * Ranged by building level correspondingly.
      * Directly affected by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResPack[] production;
+    private ResStatPack[] production;
 
     /**
      * Some buildings could provide global effects on production amounts.
@@ -90,7 +90,7 @@ public abstract class BuildingStats {
      * Values are ranged by building level correspondingly.
      * Directly affected by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResPack[] productionMultiplier;
+    private ResStatPack[] productionMultiplier;
 
     /**
      * Amount of resources taken from the player to get the corresponding <code>jobReward</code> for completing a
@@ -98,14 +98,14 @@ public abstract class BuildingStats {
      * Ranged by building level correspondingly.
      * Not affected by the building's productivity.
      */
-    private ResPack[] jobPrice;
+    private ResStatPack[] jobPrice;
 
     /**
      * Amount of resources granted to the player for completing a "production intensification" job.
      * Ranged by building level correspondingly.
      * Directly affected by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResPack[] jobReward;
+    private ResStatPack[] jobReward;
 
     /**
      * Some buildings could provide global effects on job rewards.
@@ -114,7 +114,7 @@ public abstract class BuildingStats {
      * Ranged by building level correspondingly.
      * Directly affected by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResPack[] jobRewardMultiplier;
+    private ResStatPack[] jobRewardMultiplier;
 
     /**
      * Amount of supplement resources constantly provided by this building. Those resources are not collected or stored
@@ -122,7 +122,7 @@ public abstract class BuildingStats {
      * Values are ranged by building level correspondingly.
      * Directly affected by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResPack[] supply;
+    private ResStatPack[] supply;
 
     /**
      * Some buildings could provide global effects on supply amounts.
@@ -131,28 +131,28 @@ public abstract class BuildingStats {
      * Values are ranged by building level correspondingly.
      * Directly affected by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResPack[] supplyMultiplier;
+    private ResStatPack[] supplyMultiplier;
 
     /**
      * Amount of supplement resources required for this building to operate.
      * Constant value, depends only on building level: values are ranged by building level correspondingly.
      * Regardless of condition, the building would always demand these resources and consume what is provided to it.
      */
-    private ResPack[] demand;
+    private ResStatPack[] demand;
 
     /**
      * Amount of supplement resources consumed by this building if any provided.
      * Constant value, depends only on building level: values are ranged by building level correspondingly.
      * Regardless of condition, the building would always demand these resources and consume what is provided to it.
      */
-    private ResPack[] hold;
+    private ResStatPack[] hold;
 
     /**
      * Amount of resources that could be stored in this building for future use.
      * Values are ranged by building level correspondingly.
      * Directly affected by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResPack[] store;
+    private ResStatPack[] store;
 
     /**
      * Some buildings could provide global effect on storage amount.
@@ -160,7 +160,7 @@ public abstract class BuildingStats {
      * buildings storing this resource type.
      * Values are ranged by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResPack[] storeMultiplier;
+    private ResStatPack[] storeMultiplier;
 
     public final int getRequiredPlayerLevel() {
         return requiredPlayerLevel;
@@ -210,156 +210,156 @@ public abstract class BuildingStats {
         this.structure = structure;
     }
 
-    public final ResPack[] getBuildCost() {
+    public final ResStatPack[] getBuildCost() {
         return buildCost;
     }
 
-    public final void setBuildCost(ResPack[] buildCost) {
+    public final void setBuildCost(ResStatPack[] buildCost) {
         if (buildCost == null) {
-            this.buildCost = new ResPack[maxLevel];
+            this.buildCost = new ResStatPack[maxLevel];
             return;
         }
         if (buildCost.length != maxLevel) return;
         this.buildCost = buildCost;
     }
 
-    public final ResPack[] getProduction() {
+    public final ResStatPack[] getProduction() {
         return production;
     }
 
-    public final void setProduction(ResPack[] production) {
+    public final void setProduction(ResStatPack[] production) {
         if (production == null) {
-            this.production = new ResPack[maxLevel];
+            this.production = new ResStatPack[maxLevel];
             return;
         }
         if (production.length != maxLevel) return;
         this.production = production;
     }
 
-    public final ResPack[] getProductionMultiplier() {
+    public final ResStatPack[] getProductionMultiplier() {
         return productionMultiplier;
     }
 
-    public final void setProductionMultiplier(ResPack[] productionMultiplier) {
+    public final void setProductionMultiplier(ResStatPack[] productionMultiplier) {
         if (productionMultiplier == null) {
-            this.productionMultiplier = new ResPack[maxLevel];
+            this.productionMultiplier = new ResStatPack[maxLevel];
             return;
         }
         if (productionMultiplier.length != maxLevel) return;
         this.productionMultiplier = productionMultiplier;
     }
 
-    public final ResPack[] getJobPrice() {
+    public final ResStatPack[] getJobPrice() {
         return jobPrice;
     }
 
-    public final void setJobPrice(ResPack[] jobPrice) {
+    public final void setJobPrice(ResStatPack[] jobPrice) {
         if (jobPrice == null) {
-            this.jobPrice = new ResPack[maxLevel];
+            this.jobPrice = new ResStatPack[maxLevel];
             return;
         }
         if (jobPrice.length != maxLevel) return;
         this.jobPrice = jobPrice;
     }
 
-    public final ResPack[] getJobReward() {
+    public final ResStatPack[] getJobReward() {
         return jobReward;
     }
 
-    public final void setJobReward(ResPack[] jobReward) {
+    public final void setJobReward(ResStatPack[] jobReward) {
         if (jobReward == null) {
-            this.jobReward = new ResPack[maxLevel];
+            this.jobReward = new ResStatPack[maxLevel];
             return;
         }
         if (jobReward.length != maxLevel) return;
         this.jobReward = jobReward;
     }
 
-    public final ResPack[] getJobRewardMultiplier() {
+    public final ResStatPack[] getJobRewardMultiplier() {
         return jobRewardMultiplier;
     }
 
-    public final void setJobRewardMultiplier(ResPack[] jobRewardMultiplier) {
+    public final void setJobRewardMultiplier(ResStatPack[] jobRewardMultiplier) {
         if (jobRewardMultiplier == null) {
-            this.jobRewardMultiplier = new ResPack[maxLevel];
+            this.jobRewardMultiplier = new ResStatPack[maxLevel];
             return;
         }
         if (jobRewardMultiplier.length != maxLevel) return;
         this.jobRewardMultiplier = jobRewardMultiplier;
     }
 
-    public final ResPack[] getSupply() {
+    public final ResStatPack[] getSupply() {
         return supply;
     }
 
-    public final void setSupply(ResPack[] supply) {
+    public final void setSupply(ResStatPack[] supply) {
         if (supply == null) {
-            this.supply = new ResPack[maxLevel];
+            this.supply = new ResStatPack[maxLevel];
             return;
         }
         if (supply.length != maxLevel) return;
         this.supply = supply;
     }
 
-    public final ResPack[] getSupplyMultiplier() {
+    public final ResStatPack[] getSupplyMultiplier() {
         return supplyMultiplier;
     }
 
-    public final void setSupplyMultiplier(ResPack[] supplyMultiplier) {
+    public final void setSupplyMultiplier(ResStatPack[] supplyMultiplier) {
         if (supplyMultiplier == null) {
-            this.supplyMultiplier = new ResPack[maxLevel];
+            this.supplyMultiplier = new ResStatPack[maxLevel];
             return;
         }
         if (supplyMultiplier.length != maxLevel) return;
         this.supplyMultiplier = supplyMultiplier;
     }
 
-    public final ResPack[] getDemand() {
+    public final ResStatPack[] getDemand() {
         return demand;
     }
 
-    public final void setDemand(ResPack[] demand) {
+    public final void setDemand(ResStatPack[] demand) {
         if (demand == null) {
-            this.demand = new ResPack[maxLevel];
+            this.demand = new ResStatPack[maxLevel];
             return;
         }
         if (demand.length != maxLevel) return;
         this.demand = demand;
     }
 
-    public final ResPack[] getHold() {
+    public final ResStatPack[] getHold() {
         return hold;
     }
 
-    public final void setHold(ResPack[] hold) {
+    public final void setHold(ResStatPack[] hold) {
         if (hold == null) {
-            this.hold = new ResPack[maxLevel];
+            this.hold = new ResStatPack[maxLevel];
             return;
         }
         if (hold.length != maxLevel) return;
         this.hold = hold;
     }
 
-    public final ResPack[] getStore() {
+    public final ResStatPack[] getStore() {
         return store;
     }
 
-    public final void setStore(ResPack[] store) {
+    public final void setStore(ResStatPack[] store) {
         if (store == null) {
-            this.store = new ResPack[maxLevel];
+            this.store = new ResStatPack[maxLevel];
             return;
         }
         if (store.length != maxLevel) return;
         this.store = store;
     }
 
-    public final ResPack[] getStoreMultiplier() {
+    public final ResStatPack[] getStoreMultiplier() {
         return storeMultiplier;
     }
 
-    public final void setStoreMultiplier(ResPack[] storeMultiplier) {
+    public final void setStoreMultiplier(ResStatPack[] storeMultiplier) {
         if (storeMultiplier == null) {
-            this.storeMultiplier = new ResPack[maxLevel];
+            this.storeMultiplier = new ResStatPack[maxLevel];
             return;
         }
         if (storeMultiplier.length != maxLevel) return;
@@ -394,29 +394,29 @@ public abstract class BuildingStats {
         if (model.getStructure() != null)
                   setStructure(                                          model.getStructure());
         if (model.getBuildCost() != null)
-                  setBuildCost(                     ResPack.valueOf(model.getBuildCost()));
+                  setBuildCost(                     ResStatPack.valueOf(model.getBuildCost()));
         if (model.getProduction() != null)
-                  setProduction(                    ResPack.valueOf(model.getProduction()));
+                  setProduction(                    ResStatPack.valueOf(model.getProduction()));
         if (model.getProductionMultiplier() != null)
-                  setProductionMultiplier(          ResPack.valueOf(model.getProductionMultiplier()));
+                  setProductionMultiplier(          ResStatPack.valueOf(model.getProductionMultiplier()));
         if (model.getJobPrice() != null)
-                  setJobPrice(                      ResPack.valueOf(model.getJobPrice()));
+                  setJobPrice(                      ResStatPack.valueOf(model.getJobPrice()));
         if (model.getJobReward() != null)
-                  setJobReward(                     ResPack.valueOf(model.getJobReward()));
+                  setJobReward(                     ResStatPack.valueOf(model.getJobReward()));
         if (model.getJobRewardMultiplier() != null)
-                  setJobRewardMultiplier(           ResPack.valueOf(model.getJobRewardMultiplier()));
+                  setJobRewardMultiplier(           ResStatPack.valueOf(model.getJobRewardMultiplier()));
         if (model.getSupply() != null)
-                  setSupply(                        ResPack.valueOf(model.getSupply()));
+                  setSupply(                        ResStatPack.valueOf(model.getSupply()));
         if (model.getSupplyMultiplier() != null)
-                  setSupplyMultiplier(              ResPack.valueOf(model.getSupplyMultiplier()));
+                  setSupplyMultiplier(              ResStatPack.valueOf(model.getSupplyMultiplier()));
         if (model.getDemand() != null)
-                  setDemand(                        ResPack.valueOf(model.getDemand()));
+                  setDemand(                        ResStatPack.valueOf(model.getDemand()));
         if (model.getHold() != null)
-                  setHold(                          ResPack.valueOf(model.getHold()));
+                  setHold(                          ResStatPack.valueOf(model.getHold()));
         if (model.getStore() != null)
-                  setStore(                         ResPack.valueOf(model.getStore()));
+                  setStore(                         ResStatPack.valueOf(model.getStore()));
         if (model.getStoreMultiplier() != null)
-                  setStoreMultiplier(               ResPack.valueOf(model.getStoreMultiplier()));
+                  setStoreMultiplier(               ResStatPack.valueOf(model.getStoreMultiplier()));
     }
     //@formatter:on
 }

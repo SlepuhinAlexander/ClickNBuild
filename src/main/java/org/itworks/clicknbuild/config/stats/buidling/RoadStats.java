@@ -1,7 +1,7 @@
 package org.itworks.clicknbuild.config.stats.buidling;
 
-import org.itworks.clicknbuild.engine.model.ResChunk;
-import org.itworks.clicknbuild.engine.model.ResPack;
+import org.itworks.clicknbuild.engine.model.ResStat;
+import org.itworks.clicknbuild.engine.model.ResStatPack;
 import org.itworks.clicknbuild.engine.model.ResType;
 
 public final class RoadStats extends BuildingStats {
@@ -32,9 +32,9 @@ public final class RoadStats extends BuildingStats {
         setBuildLimit(1000);
         setPriceMultiplier(105);
         setStructure(new int[]{500});
-        setBuildCost(new ResPack[]{new ResPack(
-                new ResChunk(ResType.CONSTRUCTION, 500),
-                new ResChunk(ResType.CONCRETE, 50),
-                new ResChunk(ResType.MONEY, 500))});
+        setBuildCost(new ResStatPack[]{new ResStatPack(
+                new ResStat(ResType.CONSTRUCTION, 500),
+                new ResStat(ResType.CONCRETE, 50),
+                new ResStat(ResType.MONEY, 500))});
     }
 }

@@ -1,28 +1,28 @@
 package org.itworks.clicknbuild.engine.model;
 
-import org.itworks.clicknbuild.config.stats.model.ResChunkModel;
+import org.itworks.clicknbuild.config.stats.model.ResStatModel;
 import org.itworks.clicknbuild.util.math.M;
 
 import java.util.Objects;
 
-public final class ResChunk {
+public final class ResStat {
     public final ResType type;
     private double amount;
 
-    public ResChunk(ResType type, double amount) {
+    public ResStat(ResType type, double amount) {
         this.type = Objects.requireNonNull(type);
         setAmount(amount);
     }
 
-    public ResChunk(ResType type) {
+    public ResStat(ResType type) {
         this(type, 0);
     }
 
-    public static ResChunk valueOf(ResChunkModel value) {
+    public static ResStat valueOf(ResStatModel value) {
         if (value == null) return null;
         ResType type = ResType.get(value.getType());
         if (type == null) return null;
-        ResChunk result = new ResChunk(type);
+        ResStat result = new ResStat(type);
         if (value.getAmount() != null) result.setAmount(value.getAmount());
         return result;
     }
@@ -47,16 +47,16 @@ public final class ResChunk {
         setAmount(this.amount * multiplier);
     }
 
-    public ResChunk copy() {
-        return new ResChunk(this.type, this.amount);
+    public ResStat copy() {
+        return new ResStat(this.type, this.amount);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ResChunk)) return false;
-        ResChunk resChunk = (ResChunk) o;
-        return type == resChunk.type;
+        if (!(o instanceof ResStat)) return false;
+        ResStat resStat = (ResStat) o;
+        return type == resStat.type;
     }
 
     @Override

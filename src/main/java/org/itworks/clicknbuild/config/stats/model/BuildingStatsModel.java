@@ -13,29 +13,29 @@ public class BuildingStatsModel {
 
     private int[] structure;
 
-    private ResPackModel[] buildCost;
+    private ResStatPackModel[] buildCost;
 
-    private ResPackModel[] production;
+    private ResStatPackModel[] production;
 
-    private ResPackModel[] productionMultiplier;
+    private ResStatPackModel[] productionMultiplier;
 
-    private ResPackModel[] jobPrice;
+    private ResStatPackModel[] jobPrice;
 
-    private ResPackModel[] jobReward;
+    private ResStatPackModel[] jobReward;
 
-    private ResPackModel[] jobRewardMultiplier;
+    private ResStatPackModel[] jobRewardMultiplier;
 
-    private ResPackModel[] supply;
+    private ResStatPackModel[] supply;
 
-    private ResPackModel[] supplyMultiplier;
+    private ResStatPackModel[] supplyMultiplier;
 
-    private ResPackModel[] demand;
+    private ResStatPackModel[] demand;
 
-    private ResPackModel[] hold;
+    private ResStatPackModel[] hold;
 
-    private ResPackModel[] store;
+    private ResStatPackModel[] store;
 
-    private ResPackModel[] storeMultiplier;
+    private ResStatPackModel[] storeMultiplier;
 
     // @formatter:off
     public static BuildingStatsModel valueOf(BuildingStats value) {
@@ -46,18 +46,18 @@ public class BuildingStatsModel {
         result.setBuildLimit(                                               value.getBuildLimit());
         result.setPriceMultiplier(                                          value.getPriceMultiplier());
         result.setStructure(                                                value.getStructure());
-        result.setBuildCost(                ResPackModel.valueOf(      value.getBuildCost()));
-        result.setProduction(               ResPackModel.valueOf(      value.getProduction()));
-        result.setProductionMultiplier(     ResPackModel.valueOf(      value.getProductionMultiplier()));
-        result.setJobPrice(                 ResPackModel.valueOf(      value.getJobPrice()));
-        result.setJobReward(                ResPackModel.valueOf(      value.getJobReward()));
-        result.setJobRewardMultiplier(      ResPackModel.valueOf(      value.getJobRewardMultiplier()));
-        result.setSupply(                   ResPackModel.valueOf(      value.getSupply()));
-        result.setSupplyMultiplier(         ResPackModel.valueOf(      value.getSupplyMultiplier()));
-        result.setDemand(                   ResPackModel.valueOf(      value.getDemand()));
-        result.setHold(                     ResPackModel.valueOf(      value.getHold()));
-        result.setStore(                    ResPackModel.valueOf(      value.getStore()));
-        result.setStoreMultiplier(          ResPackModel.valueOf(      value.getStoreMultiplier()));
+        result.setBuildCost(                ResStatPackModel.valueOf(      value.getBuildCost()));
+        result.setProduction(               ResStatPackModel.valueOf(      value.getProduction()));
+        result.setProductionMultiplier(     ResStatPackModel.valueOf(      value.getProductionMultiplier()));
+        result.setJobPrice(                 ResStatPackModel.valueOf(      value.getJobPrice()));
+        result.setJobReward(                ResStatPackModel.valueOf(      value.getJobReward()));
+        result.setJobRewardMultiplier(      ResStatPackModel.valueOf(      value.getJobRewardMultiplier()));
+        result.setSupply(                   ResStatPackModel.valueOf(      value.getSupply()));
+        result.setSupplyMultiplier(         ResStatPackModel.valueOf(      value.getSupplyMultiplier()));
+        result.setDemand(                   ResStatPackModel.valueOf(      value.getDemand()));
+        result.setHold(                     ResStatPackModel.valueOf(      value.getHold()));
+        result.setStore(                    ResStatPackModel.valueOf(      value.getStore()));
+        result.setStoreMultiplier(          ResStatPackModel.valueOf(      value.getStoreMultiplier()));
         return result;
     }
     // @formatter:on
@@ -102,99 +102,99 @@ public class BuildingStatsModel {
         this.structure = structure;
     }
 
-    public ResPackModel[] getBuildCost() {
+    public ResStatPackModel[] getBuildCost() {
         return buildCost;
     }
 
-    public void setBuildCost(ResPackModel[] buildCost) {
+    public void setBuildCost(ResStatPackModel[] buildCost) {
         this.buildCost = buildCost;
     }
 
-    public ResPackModel[] getProduction() {
+    public ResStatPackModel[] getProduction() {
         return production;
     }
 
-    public void setProduction(ResPackModel[] production) {
+    public void setProduction(ResStatPackModel[] production) {
         this.production = production;
     }
 
-    public ResPackModel[] getProductionMultiplier() {
+    public ResStatPackModel[] getProductionMultiplier() {
         return productionMultiplier;
     }
 
-    public void setProductionMultiplier(ResPackModel[] productionMultiplier) {
+    public void setProductionMultiplier(ResStatPackModel[] productionMultiplier) {
         this.productionMultiplier = productionMultiplier;
     }
 
-    public ResPackModel[] getJobPrice() {
+    public ResStatPackModel[] getJobPrice() {
         return jobPrice;
     }
 
-    public void setJobPrice(ResPackModel[] jobPrice) {
+    public void setJobPrice(ResStatPackModel[] jobPrice) {
         this.jobPrice = jobPrice;
     }
 
-    public ResPackModel[] getJobReward() {
+    public ResStatPackModel[] getJobReward() {
         return jobReward;
     }
 
-    public void setJobReward(ResPackModel[] jobReward) {
+    public void setJobReward(ResStatPackModel[] jobReward) {
         this.jobReward = jobReward;
     }
 
-    public ResPackModel[] getJobRewardMultiplier() {
+    public ResStatPackModel[] getJobRewardMultiplier() {
         return jobRewardMultiplier;
     }
 
-    public void setJobRewardMultiplier(ResPackModel[] jobRewardMultiplier) {
+    public void setJobRewardMultiplier(ResStatPackModel[] jobRewardMultiplier) {
         this.jobRewardMultiplier = jobRewardMultiplier;
     }
 
-    public ResPackModel[] getSupply() {
+    public ResStatPackModel[] getSupply() {
         return supply;
     }
 
-    public void setSupply(ResPackModel[] supply) {
+    public void setSupply(ResStatPackModel[] supply) {
         this.supply = supply;
     }
 
-    public ResPackModel[] getSupplyMultiplier() {
+    public ResStatPackModel[] getSupplyMultiplier() {
         return supplyMultiplier;
     }
 
-    public void setSupplyMultiplier(ResPackModel[] supplyMultiplier) {
+    public void setSupplyMultiplier(ResStatPackModel[] supplyMultiplier) {
         this.supplyMultiplier = supplyMultiplier;
     }
 
-    public ResPackModel[] getDemand() {
+    public ResStatPackModel[] getDemand() {
         return demand;
     }
 
-    public void setDemand(ResPackModel[] demand) {
+    public void setDemand(ResStatPackModel[] demand) {
         this.demand = demand;
     }
 
-    public ResPackModel[] getHold() {
+    public ResStatPackModel[] getHold() {
         return hold;
     }
 
-    public void setHold(ResPackModel[] hold) {
+    public void setHold(ResStatPackModel[] hold) {
         this.hold = hold;
     }
 
-    public ResPackModel[] getStore() {
+    public ResStatPackModel[] getStore() {
         return store;
     }
 
-    public void setStore(ResPackModel[] store) {
+    public void setStore(ResStatPackModel[] store) {
         this.store = store;
     }
 
-    public ResPackModel[] getStoreMultiplier() {
+    public ResStatPackModel[] getStoreMultiplier() {
         return storeMultiplier;
     }
 
-    public void setStoreMultiplier(ResPackModel[] storeMultiplier) {
+    public void setStoreMultiplier(ResStatPackModel[] storeMultiplier) {
         this.storeMultiplier = storeMultiplier;
     }
 }

@@ -1,7 +1,7 @@
 package org.itworks.clicknbuild.config.stats.buidling;
 
-import org.itworks.clicknbuild.engine.model.ResChunk;
-import org.itworks.clicknbuild.engine.model.ResPack;
+import org.itworks.clicknbuild.engine.model.ResStat;
+import org.itworks.clicknbuild.engine.model.ResStatPack;
 import org.itworks.clicknbuild.engine.model.ResType;
 
 public final class CityPlanningStats extends BuildingStats {
@@ -32,21 +32,21 @@ public final class CityPlanningStats extends BuildingStats {
         setBuildLimit(1);
         setPriceMultiplier(100);
         setStructure(new int[]{10000});
-        setBuildCost(new ResPack[]{new ResPack(
-                new ResChunk(ResType.CONSTRUCTION, 10000),
-                new ResChunk(ResType.STEEL, 4320),
-                new ResChunk(ResType.CONCRETE, 14400),
-                new ResChunk(ResType.MONEY, 540000)
+        setBuildCost(new ResStatPack[]{new ResStatPack(
+                new ResStat(ResType.CONSTRUCTION, 10000),
+                new ResStat(ResType.STEEL, 4320),
+                new ResStat(ResType.CONCRETE, 14400),
+                new ResStat(ResType.MONEY, 540000)
         )});
-        setDemand(new ResPack[]{new ResPack(
-                new ResChunk(ResType.UPKEEP, 1800),
-                new ResChunk(ResType.POWER_CONSUMPTION, 150),
-                new ResChunk(ResType.JOB, 3000),
-                new ResChunk(ResType.IGNITABILITY, 1)
+        setDemand(new ResStatPack[]{new ResStatPack(
+                new ResStat(ResType.UPKEEP, 1800),
+                new ResStat(ResType.POWER_CONSUMPTION, 150),
+                new ResStat(ResType.JOB, 3000),
+                new ResStat(ResType.IGNITABILITY, 1)
         )});
-        setHold(new ResPack[]{new ResPack(
-                new ResChunk(ResType.POWER, 150),
-                new ResChunk(ResType.WORKER, 3000)
+        setHold(new ResStatPack[]{new ResStatPack(
+                new ResStat(ResType.POWER, 150),
+                new ResStat(ResType.WORKER, 3000)
         )});
     }
 }

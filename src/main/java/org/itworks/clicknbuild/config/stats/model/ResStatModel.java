@@ -1,14 +1,14 @@
 package org.itworks.clicknbuild.config.stats.model;
 
-import org.itworks.clicknbuild.engine.model.ResChunk;
+import org.itworks.clicknbuild.engine.model.ResStat;
 
-public class ResChunkModel {
+public class ResStatModel {
     private String type;
     private Double amount;
 
-    public static ResChunkModel valueOf(ResChunk value) {
+    public static ResStatModel valueOf(ResStat value) {
         if (value == null) return null;
-        ResChunkModel result = new ResChunkModel();
+        ResStatModel result = new ResStatModel();
         result.setType(value.type.type);
         result.setAmount(value.getAmount());
         return result;
