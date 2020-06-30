@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.config.stats.model;
 
 import org.itworks.clicknbuild.config.stats.buidling.BuildingStats;
 
-public class BuildingStatsModel {
+public final class BuildingStatsModel {
     private int requiredPlayerLevel;
 
     private int maxLevel;

@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.config.stats.model;
 
-public class TileModel {
+public final class TileModel {
     private String type;
     private Double structure;
 

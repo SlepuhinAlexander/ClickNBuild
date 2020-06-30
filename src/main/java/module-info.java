@@ -2,6 +2,7 @@ module org.itworks {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.fasterxml.jackson.databind;
+    requires com.google.common;
 
     opens org.itworks.clicknbuild.ui.controller to javafx.fxml;
     exports org.itworks.clicknbuild.config.stats.model to com.fasterxml.jackson.databind;

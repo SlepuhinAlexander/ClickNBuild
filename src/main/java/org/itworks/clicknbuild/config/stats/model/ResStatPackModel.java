@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class ResStatPackModel {
+public final class ResStatPackModel {
     private List<ResStatModel> pack = new ArrayList<>();
 
     public static ResStatPackModel valueOf(ResStatPack value) {

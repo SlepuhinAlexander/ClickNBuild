@@ -5,8 +5,10 @@ import org.itworks.clicknbuild.util.math.M;
 
 import java.util.Objects;
 
+@SuppressWarnings("UnusedReturnValue")
 public final class ResStat {
     public final ResType type;
+
     private double amount;
 
     public ResStat(ResType type, double amount) {
@@ -31,20 +33,21 @@ public final class ResStat {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public ResStat setAmount(double amount) {
         this.amount = M.clamp(amount);
+        return this;
     }
 
-    public void add(double amount) {
-        setAmount(this.amount + amount);
+    public ResStat add(double amount) {
+        return setAmount(this.amount + amount);
     }
 
-    public void sub(double amount) {
-        setAmount(this.amount - amount);
+    public ResStat sub(double amount) {
+        return setAmount(this.amount - amount);
     }
 
-    public void mul(double multiplier) {
-        setAmount(this.amount * multiplier);
+    public ResStat mul(double multiplier) {
+        return setAmount(this.amount * multiplier);
     }
 
     public ResStat copy() {

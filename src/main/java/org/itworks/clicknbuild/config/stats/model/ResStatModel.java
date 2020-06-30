@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.config.stats.model;
 
 import org.itworks.clicknbuild.engine.model.ResStat;
 
-public class ResStatModel {
+public final class ResStatModel {
     private String type;
     private Double amount;
 

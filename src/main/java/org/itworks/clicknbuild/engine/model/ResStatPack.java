@@ -7,20 +7,21 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 
+@SuppressWarnings("UnusedReturnValue")
 public final class ResStatPack {
-    public final Map<ResType, ResStat> pack = new TreeMap<>();
+    public final TreeMap<ResType, ResStat> pack = new TreeMap<>();
 
     public ResStatPack() {
     }
 
     public ResStatPack(ResStat... resources) {
         if (resources == null) return;
-        for (ResStat res : resources) add(res);
+        add(resources);
     }
 
     public ResStatPack(Collection<ResStat> resources) {
         if (resources == null) return;
-        for (ResStat res : resources) add(res);
+        add(resources);
     }
 
     public static ResStatPack valueOf(ResStatPackModel value) {
@@ -39,70 +40,75 @@ public final class ResStatPack {
         return result;
     }
 
-    public void add(ResType type, double amount) {
-        if (type == null) return;
-        add(new ResStat(type, amount));
+    public ResStatPack add(ResType type, double amount) {
+        if (type == null) return this;
+        return add(new ResStat(type, amount));
     }
 
-    public void add(ResStat res) {
-        if (res == null) return;
-        ResStat chunk = pack.get(res.type);
-        if (chunk == null) {
+    public ResStatPack add(ResStat res) {
+        if (res == null) return this;
+        ResStat stat = pack.get(res.type);
+        if (stat == null) {
             pack.put(res.type, res);
         } else {
-            chunk.add(res.getAmount());
+            stat.add(res.getAmount());
         }
         cleanup();
+        return this;
     }
 
-    public void add(ResStat... resources) {
-        if (resources == null) return;
+    public ResStatPack add(ResStat... resources) {
+        if (resources == null) return this;
         for (ResStat res : resources) add(res);
+        return this;
     }
 
-    public void add(Collection<ResStat> resources) {
-        if (resources == null) return;
+    public ResStatPack add(Collection<ResStat> resources) {
+        if (resources == null) return this;
         for (ResStat res : resources) add(res);
+        return this;
     }
 
-    public void add(ResStatPack pack) {
-        if (pack == null) return;
-        Collection<ResStat> resources = pack.pack.values();
-        for (ResStat res : resources) add(res);
+    public ResStatPack add(ResStatPack pack) {
+        if (pack == null) return this;
+        return add(pack.pack.values());
     }
 
-    public void sub(ResType type, double amount) {
-        if (type == null) return;
-        sub(new ResStat(type, amount));
+    public ResStatPack sub(ResType type, double amount) {
+        if (type == null) return this;
+        return sub(new ResStat(type, amount));
     }
 
-    public void sub(ResStat res) {
-        if (res == null) return;
-        ResStat chunk = pack.get(res.type);
-        if (chunk != null) chunk.sub(res.getAmount());
+    public ResStatPack sub(ResStat res) {
+        if (res == null) return this;
+        ResStat stat = pack.get(res.type);
+        if (stat != null) stat.sub(res.getAmount());
         cleanup();
+        return this;
     }
 
-    public void sub(ResStat... resources) {
-        if (resources == null) return;
+    public ResStatPack sub(ResStat... resources) {
+        if (resources == null) return this;
         for (ResStat res : resources) sub(res);
+        return this;
     }
 
-    public void sub(Collection<ResStat> resources) {
-        if (resources == null) return;
+    public ResStatPack sub(Collection<ResStat> resources) {
+        if (resources == null) return this;
         for (ResStat res : resources) sub(res);
+        return this;
     }
 
-    public void sub(ResStatPack pack) {
-        if (pack == null) return;
-        Collection<ResStat> resources = pack.pack.values();
-        for (ResStat res : resources) sub(res);
+    public ResStatPack sub(ResStatPack pack) {
+        if (pack == null) return this;
+        return sub(pack.pack.values());
     }
 
-    public void mul(double multiplier) {
+    public ResStatPack mul(double multiplier) {
         Collection<ResStat> resources = pack.values();
         for (ResStat res : resources) res.mul(multiplier);
         cleanup();
+        return this;
     }
 
     private void cleanup() {
@@ -111,7 +117,7 @@ public final class ResStatPack {
 
     public ResStatPack copy() {
         ResStatPack result = new ResStatPack();
-        result.add(pack.values());
+        pack.values().forEach(res -> result.add(res.copy()));
         return result;
     }
 
