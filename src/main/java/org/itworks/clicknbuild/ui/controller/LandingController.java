@@ -20,6 +20,6 @@ public final class LandingController {
     private void initialize() {
         rootNode.getStylesheets().addAll(Src.getCss(Csses.LANDING));
         sLandingGreeting.setText(Src.getL10n(Strings.GAME_TITLE));
-        icLandingBackground.setImage(Src.getImg(Images.BLD_HEADQUARTER));
+        icLandingBackground.setImage(Src.getImg(Images.AVATAR_MAN10, ImgHandler.Size.HUGE));
     }
 }

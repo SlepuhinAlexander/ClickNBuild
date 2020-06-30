@@ -95,6 +95,7 @@ public final class ImgHandler {
      * Allows to get an appropriate key suffix to get an icon of desired size form the Image Resource Handler
      */
     public enum Size {
+        DEFAULT("default", 512, ""),
         TINY("tiny", 16, "_16"),
         MICRO("micro", 20, "_20"),
         SMALL("small", 24, "_24"),
@@ -122,7 +123,7 @@ public final class ImgHandler {
 
         public static Size get(String value) {
             for (Size size : values()) if (size.name.equalsIgnoreCase(value)) return size;
-            return FULL;
+            return DEFAULT;
         }
 
         public static Size get(int value) {
@@ -148,7 +149,7 @@ public final class ImgHandler {
                 }
             }
             for (Size size : values()) if (size.size == sizes[index]) return size;
-            return FULL;
+            return DEFAULT;
         }
     }
 }
