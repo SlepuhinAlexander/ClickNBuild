@@ -61,19 +61,19 @@ public final class ImgHandler {
     }
 
     public static Image get(Images key) {
-        return get(Objects.requireNonNull(key).value);
+        return get(Objects.requireNonNull(key).name);
     }
 
     public static Image get(Images key, Size size) {
-        return get(Objects.requireNonNull(key).value, size);
+        return get(Objects.requireNonNull(key).name, size);
     }
 
     public static Image get(Images key, String size) {
-        return get(Objects.requireNonNull(key).value, size);
+        return get(Objects.requireNonNull(key).name, size);
     }
 
     public static Image get(Images key, int size) {
-        return get(Objects.requireNonNull(key).value, size);
+        return get(Objects.requireNonNull(key).name, size);
     }
 
     private void loadImgs() {

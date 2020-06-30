@@ -1,6 +1,11 @@
 package org.itworks.clicknbuild.util.math;
 
+import java.util.Date;
+import java.util.Random;
+
 public class M {
+    private static final Random R = new Random(new Date().getTime());
+
     public static int clamp(int value, int min, int max) {
         if (max < min) throw new IllegalArgumentException(max + " cannot be less than " + min);
         return Math.min(Math.max(min, value), max);
@@ -51,5 +56,9 @@ public class M {
 
     public static double clamp(double value) {
         return clamp(value, 0, Double.MAX_VALUE);
+    }
+
+    public static int randomInt(int bound) {
+        return R.nextInt(bound);
     }
 }

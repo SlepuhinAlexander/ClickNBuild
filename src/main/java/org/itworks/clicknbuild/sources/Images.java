@@ -2,124 +2,132 @@ package org.itworks.clicknbuild.sources;
 
 import org.itworks.clicknbuild.util.string.Str;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 /**
  * Global holder of string keys for ImgHandler
  */
 public enum Images {
-    DUMMY("dummy"),
+    DUMMY("dummy", Group.OTHER),
 
-    RES_ACTION("action"),
-    RES_CONSTRUCTION("construction"),
-    RES_ENERGY("energy"),
-    RES_STEEL("steel"),
-    RES_CONCRETE("concrete"),
-    RES_BRICK("brick"),
-    RES_WOOD("wood"),
-    RES_GLASS("glass"),
-    RES_MONEY("money"),
-    RES_UPKEEP("upkeep"),
-    RES_POWER("power"),
-    RES_POWER_CONSUMPTION("power_consumption"),
-    RES_POWER_EXCESS("power_excess"),
-    RES_CITIZEN("citizen"),
-    RES_JOB("job"),
-    RES_WORKER("worker"),
-    RES_UNEMPLOYMENT("unemployment"),
-    RES_BENEFIT("benefit"),
-    RES_OBEDIENCE("obedience"),
-    RES_CRIME("crime"),
-    RES_EMIGRATION("emigration"),
-    RES_IGNITABILITY("ignitability"),
-    RES_FIRE_HAZARD("fire_hazard"),
+    RES_ACTION("action", Group.RESOURCE),
+    RES_CONSTRUCTION("construction", Group.RESOURCE),
+    RES_ENERGY("energy", Group.RESOURCE),
+    RES_STEEL("steel", Group.RESOURCE),
+    RES_CONCRETE("concrete", Group.RESOURCE),
+    RES_BRICK("brick", Group.RESOURCE),
+    RES_WOOD("wood", Group.RESOURCE),
+    RES_GLASS("glass", Group.RESOURCE),
+    RES_MONEY("money", Group.RESOURCE),
+    RES_UPKEEP("upkeep", Group.RESOURCE),
+    RES_POWER("power", Group.RESOURCE),
+    RES_POWER_CONSUMPTION("power_consumption", Group.RESOURCE),
+    RES_POWER_EXCESS("power_excess", Group.RESOURCE),
+    RES_CITIZEN("citizen", Group.RESOURCE),
+    RES_JOB("job", Group.RESOURCE),
+    RES_WORKER("worker", Group.RESOURCE),
+    RES_UNEMPLOYMENT("unemployment", Group.RESOURCE),
+    RES_BENEFIT("benefit", Group.RESOURCE),
+    RES_OBEDIENCE("obedience", Group.RESOURCE),
+    RES_CRIME("crime", Group.RESOURCE),
+    RES_EMIGRATION("emigration", Group.RESOURCE),
+    RES_IGNITABILITY("ignitability", Group.RESOURCE),
+    RES_FIRE_HAZARD("fire_hazard", Group.RESOURCE),
 
-    PLAYER_EXPERIENCE("experience"),
-    PLAYER_EXPERIENCE_LEVEL("experience_level"),
+    PLAYER_EXPERIENCE("experience", Group.RESOURCE),
+    PLAYER_EXPERIENCE_LEVEL("experience_level", Group.RESOURCE),
 
-    TILE_LAND("land"),
-    TILE_ROCK("rock"),
-    TILE_RUIN("ruin"),
-    TILE_SEA("sea"),
-    TILE_TRASH("trash"),
-    TILE_TREE("tree"),
+    TILE_LAND("land", Group.TILE),
+    TILE_ROCK("rock", Group.TILE),
+    TILE_RUIN("ruin", Group.TILE),
+    TILE_SEA("sea", Group.TILE),
+    TILE_TRASH("trash", Group.TILE),
+    TILE_TREE("tree", Group.TILE),
 
-    BLD_AIRPORT("airport"),
-    BLD_APARTMENT("apartment"),
-    BLD_BANK("bank"),
-    BLD_CITY_PLANNING("city_planning"),
-    BLD_CONSTRUCTION_SITE("construction_site"),
-    BLD_ENGINEERING_CENTER("engineering_center"),
-    BLD_EXCHANGE("exchange"),
-    BLD_FACTORY("factory"),
-    BLD_FACTORY_BRICK("factory_brick"),
-    BLD_FACTORY_CONCRETE("factory_concrete"),
-    BLD_FACTORY_GLASS("factory_glass"),
-    BLD_FACTORY_STEEL("factory_steel"),
-    BLD_FACTORY_WOOD("factory_wood"),
-    BLD_FIRE_STATION("fire_station"),
-    BLD_GYM("gym"),
-    BLD_HEADQUARTER("headquarter"),
-    BLD_HOTEL("hotel"),
-    BLD_MALL("mall"),
-    BLD_NUCLEAR_PLANT("nuclear_plant"),
-    BLD_OFFICE("office"),
-    BLD_POLICE("police"),
-    BLD_PORT("port"),
-    BLD_POWER_PLANT("power_plant"),
-    BLD_ROAD("road"),
-    BLD_WAREHOUSE("warehouse"),
-    BLD_WAREHOUSE_BRICK("warehouse_brick"),
-    BLD_WAREHOUSE_CONCRETE("warehouse_concrete"),
-    BLD_WAREHOUSE_GLASS("warehouse_glass"),
-    BLD_WAREHOUSE_STEEL("warehouse_steel"),
-    BLD_WAREHOUSE_WOOD("warehouse_wood"),
+    BLD_AIRPORT("airport", Group.BUILDING),
+    BLD_APARTMENT("apartment", Group.BUILDING),
+    BLD_BANK("bank", Group.BUILDING),
+    BLD_CITY_PLANNING("city_planning", Group.BUILDING),
+    BLD_CONSTRUCTION_SITE("construction_site", Group.BUILDING),
+    BLD_ENGINEERING_CENTER("engineering_center", Group.BUILDING),
+    BLD_EXCHANGE("exchange", Group.BUILDING),
+    BLD_FACTORY("factory", Group.BUILDING),
+    BLD_FACTORY_BRICK("factory_brick", Group.BUILDING),
+    BLD_FACTORY_CONCRETE("factory_concrete", Group.BUILDING),
+    BLD_FACTORY_GLASS("factory_glass", Group.BUILDING),
+    BLD_FACTORY_STEEL("factory_steel", Group.BUILDING),
+    BLD_FACTORY_WOOD("factory_wood", Group.BUILDING),
+    BLD_FIRE_STATION("fire_station", Group.BUILDING),
+    BLD_GYM("gym", Group.BUILDING),
+    BLD_HEADQUARTER("headquarter", Group.BUILDING),
+    BLD_HOTEL("hotel", Group.BUILDING),
+    BLD_MALL("mall", Group.BUILDING),
+    BLD_NUCLEAR_PLANT("nuclear_plant", Group.BUILDING),
+    BLD_OFFICE("office", Group.BUILDING),
+    BLD_POLICE("police", Group.BUILDING),
+    BLD_PORT("port", Group.BUILDING),
+    BLD_POWER_PLANT("power_plant", Group.BUILDING),
+    BLD_ROAD("road", Group.BUILDING),
+    BLD_WAREHOUSE("warehouse", Group.BUILDING),
+    BLD_WAREHOUSE_BRICK("warehouse_brick", Group.BUILDING),
+    BLD_WAREHOUSE_CONCRETE("warehouse_concrete", Group.BUILDING),
+    BLD_WAREHOUSE_GLASS("warehouse_glass", Group.BUILDING),
+    BLD_WAREHOUSE_STEEL("warehouse_steel", Group.BUILDING),
+    BLD_WAREHOUSE_WOOD("warehouse_wood", Group.BUILDING),
 
-    AVATAR_MAN0("man0"),
-    AVATAR_MAN1("man1"),
-    AVATAR_MAN2("man2"),
-    AVATAR_MAN3("man3"),
-    AVATAR_MAN4("man4"),
-    AVATAR_MAN5("man5"),
-    AVATAR_MAN6("man6"),
-    AVATAR_MAN7("man7"),
-    AVATAR_MAN8("man8"),
-    AVATAR_MAN9("man9"),
-    AVATAR_MAN10("man10"),
-    AVATAR_MAN11("man11"),
-    AVATAR_MAN12("man12"),
-    AVATAR_MAN13("man13"),
-    AVATAR_MAN14("man14"),
-    AVATAR_MAN15("man15"),
-    AVATAR_MAN16("man16"),
-    AVATAR_MAN17("man17"),
-    AVATAR_MAN18("man18"),
-    AVATAR_MAN19("man19"),
-    AVATAR_MAN20("man20"),
-    AVATAR_WOMAN0("woman0"),
-    AVATAR_WOMAN1("woman1"),
-    AVATAR_WOMAN2("woman2"),
-    AVATAR_WOMAN3("woman3"),
-    AVATAR_WOMAN4("woman4"),
-    AVATAR_WOMAN5("woman5"),
-    AVATAR_WOMAN6("woman6"),
-    AVATAR_WOMAN7("woman7"),
-    AVATAR_WOMAN8("woman8"),
-    AVATAR_WOMAN9("woman9"),
-    AVATAR_WOMAN10("woman10"),
-    AVATAR_WOMAN11("woman11"),
-    AVATAR_WOMAN12("woman12"),
-    AVATAR_WOMAN13("woman13"),
+    AVATAR_MAN0("man0", Group.AVATAR),
+    AVATAR_MAN1("man1", Group.AVATAR),
+    AVATAR_MAN2("man2", Group.AVATAR),
+    AVATAR_MAN3("man3", Group.AVATAR),
+    AVATAR_MAN4("man4", Group.AVATAR),
+    AVATAR_MAN5("man5", Group.AVATAR),
+    AVATAR_MAN6("man6", Group.AVATAR),
+    AVATAR_MAN7("man7", Group.AVATAR),
+    AVATAR_MAN8("man8", Group.AVATAR),
+    AVATAR_MAN9("man9", Group.AVATAR),
+    AVATAR_MAN10("man10", Group.AVATAR),
+    AVATAR_MAN11("man11", Group.AVATAR),
+    AVATAR_MAN12("man12", Group.AVATAR),
+    AVATAR_MAN13("man13", Group.AVATAR),
+    AVATAR_MAN14("man14", Group.AVATAR),
+    AVATAR_MAN15("man15", Group.AVATAR),
+    AVATAR_MAN16("man16", Group.AVATAR),
+    AVATAR_MAN17("man17", Group.AVATAR),
+    AVATAR_MAN18("man18", Group.AVATAR),
+    AVATAR_MAN19("man19", Group.AVATAR),
+    AVATAR_MAN20("man20", Group.AVATAR),
+    AVATAR_WOMAN0("woman0", Group.AVATAR),
+    AVATAR_WOMAN1("woman1", Group.AVATAR),
+    AVATAR_WOMAN2("woman2", Group.AVATAR),
+    AVATAR_WOMAN3("woman3", Group.AVATAR),
+    AVATAR_WOMAN4("woman4", Group.AVATAR),
+    AVATAR_WOMAN5("woman5", Group.AVATAR),
+    AVATAR_WOMAN6("woman6", Group.AVATAR),
+    AVATAR_WOMAN7("woman7", Group.AVATAR),
+    AVATAR_WOMAN8("woman8", Group.AVATAR),
+    AVATAR_WOMAN9("woman9", Group.AVATAR),
+    AVATAR_WOMAN10("woman10", Group.AVATAR),
+    AVATAR_WOMAN11("woman11", Group.AVATAR),
+    AVATAR_WOMAN12("woman12", Group.AVATAR),
+    AVATAR_WOMAN13("woman13", Group.AVATAR),
     ;
 
+    final String name;
 
-    final String value;
+    final Group group;
 
-    Images(String value) {
-        this.value = Str.nonNull(value);
+    Images(String name, Group group) {
+        this.name = Str.nonNull(name);
+        this.group = Objects.requireNonNull(group);
     }
 
     public static Images get(String value) {
         Images[] images = values();
-        for (Images image : images) if (image.value.equalsIgnoreCase(Str.nonNull(value).trim())) return image;
+        for (Images image : images) if (image.name.equalsIgnoreCase(Str.nonNull(value).trim())) return image;
         return DUMMY;
     }
 
@@ -127,5 +135,16 @@ public enum Images {
         Images[] images = values();
         if (ordinal < 0 || ordinal >= images.length) return DUMMY;
         return images[ordinal];
+    }
+
+    public static List<Images> get(Group group) {
+        if (group == null) return Collections.emptyList();
+        return Arrays.stream(values())
+                .filter(image -> image.group.equals(group))
+                .collect(Collectors.toList());
+    }
+
+    public enum Group {
+        BUTTON, RESOURCE, TILE, BUILDING, AVATAR, OTHER
     }
 }

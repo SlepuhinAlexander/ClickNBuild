@@ -3,10 +3,17 @@ package org.itworks.clicknbuild.ui.controller;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
-import org.itworks.clicknbuild.sources.*;
+import org.itworks.clicknbuild.sources.Csses;
+import org.itworks.clicknbuild.sources.Images;
+import org.itworks.clicknbuild.sources.Src;
+import org.itworks.clicknbuild.sources.Strings;
+import org.itworks.clicknbuild.util.math.M;
 
-public final class LandingController {
+import java.util.List;
+
+public final class LandingController extends BasicController {
     @FXML
     private StackPane rootNode;
 
@@ -20,6 +27,7 @@ public final class LandingController {
     private void initialize() {
         rootNode.getStylesheets().addAll(Src.getCss(Csses.LANDING));
         sLandingGreeting.setText(Src.getL10n(Strings.GAME_TITLE));
-        icLandingBackground.setImage(Src.getImg(Images.AVATAR_MAN10, ImgHandler.Size.HUGE));
+        List<Images> images = Images.get(Images.Group.BUILDING);
+        icLandingBackground.setImage(Src.getImg(images.get(M.randomInt(images.size()))));
     }
 }

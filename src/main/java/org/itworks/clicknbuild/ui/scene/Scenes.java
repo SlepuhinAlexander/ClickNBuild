@@ -1,14 +1,27 @@
 package org.itworks.clicknbuild.ui.scene;
 
+import org.itworks.clicknbuild.ui.controller.LandingController;
 import org.itworks.clicknbuild.util.string.Str;
 
-public enum Scenes {
-    LANDING("landing");
+import java.util.Objects;
 
+public enum Scenes {
+    LANDING("landing", LandingController.class),
+    ;
+
+    /**
+     * String key to retrieve a corresponding FXML from FXML handler
+     */
     public final String name;
 
-    Scenes(String name) {
+    /**
+     * Link to corresponding scene controller class.
+     */
+    public final Class<?> controller;
+
+    Scenes(String name, Class<?> controller) {
         this.name = Str.nonNull(name);
+        this.controller = Objects.requireNonNull(controller);
     }
 
     public static Scenes get(String name) {

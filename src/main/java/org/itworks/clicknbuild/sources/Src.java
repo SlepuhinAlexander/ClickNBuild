@@ -62,28 +62,4 @@ public final class Src {
     public static Image getImg(Images key, int size) {
         return ImgHandler.get(key, size);
     }
-
-    /**
-     * Returns any possible application resource by request.
-     * Awaits for the following key prefixes in the <code>key</code> param:
-     * <ul>
-     *     <li>"s_" or "loc_" for a localized string resource;</li>
-     *     <li>"img_" or "ic_" for an image resource to reuse in UI;</li>
-     *     <li>"css_" for a URL (as a <code>String</code> type value) to a stylesheet;</li>
-     *     <li>"fxml_" for a URL (as a <code>URL</code> type value) to an fxml-file.</li>
-     * </ul>
-     * Key prefixes are case insensitive.
-     * <p/>
-     * If none of this prefixes used, processes the whole <code>key</code> param as a key to retrieve a localized
-     * string resource.
-     */
-    public static Object get(String key) {
-        if (Str.startsWithIgnoreCase(key, "s_")) return getL10n(key.substring("s_".length()));
-        if (Str.startsWithIgnoreCase(key, "loc_")) return getL10n(key.substring("loc_".length()));
-        if (Str.startsWithIgnoreCase(key, "img_")) return getImg(key.substring("img_".length()));
-        if (Str.startsWithIgnoreCase(key, "ic_")) return getImg(key.substring("ic_".length()));
-        if (Str.startsWithIgnoreCase(key, "css_")) return getCss(key.substring("css_".length()));
-        if (Str.startsWithIgnoreCase(key, "fxml_")) return getFxml(key.substring("fxml_".length()));
-        return getL10n(key);
-    }
 }

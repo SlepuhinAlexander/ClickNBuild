@@ -19,14 +19,14 @@ public final class FxmlHandler {
 
     private static volatile FxmlHandler inst;
 
-    private final HashMap<String, URL> sources = new HashMap<>();
+    private final HashMap<String, URL> fxmls = new HashMap<>();
 
     private FxmlHandler() {
         loadFxmls();
     }
 
     public static URL get(String key) {
-        return inst().sources.get(Str.nonNull(key));
+        return inst().fxmls.get(Str.nonNull(key));
     }
 
     public static URL get(Fxmls key) {
@@ -53,7 +53,7 @@ public final class FxmlHandler {
             String filename = path.getFileName().toString();
             filename = filename.substring(0, filename.length() - FILE_EXTENSION.length());
             try {
-                sources.put(filename, path.toUri().toURL());
+                fxmls.put(filename, path.toUri().toURL());
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
