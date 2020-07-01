@@ -9,7 +9,7 @@ import org.itworks.clicknbuild.config.stats.model.TileModel;
 import org.itworks.clicknbuild.engine.model.BuildingType;
 import org.itworks.clicknbuild.engine.model.ResType;
 import org.itworks.clicknbuild.engine.model.TileType;
-import org.itworks.clicknbuild.util.io.PathWalker;
+import org.itworks.clicknbuild.util.io.FsHelper;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -69,7 +69,7 @@ public final class StatsLoader {
 
     public void loadBuildingStats() {
         ObjectMapper mapper = new ObjectMapper();
-        Set<Path> paths = PathWalker.walk(getClass().getResource(BUILDING_PATH), BUILDING_FILE_EXTENSION);
+        Set<Path> paths = FsHelper.walk(getClass().getResource(BUILDING_PATH), BUILDING_FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();
             filename = filename.substring(0, filename.length() - BUILDING_FILE_EXTENSION.length());

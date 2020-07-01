@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public final class GameLauncher {
     public static void initialize() {
-        L10nHandler.inst().setLang(Locale.ENGLISH);
+        L10nHandler.inst().setLanguage(Locale.ENGLISH);
         StatsLoader.inst().loadResStats();
         StatsLoader.inst().loadTileStats();
         StatsLoader.inst().loadBuildingStats();

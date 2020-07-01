@@ -74,6 +74,13 @@ public enum Strings {
     BLD_WAREHOUSE_GLASS("bld.warehouse_glass"),
     BLD_WAREHOUSE_STEEL("bld.warehouse_steel"),
     BLD_WAREHOUSE_WOOD("bld.warehouse_wood"),
+
+    DIFFICULTY_EASY("difficulty.easy"),
+    DIFFICULTY_NORMAL("difficulty.normal"),
+    DIFFICULTY_HARD("difficulty.hard"),
+    DIFFICULTY_EASY_DESC("difficulty.easy.description"),
+    DIFFICULTY_NORMAL_DESC("difficulty.normal.description"),
+    DIFFICULTY_HARD_DESC("difficulty.hard.description"),
     ;
 
     final String value;

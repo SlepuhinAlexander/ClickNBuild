@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.sources;
 
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
-import org.itworks.clicknbuild.util.io.PathWalker;
+import org.itworks.clicknbuild.util.io.FsHelper;
 import org.itworks.clicknbuild.util.string.Str;
 
 import java.net.MalformedURLException;
@@ -46,7 +46,7 @@ public final class CssHandler {
     }
 
     private void loadCsses() {
-        Set<Path> paths = PathWalker.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
+        Set<Path> paths = FsHelper.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();
             filename = filename.substring(0, filename.length() - FILE_EXTENSION.length());

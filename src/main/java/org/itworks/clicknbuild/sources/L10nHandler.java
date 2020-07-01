@@ -11,15 +11,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class L10nHandler {
+    /**
+     * Prefix String value of a URL for retrieving sources by the classloader
+     */
     private static final String SOURCE_PATH = ConfigLoader.get(Configs.L10N_SOURCE_PATH);
 
+    /**
+     * String value of the OS file extension to filter only this file type sources.
+     */
     private static final String FILE_EXTENSION = ConfigLoader.get(Configs.L10N_FILE_EXTENSION);
 
     private static volatile L10nHandler inst;
 
-    private final HashMap<Lang, Properties> locales = new HashMap<>();
+    private final HashMap<Language, Properties> locales = new HashMap<>();
 
-    private Lang lang = Lang.DEF;
+    private Language language = Language.DEF;
 
     private L10nHandler() {
     }
@@ -32,8 +38,8 @@ public final class L10nHandler {
      * Parses the received result to resolve possible embedded links to other resource strings.
      */
     public static String get(String key) {
-        return Resolver.resolve(Str.nonNull(inst().locales.get(inst().lang).getProperty(Str.nonNull(key)),
-                Str.nonNull(inst().locales.get(Lang.DEF).getProperty(Str.nonNull(key)))));
+        return Resolver.resolve(Str.nonNull(inst().locales.get(inst().language).getProperty(Str.nonNull(key)),
+                Str.nonNull(inst().locales.get(Language.DEF).getProperty(Str.nonNull(key)))));
     }
 
     public static String get(Strings key) {
@@ -55,8 +61,7 @@ public final class L10nHandler {
     }
 
     private void loadL10ns() {
-        setLang(Locale.getDefault());
-        for (Lang lang : Lang.values()) {
+        for (Language lang : Language.values()) {
             try (InputStream langReader = getClass().getResourceAsStream(SOURCE_PATH
                                                                          + lang.name + FILE_EXTENSION)) {
                 Properties langProperties = new Properties();
@@ -68,31 +73,40 @@ public final class L10nHandler {
         }
     }
 
-    public void setLang(Locale lang) {
-        this.lang = Lang.get(Str.nonNull(lang.getLanguage()));
+    public void setLanguage(Locale locale) {
+        this.language = Language.get(locale);
     }
 
-    public void setLang(String loc) {
-        this.lang = Lang.get(loc);
+    public void setLang(String language) {
+        this.language = Language.get(language);
     }
 
-    private enum Lang {
+    public enum Language {
         DEF("def"), EN("en"), RU("ru");
 
         final String name;
 
-        Lang(String name) {
+        Language(String name) {
             this.name = Str.nonNull(name);
         }
 
-        static Lang get(String name) {
-            for (Lang lang : Lang.values()) if (lang.name.equalsIgnoreCase(Str.nonNull(name).trim())) return lang;
+        public static Language get(String name) {
+            for (Language lang : values()) if (lang.name.equalsIgnoreCase(Str.nonNull(name).trim())) return lang;
             return DEF;
         }
 
-        static Lang get(int ordinal) {
-            for (Lang lang : Lang.values()) if (lang.ordinal() == ordinal) return lang;
+        public static Language get(Locale locale) {
+            if (locale == null) return DEF;
+            return get(Str.nonNull(locale.getLanguage()));
+        }
+
+        public static Language get(int ordinal) {
+            for (Language lang : Language.values()) if (lang.ordinal() == ordinal) return lang;
             return DEF;
+        }
+
+        public static Language getDefault() {
+            return get(Locale.getDefault());
         }
     }
 
