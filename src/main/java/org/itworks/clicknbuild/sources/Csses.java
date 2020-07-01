@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.sources;
 
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 /**
  * Global hangler of string keys for CssHandler
@@ -11,12 +11,12 @@ public enum Csses {
     final String value;
 
     Csses(String value) {
-        this.value = Str.nonNull(value);
+        this.value = StringHelper.nonNull(value);
     }
 
     public static Csses get(String value) {
         Csses[] csses = values();
-        for (Csses css : csses) if (css.value.equalsIgnoreCase(Str.nonNull(value).trim())) return css;
+        for (Csses css : csses) if (css.value.equalsIgnoreCase(StringHelper.nonNull(value).trim())) return css;
         return null;
     }
 

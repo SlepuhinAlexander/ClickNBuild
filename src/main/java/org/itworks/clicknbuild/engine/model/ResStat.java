@@ -1,7 +1,7 @@
 package org.itworks.clicknbuild.engine.model;
 
 import org.itworks.clicknbuild.config.stats.model.ResStatModel;
-import org.itworks.clicknbuild.util.math.M;
+import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public final class ResStat {
     }
 
     public ResStat setAmount(double amount) {
-        this.amount = M.clamp(amount);
+        this.amount = MathHelper.clamp(amount);
         return this;
     }
 

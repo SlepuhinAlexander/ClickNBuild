@@ -3,7 +3,7 @@ package org.itworks.clicknbuild.engine.model;
 import org.itworks.clicknbuild.config.stats.buidling.*;
 import org.itworks.clicknbuild.sources.Images;
 import org.itworks.clicknbuild.sources.Strings;
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.util.Objects;
 
@@ -146,7 +146,7 @@ public enum BuildingType {
     public final BuildingStats stats;
 
     BuildingType(String type, Strings l10nKey, Images imgKey, BuildingStats stats) {
-        this.type = Str.nonNull(type);
+        this.type = StringHelper.nonNull(type);
         this.l10nKey = Objects.requireNonNull(l10nKey);
         this.imgKey = Objects.requireNonNull(imgKey);
         this.stats = Objects.requireNonNull(stats);
@@ -154,7 +154,7 @@ public enum BuildingType {
 
     public static BuildingType get(String type) {
         BuildingType[] buildings = values();
-        for (BuildingType building : buildings) if (building.type.equalsIgnoreCase(Str.nonNull(type))) return building;
+        for (BuildingType building : buildings) if (building.type.equalsIgnoreCase(StringHelper.nonNull(type))) return building;
         return null;
     }
 

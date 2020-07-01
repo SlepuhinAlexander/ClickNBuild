@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.config;
 
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 public enum Configs {
     MAIN_CONFIG_PATH("/config/config.properties"),
@@ -32,12 +32,12 @@ public enum Configs {
     final String value;
 
     Configs(String value) {
-        this.value = Str.nonNull(value);
+        this.value = StringHelper.nonNull(value);
     }
 
     public static Configs get(String value) {
         Configs[] configs = values();
-        for (Configs config : configs) if (config.value.equalsIgnoreCase(Str.nonNull(value).trim())) return config;
+        for (Configs config : configs) if (config.value.equalsIgnoreCase(StringHelper.nonNull(value).trim())) return config;
         return null;
     }
 

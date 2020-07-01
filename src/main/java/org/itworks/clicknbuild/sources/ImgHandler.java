@@ -3,9 +3,9 @@ package org.itworks.clicknbuild.sources;
 import javafx.scene.image.Image;
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
-import org.itworks.clicknbuild.util.io.FsHelper;
-import org.itworks.clicknbuild.util.math.M;
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.io.IOHelper;
+import org.itworks.clicknbuild.util.math.MathHelper;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,11 +16,11 @@ import java.util.Objects;
 import java.util.Set;
 
 public final class ImgHandler {
-    private static final String SOURCE_PATH = ConfigLoader.get(Configs.IMG_SOURCE_PATH);
+    private static final String SOURCE_PATH = ConfigLoader.inst().get(Configs.IMG_SOURCE_PATH);
 
-    private static final String FILE_EXTENSION = ConfigLoader.get(Configs.IMG_FILE_EXTENSION);
+    private static final String FILE_EXTENSION = ConfigLoader.inst().get(Configs.IMG_FILE_EXTENSION);
 
-    private static final String DEFAULT_IMAGE_NAME = ConfigLoader.get(Configs.IMG_DEFAULT_IMAGE_NAME);
+    private static final String DEFAULT_IMAGE_NAME = ConfigLoader.inst().get(Configs.IMG_DEFAULT_IMAGE_NAME);
 
     private static volatile ImgHandler inst;
 
@@ -43,41 +43,41 @@ public final class ImgHandler {
         return local;
     }
 
-    public static Image get(String key) {
-        Image result = inst().images.get(Str.nonNull(key, DEFAULT_IMAGE_NAME));
-        return result == null ? inst().images.get(DEFAULT_IMAGE_NAME) : result;
+    public Image get(String key) {
+        Image result = images.get(StringHelper.nonNull(key, DEFAULT_IMAGE_NAME));
+        return result == null ? images.get(DEFAULT_IMAGE_NAME) : result;
     }
 
-    public static Image get(String key, Size size) {
-        return get(Str.nonNull(key) + size.source_suffix);
+    public Image get(String key, Size size) {
+        return get(StringHelper.nonNull(key) + size.source_suffix);
     }
 
-    public static Image get(String key, String size) {
-        return get(Str.nonNull(key) + Size.get(Str.nonNull(size)).source_suffix);
+    public Image get(String key, String size) {
+        return get(StringHelper.nonNull(key) + Size.get(StringHelper.nonNull(size)).source_suffix);
     }
 
-    public static Image get(String key, int size) {
-        return get(Str.nonNull(key) + Size.get(size).source_suffix);
+    public Image get(String key, int size) {
+        return get(StringHelper.nonNull(key) + Size.get(size).source_suffix);
     }
 
-    public static Image get(Images key) {
+    public Image get(Images key) {
         return get(Objects.requireNonNull(key).name);
     }
 
-    public static Image get(Images key, Size size) {
+    public Image get(Images key, Size size) {
         return get(Objects.requireNonNull(key).name, size);
     }
 
-    public static Image get(Images key, String size) {
+    public Image get(Images key, String size) {
         return get(Objects.requireNonNull(key).name, size);
     }
 
-    public static Image get(Images key, int size) {
+    public Image get(Images key, int size) {
         return get(Objects.requireNonNull(key).name, size);
     }
 
     private void loadImgs() {
-        Set<Path> paths = FsHelper.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
+        Set<Path> paths = IOHelper.walk(getClass().getResource(SOURCE_PATH), FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();
             filename = filename.substring(0, filename.length() - FILE_EXTENSION.length());
@@ -116,9 +116,9 @@ public final class ImgHandler {
         public final String source_suffix;
 
         Size(String name, int size, String source_suffix) {
-            this.name = Str.nonNull(name);
-            this.size = M.clamp(size);
-            this.source_suffix = Str.nonNull(source_suffix);
+            this.name = StringHelper.nonNull(name);
+            this.size = MathHelper.clamp(size);
+            this.source_suffix = StringHelper.nonNull(source_suffix);
         }
 
         public static Size get(String value) {

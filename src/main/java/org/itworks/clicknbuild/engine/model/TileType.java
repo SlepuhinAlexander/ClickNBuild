@@ -2,8 +2,8 @@ package org.itworks.clicknbuild.engine.model;
 
 import org.itworks.clicknbuild.sources.Images;
 import org.itworks.clicknbuild.sources.Strings;
-import org.itworks.clicknbuild.util.math.M;
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.math.MathHelper;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.util.Objects;
 
@@ -24,15 +24,15 @@ public enum TileType {
     private double structure;
 
     TileType(String type, Strings l10nKey, Images imgKey, double structure) {
-        this.type = Str.nonNull(type);
+        this.type = StringHelper.nonNull(type);
         this.l10nKey = Objects.requireNonNull(l10nKey);
         this.imgKey = Objects.requireNonNull(imgKey);
-        this.structure = M.clamp(structure);
+        this.structure = MathHelper.clamp(structure);
     }
 
     public static TileType get(String type) {
         TileType[] tiles = values();
-        for (TileType tile : tiles) if (tile.type.equalsIgnoreCase(Str.nonNull(type).trim())) return tile;
+        for (TileType tile : tiles) if (tile.type.equalsIgnoreCase(StringHelper.nonNull(type).trim())) return tile;
         return null;
     }
 
@@ -47,6 +47,6 @@ public enum TileType {
     }
 
     public void setStructure(double structure) {
-        this.structure = M.clamp(structure);
+        this.structure = MathHelper.clamp(structure);
     }
 }

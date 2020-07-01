@@ -3,7 +3,7 @@ package org.itworks.clicknbuild.util.math;
 import java.util.Date;
 import java.util.Random;
 
-public class M {
+public class MathHelper {
     private static final Random R = new Random(new Date().getTime());
 
     public static int clamp(int value, int min, int max) {

@@ -9,22 +9,23 @@ import org.itworks.clicknbuild.config.stats.model.TileModel;
 import org.itworks.clicknbuild.engine.model.BuildingType;
 import org.itworks.clicknbuild.engine.model.ResType;
 import org.itworks.clicknbuild.engine.model.TileType;
-import org.itworks.clicknbuild.util.io.FsHelper;
+import org.itworks.clicknbuild.util.io.IOHelper;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Set;
 
 public final class StatsLoader {
-    private static final String STATS_PATH = ConfigLoader.get(Configs.STATS_SOURCE_PATH);
+    private static final String STATS_PATH = ConfigLoader.inst().get(Configs.STATS_SOURCE_PATH);
 
-    private static final String RESOURCE_FILE = ConfigLoader.get(Configs.STATS_RESOURCE_FILE);
+    private static final String RESOURCE_FILE = ConfigLoader.inst().get(Configs.STATS_RESOURCE_FILE);
 
-    private static final String TILE_FILE = ConfigLoader.get(Configs.STATS_TILE_FILE);
+    private static final String TILE_FILE = ConfigLoader.inst().get(Configs.STATS_TILE_FILE);
 
-    private static final String BUILDING_PATH = ConfigLoader.get(Configs.STATS_BUILDING_PATH);
+    private static final String BUILDING_PATH = ConfigLoader.inst().get(Configs.STATS_BUILDING_PATH);
 
-    private static final String BUILDING_FILE_EXTENSION = ConfigLoader.get(Configs.STATS_BUILDING_FILE_EXTENSION);
+    private static final String BUILDING_FILE_EXTENSION =
+            ConfigLoader.inst().get(Configs.STATS_BUILDING_FILE_EXTENSION);
 
     private static volatile StatsLoader inst;
 
@@ -69,7 +70,7 @@ public final class StatsLoader {
 
     public void loadBuildingStats() {
         ObjectMapper mapper = new ObjectMapper();
-        Set<Path> paths = FsHelper.walk(getClass().getResource(BUILDING_PATH), BUILDING_FILE_EXTENSION);
+        Set<Path> paths = IOHelper.walk(getClass().getResource(BUILDING_PATH), BUILDING_FILE_EXTENSION);
         for (Path path : paths) {
             String filename = path.getFileName().toString();
             filename = filename.substring(0, filename.length() - BUILDING_FILE_EXTENSION.length());

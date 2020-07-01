@@ -3,7 +3,7 @@ package org.itworks.clicknbuild.engine.profile;
 import org.itworks.clicknbuild.engine.Difficulty;
 import org.itworks.clicknbuild.sources.Images;
 import org.itworks.clicknbuild.sources.L10nHandler;
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.nio.file.Path;
 import java.util.Objects;
@@ -28,7 +28,7 @@ public final class Preferences {
     }
 
     public void setName(String name) {
-        this.name = Str.nonNull(name);
+        this.name = StringHelper.nonNull(name);
     }
 
     public void setDefaultName() {

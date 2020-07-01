@@ -18,10 +18,10 @@ public final class GameLauncher {
     }
 
     public static void launch(Stage primaryStage) throws IOException {
-        SceneLoader.setStage(primaryStage);
-        primaryStage.setTitle(Src.getL10n(Strings.GAME_TITLE));
-        primaryStage.getIcons().add(Src.getImg(Images.BLD_HEADQUARTER, ImgHandler.Size.SMALL));
-        SceneLoader.show(Scenes.LANDING);
+        SceneLoader.inst().setStage(primaryStage);
+        primaryStage.setTitle(Sources.getL10n(Strings.GAME_TITLE));
+        primaryStage.getIcons().add(Sources.getImg(Images.BLD_HEADQUARTER, ImgHandler.Size.SMALL));
+        SceneLoader.inst().show(Scenes.LANDING);
         primaryStage.show();
     }
 }

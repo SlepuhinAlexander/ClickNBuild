@@ -3,10 +3,10 @@ package org.itworks.clicknbuild.ui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.itworks.clicknbuild.sources.FxmlHandler;
-import org.itworks.clicknbuild.sources.Src;
+import org.itworks.clicknbuild.sources.FXMLHandler;
+import org.itworks.clicknbuild.sources.Sources;
 import org.itworks.clicknbuild.ui.scene.Scenes;
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
@@ -42,13 +42,13 @@ public final class SceneLoader {
         return local;
     }
 
-    public static Stage getStage() {
-        return inst().stage;
+    public Stage getStage() {
+        return stage;
     }
 
-    public static void setStage(Stage stage) {
+    public void setStage(Stage stage) {
         if (stage == null) return;
-        inst().stage = stage;
+        this.stage = stage;
     }
 
     /**
@@ -57,20 +57,20 @@ public final class SceneLoader {
      * Replaces a record in the {@link SceneLoader#scenes} map, if any.
      * <p/>
      * Uses the {@link Scenes} enum to retrieve a string key (which is a filename of the corresponding fxml) and then
-     * retrieve a URL to that source using {@link FxmlHandler}
+     * retrieve a URL to that source using {@link FXMLHandler}
      * <p/>
      * Loaded scene would be immediately shown on the {@link SceneLoader#stage}. Will throw an exception if the stage
      * is not set;
      */
-    public static void load(Scenes key) throws IOException {
+    public void load(Scenes key) throws IOException {
         if (key == null) return;
-        Scene scene = new Scene(new FXMLLoader(Src.getFxml(key.name)).load());
-        inst().scenes.put(key, scene);
-        inst().stage.setScene(scene);
+        Scene scene = new Scene(new FXMLLoader(Sources.getFxml(key.name)).load());
+        scenes.put(key, scene);
+        stage.setScene(scene);
     }
 
-    public static void load(String key) throws IOException {
-        load(Scenes.get(Str.nonNull(key)));
+    public void load(String key) throws IOException {
+        load(Scenes.get(StringHelper.nonNull(key)));
     }
 
     /**
@@ -79,19 +79,17 @@ public final class SceneLoader {
      * The scene would be immediately shown on the {@link SceneLoader#stage}. Will throw an exception if the stage is
      * not set.
      */
-    public static void show(Scenes key) throws IOException {
+    public void show(Scenes key) throws IOException {
         if (key == null) return;
-        Scene scene = inst().scenes.get(key);
+        Scene scene = scenes.get(key);
         if (scene != null) {
-            inst().stage.setScene(scene);
+            stage.setScene(scene);
         } else {
             load(key);
         }
     }
 
-    public static void show(String key) throws IOException {
-        show(Scenes.get(Str.nonNull(key)));
+    public void show(String key) throws IOException {
+        show(Scenes.get(StringHelper.nonNull(key)));
     }
-
-
 }

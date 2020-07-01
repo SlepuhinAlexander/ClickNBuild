@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.sources;
 
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -121,13 +121,13 @@ public enum Images {
     final Group group;
 
     Images(String name, Group group) {
-        this.name = Str.nonNull(name);
+        this.name = StringHelper.nonNull(name);
         this.group = Objects.requireNonNull(group);
     }
 
     public static Images get(String value) {
         Images[] images = values();
-        for (Images image : images) if (image.name.equalsIgnoreCase(Str.nonNull(value).trim())) return image;
+        for (Images image : images) if (image.name.equalsIgnoreCase(StringHelper.nonNull(value).trim())) return image;
         return DUMMY;
     }
 

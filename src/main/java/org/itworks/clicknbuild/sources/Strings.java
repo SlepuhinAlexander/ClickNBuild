@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.sources;
 
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 /**
  * Global holder of string keys for L10nHandler
@@ -86,12 +86,12 @@ public enum Strings {
     final String value;
 
     Strings(String value) {
-        this.value = Str.nonNull(value);
+        this.value = StringHelper.nonNull(value);
     }
 
     public static Strings get(String value) {
         Strings[] strings = values();
-        for (Strings string : strings) if (string.value.equalsIgnoreCase(Str.nonNull(value).trim())) return string;
+        for (Strings string : strings) if (string.value.equalsIgnoreCase(StringHelper.nonNull(value).trim())) return string;
         return EMPTY;
     }
 

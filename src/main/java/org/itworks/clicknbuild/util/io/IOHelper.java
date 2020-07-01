@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.util.io;
 
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class FsHelper {
+public class IOHelper {
     /**
      * Recursively walks down the file tree starting from the <code>root</code> position.
      * Collects all regular files (Paths to them) ending with the given <code>extension</code>.
@@ -27,7 +27,8 @@ public class FsHelper {
             paths = Files.walk(Paths.get(root.toURI()))
                     .filter(Files::isRegularFile)
                     .filter(Files::isReadable)
-                    .filter(path -> Str.endsWithIgnoreCase(path.toFile().getName(), Str.nonNull(extension)))
+                    .filter(path -> StringHelper.endsWithIgnoreCase(path.toFile().getName(),
+                            StringHelper.nonNull(extension)))
                     .collect(Collectors.toSet());
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
@@ -35,6 +36,9 @@ public class FsHelper {
         return paths;
     }
 
+    /**
+     * Recursively creates a file or a directory as well as all parent directories if they are not exist.
+     */
     public static void createIfNotExist(Path path, boolean isDirectory) throws IOException {
         Objects.requireNonNull(path);
         if (!path.isAbsolute()) throw new IllegalArgumentException("path must be absolute");
@@ -51,6 +55,9 @@ public class FsHelper {
         }
     }
 
+    /**
+     * Recursively deletes a folder with all its contents.
+     */
     public static void deleteIfExists(Path path) throws IOException {
         Objects.requireNonNull(path);
         if (!Files.exists(path)) return;

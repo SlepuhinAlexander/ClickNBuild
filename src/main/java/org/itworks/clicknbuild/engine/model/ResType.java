@@ -2,8 +2,8 @@ package org.itworks.clicknbuild.engine.model;
 
 import org.itworks.clicknbuild.sources.Images;
 import org.itworks.clicknbuild.sources.Strings;
-import org.itworks.clicknbuild.util.math.M;
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.math.MathHelper;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.util.Objects;
 
@@ -138,16 +138,16 @@ public enum ResType {
     private double price;
 
     ResType(String type, Strings l10nKey, Images imgKey, boolean tradable, double price) {
-        this.type = Str.nonNull(type);
+        this.type = StringHelper.nonNull(type);
         this.l10nKey = Objects.requireNonNull(l10nKey);
         this.imgKey = Objects.requireNonNull(imgKey);
         this.tradable = tradable;
-        this.price = M.clamp(price, -1, 1000);
+        this.price = MathHelper.clamp(price, -1, 1000);
     }
 
     public static ResType get(String type) {
         ResType[] resources = values();
-        for (ResType res : resources) if (res.type.equalsIgnoreCase(Str.nonNull(type).trim())) return res;
+        for (ResType res : resources) if (res.type.equalsIgnoreCase(StringHelper.nonNull(type).trim())) return res;
         return null;
     }
 
@@ -181,6 +181,6 @@ public enum ResType {
     }
 
     public void setPrice(double price) {
-        this.price = isTradable() ? M.clamp(price, 1000) : -1;
+        this.price = isTradable() ? MathHelper.clamp(price, 1000) : -1;
     }
 }

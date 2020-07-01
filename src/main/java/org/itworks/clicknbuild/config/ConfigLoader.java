@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.config;
 
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,11 +31,11 @@ public final class ConfigLoader {
         return local;
     }
 
-    public static String get(String key) {
-        return inst().configs.getProperty(Str.nonNull(key));
+    public String get(String key) {
+        return configs.getProperty(StringHelper.nonNull(key));
     }
 
-    public static String get(Configs config) {
+    public String get(Configs config) {
         return get(Objects.requireNonNull(config).value);
     }
 

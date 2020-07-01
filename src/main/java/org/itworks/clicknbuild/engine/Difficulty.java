@@ -1,8 +1,8 @@
 package org.itworks.clicknbuild.engine;
 
 import org.itworks.clicknbuild.sources.Strings;
-import org.itworks.clicknbuild.util.math.M;
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.math.MathHelper;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.util.Objects;
 
@@ -68,12 +68,12 @@ public enum Difficulty {
     final double costsMult;
 
     Difficulty(String name, Strings l10n, Strings desc, boolean useCostMult, double gainsMult, double costsMult) {
-        this.name = Str.nonNull(name);
+        this.name = StringHelper.nonNull(name);
         this.l10n = Objects.requireNonNull(l10n);
         this.desc = Objects.requireNonNull(desc);
         this.useCostMult = useCostMult;
-        this.gainsMult = M.clamp(gainsMult);
-        this.costsMult = M.clamp(costsMult);
+        this.gainsMult = MathHelper.clamp(gainsMult);
+        this.costsMult = MathHelper.clamp(costsMult);
     }
 
     public static Difficulty getDefault() {

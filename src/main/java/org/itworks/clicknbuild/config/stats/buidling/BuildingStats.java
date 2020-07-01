@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.config.stats.buidling;
 
 import org.itworks.clicknbuild.config.stats.model.BuildingStatsModel;
 import org.itworks.clicknbuild.engine.model.ResStatPack;
-import org.itworks.clicknbuild.util.math.M;
+import org.itworks.clicknbuild.util.math.MathHelper;
 
 public abstract class BuildingStats {
     /**
@@ -167,7 +167,7 @@ public abstract class BuildingStats {
     }
 
     public final void setRequiredPlayerLevel(int requiredPlayerLevel) {
-        this.requiredPlayerLevel = M.clamp(requiredPlayerLevel, 1, MAX_REQUIRED_PLAYER_LEVEL);
+        this.requiredPlayerLevel = MathHelper.clamp(requiredPlayerLevel, 1, MAX_REQUIRED_PLAYER_LEVEL);
     }
 
     public final int getMaxLevel() {
@@ -175,7 +175,7 @@ public abstract class BuildingStats {
     }
 
     public final void setMaxLevel(int maxLevel) {
-        int clamped = M.clamp(maxLevel, 1, MAX_ALLOWED_BUILDING_LEVEL);
+        int clamped = MathHelper.clamp(maxLevel, 1, MAX_ALLOWED_BUILDING_LEVEL);
         if (this.maxLevel == clamped && this.structure != null && this.structure.length == this.maxLevel) return;
         this.maxLevel = clamped;
         initArrays();
@@ -186,7 +186,7 @@ public abstract class BuildingStats {
     }
 
     public final void setBuildLimit(int buildLimit) {
-        this.buildLimit = M.clamp(buildLimit, 1, MAX_BUILD_LIMIT);
+        this.buildLimit = MathHelper.clamp(buildLimit, 1, MAX_BUILD_LIMIT);
     }
 
     public final int getPriceMultiplier() {
@@ -194,7 +194,7 @@ public abstract class BuildingStats {
     }
 
     public final void setPriceMultiplier(int priceMultiplier) {
-        this.priceMultiplier = M.clamp(priceMultiplier, MAX_PRICE_MULTIPLIER);
+        this.priceMultiplier = MathHelper.clamp(priceMultiplier, MAX_PRICE_MULTIPLIER);
     }
 
     public final int[] getStructure() {

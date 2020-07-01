@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.sources;
 
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
-import org.itworks.clicknbuild.util.string.Str;
+import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,12 +14,12 @@ public final class L10nHandler {
     /**
      * Prefix String value of a URL for retrieving sources by the classloader
      */
-    private static final String SOURCE_PATH = ConfigLoader.get(Configs.L10N_SOURCE_PATH);
+    private static final String SOURCE_PATH = ConfigLoader.inst().get(Configs.L10N_SOURCE_PATH);
 
     /**
      * String value of the OS file extension to filter only this file type sources.
      */
-    private static final String FILE_EXTENSION = ConfigLoader.get(Configs.L10N_FILE_EXTENSION);
+    private static final String FILE_EXTENSION = ConfigLoader.inst().get(Configs.L10N_FILE_EXTENSION);
 
     private static volatile L10nHandler inst;
 
@@ -37,12 +37,12 @@ public final class L10nHandler {
      * Not found (null) result replaces with empty string.
      * Parses the received result to resolve possible embedded links to other resource strings.
      */
-    public static String get(String key) {
-        return Resolver.resolve(Str.nonNull(inst().locales.get(inst().language).getProperty(Str.nonNull(key)),
-                Str.nonNull(inst().locales.get(Language.DEF).getProperty(Str.nonNull(key)))));
+    public String get(String key) {
+        return Resolver.resolve(StringHelper.nonNull(locales.get(inst().language).getProperty(StringHelper.nonNull(key)),
+                StringHelper.nonNull(locales.get(Language.DEF).getProperty(StringHelper.nonNull(key)))));
     }
 
-    public static String get(Strings key) {
+    public String get(Strings key) {
         return get(key.value);
     }
 
@@ -87,17 +87,17 @@ public final class L10nHandler {
         final String name;
 
         Language(String name) {
-            this.name = Str.nonNull(name);
+            this.name = StringHelper.nonNull(name);
         }
 
         public static Language get(String name) {
-            for (Language lang : values()) if (lang.name.equalsIgnoreCase(Str.nonNull(name).trim())) return lang;
+            for (Language lang : values()) if (lang.name.equalsIgnoreCase(StringHelper.nonNull(name).trim())) return lang;
             return DEF;
         }
 
         public static Language get(Locale locale) {
             if (locale == null) return DEF;
-            return get(Str.nonNull(locale.getLanguage()));
+            return get(StringHelper.nonNull(locale.getLanguage()));
         }
 
         public static Language get(int ordinal) {
@@ -141,7 +141,7 @@ public final class L10nHandler {
 
         private static Set<String> tokenize(String input) {
             Pattern toReplace = Pattern.compile(REGEX_PATTERN);
-            Matcher matcher = toReplace.matcher(Str.nonNull(input));
+            Matcher matcher = toReplace.matcher(StringHelper.nonNull(input));
             Set<String> tokens = new HashSet<>();
             while (matcher.find()) {
                 tokens.add(matcher.group());
@@ -149,11 +149,11 @@ public final class L10nHandler {
             return tokens;
         }
 
-        static String resolve(String nonParsed) {
-            String parsed = Str.nonNull(nonParsed);
+        private static String resolve(String nonParsed) {
+            String parsed = StringHelper.nonNull(nonParsed);
             Set<String> tokens = tokenize(parsed);
             for (String token : tokens) {
-                parsed = parsed.replace(token, get(token.substring(PATTERN_BEGIN.length(),
+                parsed = parsed.replace(token, inst().get(token.substring(PATTERN_BEGIN.length(),
                         token.length() - PATTERN_END.length())));
             }
             return parsed;

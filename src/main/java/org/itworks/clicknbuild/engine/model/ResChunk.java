@@ -1,7 +1,7 @@
 package org.itworks.clicknbuild.engine.model;
 
 import com.google.common.util.concurrent.AtomicDouble;
-import org.itworks.clicknbuild.util.math.M;
+import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Objects;
 
@@ -32,8 +32,8 @@ public final class ResChunk {
     private final AtomicDouble max = new AtomicDouble();
 
     public ResChunk(ResType type, double current, double max) {
-        max = M.clamp(max);
-        current = M.clamp(current, max);
+        max = MathHelper.clamp(max);
+        current = MathHelper.clamp(current, max);
         this.type = Objects.requireNonNull(type);
         setCurrent(current);
         setMax(max);
@@ -64,18 +64,18 @@ public final class ResChunk {
     }
 
     public ResChunk setCurrent(double amount) {
-        current.set(M.clamp(amount, getMax()));
+        current.set(MathHelper.clamp(amount, getMax()));
         return this;
     }
 
     public ResChunk setMax(double amount) {
-        max.set(M.clamp(amount));
-        current.set(M.clamp(current.get(), max.get()));
+        max.set(MathHelper.clamp(amount));
+        current.set(MathHelper.clamp(current.get(), max.get()));
         return this;
     }
 
     public ResChunk add(double delta) {
-        return setCurrent(M.clamp(getCurrent() + delta, getMax()));
+        return setCurrent(MathHelper.clamp(getCurrent() + delta, getMax()));
     }
 
     public ResChunk add(ResStat res) {
@@ -89,7 +89,7 @@ public final class ResChunk {
     }
 
     public ResChunk sub(double delta) {
-        return setCurrent(M.clamp(getCurrent() - delta, getMax()));
+        return setCurrent(MathHelper.clamp(getCurrent() - delta, getMax()));
     }
 
     public ResChunk sub(ResStat res) {

@@ -24,12 +24,12 @@ public final class Controllers {
         return local;
     }
 
-    public static void register(Object object) {
+    public void register(Object object) {
         if (object == null) return;
-        inst().controllers.put(object.getClass(), object);
+        controllers.put(object.getClass(), object);
     }
 
-    public static Object get(Class<?> aClass) {
-        return aClass == null ? null : inst().controllers.get(aClass);
+    public Object get(Class<?> aClass) {
+        return aClass == null ? null : controllers.get(aClass);
     }
 }

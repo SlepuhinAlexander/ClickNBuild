@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.util.string;
 
-public class Str {
+public class StringHelper {
     private static final String DEFAULT_STRING = "";
 
     public static String nonNull(String value) {
