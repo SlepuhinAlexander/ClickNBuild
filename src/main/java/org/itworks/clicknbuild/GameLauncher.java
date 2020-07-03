@@ -2,6 +2,7 @@ package org.itworks.clicknbuild;
 
 import javafx.stage.Stage;
 import org.itworks.clicknbuild.config.stats.StatsLoader;
+import org.itworks.clicknbuild.engine.ProfileManager;
 import org.itworks.clicknbuild.sources.*;
 import org.itworks.clicknbuild.ui.SceneLoader;
 import org.itworks.clicknbuild.ui.scene.Scenes;
@@ -15,6 +16,7 @@ public final class GameLauncher {
         StatsLoader.inst().loadResStats();
         StatsLoader.inst().loadTileStats();
         StatsLoader.inst().loadBuildingStats();
+        ProfileManager.inst();
     }
 
     public static void launch(Stage primaryStage) throws IOException {

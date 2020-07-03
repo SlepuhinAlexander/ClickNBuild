@@ -38,7 +38,7 @@ public final class L10nHandler {
      * Parses the received result to resolve possible embedded links to other resource strings.
      */
     public String get(String key) {
-        return Resolver.resolve(StringHelper.nonNull(locales.get(inst().language).getProperty(StringHelper.nonNull(key)),
+        return Resolver.resolve(StringHelper.nonNull(locales.get(language).getProperty(StringHelper.nonNull(key)),
                 StringHelper.nonNull(locales.get(Language.DEF).getProperty(StringHelper.nonNull(key)))));
     }
 
@@ -73,11 +73,15 @@ public final class L10nHandler {
         }
     }
 
+    public void setLanguage(Language language) {
+        this.language = language == null ? Language.DEF : language;
+    }
+
     public void setLanguage(Locale locale) {
         this.language = Language.get(locale);
     }
 
-    public void setLang(String language) {
+    public void setLanguage(String language) {
         this.language = Language.get(language);
     }
 

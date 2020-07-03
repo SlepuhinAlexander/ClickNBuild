@@ -37,7 +37,9 @@ public enum Configs {
 
     public static Configs get(String value) {
         Configs[] configs = values();
-        for (Configs config : configs) if (config.value.equalsIgnoreCase(StringHelper.nonNull(value).trim())) return config;
+        for (Configs config : configs) {
+            if (config.value.equalsIgnoreCase(StringHelper.nonNull(value).trim())) return config;
+        }
         return null;
     }
 

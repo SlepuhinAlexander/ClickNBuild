@@ -154,7 +154,9 @@ public enum BuildingType {
 
     public static BuildingType get(String type) {
         BuildingType[] buildings = values();
-        for (BuildingType building : buildings) if (building.type.equalsIgnoreCase(StringHelper.nonNull(type))) return building;
+        for (BuildingType building : buildings) {
+            if (building.type.equalsIgnoreCase(StringHelper.nonNull(type))) return building;
+        }
         return null;
     }
 

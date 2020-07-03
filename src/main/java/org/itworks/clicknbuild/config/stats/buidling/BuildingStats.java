@@ -387,36 +387,36 @@ public abstract class BuildingStats {
     //@formatter:off
     public final void applyModelValues(BuildingStatsModel model) {
         if (model == null) return;
-                  setRequiredPlayerLevel(                                model.getRequiredPlayerLevel());
-                  setMaxLevel(                                           model.getMaxLevel());
-                  setBuildLimit(                                         model.getBuildLimit());
-                  setPriceMultiplier(                                    model.getPriceMultiplier());
-        if (model.getStructure() != null)
-                  setStructure(                                          model.getStructure());
-        if (model.getBuildCost() != null)
-                  setBuildCost(                     ResStatPack.valueOf(model.getBuildCost()));
-        if (model.getProduction() != null)
-                  setProduction(                    ResStatPack.valueOf(model.getProduction()));
+                  setRequiredPlayerLevel(                                 model.getRequiredPlayerLevel());
+                  setMaxLevel(                                            model.getMaxLevel());
+                  setBuildLimit(                                          model.getBuildLimit());
+                  setPriceMultiplier(                                     model.getPriceMultiplier());
+        if (model.getStructure()            != null)
+                  setStructure(                                           model.getStructure());
+        if (model.getBuildCost()            != null)
+                  setBuildCost(                      ResStatPack.valueOf(model.getBuildCost()));
+        if (model.getProduction()           != null)
+                  setProduction(                     ResStatPack.valueOf(model.getProduction()));
         if (model.getProductionMultiplier() != null)
-                  setProductionMultiplier(          ResStatPack.valueOf(model.getProductionMultiplier()));
-        if (model.getJobPrice() != null)
-                  setJobPrice(                      ResStatPack.valueOf(model.getJobPrice()));
-        if (model.getJobReward() != null)
-                  setJobReward(                     ResStatPack.valueOf(model.getJobReward()));
-        if (model.getJobRewardMultiplier() != null)
-                  setJobRewardMultiplier(           ResStatPack.valueOf(model.getJobRewardMultiplier()));
-        if (model.getSupply() != null)
-                  setSupply(                        ResStatPack.valueOf(model.getSupply()));
-        if (model.getSupplyMultiplier() != null)
-                  setSupplyMultiplier(              ResStatPack.valueOf(model.getSupplyMultiplier()));
-        if (model.getDemand() != null)
-                  setDemand(                        ResStatPack.valueOf(model.getDemand()));
-        if (model.getHold() != null)
-                  setHold(                          ResStatPack.valueOf(model.getHold()));
-        if (model.getStore() != null)
-                  setStore(                         ResStatPack.valueOf(model.getStore()));
-        if (model.getStoreMultiplier() != null)
-                  setStoreMultiplier(               ResStatPack.valueOf(model.getStoreMultiplier()));
+                  setProductionMultiplier(           ResStatPack.valueOf(model.getProductionMultiplier()));
+        if (model.getJobPrice()             != null)
+                  setJobPrice(                       ResStatPack.valueOf(model.getJobPrice()));
+        if (model.getJobReward()            != null)
+                  setJobReward(                      ResStatPack.valueOf(model.getJobReward()));
+        if (model.getJobRewardMultiplier()  != null)
+                  setJobRewardMultiplier(            ResStatPack.valueOf(model.getJobRewardMultiplier()));
+        if (model.getSupply()               != null)
+                  setSupply(                         ResStatPack.valueOf(model.getSupply()));
+        if (model.getSupplyMultiplier()     != null)
+                  setSupplyMultiplier(               ResStatPack.valueOf(model.getSupplyMultiplier()));
+        if (model.getDemand()               != null)
+                  setDemand(                         ResStatPack.valueOf(model.getDemand()));
+        if (model.getHold()                 != null)
+                  setHold(                           ResStatPack.valueOf(model.getHold()));
+        if (model.getStore()                != null)
+                  setStore(                          ResStatPack.valueOf(model.getStore()));
+        if (model.getStoreMultiplier()      != null)
+                  setStoreMultiplier(                ResStatPack.valueOf(model.getStoreMultiplier()));
     }
     //@formatter:on
 }

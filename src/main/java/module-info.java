@@ -8,6 +8,8 @@ module org.itworks {
     exports org.itworks.clicknbuild.config.stats.model to com.fasterxml.jackson.databind;
     exports org.itworks.clicknbuild.config.stats.buidling to com.fasterxml.jackson.databind;
     exports org.itworks.clicknbuild.engine.model to com.fasterxml.jackson.databind;
+    exports org.itworks.clicknbuild.engine.profile to com.fasterxml.jackson.databind;
+    exports org.itworks.clicknbuild.engine to com.fasterxml.jackson.databind;
     exports org.itworks.clicknbuild;
     exports org.itworks.clicknbuild.sources;
 }

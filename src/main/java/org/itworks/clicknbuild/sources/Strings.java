@@ -91,7 +91,9 @@ public enum Strings {
 
     public static Strings get(String value) {
         Strings[] strings = values();
-        for (Strings string : strings) if (string.value.equalsIgnoreCase(StringHelper.nonNull(value).trim())) return string;
+        for (Strings string : strings) {
+            if (string.value.equalsIgnoreCase(StringHelper.nonNull(value).trim())) return string;
+        }
         return EMPTY;
     }
 
