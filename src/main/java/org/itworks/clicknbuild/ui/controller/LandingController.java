@@ -4,12 +4,15 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import org.itworks.clicknbuild.sources.Csses;
+import org.itworks.clicknbuild.sources.CSSes;
 import org.itworks.clicknbuild.sources.Images;
 import org.itworks.clicknbuild.sources.Sources;
 import org.itworks.clicknbuild.sources.Strings;
+import org.itworks.clicknbuild.ui.SceneLoader;
+import org.itworks.clicknbuild.ui.scene.Scenes;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
+import java.io.IOException;
 import java.util.List;
 
 public final class LandingController extends BasicController {
@@ -17,16 +20,21 @@ public final class LandingController extends BasicController {
     private StackPane rootNode;
 
     @FXML
-    private ImageView icLandingBackground;
+    private ImageView backgroundImage;
 
     @FXML
-    private Text sLandingGreeting;
+    private Text greetingMessage;
 
     @FXML
     private void initialize() {
-        rootNode.getStylesheets().addAll(Sources.getCss(Csses.LANDING));
-        sLandingGreeting.setText(Sources.getL10n(Strings.GAME_TITLE));
-        List<Images> images = Images.get(Images.Group.BUILDING);
-        icLandingBackground.setImage(Sources.getImg(images.get(MathHelper.randomInt(images.size()))));
+        rootNode.getStylesheets().addAll(Sources.getCSS(CSSes.LANDING));
+        greetingMessage.setText(Sources.getL10n(Strings.GAME_TITLE));
+        Images[] images = Images.get(Images.Group.BUILDING);
+        backgroundImage.setImage(Sources.getImg(images[MathHelper.randomInt(images.length)]));
+    }
+
+    @FXML
+    private void toMainMenu() throws IOException {
+        SceneLoader.inst().show(Scenes.MAIN_MENU);
     }
 }

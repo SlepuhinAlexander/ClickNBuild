@@ -29,4 +29,9 @@ public class StringHelper {
                string.regionMatches(true, string.length() - postfix.length(), postfix, 0,
                        postfix.length());
     }
+
+    public static String crop(String line, int size) {
+        if (line == null || size < 0) return null;
+        return line.length() <= size ? line : line.substring(0, size);
+    }
 }

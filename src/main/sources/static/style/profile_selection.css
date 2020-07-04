@@ -1,0 +1,38 @@
+.profile_selection__root {
+    -fx-background-color: white;
+}
+
+.profile_selection__title {
+    -fx-font-size: 64;
+    -fx-font-weight: 900;
+    -fx-fill: coral;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
+
+.profile_selection__button {
+    -fx-background-color: ivory;
+    -fx-background-radius: 10;
+    -fx-border-width: 3;
+    -fx-border-color: coral;
+    -fx-border-radius: 10;
+    -fx-text-fill: coral;
+    -fx-font-size: 32;
+    -fx-font-weight: 700;
+}
+
+.profile_selection__avatar {
+    -fx-border-width: 3;
+    -fx-border-color: coral;
+    -fx-border-radius: 10;
+    -fx-background-color: ivory;
+    -fx-background-radius: 10;
+}
+
+.profile_selection__name {
+    -fx-font-size: 26;
+    -fx-font-weight: 700;
+    -fx-fill: coral;
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+}

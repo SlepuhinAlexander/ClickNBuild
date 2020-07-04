@@ -18,7 +18,7 @@ public final class ProfileManager {
      * Limit for the amount of player {@link Profile} there could be in the game.
      * Used for predictable UI look.
      */
-    private static final int SLOTS_AMOUNT = Integer.parseInt(ConfigLoader.inst().get(Configs.PROFILE_SLOTS_COUNT));
+    public static final int SLOTS_AMOUNT = Integer.parseInt(ConfigLoader.inst().get(Configs.PROFILE_SLOTS_COUNT));
 
     /**
      * Path to a folder with profile saves.
@@ -85,6 +85,15 @@ public final class ProfileManager {
         return local;
     }
 
+    public Profile getProfile() {
+        return profiles[selected];
+    }
+
+    public Profile getProfile(int slot) {
+        if (slot < 0 || slot >= SLOTS_AMOUNT) return null;
+        return profiles[slot];
+    }
+
     private void initialize() {
         loadProfiles();
     }
@@ -98,6 +107,7 @@ public final class ProfileManager {
             selectProfile(selectedSlot == -1 ? findExistingSlot() : selectedSlot);
         } else {
             createProfile(0);
+            selectProfile(0);
         }
     }
 
@@ -138,6 +148,7 @@ public final class ProfileManager {
             selectProfile(selectedSlot == -1 ? findExistingSlot() : selectedSlot);
         } else {
             createProfile(0);
+            selectProfile(0);
         }
     }
 
@@ -161,7 +172,7 @@ public final class ProfileManager {
         deleteProfileFolder(slot); // to clear up possible leftovers of a somehow corrupted profile slot
         initializeProfile(slot);
         profiles[slot] = new Profile();
-        selectProfile(slot);
+        saveProfile(slot);
     }
 
     public void selectProfile(int slot) {
@@ -198,10 +209,24 @@ public final class ProfileManager {
         profile.getGameSave().save(path.resolve(GAMESAVE_FILE_NAME));
     }
 
+    public void saveProfile() {
+        saveProfile(selected);
+    }
+
     private void saveAllProfiles() {
         for (int i = 0; i < SLOTS_AMOUNT; i++) {
             if (profiles[i] != null) saveProfile(i);
         }
+    }
+
+    public void wipeSave(int slot) {
+        if (slot < 0 || slot >= SLOTS_AMOUNT) return;
+        Profile profile = profiles[slot];
+        if (profile == null) return;
+        initializeProfile(slot); // just in case there are no files to save to
+        profile.setGameSave(new GameSave());
+        Path path = PATH.resolve(FOLDER_NAME + slot);
+        profile.getGameSave().save(path.resolve(GAMESAVE_FILE_NAME));
     }
 
     private void clearUp() {

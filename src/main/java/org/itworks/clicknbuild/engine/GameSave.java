@@ -12,6 +12,16 @@ import java.nio.file.Path;
 import java.util.Objects;
 
 public final class GameSave {
+    private int dummyProgress;
+
+    public int getDummyProgress() {
+        return dummyProgress;
+    }
+
+    public void setDummyProgress(int dummyProgress) {
+        this.dummyProgress = dummyProgress;
+    }
+
     public void save(Path path) {
         if (path == null || !Files.exists(path)) return;
         ObjectMapper mapper = new ObjectMapper();

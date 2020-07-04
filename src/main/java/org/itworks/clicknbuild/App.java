@@ -2,8 +2,6 @@ package org.itworks.clicknbuild;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import org.itworks.clicknbuild.ui.Controllers;
-import org.itworks.clicknbuild.ui.controller.LandingController;
 
 import java.io.IOException;
 

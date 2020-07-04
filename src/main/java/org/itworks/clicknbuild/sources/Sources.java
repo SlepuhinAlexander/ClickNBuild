@@ -7,20 +7,20 @@ import java.net.URL;
 import java.util.Objects;
 
 public final class Sources {
-    public static URL getFxml(String key) {
+    public static URL getFXML(String key) {
         return FXMLHandler.inst().get(key);
     }
 
-    public static URL getFxml(FXMLs key) {
+    public static URL getFXML(FXMLs key) {
         return FXMLHandler.inst().get(Objects.requireNonNull(key));
     }
 
-    public static String getCss(String key) {
-        return CssHandler.inst().get(key);
+    public static String getCSS(String key) {
+        return CSSHandler.inst().get(key);
     }
 
-    public static String getCss(Csses key) {
-        return CssHandler.inst().get(key);
+    public static String getCSS(CSSes key) {
+        return CSSHandler.inst().get(key);
     }
 
     public static String getL10n(String key) {

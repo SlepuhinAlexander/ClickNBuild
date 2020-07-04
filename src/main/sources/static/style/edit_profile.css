@@ -1,0 +1,60 @@
+.edit_profile__root {
+    -fx-background-color: white;
+}
+
+.edit_profile__title {
+    -fx-font-size: 64;
+    -fx-font-weight: 900;
+    -fx-fill: coral;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
+
+.edit_profile__button {
+    -fx-background-color: ivory;
+    -fx-background-radius: 10;
+    -fx-border-width: 3;
+    -fx-border-color: coral;
+    -fx-border-radius: 10;
+    -fx-text-fill: coral;
+    -fx-font-size: 32;
+    -fx-font-weight: 700;
+}
+
+.edit_profile__button:selected {
+    -fx-background-color: yellow;
+}
+
+.edit_profile__avatar {
+    -fx-border-width: 3;
+    -fx-border-color: coral;
+    -fx-border-radius: 10;
+    -fx-background-color: ivory;
+}
+
+.edit_profile__name {
+    -fx-font-size: 32;
+    -fx-font-weight: 700;
+    -fx-fill: coral;
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+}
+
+.edit_profile__input {
+    -fx-background-color: ivory;
+    -fx-background-radius: 10;
+    -fx-border-width: 3;
+    -fx-border-color: coral;
+    -fx-border-radius: 10;
+    -fx-text-fill: coral;
+    -fx-font-size: 32;
+    -fx-font-weight: 700;
+}
+
+.edit_profile__tooltip {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-text-fill: coral;
+    -fx-font-size: 20;
+    -fx-font-weight: 700;
+}

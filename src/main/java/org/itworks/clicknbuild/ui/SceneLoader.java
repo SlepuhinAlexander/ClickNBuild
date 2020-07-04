@@ -64,7 +64,15 @@ public final class SceneLoader {
      */
     public void load(Scenes key) throws IOException {
         if (key == null) return;
-        Scene scene = new Scene(new FXMLLoader(Sources.getFxml(key.name)).load());
+        Scene currentScene = stage.getScene();
+        Scene scene;
+        if (currentScene == null) {
+            scene = new Scene(new FXMLLoader(Sources.getFXML(key.fxml)).load());
+        } else {
+            scene = new Scene(new FXMLLoader(Sources.getFXML(key.fxml)).load(),
+                    currentScene.getWidth(),
+                    currentScene.getHeight());
+        }
         scenes.put(key, scene);
         stage.setScene(scene);
     }

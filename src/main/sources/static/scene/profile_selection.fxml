@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane fx:id="rootNode" styleClass="profile_selection__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.itworks.clicknbuild.ui.controller.ProfileSelectionController">
+    <top>
+        <HBox alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="50"/>
+            </BorderPane.margin>
+            <Text fx:id="title" styleClass="profile_selection__title"/>
+        </HBox>
+    </top>
+    <center>
+        <HBox alignment="CENTER" spacing="50" fx:id="profiles">
+            <BorderPane.margin>
+                <Insets left="100.0" right="100"/>
+            </BorderPane.margin>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="100.0"/>
+            </BorderPane.margin>
+            <Button fx:id="btnBack" onAction="#toMainMenu" styleClass="profile_selection__button"/>
+        </HBox>
+    </bottom>
+</BorderPane>

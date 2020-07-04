@@ -3,10 +3,7 @@ package org.itworks.clicknbuild.sources;
 import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * Global holder of string keys for ImgHandler
@@ -114,6 +111,15 @@ public enum Images {
     AVATAR_WOMAN11("woman11", Group.AVATAR),
     AVATAR_WOMAN12("woman12", Group.AVATAR),
     AVATAR_WOMAN13("woman13", Group.AVATAR),
+
+    BTN_NEW_PROFILE("new_profile", Group.BUTTON),
+    BTN_LEFT("left", Group.BUTTON),
+    BTN_RIGHT("right", Group.BUTTON),
+    BTN_EN("en", Group.BUTTON),
+    BTN_RU("ru", Group.BUTTON),
+    BTN_EASY("easy", Group.BUTTON),
+    BTN_NORMAL("normal", Group.BUTTON),
+    BTN_HARD("hard", Group.BUTTON),
     ;
 
     final String name;
@@ -137,11 +143,11 @@ public enum Images {
         return images[ordinal];
     }
 
-    public static List<Images> get(Group group) {
-        if (group == null) return Collections.emptyList();
+    public static Images[] get(Group group) {
+        if (group == null) return new Images[0];
         return Arrays.stream(values())
                 .filter(image -> image.group.equals(group))
-                .collect(Collectors.toList());
+                .toArray(Images[]::new);
     }
 
     public enum Group {

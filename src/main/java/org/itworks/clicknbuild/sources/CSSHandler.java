@@ -11,33 +11,33 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Set;
 
-public final class CssHandler {
+public final class CSSHandler {
     private static final String SOURCE_PATH = ConfigLoader.inst().get(Configs.CSS_SOURCE_PATH);
 
     private static final String FILE_EXTENSION = ConfigLoader.inst().get(Configs.CSS_FILE_EXTENSION);
 
-    private static volatile CssHandler inst;
+    private static volatile CSSHandler inst;
 
     private final HashMap<String, String> stylesheets = new HashMap<>();
 
-    private CssHandler() {
+    private CSSHandler() {
     }
 
     public String get(String key) {
         return StringHelper.nonNull(stylesheets.get(StringHelper.nonNull(key)));
     }
 
-    public String get(Csses key) {
+    public String get(CSSes key) {
         return get(Objects.requireNonNull(key.value));
     }
 
-    public static CssHandler inst() {
-        CssHandler local = inst;
+    public static CSSHandler inst() {
+        CSSHandler local = inst;
         if (local == null) {
-            synchronized (CssHandler.class) {
+            synchronized (CSSHandler.class) {
                 local = inst;
                 if (local == null) {
-                    inst = local = new CssHandler();
+                    inst = local = new CSSHandler();
                     local.loadCsses();
                 }
             }

@@ -1,7 +1,7 @@
 .landing__greeting {
-    -fx-font-size: 86;
+    -fx-font-size: 120;
     -fx-font-weight: 900;
     -fx-fill: coral;
-    -fx-stroke: white;
-    -fx-stroke-width: 3;
+    -fx-stroke: black;
+    -fx-stroke-width: 5;
 }

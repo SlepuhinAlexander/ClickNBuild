@@ -1,0 +1,30 @@
+.help_menu__root {
+    -fx-background-color: white;
+}
+
+.help_menu__title {
+    -fx-font-size: 64;
+    -fx-font-weight: 900;
+    -fx-fill: coral;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
+
+.help_menu__text {
+    -fx-font-size: 24;
+    -fx-font-weight: 700;
+    -fx-fill: coral;
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+}
+
+.help_menu__button {
+    -fx-background-color: ivory;
+    -fx-background-radius: 10;
+    -fx-border-width: 3;
+    -fx-border-color: coral;
+    -fx-border-radius: 10;
+    -fx-text-fill: coral;
+    -fx-font-size: 32;
+    -fx-font-weight: 700;
+}

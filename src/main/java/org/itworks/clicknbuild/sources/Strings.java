@@ -81,6 +81,24 @@ public enum Strings {
     DIFFICULTY_EASY_DESC("difficulty.easy.description"),
     DIFFICULTY_NORMAL_DESC("difficulty.normal.description"),
     DIFFICULTY_HARD_DESC("difficulty.hard.description"),
+
+    MAIN_MENU_TITLE("main_menu.title"),
+    BTN_START_GAME("btn.start_game"),
+    BTN_SELECT_PROFILE("btn.select_profile"),
+    BTN_HELP("btn.help"),
+    BTN_EXIT("btn.exit"),
+    BTN_BACK("btn.back"),
+    BTN_SAVE("btn.save"),
+    BTN_DEFAULTS("btn.defaults"),
+    BTN_WIPE_SAVE("btn.wipe_save"),
+    BTN_DELETE_PROFILE("btn.delete_profile"),
+
+    HELP_TITLE("help.title"),
+    HELP_DUMMY("help.dummy"),
+
+    PROFILE_SELECTION_TITLE("profile_selection.title"),
+
+    EDIT_PROFILE_TITLE("edit_profile.title"),
     ;
 
     final String value;

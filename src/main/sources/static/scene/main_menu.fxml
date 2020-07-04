@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane fx:id="rootNode" styleClass="main_menu__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.itworks.clicknbuild.ui.controller.MainMenuController">
+    <top>
+        <HBox alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="50"/>
+            </BorderPane.margin>
+            <Text fx:id="title" styleClass="main_menu__title"/>
+        </HBox>
+    </top>
+    <right>
+        <VBox alignment="TOP_RIGHT" spacing="5">
+            <BorderPane.margin>
+                <Insets right="200" top="50"/>
+            </BorderPane.margin>
+            <StackPane maxWidth="1" onMouseClicked="#toProfileSelection" styleClass="main_menu__avatar">
+                <ImageView fx:id="selectedProfile">
+                    <StackPane.margin>
+                        <Insets bottom="5" left="5" right="5" top="5"/>
+                    </StackPane.margin>
+                </ImageView>
+            </StackPane>
+            <Text fx:id="selectedProfileName" styleClass="main_menu__name"/>
+        </VBox>
+    </right>
+    <left>
+        <VBox spacing="50">
+            <BorderPane.margin>
+                <Insets left="250" top="100"/>
+            </BorderPane.margin>
+            <Button fx:id="btnStartGame" onAction="#startGame" styleClass="main_menu__button"/>
+            <Button fx:id="btnSelectProfile" onAction="#toProfileSelection" styleClass="main_menu__button"/>
+            <Button fx:id="btnHelp" onAction="#toHelp" styleClass="main_menu__button">
+                <VBox.margin>
+                    <Insets bottom="50"/>
+                </VBox.margin>
+            </Button>
+            <Button fx:id="bntExit" onAction="#exit" styleClass="main_menu__button">
+                <VBox.margin>
+                    <Insets top="50"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </left>
+</BorderPane>

@@ -7,6 +7,10 @@ import org.itworks.clicknbuild.util.string.StringHelper;
  */
 public enum FXMLs {
     LANDING("landing"),
+    MAIN_MENU("main_menu"),
+    HELP_MENU("help_menu"),
+    PROFILE_SELECTION("profile_selection"),
+    EDIT_PROFILE("edit_profile"),
     ;
 
     final String value;
