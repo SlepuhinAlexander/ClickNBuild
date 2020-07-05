@@ -122,6 +122,11 @@ public enum ResType {
             Strings.RES_FIRE_HAZARD,
             Images.RES_FIRE_HAZARD,
             false,
+            -1),
+    EXPERIENCE("experience",
+            Strings.PLAYER_EXPERIENCE,
+            Images.PLAYER_EXPERIENCE,
+            false,
             -1);
 
     // lowercased equivalent for enum element itself.

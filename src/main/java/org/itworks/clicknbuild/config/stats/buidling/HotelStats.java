@@ -543,7 +543,7 @@ public final class HotelStats extends BuildingStats {
                         new ResStat(ResType.WORKER, 5000)
                 )
         });
-        setStoreMultiplier(new ResStatPack[]{
+        setCapacityMultiplier(new ResStatPack[]{
                 new ResStatPack( // 1
                         new ResStat(ResType.ENERGY, 2)
                 ),

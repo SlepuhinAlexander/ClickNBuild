@@ -152,15 +152,15 @@ public abstract class BuildingStats {
      * Values are ranged by building level correspondingly.
      * Directly affected by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResStatPack[] store;
+    private ResStatPack[] capacity;
 
     /**
-     * Some buildings could provide global effect on storage amount.
+     * Some buildings could provide global effect on storage capacity.
      * These values mean that the store of resources of this resource type would be increase by given percent in all
      * buildings storing this resource type.
      * Values are ranged by the building's productivity: these values correspond to 100% productivity.
      */
-    private ResStatPack[] storeMultiplier;
+    private ResStatPack[] capacityMultiplier;
 
     public final int getRequiredPlayerLevel() {
         return requiredPlayerLevel;
@@ -340,30 +340,30 @@ public abstract class BuildingStats {
         this.hold = hold;
     }
 
-    public final ResStatPack[] getStore() {
-        return store;
+    public final ResStatPack[] getCapacity() {
+        return capacity;
     }
 
-    public final void setStore(ResStatPack[] store) {
-        if (store == null) {
-            this.store = new ResStatPack[maxLevel];
+    public final void setCapacity(ResStatPack[] capacity) {
+        if (capacity == null) {
+            this.capacity = new ResStatPack[maxLevel];
             return;
         }
-        if (store.length != maxLevel) return;
-        this.store = store;
+        if (capacity.length != maxLevel) return;
+        this.capacity = capacity;
     }
 
-    public final ResStatPack[] getStoreMultiplier() {
-        return storeMultiplier;
+    public final ResStatPack[] getCapacityMultiplier() {
+        return capacityMultiplier;
     }
 
-    public final void setStoreMultiplier(ResStatPack[] storeMultiplier) {
-        if (storeMultiplier == null) {
-            this.storeMultiplier = new ResStatPack[maxLevel];
+    public final void setCapacityMultiplier(ResStatPack[] capacityMultiplier) {
+        if (capacityMultiplier == null) {
+            this.capacityMultiplier = new ResStatPack[maxLevel];
             return;
         }
-        if (storeMultiplier.length != maxLevel) return;
-        this.storeMultiplier = storeMultiplier;
+        if (capacityMultiplier.length != maxLevel) return;
+        this.capacityMultiplier = capacityMultiplier;
     }
 
     protected final void initArrays() {
@@ -378,8 +378,8 @@ public abstract class BuildingStats {
         setSupplyMultiplier(null);
         setDemand(null);
         setHold(null);
-        setStore(null);
-        setStoreMultiplier(null);
+        setCapacity(null);
+        setCapacityMultiplier(null);
     }
 
     protected abstract void initValues();
@@ -387,12 +387,12 @@ public abstract class BuildingStats {
     //@formatter:off
     public final void applyModelValues(BuildingStatsModel model) {
         if (model == null) return;
-                  setRequiredPlayerLevel(                                 model.getRequiredPlayerLevel());
-                  setMaxLevel(                                            model.getMaxLevel());
-                  setBuildLimit(                                          model.getBuildLimit());
-                  setPriceMultiplier(                                     model.getPriceMultiplier());
+                  setRequiredPlayerLevel(                                model.getRequiredPlayerLevel());
+                  setMaxLevel(                                           model.getMaxLevel());
+                  setBuildLimit(                                         model.getBuildLimit());
+                  setPriceMultiplier(                                    model.getPriceMultiplier());
         if (model.getStructure()            != null)
-                  setStructure(                                           model.getStructure());
+                  setStructure(                                          model.getStructure());
         if (model.getBuildCost()            != null)
                   setBuildCost(                      ResStatPack.valueOf(model.getBuildCost()));
         if (model.getProduction()           != null)
@@ -413,10 +413,10 @@ public abstract class BuildingStats {
                   setDemand(                         ResStatPack.valueOf(model.getDemand()));
         if (model.getHold()                 != null)
                   setHold(                           ResStatPack.valueOf(model.getHold()));
-        if (model.getStore()                != null)
-                  setStore(                          ResStatPack.valueOf(model.getStore()));
-        if (model.getStoreMultiplier()      != null)
-                  setStoreMultiplier(                ResStatPack.valueOf(model.getStoreMultiplier()));
+        if (model.getCapacity()             != null)
+                  setCapacity(                       ResStatPack.valueOf(model.getCapacity()));
+        if (model.getCapacityMultiplier()   != null)
+                  setCapacityMultiplier(             ResStatPack.valueOf(model.getCapacityMultiplier()));
     }
     //@formatter:on
 }

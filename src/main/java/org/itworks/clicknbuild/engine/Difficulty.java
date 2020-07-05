@@ -29,17 +29,17 @@ public enum Difficulty {
     /**
      * String identity of this enum values
      */
-    final String name;
+    public final String name;
 
     /**
      * Key for L10nHandler to get localized <code>Difficulty</code> name.
      */
-    final Strings l10n;
+    public final Strings l10n;
 
     /**
      * Key for L10nHandler to get localized <code>Difficulty</code> description.
      */
-    final Strings desc;
+    public final Strings desc;
 
     /**
      * If true, the subsequent buildings of the same type would costs exponentially more to construct and upgrade.
@@ -49,7 +49,7 @@ public enum Difficulty {
      *
      * @See org.itworks.clicknbuild.config.stats.buidling.BuildingStats#priceMultiplier
      */
-    final boolean useCostMult;
+    public final boolean useCostMultiplier;
 
     /**
      * A multiplier that would be applied to any positive ingame results or properties: resources production,
@@ -57,7 +57,7 @@ public enum Difficulty {
      * A value greater than 1.0 would ease the game process.
      * A value smaller than 1.0 would make the game harder or even impossible.
      */
-    final double gainsMult;
+    public final double gainsMultiplier;
 
     /**
      * A multiplier that would be applied to any negative ingame results or properties: build, upgrade and upkeep costs,
@@ -65,15 +65,16 @@ public enum Difficulty {
      * A value greater than 1.0 would make the game harder or even impossible.
      * A value smaller than 1.0 would ease the game process.
      */
-    final double costsMult;
+    public final double costsMultiplier;
 
-    Difficulty(String name, Strings l10n, Strings desc, boolean useCostMult, double gainsMult, double costsMult) {
+    Difficulty(String name, Strings l10n, Strings desc, boolean useCostMultiplier, double gainsMultiplier,
+               double costsMultiplier) {
         this.name = StringHelper.nonNull(name);
         this.l10n = Objects.requireNonNull(l10n);
         this.desc = Objects.requireNonNull(desc);
-        this.useCostMult = useCostMult;
-        this.gainsMult = MathHelper.clamp(gainsMult);
-        this.costsMult = MathHelper.clamp(costsMult);
+        this.useCostMultiplier = useCostMultiplier;
+        this.gainsMultiplier = MathHelper.clamp(gainsMultiplier);
+        this.costsMultiplier = MathHelper.clamp(costsMultiplier);
     }
 
     public static Difficulty getDefault() {

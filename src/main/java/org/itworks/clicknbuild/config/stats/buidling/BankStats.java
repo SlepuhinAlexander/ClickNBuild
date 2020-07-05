@@ -543,7 +543,7 @@ public final class BankStats extends BuildingStats {
                         new ResStat(ResType.WORKER, 9000)
                 )
         });
-        setStoreMultiplier(new ResStatPack[]{
+        setCapacityMultiplier(new ResStatPack[]{
                 new ResStatPack( // 1
                         new ResStat(ResType.MONEY, 2)
                 ),

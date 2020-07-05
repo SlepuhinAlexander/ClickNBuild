@@ -379,7 +379,7 @@ public final class FireStationStats extends BuildingStats {
                         new ResStat(ResType.WORKER, 6000)
                 )
         });
-        setStore(new ResStatPack[]{
+        setCapacity(new ResStatPack[]{
                 new ResStatPack( // 1
                         new ResStat(ResType.IGNITABILITY, 1)
                 ),

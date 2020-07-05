@@ -4,7 +4,6 @@ import org.itworks.clicknbuild.config.stats.model.ResStatModel;
 import org.itworks.clicknbuild.config.stats.model.ResStatPackModel;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.TreeMap;
 
 @SuppressWarnings("UnusedReturnValue")

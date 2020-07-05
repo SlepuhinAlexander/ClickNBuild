@@ -85,10 +85,10 @@
       ]
     }
   ],
-  "store" : [
+  "capacity" : [
     null
   ],
-  "storeMultiplier" : [
+  "capacityMultiplier" : [
     null
   ]
 }

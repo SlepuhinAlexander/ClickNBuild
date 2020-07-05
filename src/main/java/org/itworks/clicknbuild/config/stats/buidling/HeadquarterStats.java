@@ -43,6 +43,7 @@ public class HeadquarterStats extends BuildingStats {
                 new ResStat(ResType.CITIZEN, 50)
         )});
         setHold(new ResStatPack[]{new ResStatPack(
+                new ResStat(ResType.UPKEEP, Integer.MAX_VALUE),
                 new ResStat(ResType.POWER_CONSUMPTION, Integer.MAX_VALUE),
                 new ResStat(ResType.POWER_EXCESS, Integer.MAX_VALUE),
                 new ResStat(ResType.JOB, Integer.MAX_VALUE),
@@ -52,7 +53,7 @@ public class HeadquarterStats extends BuildingStats {
                 new ResStat(ResType.EMIGRATION, Integer.MAX_VALUE),
                 new ResStat(ResType.FIRE_HAZARD, Integer.MAX_VALUE)
         )});
-        setStore(new ResStatPack[]{new ResStatPack(
+        setCapacity(new ResStatPack[]{new ResStatPack(
                 new ResStat(ResType.ENERGY, 500),
                 new ResStat(ResType.STEEL, 3000),
                 new ResStat(ResType.CONCRETE, 10000),

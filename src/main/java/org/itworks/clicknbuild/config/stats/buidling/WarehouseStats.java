@@ -439,7 +439,7 @@ public final class WarehouseStats extends BuildingStats {
                         new ResStat(ResType.WORKER, 4000)
                 )
         });
-        setStore(new ResStatPack[]{
+        setCapacity(new ResStatPack[]{
                 new ResStatPack( // 1
                         new ResStat(ResType.STEEL, 400),
                         new ResStat(ResType.CONCRETE, 400),

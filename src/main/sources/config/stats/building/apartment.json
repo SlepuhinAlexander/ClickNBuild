@@ -1725,7 +1725,7 @@
       ]
     }
   ],
-  "store" : [
+  "capacity" : [
     {
       "pack" : [
         {
@@ -1887,7 +1887,7 @@
       ]
     }
   ],
-  "storeMultiplier" : [
+  "capacityMultiplier" : [
     null,
     null,
     null,

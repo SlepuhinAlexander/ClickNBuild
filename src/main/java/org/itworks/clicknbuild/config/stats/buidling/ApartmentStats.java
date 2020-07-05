@@ -585,7 +585,7 @@ public final class ApartmentStats extends BuildingStats {
                         new ResStat(ResType.POWER, 200)
                 )
         });
-        setStore(new ResStatPack[]{ // store
+        setCapacity(new ResStatPack[]{ // store
                 new ResStatPack( // 1
                         new ResStat(ResType.CITIZEN, 400)
                 ),

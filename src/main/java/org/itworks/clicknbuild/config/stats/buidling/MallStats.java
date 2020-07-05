@@ -441,7 +441,7 @@ public final class MallStats extends BuildingStats {
                         new ResStat(ResType.WORKER, 5000)
                 )
         });
-        setStore(new ResStatPack[]{
+        setCapacity(new ResStatPack[]{
                 new ResStatPack( // 1
                         new ResStat(ResType.MONEY, 15000)
                 ),

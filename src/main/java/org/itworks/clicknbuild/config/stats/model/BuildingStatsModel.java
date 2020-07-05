@@ -33,31 +33,31 @@ public final class BuildingStatsModel {
 
     private ResStatPackModel[] hold;
 
-    private ResStatPackModel[] store;
+    private ResStatPackModel[] capacity;
 
-    private ResStatPackModel[] storeMultiplier;
+    private ResStatPackModel[] capacityMultiplier;
 
     // @formatter:off
     public static BuildingStatsModel valueOf(BuildingStats value) {
         if (value == null) return null;
         BuildingStatsModel result = new BuildingStatsModel();
-        result.setRequiredPlayerLevel(                                      value.getRequiredPlayerLevel());
-        result.setMaxLevel(                                                 value.getMaxLevel());
-        result.setBuildLimit(                                               value.getBuildLimit());
-        result.setPriceMultiplier(                                          value.getPriceMultiplier());
-        result.setStructure(                                                value.getStructure());
-        result.setBuildCost(                ResStatPackModel.valueOf(      value.getBuildCost()));
-        result.setProduction(               ResStatPackModel.valueOf(      value.getProduction()));
-        result.setProductionMultiplier(     ResStatPackModel.valueOf(      value.getProductionMultiplier()));
-        result.setJobPrice(                 ResStatPackModel.valueOf(      value.getJobPrice()));
-        result.setJobReward(                ResStatPackModel.valueOf(      value.getJobReward()));
-        result.setJobRewardMultiplier(      ResStatPackModel.valueOf(      value.getJobRewardMultiplier()));
-        result.setSupply(                   ResStatPackModel.valueOf(      value.getSupply()));
-        result.setSupplyMultiplier(         ResStatPackModel.valueOf(      value.getSupplyMultiplier()));
-        result.setDemand(                   ResStatPackModel.valueOf(      value.getDemand()));
-        result.setHold(                     ResStatPackModel.valueOf(      value.getHold()));
-        result.setStore(                    ResStatPackModel.valueOf(      value.getStore()));
-        result.setStoreMultiplier(          ResStatPackModel.valueOf(      value.getStoreMultiplier()));
+        result.setRequiredPlayerLevel(                                   value.getRequiredPlayerLevel());
+        result.setMaxLevel(                                              value.getMaxLevel());
+        result.setBuildLimit(                                            value.getBuildLimit());
+        result.setPriceMultiplier(                                       value.getPriceMultiplier());
+        result.setStructure(                                             value.getStructure());
+        result.setBuildCost(                ResStatPackModel.valueOf(    value.getBuildCost()));
+        result.setProduction(               ResStatPackModel.valueOf(    value.getProduction()));
+        result.setProductionMultiplier(     ResStatPackModel.valueOf(    value.getProductionMultiplier()));
+        result.setJobPrice(                 ResStatPackModel.valueOf(    value.getJobPrice()));
+        result.setJobReward(                ResStatPackModel.valueOf(    value.getJobReward()));
+        result.setJobRewardMultiplier(      ResStatPackModel.valueOf(    value.getJobRewardMultiplier()));
+        result.setSupply(                   ResStatPackModel.valueOf(    value.getSupply()));
+        result.setSupplyMultiplier(         ResStatPackModel.valueOf(    value.getSupplyMultiplier()));
+        result.setDemand(                   ResStatPackModel.valueOf(    value.getDemand()));
+        result.setHold(                     ResStatPackModel.valueOf(    value.getHold()));
+        result.setCapacity(                 ResStatPackModel.valueOf(    value.getCapacity()));
+        result.setCapacityMultiplier(       ResStatPackModel.valueOf(    value.getCapacityMultiplier()));
         return result;
     }
     // @formatter:on
@@ -182,19 +182,19 @@ public final class BuildingStatsModel {
         this.hold = hold;
     }
 
-    public ResStatPackModel[] getStore() {
-        return store;
+    public ResStatPackModel[] getCapacity() {
+        return capacity;
     }
 
-    public void setStore(ResStatPackModel[] store) {
-        this.store = store;
+    public void setCapacity(ResStatPackModel[] capacity) {
+        this.capacity = capacity;
     }
 
-    public ResStatPackModel[] getStoreMultiplier() {
-        return storeMultiplier;
+    public ResStatPackModel[] getCapacityMultiplier() {
+        return capacityMultiplier;
     }
 
-    public void setStoreMultiplier(ResStatPackModel[] storeMultiplier) {
-        this.storeMultiplier = storeMultiplier;
+    public void setCapacityMultiplier(ResStatPackModel[] capacityMultiplier) {
+        this.capacityMultiplier = capacityMultiplier;
     }
 }

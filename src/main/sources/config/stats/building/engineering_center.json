@@ -2385,7 +2385,7 @@
       ]
     }
   ],
-  "store" : [
+  "capacity" : [
     null,
     null,
     null,
@@ -2407,7 +2407,7 @@
     null,
     null
   ],
-  "storeMultiplier" : [
+  "capacityMultiplier" : [
     null,
     null,
     null,

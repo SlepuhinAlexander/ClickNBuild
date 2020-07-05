@@ -543,7 +543,7 @@ public final class GymStats extends BuildingStats {
                         new ResStat(ResType.WORKER, 4000)
                 )
         });
-        setStore(new ResStatPack[]{
+        setCapacity(new ResStatPack[]{
                 new ResStatPack( // 1
                         new ResStat(ResType.ENERGY, 40)
                 ),

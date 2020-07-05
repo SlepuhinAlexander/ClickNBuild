@@ -23,7 +23,8 @@ public enum Configs {
     PROFILE_FOLDER_NAME("profile.folder_name"),
     PROFILE_PREFERENCES_FILE_NAME("profile.preferences_file_name"),
     PROFILE_GAMESAVE_FILE_NAME("profile.gamesave_file_name"),
-
+    MAP_WIDTH("map.width"),
+    MAP_HEIGHT("map.height"),
     ;
 
     /**

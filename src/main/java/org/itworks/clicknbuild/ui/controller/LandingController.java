@@ -13,7 +13,6 @@ import org.itworks.clicknbuild.ui.scene.Scenes;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.io.IOException;
-import java.util.List;
 
 public final class LandingController extends BasicController {
     @FXML

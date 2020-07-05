@@ -2,8 +2,6 @@ package org.itworks.clicknbuild;
 
 import javafx.stage.Stage;
 import org.itworks.clicknbuild.config.stats.StatsLoader;
-import org.itworks.clicknbuild.engine.ProfileManager;
-import org.itworks.clicknbuild.engine.profile.Profile;
 import org.itworks.clicknbuild.sources.*;
 import org.itworks.clicknbuild.ui.SceneLoader;
 import org.itworks.clicknbuild.ui.scene.Scenes;

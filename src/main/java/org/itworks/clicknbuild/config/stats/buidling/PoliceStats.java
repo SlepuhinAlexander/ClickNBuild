@@ -399,7 +399,7 @@ public final class PoliceStats extends BuildingStats {
                         new ResStat(ResType.WORKER, 6000)
                 )
         });
-        setStore(new ResStatPack[]{
+        setCapacity(new ResStatPack[]{
                 new ResStatPack( // 1
                         new ResStat(ResType.OBEDIENCE, 2000)
                 ),

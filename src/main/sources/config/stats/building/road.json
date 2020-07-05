@@ -51,10 +51,10 @@
   "hold" : [
     null
   ],
-  "store" : [
+  "capacity" : [
     null
   ],
-  "storeMultiplier" : [
+  "capacityMultiplier" : [
     null
   ]
 }

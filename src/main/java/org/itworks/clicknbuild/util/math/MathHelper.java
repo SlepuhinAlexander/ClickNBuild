@@ -61,4 +61,9 @@ public class MathHelper {
     public static int randomInt(int bound) {
         return R.nextInt(bound);
     }
+
+    public static int randomInt(int lower, int upper) {
+        if (upper <= lower) throw new IllegalArgumentException();
+        return R.nextInt(upper - lower) + lower;
+    }
 }
