@@ -10,6 +10,21 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Responsible for:
+ * <ul>
+ *     <li>storing the game map of {@link Cell}-s</li>
+ *     <li>collecting all {@link Building}-s that currently present on the map</li>
+ *     <li>providing terraform options: checking possibilities to change a {@link TileType}, providing corresponding
+ *     options to the player, generating a corresponding job, applying the change</li>
+ *     <li>providing construction options: checking possibilities to construct a {@link BuildingType} building in a
+ *     cell, providing list of available buildings to construct</li>
+ *     <li>checking the construction requirements: player level, construction limits, prices, etc</li>
+ *     <li>calculating the construction / upgrade price of a building taking into account possible cost multipliers</li>
+ *     <li>initiating construction / upgrading / demolition job</li>
+ *     <li>actual construction / upgrading / demolition</li>
+ * </ul>
+ */
 public final class BuildingManager {
     private static final int MAP_WIDTH = Integer.parseInt(ConfigLoader.inst().get(Configs.MAP_WIDTH));
     private static final int MAP_HEIGHT = Integer.parseInt(ConfigLoader.inst().get(Configs.MAP_HEIGHT));
@@ -107,6 +122,10 @@ public final class BuildingManager {
         dry(validateLocation(row, col));
     }
 
+    /**
+     * Turns {@link TileType#SEA} tile into {@link TileType#LAND}.
+     * Should happen when drying job is complete.
+     */
     private void dry(Location location) {
         Objects.requireNonNull(location);
         Cell cell = map[location.row][location.col];
@@ -120,6 +139,10 @@ public final class BuildingManager {
         dig(validateLocation(row, col));
     }
 
+    /**
+     * Turns {@link TileType#LAND} tile into {@link TileType#SEA} if it is not occupied by any building.
+     * Should happen when gigging job is complete.
+     */
     private void dig(Location location) {
         Objects.requireNonNull(location);
         Cell cell = map[location.row][location.col];
@@ -134,6 +157,11 @@ public final class BuildingManager {
         clear(validateLocation(row, col));
     }
 
+    /**
+     * Turns {@link TileType#TRASH}, {@link TileType#TREE}, {@link TileType#ROCK} or {@link TileType#RUIN} into
+     * {@link TileType#LAND}.
+     * Should happen when clearing job is complete.
+     */
     private void clear(Location location) {
         Objects.requireNonNull(location);
         Cell cell = map[location.row][location.col];
@@ -147,6 +175,12 @@ public final class BuildingManager {
         build(type, validateLocation(row, col));
     }
 
+    /**
+     * Creates a {@link Building} object of this {@link BuildingType}, places it in the given {@link Location} on the
+     * map and registers it in game managers.
+     * Always creates a building at level 1.
+     * Should happen when construction job is complete.
+     */
     private void build(BuildingType type, Location location) {
         Objects.requireNonNull(type);
         Objects.requireNonNull(location);
@@ -157,12 +191,32 @@ public final class BuildingManager {
         building.setLocation(location);
         cell.setBuilding(building);
         register(building);
+        //TODO registering in Resource manager
     }
 
     private void burn(int row, int col) {
         burn(validateLocation(row, col));
     }
 
+    private void upgrade(int row, int col) {
+        upgrade(validateLocation(row, col));
+    }
+
+    /**
+     * Levels up a {@link Building} located at given {@link Location} (if possible) and updates register records in
+     * game managers.
+     */
+    private void upgrade(Location location) {
+        //TODO implement
+    }
+
+
+    /**
+     * Destructs a {@link Building} located at given {@link Location} (if any), delists it from game managers and turns
+     * the corresponding tile into {@link TileType#RUIN}.
+     * Should happen when this building failed to pass inflammability check.
+     * Building of any level could burn.
+     */
     private void burn(Location location) {
         demolish(location);
         map[location.row][location.col].setTile(TileType.RUIN);
@@ -172,12 +226,19 @@ public final class BuildingManager {
         demolish(validateLocation(row, col));
     }
 
+    /**
+     * Destructs a {@link Building} located at given {@link Location} (if any), delists it from game managers.
+     * Does not change the tile (it should have been {@link TileType#LAND}).
+     * Should happen when demolition job is done.
+     * Building of any level could be demolished.
+     */
     private void demolish(Location location) {
         Objects.requireNonNull(location);
         Cell cell = map[location.row][location.col];
         Building building = cell.getBuilding();
         if (building == null) return;
-        delist(building);
         cell.setBuilding(null);
+        delist(building);
+        // TODO delisting from Resource Manager
     }
 }

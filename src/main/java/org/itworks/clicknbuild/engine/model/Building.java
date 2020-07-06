@@ -5,6 +5,7 @@ import org.itworks.clicknbuild.config.stats.buidling.BuildingStats;
 import org.itworks.clicknbuild.engine.Difficulty;
 import org.itworks.clicknbuild.engine.ProfileManager;
 import org.itworks.clicknbuild.engine.ResCalculator;
+import org.itworks.clicknbuild.engine.ResManager;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Objects;
@@ -39,7 +40,7 @@ public final class Building {
      * Used to properly subtract this value from overall player experience when this building is demolished or
      * destroyed.
      */
-    private ResStat expEarned = new ResStat(ResType.EXPERIENCE);
+    private ResStat expEarned;
 
     /**
      * Current production efficiency of this building (in percents).
@@ -170,7 +171,7 @@ public final class Building {
     }
 
     public static Building of(BuildingType type, int level) {
-        return new Building(type).initializeValues(level);
+        return new Building(type).initValues(level);
     }
 
     public static Building of(BuildingType type) {
@@ -210,7 +211,7 @@ public final class Building {
     }
 
     private void setExpEarned(ResStat expEarned) {
-        this.expEarned = expEarned;
+        this.expEarned = expEarned == null ? new ResStat(ResType.EXPERIENCE) : expEarned;
     }
 
     public double getProductivity() {
@@ -323,14 +324,47 @@ public final class Building {
     }
 
     public void calculateProductivity() {
+        //TODO implement
+
+        // needs taking into account the criminal level from outside.
         applyProductivity();
     }
 
     public void applyProductivity() {
-
+        //TODO implement
     }
 
-    private Building initializeValues(int level) {
+    public void applyProductionMultipliers() {
+        Difficulty difficulty = ProfileManager.inst().getProfile().getPreferences().getDifficulty();
+        ResPack totalProductionMultiplier = ResManager.inst().getTotalProductionMultiplier();
+        production.pack.keySet().forEach(resType -> production.get(resType).setMax(
+                type.stats.getProduction()[getLevel() - 1].get(resType) *
+                difficulty.gainsMultiplier *
+                (1 + totalProductionMultiplier.getCurrent(resType) / 100d)
+        ));
+    }
+
+    public void applyJobRewardMultipliers() {
+        Difficulty difficulty = ProfileManager.inst().getProfile().getPreferences().getDifficulty();
+        ResPack totalJobRewardMultiplier = ResManager.inst().getTotalJobRewardMultiplier();
+        jobReward.pack.keySet().forEach(resType -> jobReward.get(resType).setMax(
+                type.stats.getJobReward()[getLevel() - 1].get(resType) *
+                difficulty.gainsMultiplier *
+                (1 + totalJobRewardMultiplier.getCurrent(resType) / 100d)
+        ));
+    }
+
+    public void applySupplyMultipliers() {
+        Difficulty difficulty = ProfileManager.inst().getProfile().getPreferences().getDifficulty();
+        ResPack totalSupplyMultiplier = ResManager.inst().getTotalSupplyMultiplier();
+        supply.pack.keySet().forEach(resType -> production.get(resType).setMax(
+                type.stats.getSupply()[getLevel() - 1].get(resType) *
+                difficulty.gainsMultiplier *
+                (1 + totalSupplyMultiplier.getCurrent(resType) / 100d)
+        ));
+    }
+
+    private Building initValues(int level) {
         Difficulty difficulty = ProfileManager.inst().getProfile().getPreferences().getDifficulty();
         setLevel(level);
         setExpEarned(new ResStat(ResType.EXPERIENCE));
