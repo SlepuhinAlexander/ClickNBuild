@@ -1,4 +1,7 @@
-package org.itworks.clicknbuild.engine.model;
+package org.itworks.clicknbuild.engine.city;
+
+import org.itworks.clicknbuild.engine.building.Building;
+import org.itworks.clicknbuild.engine.res.TileType;
 
 import java.util.Objects;
 

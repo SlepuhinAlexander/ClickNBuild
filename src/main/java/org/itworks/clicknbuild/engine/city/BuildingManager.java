@@ -1,9 +1,11 @@
-package org.itworks.clicknbuild.engine;
+package org.itworks.clicknbuild.engine.city;
 
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
+import org.itworks.clicknbuild.engine.building.Building;
+import org.itworks.clicknbuild.engine.building.BuildingType;
 import org.itworks.clicknbuild.engine.exception.CannotBuildException;
-import org.itworks.clicknbuild.engine.model.*;
+import org.itworks.clicknbuild.engine.res.*;
 
 import java.util.ArrayList;
 import java.util.List;

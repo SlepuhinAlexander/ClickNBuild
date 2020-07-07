@@ -1,4 +1,4 @@
-package org.itworks.clicknbuild.engine.model;
+package org.itworks.clicknbuild.engine.res;
 
 import org.itworks.clicknbuild.config.stats.ResStat;
 import org.itworks.clicknbuild.config.stats.ResStatPack;
@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 @SuppressWarnings("UnusedReturnValue")
-public final class ResPack {
+public class ResPack {
     public final ConcurrentSkipListMap<ResType, ResChunk> pack = new ConcurrentSkipListMap<>();
 
 

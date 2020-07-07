@@ -1,7 +1,5 @@
 package org.itworks.clicknbuild.engine.profile;
 
-import org.itworks.clicknbuild.engine.GameSave;
-
 import java.util.Objects;
 
 public final class Profile {

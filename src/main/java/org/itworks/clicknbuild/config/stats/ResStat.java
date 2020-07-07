@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.config.stats;
 
-import org.itworks.clicknbuild.engine.model.ResType;
+import org.itworks.clicknbuild.engine.res.ResType;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Objects;

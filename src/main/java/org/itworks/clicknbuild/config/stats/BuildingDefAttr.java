@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.config.stats;
 
-import org.itworks.clicknbuild.engine.model.BuildingAttrType;
+import org.itworks.clicknbuild.engine.building.BuildingAttrType;
 
 /**
  * One of the default building attributes like production, storage, etc which this building would have at some its

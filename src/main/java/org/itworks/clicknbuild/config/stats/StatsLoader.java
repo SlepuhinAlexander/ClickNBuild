@@ -5,9 +5,9 @@ import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
 import org.itworks.clicknbuild.config.stats.model.ResTypeModel;
 import org.itworks.clicknbuild.config.stats.model.TileModel;
-import org.itworks.clicknbuild.engine.model.BuildingType;
-import org.itworks.clicknbuild.engine.model.ResType;
-import org.itworks.clicknbuild.engine.model.TileType;
+import org.itworks.clicknbuild.engine.building.BuildingType;
+import org.itworks.clicknbuild.engine.res.ResType;
+import org.itworks.clicknbuild.engine.res.TileType;
 import org.itworks.clicknbuild.util.io.IOHelper;
 
 import java.io.IOException;

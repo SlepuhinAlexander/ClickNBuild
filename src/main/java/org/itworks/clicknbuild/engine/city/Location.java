@@ -1,4 +1,4 @@
-package org.itworks.clicknbuild.engine.model;
+package org.itworks.clicknbuild.engine.city;
 
 import java.util.Objects;
 

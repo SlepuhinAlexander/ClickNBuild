@@ -1,4 +1,4 @@
-package org.itworks.clicknbuild.engine.model;
+package org.itworks.clicknbuild.engine.building;
 
 public enum BuildingAttrType {
     BUILD_COST,

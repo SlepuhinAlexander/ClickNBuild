@@ -1,4 +1,4 @@
-package org.itworks.clicknbuild.engine;
+package org.itworks.clicknbuild.engine.profile;
 
 import org.itworks.clicknbuild.sources.Strings;
 import org.itworks.clicknbuild.util.math.MathHelper;

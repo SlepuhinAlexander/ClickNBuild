@@ -1,8 +1,8 @@
 package org.itworks.clicknbuild.config.stats;
 
-import org.itworks.clicknbuild.engine.model.Building;
-import org.itworks.clicknbuild.engine.model.BuildingAttrType;
-import org.itworks.clicknbuild.engine.model.ResType;
+import org.itworks.clicknbuild.engine.building.Building;
+import org.itworks.clicknbuild.engine.building.BuildingAttrType;
+import org.itworks.clicknbuild.engine.res.ResType;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Arrays;

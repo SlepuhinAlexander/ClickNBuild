@@ -1,4 +1,4 @@
-package org.itworks.clicknbuild.ui.scene;
+package org.itworks.clicknbuild.ui;
 
 import org.itworks.clicknbuild.sources.FXMLs;
 import org.itworks.clicknbuild.ui.controller.*;

@@ -5,14 +5,14 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
-import org.itworks.clicknbuild.engine.Difficulty;
-import org.itworks.clicknbuild.engine.ProfileManager;
+import org.itworks.clicknbuild.engine.profile.Difficulty;
+import org.itworks.clicknbuild.engine.profile.ProfileManager;
 import org.itworks.clicknbuild.engine.profile.Preferences;
 import org.itworks.clicknbuild.engine.profile.Profile;
 import org.itworks.clicknbuild.sources.*;
 import org.itworks.clicknbuild.ui.Controllers;
 import org.itworks.clicknbuild.ui.SceneLoader;
-import org.itworks.clicknbuild.ui.scene.Scenes;
+import org.itworks.clicknbuild.ui.Scenes;
 import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.io.IOException;

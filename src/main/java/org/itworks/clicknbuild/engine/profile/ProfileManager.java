@@ -1,9 +1,7 @@
-package org.itworks.clicknbuild.engine;
+package org.itworks.clicknbuild.engine.profile;
 
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
-import org.itworks.clicknbuild.engine.profile.Preferences;
-import org.itworks.clicknbuild.engine.profile.Profile;
 import org.itworks.clicknbuild.sources.L10nHandler;
 import org.itworks.clicknbuild.util.io.IOHelper;
 

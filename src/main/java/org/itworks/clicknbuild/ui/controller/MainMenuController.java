@@ -5,13 +5,13 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
-import org.itworks.clicknbuild.engine.ProfileManager;
+import org.itworks.clicknbuild.engine.profile.ProfileManager;
 import org.itworks.clicknbuild.sources.CSSes;
 import org.itworks.clicknbuild.sources.ImgHandler;
 import org.itworks.clicknbuild.sources.Sources;
 import org.itworks.clicknbuild.sources.Strings;
 import org.itworks.clicknbuild.ui.SceneLoader;
-import org.itworks.clicknbuild.ui.scene.Scenes;
+import org.itworks.clicknbuild.ui.Scenes;
 
 import java.io.IOException;
 

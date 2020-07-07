@@ -9,7 +9,7 @@ import org.itworks.clicknbuild.sources.Images;
 import org.itworks.clicknbuild.sources.Sources;
 import org.itworks.clicknbuild.sources.Strings;
 import org.itworks.clicknbuild.ui.SceneLoader;
-import org.itworks.clicknbuild.ui.scene.Scenes;
+import org.itworks.clicknbuild.ui.Scenes;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.io.IOException;

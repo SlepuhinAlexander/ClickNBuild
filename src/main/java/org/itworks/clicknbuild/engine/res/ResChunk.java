@@ -1,4 +1,4 @@
-package org.itworks.clicknbuild.engine.model;
+package org.itworks.clicknbuild.engine.res;
 
 import com.google.common.util.concurrent.AtomicDouble;
 import org.itworks.clicknbuild.config.stats.ResStat;

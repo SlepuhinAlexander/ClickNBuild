@@ -1,4 +1,4 @@
-package org.itworks.clicknbuild.engine.model;
+package org.itworks.clicknbuild.engine.res;
 
 import org.itworks.clicknbuild.sources.Images;
 import org.itworks.clicknbuild.sources.Strings;

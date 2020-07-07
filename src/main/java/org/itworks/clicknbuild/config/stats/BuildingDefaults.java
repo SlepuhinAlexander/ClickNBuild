@@ -1,7 +1,7 @@
 package org.itworks.clicknbuild.config.stats;
 
-import org.itworks.clicknbuild.engine.Difficulty;
-import org.itworks.clicknbuild.engine.model.BuildingAttrType;
+import org.itworks.clicknbuild.engine.profile.Difficulty;
+import org.itworks.clicknbuild.engine.building.BuildingAttrType;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Objects;

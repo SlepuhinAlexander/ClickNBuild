@@ -1,4 +1,4 @@
-package org.itworks.clicknbuild.engine;
+package org.itworks.clicknbuild.engine.profile;
 
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;

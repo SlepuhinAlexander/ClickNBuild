@@ -10,11 +10,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import org.itworks.clicknbuild.engine.ProfileManager;
+import org.itworks.clicknbuild.engine.profile.ProfileManager;
 import org.itworks.clicknbuild.engine.profile.Profile;
 import org.itworks.clicknbuild.sources.*;
 import org.itworks.clicknbuild.ui.SceneLoader;
-import org.itworks.clicknbuild.ui.scene.Scenes;
+import org.itworks.clicknbuild.ui.Scenes;
 
 import java.io.IOException;
 

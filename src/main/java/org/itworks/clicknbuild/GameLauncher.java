@@ -4,7 +4,7 @@ import javafx.stage.Stage;
 import org.itworks.clicknbuild.config.stats.StatsLoader;
 import org.itworks.clicknbuild.sources.*;
 import org.itworks.clicknbuild.ui.SceneLoader;
-import org.itworks.clicknbuild.ui.scene.Scenes;
+import org.itworks.clicknbuild.ui.Scenes;
 
 import java.io.IOException;
 import java.util.Locale;

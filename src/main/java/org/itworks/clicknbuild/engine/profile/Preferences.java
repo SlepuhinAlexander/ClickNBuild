@@ -3,7 +3,6 @@ package org.itworks.clicknbuild.engine.profile;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.itworks.clicknbuild.engine.Difficulty;
 import org.itworks.clicknbuild.sources.Images;
 import org.itworks.clicknbuild.sources.L10nHandler;
 import org.itworks.clicknbuild.util.string.StringHelper;

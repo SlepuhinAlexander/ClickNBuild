@@ -5,7 +5,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.itworks.clicknbuild.sources.FXMLHandler;
 import org.itworks.clicknbuild.sources.Sources;
-import org.itworks.clicknbuild.ui.scene.Scenes;
 import org.itworks.clicknbuild.util.string.StringHelper;
 
 import java.io.IOException;
