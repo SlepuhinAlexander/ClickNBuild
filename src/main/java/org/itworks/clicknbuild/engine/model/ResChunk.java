@@ -1,6 +1,7 @@
 package org.itworks.clicknbuild.engine.model;
 
 import com.google.common.util.concurrent.AtomicDouble;
+import org.itworks.clicknbuild.config.stats.ResStat;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Objects;
@@ -79,7 +80,7 @@ public final class ResChunk {
     }
 
     public ResChunk add(ResStat res) {
-        if (res == null || !res.type.equals(type)) return this;
+        if (res == null || !res.getType().equals(type)) return this;
         return add(res.getAmount());
     }
 
@@ -93,7 +94,7 @@ public final class ResChunk {
     }
 
     public ResChunk sub(ResStat res) {
-        if (res == null || !res.type.equals(type)) return this;
+        if (res == null || !res.getType().equals(type)) return this;
         return sub(res.getAmount());
     }
 

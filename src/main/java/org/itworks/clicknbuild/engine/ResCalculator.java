@@ -2,7 +2,7 @@ package org.itworks.clicknbuild.engine;
 
 import org.itworks.clicknbuild.engine.model.ResChunk;
 import org.itworks.clicknbuild.engine.model.ResPack;
-import org.itworks.clicknbuild.engine.model.ResStatPack;
+import org.itworks.clicknbuild.config.stats.ResStatPack;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 public final class ResCalculator {
@@ -29,7 +29,7 @@ public final class ResCalculator {
         if (stats == null) return new ResPack();
         ResPack result = new ResPack();
         final double fraction = MathHelper.clamp(percent, 0d, 100d);
-        stats.pack.forEach((type, resStat) -> result
+        stats.getPack().forEach((type, resStat) -> result
                 .put(new ResChunk(type, resStat.getAmount() * fraction, resStat.getAmount())));
         return result;
     }
@@ -37,7 +37,7 @@ public final class ResCalculator {
     public static ResPack toResPack(ResStatPack stats) {
         if (stats == null) return new ResPack();
         ResPack result = new ResPack();
-        stats.pack.forEach((type, resStat) -> result.put(new ResChunk(type, resStat.getAmount())));
+        stats.getPack().forEach((type, resStat) -> result.put(new ResChunk(type, resStat.getAmount())));
         return result;
     }
 

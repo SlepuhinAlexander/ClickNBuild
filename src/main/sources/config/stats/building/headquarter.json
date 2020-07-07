@@ -2,153 +2,134 @@
   "requiredPlayerLevel" : 1,
   "maxLevel" : 1,
   "buildLimit" : 1,
-  "priceMultiplier" : 100,
-  "structure" : [
-    0
-  ],
-  "buildCost" : [
-    null
-  ],
-  "production" : [
+  "costMultiplier" : 100,
+  "stats" : [
     {
-      "pack" : [
-        {
-          "type" : "energy",
-          "amount" : 1000
+      "structure" : 0,
+      "attributes" : {
+        "BUILD_COST" : null,
+        "PRODUCTION" : {
+          "pack" : {
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 1000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 120
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 400
+            },
+            "BRICK" : {
+              "type" : "BRICK",
+              "amount" : 300
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 100
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 200
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 1000
+            },
+            "CITIZEN" : {
+              "type" : "CITIZEN",
+              "amount" : 50
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 120
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : null,
+        "JOB_REWARD" : null,
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : null,
+        "HOLD" : {
+          "pack" : {
+            "UPKEEP" : {
+              "type" : "UPKEEP",
+              "amount" : 2147483647
+            },
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 2147483647
+            },
+            "POWER_EXCESS" : {
+              "type" : "POWER_EXCESS",
+              "amount" : 2147483647
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 2147483647
+            },
+            "UNEMPLOYMENT" : {
+              "type" : "UNEMPLOYMENT",
+              "amount" : 2147483647
+            },
+            "BENEFIT" : {
+              "type" : "BENEFIT",
+              "amount" : 2147483647
+            },
+            "CRIME" : {
+              "type" : "CRIME",
+              "amount" : 2147483647
+            },
+            "EMIGRATION" : {
+              "type" : "EMIGRATION",
+              "amount" : 2147483647
+            },
+            "FIRE_HAZARD" : {
+              "type" : "FIRE_HAZARD",
+              "amount" : 2147483647
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 400
+        "STORE" : null,
+        "CAPACITY" : {
+          "pack" : {
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 500
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 3000
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 10000
+            },
+            "BRICK" : {
+              "type" : "BRICK",
+              "amount" : 7500
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 2500
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 5000
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 200000
+            },
+            "CITIZEN" : {
+              "type" : "CITIZEN",
+              "amount" : 5000
+            }
+          }
         },
-        {
-          "type" : "brick",
-          "amount" : 300
-        },
-        {
-          "type" : "wood",
-          "amount" : 100
-        },
-        {
-          "type" : "glass",
-          "amount" : 200
-        },
-        {
-          "type" : "money",
-          "amount" : 1000
-        },
-        {
-          "type" : "citizen",
-          "amount" : 50
-        }
-      ]
+        "CAPACITY_MUL" : null
+      }
     }
-  ],
-  "productionMultiplier" : [
-    null
-  ],
-  "jobPrice" : [
-    null
-  ],
-  "jobReward" : [
-    null
-  ],
-  "jobRewardMultiplier" : [
-    null
-  ],
-  "supply" : [
-    null
-  ],
-  "supplyMultiplier" : [
-    null
-  ],
-  "demand" : [
-    null
-  ],
-  "hold" : [
-    {
-      "pack" : [
-        {
-          "type" : "upkeep",
-          "amount" : 2147483647
-        },
-        {
-          "type": "power_consumption",
-          "amount": 2147483647
-        },
-        {
-          "type" : "power_excess",
-          "amount" : 2147483647
-        },
-        {
-          "type" : "job",
-          "amount" : 2147483647
-        },
-        {
-          "type" : "unemployment",
-          "amount" : 2147483647
-        },
-        {
-          "type" : "benefit",
-          "amount" : 2147483647
-        },
-        {
-          "type" : "crime",
-          "amount" : 2147483647
-        },
-        {
-          "type" : "emigration",
-          "amount" : 2147483647
-        },
-        {
-          "type" : "fire_hazard",
-          "amount" : 2147483647
-        }
-      ]
-    }
-  ],
-  "capacity" : [
-    {
-      "pack" : [
-        {
-          "type" : "energy",
-          "amount" : 500
-        },
-        {
-          "type" : "steel",
-          "amount" : 3000
-        },
-        {
-          "type" : "concrete",
-          "amount" : 10000
-        },
-        {
-          "type" : "brick",
-          "amount" : 7500
-        },
-        {
-          "type" : "wood",
-          "amount" : 2500
-        },
-        {
-          "type" : "glass",
-          "amount" : 5000
-        },
-        {
-          "type" : "money",
-          "amount" : 200000
-        },
-        {
-          "type" : "citizen",
-          "amount" : 5000
-        }
-      ]
-    }
-  ],
-  "capacityMultiplier" : [
-    null
   ]
 }

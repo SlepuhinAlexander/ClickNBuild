@@ -3,7 +3,6 @@ package org.itworks.clicknbuild.config.stats;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
-import org.itworks.clicknbuild.config.stats.model.BuildingStatsModel;
 import org.itworks.clicknbuild.config.stats.model.ResTypeModel;
 import org.itworks.clicknbuild.config.stats.model.TileModel;
 import org.itworks.clicknbuild.engine.model.BuildingType;
@@ -76,13 +75,11 @@ public final class StatsLoader {
             filename = filename.substring(0, filename.length() - BUILDING_FILE_EXTENSION.length());
             BuildingType type = BuildingType.get(filename);
             if (type == null) return;
-            BuildingStatsModel model = null;
             try {
-                model = mapper.readValue(path.toUri().toURL(), BuildingStatsModel.class);
+                mapper.readerForUpdating(type.stats).readValue(path.toUri().toURL(), BuildingDefaults.class);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            applyBuildingStats(type, model);
         }
     }
 
@@ -103,10 +100,5 @@ public final class StatsLoader {
             if (tile == null) continue;
             if (loaded.getStructure() != null) tile.setStructure(loaded.getStructure());
         }
-    }
-
-    private void applyBuildingStats(BuildingType type, BuildingStatsModel model) {
-        if (type == null || model == null) return;
-        type.stats.applyModelValues(model);
     }
 }

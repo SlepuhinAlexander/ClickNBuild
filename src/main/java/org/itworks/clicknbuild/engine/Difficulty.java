@@ -47,7 +47,7 @@ public enum Difficulty {
      * <p>
      * Turning this option on greatly increase difficulty in mid- and end-game.
      *
-     * @See org.itworks.clicknbuild.config.stats.buidling.BuildingStats#priceMultiplier
+     * @See BuildingDefaults#costMultiplier
      */
     public final boolean useCostMultiplier;
 

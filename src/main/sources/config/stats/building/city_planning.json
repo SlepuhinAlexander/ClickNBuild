@@ -2,93 +2,74 @@
   "requiredPlayerLevel" : 1,
   "maxLevel" : 1,
   "buildLimit" : 1,
-  "priceMultiplier" : 100,
-  "structure" : [
-    10000
-  ],
-  "buildCost" : [
+  "costMultiplier" : 100,
+  "stats" : [
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 10000
+      "structure" : 10000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 10000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 4320
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 14400
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 540000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 4320
+        "PRODUCTION" : null,
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : null,
+        "JOB_REWARD" : null,
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "UPKEEP" : {
+              "type" : "UPKEEP",
+              "amount" : 1800
+            },
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 150
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 3000
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 14400
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 150
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 3000
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 540000
-        }
-      ]
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     }
-  ],
-  "production" : [
-    null
-  ],
-  "productionMultiplier" : [
-    null
-  ],
-  "jobPrice" : [
-    null
-  ],
-  "jobReward" : [
-    null
-  ],
-  "jobRewardMultiplier" : [
-    null
-  ],
-  "supply" : [
-    null
-  ],
-  "supplyMultiplier" : [
-    null
-  ],
-  "demand" : [
-    {
-      "pack" : [
-        {
-          "type" : "upkeep",
-          "amount" : 1800
-        },
-        {
-          "type" : "power_consumption",
-          "amount" : 150
-        },
-        {
-          "type" : "job",
-          "amount" : 3000
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    }
-  ],
-  "hold" : [
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 150
-        },
-        {
-          "type" : "worker",
-          "amount" : 3000
-        }
-      ]
-    }
-  ],
-  "capacity" : [
-    null
-  ],
-  "capacityMultiplier" : [
-    null
   ]
 }

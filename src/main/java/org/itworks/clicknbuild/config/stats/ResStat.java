@@ -1,15 +1,23 @@
-package org.itworks.clicknbuild.engine.model;
+package org.itworks.clicknbuild.config.stats;
 
-import org.itworks.clicknbuild.config.stats.model.ResStatModel;
+import org.itworks.clicknbuild.engine.model.ResType;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Objects;
 
+/**
+ * In-game resource unit: {@link ResType} - type of an in-game resource; and its amonut.
+ * The amount cannot be negative.
+ * Non-nullable: null <code>ResStat</code> does not make any sense.
+ */
 @SuppressWarnings("UnusedReturnValue")
 public final class ResStat {
-    public final ResType type;
+    private ResType type;
 
     private double amount;
+
+    public ResStat() {
+    }
 
     public ResStat(ResType type, double amount) {
         this.type = Objects.requireNonNull(type);
@@ -20,13 +28,12 @@ public final class ResStat {
         this(type, 0);
     }
 
-    public static ResStat valueOf(ResStatModel value) {
-        if (value == null) return null;
-        ResType type = ResType.get(value.getType());
-        if (type == null) return null;
-        ResStat result = new ResStat(type);
-        if (value.getAmount() != null) result.setAmount(value.getAmount());
-        return result;
+    public ResType getType() {
+        return type;
+    }
+
+    public void setType(ResType type) {
+        this.type = Objects.requireNonNull(type);
     }
 
     public double getAmount() {

@@ -1,6 +1,6 @@
 package org.itworks.clicknbuild.engine;
 
-import org.itworks.clicknbuild.config.stats.buidling.BuildingStats;
+import org.itworks.clicknbuild.config.stats.BuildingDefaults;
 import org.itworks.clicknbuild.engine.model.Building;
 import org.itworks.clicknbuild.engine.model.ResChunk;
 import org.itworks.clicknbuild.engine.model.ResPack;
@@ -9,7 +9,6 @@ import org.itworks.clicknbuild.engine.model.ResType;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -38,7 +37,7 @@ public final class ResManager {
 
     /**
      * Sum of all {@link Building#getProduction()}-s in all currently existing {@link Building}-s.
-     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingStats}.
+     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingDefaults}.
      * Stored in current values.
      * Max values are immutable and unlimited (big enough).
      * Used to produce these resources per game tick and to display global stats to the player.
@@ -47,7 +46,7 @@ public final class ResManager {
 
     /**
      * Sum of all {@link Building#getProductionMultiplier()}-s in all currently existing {@link Building}-s.
-     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingStats}.
+     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingDefaults}.
      * Stored in current values. Values are in percents.
      * Max values are immutable and unlimited (big enough).
      * Shows global multiplicative effect for each {@link Building} producing these {@link ResType}-s.
@@ -57,7 +56,7 @@ public final class ResManager {
 
     /**
      * Sum of all {@link Building#getJobRewardMultiplier()}-s in all currently existing {@link Building}-s.
-     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingStats}.
+     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingDefaults}.
      * Stored in current values. Values are in percents.
      * Max values are immutable and unlimited (big enough).
      * Shows global multiplicative effect for each {@link Building} rewarding these {@link ResType}-s as a result of a
@@ -68,7 +67,7 @@ public final class ResManager {
 
     /**
      * Sum of all {@link Building#getSupply()}-s in all currently existing {@link Building}-s.
-     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingStats}.
+     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingDefaults}.
      * Stored in current values.
      * Max values are immutable and unlimited (big enough).
      * Used to provide a steady supply of this resource type to the city needs.
@@ -78,7 +77,7 @@ public final class ResManager {
 
     /**
      * Sum of all {@link Building#getSupplyMultiplier()}-s in all currently existing {@link Building}-s.
-     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingStats}.
+     * Accounts all possible {@link ResType}-s to cover possible cases of overriding default {@link BuildingDefaults}.
      * Stored in current values. Values are in percents.
      * Max values are immutable and unlimited (big enough).
      * Shows global multiplicative effect for each {@link Building} supplying these {@link ResType}-s.

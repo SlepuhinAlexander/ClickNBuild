@@ -95,7 +95,10 @@ public final class L10nHandler {
         }
 
         public static Language get(String name) {
-            for (Language lang : values()) if (lang.name.equalsIgnoreCase(StringHelper.nonNull(name).trim())) return lang;
+            for (Language lang : values())
+                if (lang.name.equalsIgnoreCase(StringHelper.nonNull(name).trim())) {
+                    return lang;
+                }
             return DEF;
         }
 

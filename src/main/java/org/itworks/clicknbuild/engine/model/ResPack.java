@@ -1,5 +1,8 @@
 package org.itworks.clicknbuild.engine.model;
 
+import org.itworks.clicknbuild.config.stats.ResStat;
+import org.itworks.clicknbuild.config.stats.ResStatPack;
+
 import java.util.Collection;
 import java.util.concurrent.ConcurrentSkipListMap;
 
@@ -82,7 +85,7 @@ public final class ResPack {
 
     public ResPack add(ResStat resStat) {
         if (resStat == null) return this;
-        return add(resStat.type, resStat.getAmount());
+        return add(resStat.getType(), resStat.getAmount());
     }
 
     public ResPack add(ResStat... resources) {
@@ -99,7 +102,7 @@ public final class ResPack {
 
     public ResPack add(ResStatPack pack) {
         if (pack == null) return this;
-        return add(pack.pack.values());
+        return add(pack.getPack().values());
     }
 
     public ResPack add(ResChunk resChunk) {
@@ -133,7 +136,7 @@ public final class ResPack {
 
     public ResPack sub(ResStat resStat) {
         if (resStat == null) return this;
-        return sub(resStat.type, resStat.getAmount());
+        return sub(resStat.getType(), resStat.getAmount());
     }
 
     public ResPack sub(ResStat... resources) {
@@ -150,7 +153,7 @@ public final class ResPack {
 
     public ResPack sub(ResStatPack pack) {
         if (pack == null) return this;
-        return sub(pack.pack.values());
+        return sub(pack.getPack().values());
     }
 
     public ResPack sub(ResChunk resChunk) {

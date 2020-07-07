@@ -1,7 +1,8 @@
 package org.itworks.clicknbuild.engine.model;
 
 import com.google.common.util.concurrent.AtomicDouble;
-import org.itworks.clicknbuild.config.stats.buidling.BuildingStats;
+import org.itworks.clicknbuild.config.stats.BuildingDefaults;
+import org.itworks.clicknbuild.config.stats.ResStat;
 import org.itworks.clicknbuild.engine.Difficulty;
 import org.itworks.clicknbuild.engine.ProfileManager;
 import org.itworks.clicknbuild.engine.ResCalculator;
@@ -13,7 +14,7 @@ import java.util.Objects;
 public final class Building {
     /**
      * {@link BuildingType} of this building.
-     * Contains a link to corresponding {@link BuildingStats} object.
+     * Contains a link to corresponding {@link BuildingDefaults} object.
      * Cannot be changed.
      */
     public final BuildingType type;
@@ -30,7 +31,7 @@ public final class Building {
 
     /**
      * Current level of this building.
-     * Cannot be less than 1 and cannot be higher than corresponding {@link BuildingStats#getMaxLevel()}.
+     * Cannot be less than 1 and cannot be higher than corresponding {@link BuildingDefaults#getMaxLevel()}.
      * Can only increment by 1;
      */
     private int level = 1;
@@ -338,7 +339,7 @@ public final class Building {
         Difficulty difficulty = ProfileManager.inst().getProfile().getPreferences().getDifficulty();
         ResPack totalProductionMultiplier = ResManager.inst().getTotalProductionMultiplier();
         production.pack.keySet().forEach(resType -> production.get(resType).setMax(
-                type.stats.getProduction()[getLevel() - 1].get(resType) *
+                type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.PRODUCTION).get(resType) *
                 difficulty.gainsMultiplier *
                 (1 + totalProductionMultiplier.getCurrent(resType) / 100d)
         ));
@@ -348,7 +349,7 @@ public final class Building {
         Difficulty difficulty = ProfileManager.inst().getProfile().getPreferences().getDifficulty();
         ResPack totalJobRewardMultiplier = ResManager.inst().getTotalJobRewardMultiplier();
         jobReward.pack.keySet().forEach(resType -> jobReward.get(resType).setMax(
-                type.stats.getJobReward()[getLevel() - 1].get(resType) *
+                type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.JOB_REWARD).get(resType) *
                 difficulty.gainsMultiplier *
                 (1 + totalJobRewardMultiplier.getCurrent(resType) / 100d)
         ));
@@ -358,7 +359,7 @@ public final class Building {
         Difficulty difficulty = ProfileManager.inst().getProfile().getPreferences().getDifficulty();
         ResPack totalSupplyMultiplier = ResManager.inst().getTotalSupplyMultiplier();
         supply.pack.keySet().forEach(resType -> production.get(resType).setMax(
-                type.stats.getSupply()[getLevel() - 1].get(resType) *
+                type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.SUPPLY).get(resType) *
                 difficulty.gainsMultiplier *
                 (1 + totalSupplyMultiplier.getCurrent(resType) / 100d)
         ));
@@ -370,35 +371,38 @@ public final class Building {
         setExpEarned(new ResStat(ResType.EXPERIENCE));
         setProductivity(0d);
         setProduction(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getProduction()[getLevel() - 1], difficulty.gainsMultiplier),
-                getProductivity()));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.PRODUCTION),
+                        difficulty.gainsMultiplier), getProductivity()));
         setProductionMultiplier(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getProductionMultiplier()[getLevel() - 1], difficulty.gainsMultiplier),
-                getProductivity()));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.PRODUCTION_MUL),
+                        difficulty.gainsMultiplier), getProductivity()));
         setJobPrice(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getJobPrice()[getLevel() - 1], difficulty.costsMultiplier)));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.JOB_PRICE),
+                        difficulty.costsMultiplier)));
         setJobReward(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getJobReward()[getLevel() - 1], difficulty.gainsMultiplier),
-                getProductivity()));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.JOB_REWARD),
+                        difficulty.gainsMultiplier), getProductivity()));
         setJobRewardMultiplier(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getJobRewardMultiplier()[getLevel() - 1], difficulty.gainsMultiplier),
-                getProductivity()));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.JOB_REWARD_MUL),
+                        difficulty.gainsMultiplier), getProductivity()));
         setSupply(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getSupply()[getLevel() - 1], difficulty.gainsMultiplier),
-                getProductivity()));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.SUPPLY),
+                        difficulty.gainsMultiplier), getProductivity()));
         setSupplyMultiplier(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getSupplyMultiplier()[getLevel() - 1], difficulty.gainsMultiplier),
-                getProductivity()));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.SUPPLY_MUL),
+                        difficulty.gainsMultiplier), getProductivity()));
         setDemand(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getDemand()[getLevel() - 1], difficulty.costsMultiplier)));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.DEMAND),
+                        difficulty.costsMultiplier)));
         setHold(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getHold()[getLevel() - 1], difficulty.costsMultiplier), 0));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.HOLD),
+                        difficulty.costsMultiplier), 0));
         setCapacity(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getCapacity()[getLevel() - 1], difficulty.gainsMultiplier),
-                getProductivity()));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.CAPACITY),
+                        difficulty.gainsMultiplier), getProductivity()));
         setCapacityMultiplier(ResCalculator.toResPack(
-                ResCalculator.mul(type.stats.getCapacityMultiplier()[getLevel() - 1], difficulty.gainsMultiplier),
-                getProductivity()));
+                ResCalculator.mul(type.stats.getStats()[getLevel() - 1].get(BuildingAttrType.CAPACITY_MUL),
+                        difficulty.gainsMultiplier), getProductivity()));
         setStore(ResCalculator.resPackMaxedBy(getCapacity()));
         return this;
     }

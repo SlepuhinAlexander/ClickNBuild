@@ -2,101 +2,82 @@
   "requiredPlayerLevel" : 1,
   "maxLevel" : 1,
   "buildLimit" : 1,
-  "priceMultiplier" : 100,
-  "structure" : [
-    9000
-  ],
-  "buildCost" : [
+  "costMultiplier" : 100,
+  "stats" : [
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 9000
+      "structure" : 9000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 9000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 4500
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 15000
+            },
+            "BRICK" : {
+              "type" : "BRICK",
+              "amount" : 11250
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 3750
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 7500
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 450000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 4500
+        "PRODUCTION" : null,
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : null,
+        "JOB_REWARD" : null,
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 100
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 2000
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 15000
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 100
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 2000
+            }
+          }
         },
-        {
-          "type" : "brick",
-          "amount" : 11250
-        },
-        {
-          "type" : "wood",
-          "amount" : 3750
-        },
-        {
-          "type" : "glass",
-          "amount" : 7500
-        },
-        {
-          "type" : "money",
-          "amount" : 450000
-        }
-      ]
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     }
-  ],
-  "production" : [
-    null
-  ],
-  "productionMultiplier" : [
-    null
-  ],
-  "jobPrice" : [
-    null
-  ],
-  "jobReward" : [
-    null
-  ],
-  "jobRewardMultiplier" : [
-    null
-  ],
-  "supply" : [
-    null
-  ],
-  "supplyMultiplier" : [
-    null
-  ],
-  "demand" : [
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 100
-        },
-        {
-          "type" : "job",
-          "amount" : 2000
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    }
-  ],
-  "hold" : [
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 100
-        },
-        {
-          "type" : "worker",
-          "amount" : 2000
-        }
-      ]
-    }
-  ],
-  "capacity" : [
-    null
-  ],
-  "capacityMultiplier" : [
-    null
   ]
 }

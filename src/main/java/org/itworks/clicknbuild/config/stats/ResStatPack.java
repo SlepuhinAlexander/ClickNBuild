@@ -1,14 +1,23 @@
-package org.itworks.clicknbuild.engine.model;
+package org.itworks.clicknbuild.config.stats;
 
-import org.itworks.clicknbuild.config.stats.model.ResStatModel;
-import org.itworks.clicknbuild.config.stats.model.ResStatPackModel;
+import org.itworks.clicknbuild.engine.model.ResType;
 
 import java.util.Collection;
+import java.util.Objects;
 import java.util.TreeMap;
 
+/**
+ * A collection of {@link ResStat}-s with useful aggregation and retrieval methods.
+ * Represents some price, cost, reward, need, ets, that an in-game building may provide or require.
+ * Any {@link ResType} might present here only once.
+ * {@link ResType}-s with zero amounts are automatically cleared out from the collection.
+ * If a {@link ResType} is not found in this collection, the returned value is 0, not null.
+ * Among else, used as a {@link BuildingDefAttr}. In this role is nullable meaning that a building does not use such
+ * attribute at all.
+ */
 @SuppressWarnings("UnusedReturnValue")
-public final class ResStatPack {
-    public final TreeMap<ResType, ResStat> pack = new TreeMap<>();
+public class ResStatPack {
+    private TreeMap<ResType, ResStat> pack = new TreeMap<>();
 
     public ResStatPack() {
     }
@@ -23,20 +32,12 @@ public final class ResStatPack {
         add(resources);
     }
 
-    public static ResStatPack valueOf(ResStatPackModel value) {
-        if (value == null) return null;
-        ResStatPack result = new ResStatPack();
-        for (ResStatModel chunkModel : value.getPack()) result.add(ResStat.valueOf(chunkModel));
-        return result;
+    public TreeMap<ResType, ResStat> getPack() {
+        return pack;
     }
 
-    public static ResStatPack[] valueOf(ResStatPackModel... values) {
-        if (values == null) return null;
-        ResStatPack[] result = new ResStatPack[values.length];
-        for (int i = 0; i < values.length; i++) {
-            result[i] = valueOf(values[i]);
-        }
-        return result;
+    public void setPack(TreeMap<ResType, ResStat> pack) {
+        this.pack = Objects.requireNonNull(pack);
     }
 
     public ResStatPack add(ResType type, double amount) {
@@ -46,9 +47,9 @@ public final class ResStatPack {
 
     public ResStatPack add(ResStat res) {
         if (res == null) return this;
-        ResStat stat = pack.get(res.type);
+        ResStat stat = pack.get(res.getType());
         if (stat == null) {
-            pack.put(res.type, res);
+            pack.put(res.getType(), res);
         } else {
             stat.add(res.getAmount());
         }
@@ -80,7 +81,7 @@ public final class ResStatPack {
 
     public ResStatPack sub(ResStat res) {
         if (res == null) return this;
-        ResStat stat = pack.get(res.type);
+        ResStat stat = pack.get(res.getType());
         if (stat != null) stat.sub(res.getAmount());
         cleanup();
         return this;

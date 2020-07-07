@@ -2,59 +2,40 @@
   "requiredPlayerLevel" : 1,
   "maxLevel" : 1,
   "buildLimit" : 1000,
-  "priceMultiplier" : 105,
-  "structure" : [
-    500
-  ],
-  "buildCost" : [
+  "costMultiplier" : 105,
+  "stats" : [
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 500
+      "structure" : 500,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 500
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 50
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 500
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 50
-        },
-        {
-          "type" : "money",
-          "amount" : 500
-        }
-      ]
+        "PRODUCTION" : null,
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : null,
+        "JOB_REWARD" : null,
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : null,
+        "HOLD" : null,
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     }
-  ],
-  "production" : [
-    null
-  ],
-  "productionMultiplier" : [
-    null
-  ],
-  "jobPrice" : [
-    null
-  ],
-  "jobReward" : [
-    null
-  ],
-  "jobRewardMultiplier" : [
-    null
-  ],
-  "supply" : [
-    null
-  ],
-  "supplyMultiplier" : [
-    null
-  ],
-  "demand" : [
-    null
-  ],
-  "hold" : [
-    null
-  ],
-  "capacity" : [
-    null
-  ],
-  "capacityMultiplier" : [
-    null
   ]
 }

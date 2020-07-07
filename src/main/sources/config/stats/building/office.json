@@ -2,1851 +2,1927 @@
   "requiredPlayerLevel" : 1,
   "maxLevel" : 20,
   "buildLimit" : 1000,
-  "priceMultiplier" : 110,
-  "structure" : [
-    500,
-    1500,
-    3000,
-    5000,
-    7500,
-    11000,
-    15500,
-    21000,
-    27500,
-    35000,
-    44000,
-    54500,
-    66500,
-    80000,
-    95000,
-    112000,
-    131000,
-    152000,
-    175000,
-    200000
-  ],
-  "buildCost" : [
+  "costMultiplier" : 110,
+  "stats" : [
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 500
+      "structure" : 500,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 500
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 163
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 245
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 61
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 1020
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 35700
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 163
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 200
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 245
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 24
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 24
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 61
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 200
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 1020
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 9
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 180
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 35700
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 9
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 180
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 1500
+      "structure" : 1500,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 1500
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 496
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 744
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 186
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 3100
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 108500
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 496
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 400
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 744
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 28
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 28
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 186
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 400
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 3100
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 18
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 360
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 108500
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 18
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 360
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 3000
+      "structure" : 3000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 3000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 1005
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 1507
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 377
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 6280
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 219800
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 1005
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 600
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 1507
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 32
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 32
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 377
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 600
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 6280
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 27
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 540
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 219800
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 27
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 540
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 5000
+      "structure" : 5000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 5000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 1696
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 2544
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 636
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 10600
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 371000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 1696
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 800
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 2544
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 36
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 36
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 636
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 800
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 10600
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 36
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 720
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 371000
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 36
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 720
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 7500
+      "structure" : 7500,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 7500
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 2576
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 3864
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 966
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 16100
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 563500
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 2576
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 1000
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 3864
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 40
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 40
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 966
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 1000
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 16100
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 45
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 900
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 563500
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 45
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 900
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 11000
+      "structure" : 11000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 11000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 3853
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 5779
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 1445
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 24080
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 842000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 3853
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 1400
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 5779
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 44
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 44
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 1445
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 1400
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 24080
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 63
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 1260
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 842000
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 63
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 1260
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 15500
+      "structure" : 15500,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 15500
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 5552
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 8328
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 2082
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 34700
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 1214500
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 5552
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 1800
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 8328
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 48
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 48
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 2082
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 1800
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 34700
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 81
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 1620
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 1214500
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 81
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 1620
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 21000
+      "structure" : 21000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 21000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 7699
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 11549
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 2887
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 48120
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 1684200
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 7699
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 2200
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 11549
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 52
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 52
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 2887
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 2200
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 48120
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 99
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 1980
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 1684200
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 99
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 1980
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 27500
+      "structure" : 27500,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 27500
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 10320
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 15480
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 3870
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 64500
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 2257500
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 10320
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 2600
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 15480
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 56
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 56
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 3870
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 2600
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 64500
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 117
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 2340
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 2257500
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 117
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 2340
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 35000
+      "structure" : 35000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 35000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 13440
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 20160
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 5040
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 84000
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 2940000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 13440
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 3000
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 20160
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 60
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 60
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 5040
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 3000
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 84000
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 135
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 2700
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 2940000
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 135
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 2700
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 44000
+      "structure" : 44000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 44000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 17357
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 26036
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 6509
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 108480
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 3796800
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 17357
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 3600
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 26036
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 64
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 64
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 6509
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 3600
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 108480
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 162
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 3240
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 3796800
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 162
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 3240
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 54500
+      "structure" : 54500,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 54500
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 22128
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 33192
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 8298
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 138300
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 4840500
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 22128
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 4200
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 33192
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 68
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 68
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 8298
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 4200
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 138300
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 189
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 3780
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 4840500
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 189
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 3780
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 66500
+      "structure" : 66500,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 66500
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 27811
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 41717
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 10249
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 173820
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 6083700
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 27811
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 4800
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 41717
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 72
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 72
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 10249
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 4800
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 173820
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 216
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 4320
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 6083700
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 216
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 4320
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 80000
+      "structure" : 80000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 80000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 34464
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 51696
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 12924
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 215400
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 7539000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 34464
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 5400
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 51696
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 76
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 76
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 12924
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 5400
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 215400
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 243
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 4860
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 7539000
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 243
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 4860
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 95000
+      "structure" : 95000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 95000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 42144
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 63216
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 15804
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 263400
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 9219000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 42144
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 6000
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 63216
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 80
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 80
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 15804
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 6000
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 263400
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 270
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 5400
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 9219000
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 270
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 5400
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 112000
+      "structure" : 112000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 112000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 51283
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 76925
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 19231
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 320520
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 11218200
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 51283
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 6800
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 76925
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 84
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 84
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 19231
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 6800
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 320520
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 306
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 6120
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 11218200
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 306
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 6120
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 131000
+      "structure" : 131000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 131000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 61984
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 92976
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 23244
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 387400
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 13559000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 61984
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 7600
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 92976
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 88
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 88
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 23244
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 7600
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 387400
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 342
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 6840
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 13559000
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 342
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 6840
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 152000
+      "structure" : 152000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 152000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 74349
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 111523
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 27881
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 464680
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 16263800
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 74349
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 8400
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 111523
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 92
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 92
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 27881
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 8400
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 464680
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 378
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 7560
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 16263800
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 378
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 7560
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 175000
+      "structure" : 175000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 175000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 88480
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 132720
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 33180
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 553000
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 19355000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 88480
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 9200
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 132720
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 96
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 96
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 33180
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 9200
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 553000
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 414
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 8280
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 19355000
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 414
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 8280
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     },
     {
-      "pack" : [
-        {
-          "type" : "construction",
-          "amount" : 20000
+      "structure" : 200000,
+      "attributes" : {
+        "BUILD_COST" : {
+          "pack" : {
+            "CONSTRUCTION" : {
+              "type" : "CONSTRUCTION",
+              "amount" : 20000
+            },
+            "STEEL" : {
+              "type" : "STEEL",
+              "amount" : 104480
+            },
+            "CONCRETE" : {
+              "type" : "CONCRETE",
+              "amount" : 156720
+            },
+            "WOOD" : {
+              "type" : "WOOD",
+              "amount" : 39180
+            },
+            "GLASS" : {
+              "type" : "GLASS",
+              "amount" : 653000
+            },
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 22855000
+            }
+          }
         },
-        {
-          "type" : "steel",
-          "amount" : 104480
+        "PRODUCTION" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 10000
+            }
+          }
         },
-        {
-          "type" : "concrete",
-          "amount" : 156720
+        "PRODUCTION_MUL" : null,
+        "JOB_PRICE" : {
+          "pack" : {
+            "ACTION" : {
+              "type" : "ACTION",
+              "amount" : 100
+            },
+            "ENERGY" : {
+              "type" : "ENERGY",
+              "amount" : 100
+            }
+          }
         },
-        {
-          "type" : "wood",
-          "amount" : 39180
+        "JOB_REWARD" : {
+          "pack" : {
+            "MONEY" : {
+              "type" : "MONEY",
+              "amount" : 10000
+            }
+          }
         },
-        {
-          "type" : "glass",
-          "amount" : 653000
+        "JOB_REWARD_MUL" : null,
+        "SUPPLY" : null,
+        "SUPPLY_MUL" : null,
+        "DEMAND" : {
+          "pack" : {
+            "POWER_CONSUMPTION" : {
+              "type" : "POWER_CONSUMPTION",
+              "amount" : 450
+            },
+            "JOB" : {
+              "type" : "JOB",
+              "amount" : 9000
+            },
+            "IGNITABILITY" : {
+              "type" : "IGNITABILITY",
+              "amount" : 1
+            }
+          }
         },
-        {
-          "type" : "money",
-          "amount" : 22855000
-        }
-      ]
+        "HOLD" : {
+          "pack" : {
+            "POWER" : {
+              "type" : "POWER",
+              "amount" : 450
+            },
+            "WORKER" : {
+              "type" : "WORKER",
+              "amount" : 9000
+            }
+          }
+        },
+        "STORE" : null,
+        "CAPACITY" : null,
+        "CAPACITY_MUL" : null
+      }
     }
-  ],
-  "production" : [
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 200
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 400
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 600
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 800
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 1000
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 1400
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 1800
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 2200
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 2600
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 3000
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 3600
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 4200
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 4800
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 5400
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 6000
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 6800
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 7600
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 8400
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 9200
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 10000
-        }
-      ]
-    }
-  ],
-  "productionMultiplier" : [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ],
-  "jobPrice" : [
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 24
-        },
-        {
-          "type" : "energy",
-          "amount" : 24
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 28
-        },
-        {
-          "type" : "energy",
-          "amount" : 28
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 32
-        },
-        {
-          "type" : "energy",
-          "amount" : 32
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 36
-        },
-        {
-          "type" : "energy",
-          "amount" : 36
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 40
-        },
-        {
-          "type" : "energy",
-          "amount" : 40
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 44
-        },
-        {
-          "type" : "energy",
-          "amount" : 44
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 48
-        },
-        {
-          "type" : "energy",
-          "amount" : 48
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 52
-        },
-        {
-          "type" : "energy",
-          "amount" : 52
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 56
-        },
-        {
-          "type" : "energy",
-          "amount" : 56
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 60
-        },
-        {
-          "type" : "energy",
-          "amount" : 60
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 64
-        },
-        {
-          "type" : "energy",
-          "amount" : 64
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 68
-        },
-        {
-          "type" : "energy",
-          "amount" : 68
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 72
-        },
-        {
-          "type" : "energy",
-          "amount" : 72
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 76
-        },
-        {
-          "type" : "energy",
-          "amount" : 76
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 80
-        },
-        {
-          "type" : "energy",
-          "amount" : 80
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 84
-        },
-        {
-          "type" : "energy",
-          "amount" : 84
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 88
-        },
-        {
-          "type" : "energy",
-          "amount" : 88
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 92
-        },
-        {
-          "type" : "energy",
-          "amount" : 92
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 96
-        },
-        {
-          "type" : "energy",
-          "amount" : 96
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "action",
-          "amount" : 100
-        },
-        {
-          "type" : "energy",
-          "amount" : 100
-        }
-      ]
-    }
-  ],
-  "jobReward" : [
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 200
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 400
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 600
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 800
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 1000
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 1400
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 1800
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 2200
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 2600
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 3000
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 3600
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 4200
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 4800
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 5400
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 6000
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 6800
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 7600
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 8400
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 9200
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "money",
-          "amount" : 10000
-        }
-      ]
-    }
-  ],
-  "jobRewardMultiplier" : [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ],
-  "supply" : [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ],
-  "supplyMultiplier" : [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ],
-  "demand" : [
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 9
-        },
-        {
-          "type" : "job",
-          "amount" : 180
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 18
-        },
-        {
-          "type" : "job",
-          "amount" : 360
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 27
-        },
-        {
-          "type" : "job",
-          "amount" : 540
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 36
-        },
-        {
-          "type" : "job",
-          "amount" : 720
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 45
-        },
-        {
-          "type" : "job",
-          "amount" : 900
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 63
-        },
-        {
-          "type" : "job",
-          "amount" : 1260
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 81
-        },
-        {
-          "type" : "job",
-          "amount" : 1620
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 99
-        },
-        {
-          "type" : "job",
-          "amount" : 1980
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 117
-        },
-        {
-          "type" : "job",
-          "amount" : 2340
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 135
-        },
-        {
-          "type" : "job",
-          "amount" : 2700
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 162
-        },
-        {
-          "type" : "job",
-          "amount" : 3240
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 189
-        },
-        {
-          "type" : "job",
-          "amount" : 3780
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 216
-        },
-        {
-          "type" : "job",
-          "amount" : 4320
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 243
-        },
-        {
-          "type" : "job",
-          "amount" : 4860
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 270
-        },
-        {
-          "type" : "job",
-          "amount" : 5400
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 306
-        },
-        {
-          "type" : "job",
-          "amount" : 6120
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 342
-        },
-        {
-          "type" : "job",
-          "amount" : 6840
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 378
-        },
-        {
-          "type" : "job",
-          "amount" : 7560
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 414
-        },
-        {
-          "type" : "job",
-          "amount" : 8280
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power_consumption",
-          "amount" : 450
-        },
-        {
-          "type" : "job",
-          "amount" : 9000
-        },
-        {
-          "type" : "ignitability",
-          "amount" : 1
-        }
-      ]
-    }
-  ],
-  "hold" : [
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 9
-        },
-        {
-          "type" : "worker",
-          "amount" : 180
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 18
-        },
-        {
-          "type" : "worker",
-          "amount" : 360
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 27
-        },
-        {
-          "type" : "worker",
-          "amount" : 540
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 36
-        },
-        {
-          "type" : "worker",
-          "amount" : 720
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 45
-        },
-        {
-          "type" : "worker",
-          "amount" : 900
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 63
-        },
-        {
-          "type" : "worker",
-          "amount" : 1260
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 81
-        },
-        {
-          "type" : "worker",
-          "amount" : 1620
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 99
-        },
-        {
-          "type" : "worker",
-          "amount" : 1980
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 117
-        },
-        {
-          "type" : "worker",
-          "amount" : 2340
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 135
-        },
-        {
-          "type" : "worker",
-          "amount" : 2700
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 162
-        },
-        {
-          "type" : "worker",
-          "amount" : 3240
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 189
-        },
-        {
-          "type" : "worker",
-          "amount" : 3780
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 216
-        },
-        {
-          "type" : "worker",
-          "amount" : 4320
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 243
-        },
-        {
-          "type" : "worker",
-          "amount" : 4860
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 270
-        },
-        {
-          "type" : "worker",
-          "amount" : 5400
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 306
-        },
-        {
-          "type" : "worker",
-          "amount" : 6120
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 342
-        },
-        {
-          "type" : "worker",
-          "amount" : 6840
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 378
-        },
-        {
-          "type" : "worker",
-          "amount" : 7560
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 414
-        },
-        {
-          "type" : "worker",
-          "amount" : 8280
-        }
-      ]
-    },
-    {
-      "pack" : [
-        {
-          "type" : "power",
-          "amount" : 450
-        },
-        {
-          "type" : "worker",
-          "amount" : 9000
-        }
-      ]
-    }
-  ],
-  "capacity" : [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ],
-  "capacityMultiplier" : [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
   ]
 }
