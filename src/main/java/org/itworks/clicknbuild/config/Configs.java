@@ -25,6 +25,7 @@ public enum Configs {
     PROFILE_GAMESAVE_FILE_NAME("profile.gamesave_file_name"),
     MAP_WIDTH("map.width"),
     MAP_HEIGHT("map.height"),
+    TICKING_RATE("ticker.ticking_rate"),
     ;
 
     /**
