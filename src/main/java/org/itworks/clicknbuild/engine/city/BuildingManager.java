@@ -5,7 +5,7 @@ import org.itworks.clicknbuild.config.Configs;
 import org.itworks.clicknbuild.engine.building.Building;
 import org.itworks.clicknbuild.engine.building.BuildingType;
 import org.itworks.clicknbuild.engine.exception.CannotBuildException;
-import org.itworks.clicknbuild.engine.res.*;
+import org.itworks.clicknbuild.engine.res.TileType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,7 +103,7 @@ public final class BuildingManager {
     }
 
     /**
-     * Removes this building from registered buildings (if it was actually registered).
+     * Removes thе given building from registered buildings (if it was actually registered).
      * Typically, a building is desisted when it is destroyed: demolished, burned down, etc.
      */
     private void delist(Building building) {
@@ -113,6 +113,23 @@ public final class BuildingManager {
         buildingList.removeIf(registered -> registered.equals(building) ||
                                             registered.getLocation().equals(building.getLocation()));
         reorder(building.type);
+    }
+
+    public void clearAll() {
+        clearBuildings();
+        clearMap();
+    }
+
+    public void clearBuildings() {
+        buildings.clear();
+    }
+
+    public void clearMap() {
+        for (int i = 0; i < MAP_WIDTH; i++) {
+            for (int j = 0; j < MAP_HEIGHT; j++) {
+                map[i][j] = new Cell(i, j);
+            }
+        }
     }
 
     private Location validateLocation(int row, int col) {

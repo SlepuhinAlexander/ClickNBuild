@@ -270,6 +270,7 @@ public final class Building {
             }
         }
         setProductivity(productivity);
+        applyProductivity();
     }
 
     public void applyProductivity() {
@@ -282,5 +283,6 @@ public final class Building {
         BuildingAttribute attribute = get(attrType);
         if (attribute == null) return;
         attribute.applyMultipliers(multipliers);
+        applyProductivity();
     }
 }

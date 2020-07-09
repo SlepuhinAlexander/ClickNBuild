@@ -61,20 +61,9 @@ public final class ResManager {
         BuildingAttrType[] attrTypes = BuildingAttrType.values();
         for (BuildingAttrType attrType : attrTypes) {
             if (attrType.equals(BuildingAttrType.BUILD_COST) ||
-                attrType.equals(BuildingAttrType.JOB_PRICE) ||
-                attrType.equals(BuildingAttrType.JOB_REWARD)) continue;
+                attrType.equals(BuildingAttrType.JOB_PRICE)) continue;
             put(attrType, new CityAttribute(attrType));
         }
-        //  +  PRODUCTION,
-        //  +  PRODUCTION_MUL,
-        //  +  JOB_REWARD_MUL,
-        //  +  SUPPLY,
-        //  +  SUPPLY_MUL,
-        //    DEMAND,
-        //    HOLD,
-        //    STORE,
-        //    CAPACITY,
-        //    CAPACITY_MUL
     }
 
     public CityAttribute get(BuildingAttrType attrType) {
@@ -122,4 +111,43 @@ public final class ResManager {
         totalExpEarned.sub(amount);
     }
 
+    /**
+     * Registers the given building to this ResManages.
+     * Not registered buildings are unknown to the game.
+     * While registering the building would be added in all {@link CityAttribute#getBuildings()} maps for each non-null
+     * (and not-empty) building's {@link BuildingAttrType}.
+     * Typically, a building is registered when its construction / upgrading is complete.
+     */
+    public void register(Building building) {
+        if (building == null) return;
+        BuildingAttrType[] attrTypes = BuildingAttrType.values();
+        for (BuildingAttrType attrType : attrTypes) {
+            CityAttribute cityAttribute = attributes.get(attrType);
+            if (cityAttribute == null) continue;
+            cityAttribute.register(building);
+        }
+    }
+
+    /**
+     * Removes the given building from registered buildings.
+     * Typically, a building is delisted when it is destroyed.
+     */
+    public void delist(Building building) {
+        if (building == null) return;
+        BuildingAttrType[] attrTypes = BuildingAttrType.values();
+        for (BuildingAttrType attrType : attrTypes) {
+            CityAttribute cityAttribute = attributes.get(attrType);
+            if (cityAttribute == null) continue;
+            cityAttribute.delist(building);
+        }
+    }
+
+    public void clearBuildings() {
+        BuildingAttrType[] attrTypes = BuildingAttrType.values();
+        for (BuildingAttrType attrType : attrTypes) {
+            CityAttribute cityAttribute = attributes.get(attrType);
+            if (cityAttribute == null) continue;
+            cityAttribute.clear();
+        }
+    }
 }

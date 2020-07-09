@@ -125,6 +125,10 @@
             "CITIZEN" : {
               "type" : "CITIZEN",
               "amount" : 5000
+            },
+            "OBEDIENCE" : {
+              "type" : "OBEDIENCE",
+              "amount" : 2000
             }
           }
         },

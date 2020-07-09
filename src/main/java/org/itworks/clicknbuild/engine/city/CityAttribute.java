@@ -6,6 +6,7 @@ import org.itworks.clicknbuild.engine.building.BuildingAttribute;
 import org.itworks.clicknbuild.engine.res.ResChunk;
 import org.itworks.clicknbuild.engine.res.ResPack;
 import org.itworks.clicknbuild.engine.res.ResType;
+import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -64,28 +65,51 @@ public class CityAttribute {
         this.total = total;
     }
 
+    private void initBuildings() {
+        buildings = new ConcurrentHashMap<>();
+        ResType[] resTypes = ResType.values();
+        for (ResType type : resTypes) buildings.put(type, new CopyOnWriteArrayList<>());
+    }
+
     private void initTotal() {
         total = new ResPack();
         ResType[] resTypes = ResType.values();
         for (ResType type : resTypes) total.put(new ResChunk(type, 0d, Integer.MAX_VALUE));
     }
 
+    public void calculateTotal(ResType type) {
+        Objects.requireNonNull(type);
+        total.get(type).setCurrent(0d);
+        buildings.get(type).forEach(building -> {
+            BuildingAttribute attribute = building.get(attrType);
+            if (attribute == null) return;
+            total.add(type, building.get(attrType).getCurrent(type));
+        });
+    }
+
     public void calculateTotal() {
-        initTotal();
         ResType[] resTypes = ResType.values();
-        for (ResType type : resTypes) {
-            buildings.get(type).forEach(building -> {
-                BuildingAttribute attribute = building.get(attrType);
-                if (attribute == null) return;
-                total.add(type, building.get(attrType).getCurrent(type));
-            });
+        for (ResType type : resTypes) calculateTotal(type);
+    }
+
+    public void distribute(ResChunk resChunk) {
+        Objects.requireNonNull(resChunk);
+        CopyOnWriteArrayList<Building> storages = buildings.get(resChunk.type);
+        if (storages == null || storages.isEmpty()) return;
+        double[] toDistribute = new double[storages.size()];
+        for (int i = 0; i < toDistribute.length; i++) {
+            toDistribute[i] = storages.get(i).get(attrType).getMax(resChunk.type);
+        }
+        double[] distribution = MathHelper.distribute(resChunk.getCurrent(), toDistribute);
+        for (int i = 0; i < distribution.length; i++) {
+            storages.get(i).get(attrType).setCurrent(resChunk.type, distribution[i]);
         }
     }
 
-    private void initBuildings() {
-        buildings = new ConcurrentHashMap<>();
-        ResType[] resTypes = ResType.values();
-        for (ResType type : resTypes) buildings.put(type, new CopyOnWriteArrayList<>());
+    public void applyMultipliers(ResPack multipliers) {
+        Objects.requireNonNull(multipliers);
+        buildings.values().forEach(buildingsList ->
+                buildingsList.forEach(building -> building.applyMultipliers(attrType, multipliers)));
     }
 
     public void register(Building building) {
@@ -93,7 +117,7 @@ public class CityAttribute {
         BuildingAttribute attribute = building.get(attrType);
         if (attribute == null) return;
         attribute.pack.forEach((resType, resChunk) -> {
-            if (resChunk == null || resChunk.getMax() <= 0) return;
+            if (resChunk == null || (resChunk.getMax() <= 0 && !attrType.equals(BuildingAttrType.STORE))) return;
             if (buildings.get(resType).contains(building)) return;
             buildings.get(resType).add(building);
         });
@@ -104,5 +128,10 @@ public class CityAttribute {
         BuildingAttribute attribute = building.get(attrType);
         if (attribute == null) return;
         attribute.pack.forEach((resType, resChunk) -> buildings.get(resType).remove(building));
+    }
+
+    public void clear() {
+        initTotal();
+        initBuildings();
     }
 }

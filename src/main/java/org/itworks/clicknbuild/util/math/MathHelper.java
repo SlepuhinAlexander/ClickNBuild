@@ -1,6 +1,7 @@
 package org.itworks.clicknbuild.util.math;
 
 import java.util.Date;
+import java.util.Objects;
 import java.util.Random;
 
 public class MathHelper {
@@ -65,5 +66,43 @@ public class MathHelper {
     public static int randomInt(int lower, int upper) {
         if (upper <= lower) throw new IllegalArgumentException();
         return R.nextInt(upper - lower) + lower;
+    }
+
+    public static double[] distribute(double amount, double[] jars) {
+        Objects.requireNonNull(jars);
+        for (double jar : jars) if (jar < 0d) throw new IllegalArgumentException();
+        double[] result = new double[jars.length];
+        if (amount <= 0d) return result;
+        double sum = 0d;
+        for (double jar : jars) sum += jar;
+        if (amount >= sum) return jars.clone();
+        boolean[] filled = new boolean[jars.length];
+        int available = jars.length;
+        double toDistribute;
+        do {
+            toDistribute = amount;
+            for (double val : result) toDistribute -= val;
+            double min = Double.MAX_VALUE;
+            // find min jar that is not filled.
+            for (int i = 0; i < jars.length; i++) if (!filled[i] && jars[i] < min) min = jars[i];
+            // split evenly the rest amount toDistribute to all not filled
+            double even = toDistribute / available;
+            // if even split is less than minimal -> fill the not yet filled with even value and return;
+            if (even <= min) {
+                for (int i = 0; i < jars.length; i++) {
+                    if (!filled[i]) result[i] = even;
+                }
+                return result;
+            }
+            // if even split is more than minimal jar -> fill to minimal; mark filled; recount not filled; proceed.
+            for (int i = 0; i < jars.length; i++) {
+                if (!filled[i] && jars[i] <= min) {
+                    result[i] = min;
+                    filled[i] = true;
+                    available--;
+                }
+            }
+        } while (toDistribute > 0d && available > 0d);
+        return result;
     }
 }

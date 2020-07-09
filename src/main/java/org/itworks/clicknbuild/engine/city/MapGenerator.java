@@ -4,7 +4,7 @@ import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
 import org.itworks.clicknbuild.engine.building.Building;
 import org.itworks.clicknbuild.engine.building.BuildingType;
-import org.itworks.clicknbuild.engine.res.*;
+import org.itworks.clicknbuild.engine.res.TileType;
 import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.HashSet;
@@ -64,7 +64,8 @@ public class MapGenerator {
         }
     }
 
-    public void constructRandomBuildings(Cell[][] map) {
+    //TODO clear
+    public static void constructRandomBuildings(Cell[][] map) {
         if (map == null) return;
         if (map.length != MAP_HEIGHT) throw new IllegalArgumentException();
         BuildingType[] buildingTypes = BuildingType.values();
@@ -85,6 +86,132 @@ public class MapGenerator {
                 building.setLocation(cell.location);
                 cell.setTile(TileType.LAND);
                 cell.setBuilding(building);
+            }
+        }
+    }
+
+    // TODO clear
+    public static void generatePredefinedMap(Cell[][] map) {
+        if (map == null) return;
+        if (map.length != MAP_HEIGHT) throw new IllegalArgumentException();
+        BuildingType[] buildingTypes = BuildingType.values();
+        for (int i = 0; i < MAP_HEIGHT; i++) {
+            if (map[i] == null || map[i].length != MAP_WIDTH) throw new IllegalArgumentException();
+            for (int j = 0; j < MAP_WIDTH; j++) {
+                if (i == 0 || i == MAP_HEIGHT - 1 || j == 0 || j == MAP_WIDTH - 1) {
+                    map[i][j].setTile(TileType.SEA);
+                } else {
+                    map[i][j].setTile(TileType.LAND);
+                }
+                map[i][j].setBuilding(null);
+            }
+        }
+        map[7][18].setTile(TileType.SEA);
+        for (int j = 3; j <= 16; j++) {
+            if (map[7][j].getBuilding() == null) map[7][j].setBuilding(Building.of(BuildingType.ROAD, 1));
+        }
+        for (int i = 3; i <= 11; i++) {
+            for (int j = 3; j <= 15; j += 3) {
+                if (map[i][j].getBuilding() == null) map[i][j].setBuilding(Building.of(BuildingType.ROAD, 1));
+            }
+        }
+        for (int i = 2; i <= 12; i += 10) {
+            for (int j = 3; j <= 9; j += 3) {
+                if (map[i][j].getBuilding() == null) {
+                    map[i][j].setBuilding(Building.of(BuildingType.POLICE, MathHelper.randomInt(11, 21)));
+                }
+            }
+        }
+        for (int i = 6; i <= 8; i += 2) {
+            for (int j = 4; j <= 11; j++) {
+                if (map[i][j].getBuilding() == null) {
+                    map[i][j].setBuilding(Building.of(BuildingType.MALL, MathHelper.randomInt(11, 21)));
+                }
+            }
+        }
+        for (int i = 2; i <= 12; i++) {
+            if (map[i][2].getBuilding() == null) {
+                map[i][2].setBuilding(Building.of(BuildingType.APARTMENT, MathHelper.randomInt(1, 11)));
+            }
+        }
+        for (int i = 2; i <= 12; i++) {
+            for (int j = 4; j <= 7; j++) {
+                if (map[i][j].getBuilding() == null) {
+                    map[i][j].setBuilding(Building.of(BuildingType.APARTMENT,
+                            MathHelper.randomInt(6, 21)));
+                }
+            }
+        }
+        map[9][10].setBuilding(Building.of(BuildingType.BANK, MathHelper.randomInt(11, 21)));
+        map[10][10].setBuilding(Building.of(BuildingType.EXCHANGE, 1));
+        map[4][11].setBuilding(Building.of(BuildingType.ENGINEERING_CENTER, MathHelper.randomInt(11, 21)));
+        map[5][11].setBuilding(Building.of(BuildingType.CITY_PLANNING, 1));
+        map[9][11].setBuilding(Building.of(BuildingType.HOTEL, MathHelper.randomInt(11, 21)));
+        map[10][11].setBuilding(Building.of(BuildingType.GYM, MathHelper.randomInt(11, 21)));
+        map[12][11].setBuilding(Building.of(BuildingType.CONSTRUCTION_SITE, MathHelper.randomInt(6, 21)));
+        for (int i = 3; i <= 11; i++) {
+            for (int j = 8; j <= 10; j++) {
+                if (map[i][j].getBuilding() == null) {
+                    map[i][j].setBuilding(Building.of(BuildingType.OFFICE, MathHelper.randomInt(11, 21)));
+                }
+            }
+        }
+        for (int i = 2; i <= 12; i++) {
+            for (int j = 8; j <= 11; j++) {
+                if (map[i][j].getBuilding() == null) {
+                    map[i][j].setBuilding(Building.of(BuildingType.APARTMENT,
+                            MathHelper.randomInt(11, 21)));
+                }
+            }
+        }
+        map[2][12].setBuilding(Building.of(BuildingType.FIRE_STATION, MathHelper.randomInt(15, 21)));
+        map[12][12].setBuilding(Building.of(BuildingType.FIRE_STATION, MathHelper.randomInt(15, 21)));
+        for (int i = 2; i <= 12; i++) {
+            if (map[i][13].getBuilding() == null) {
+                map[i][13].setBuilding(Building.of(BuildingType.POWER_PLANT,
+                        MathHelper.randomInt(11, 21)));
+            }
+        }
+        map[2][15].setBuilding(Building.of(BuildingType.WAREHOUSE, MathHelper.randomInt(11, 21)));
+        map[12][15].setBuilding(Building.of(BuildingType.WAREHOUSE, MathHelper.randomInt(11, 21)));
+        map[2][14].setBuilding(Building.of(BuildingType.WAREHOUSE_STEEL, MathHelper.randomInt(11, 21)));
+        map[3][14].setBuilding(Building.of(BuildingType.WAREHOUSE_CONCRETE, MathHelper.randomInt(11, 21)));
+        map[4][14].setBuilding(Building.of(BuildingType.WAREHOUSE_BRICK, MathHelper.randomInt(11, 21)));
+        map[5][14].setBuilding(Building.of(BuildingType.WAREHOUSE_WOOD, MathHelper.randomInt(11, 21)));
+        map[6][14].setBuilding(Building.of(BuildingType.WAREHOUSE_GLASS, MathHelper.randomInt(11, 21)));
+        map[8][14].setBuilding(Building.of(BuildingType.WAREHOUSE_GLASS, MathHelper.randomInt(11, 21)));
+        map[9][14].setBuilding(Building.of(BuildingType.WAREHOUSE_WOOD, MathHelper.randomInt(11, 21)));
+        map[10][14].setBuilding(Building.of(BuildingType.WAREHOUSE_BRICK, MathHelper.randomInt(11, 21)));
+        map[11][14].setBuilding(Building.of(BuildingType.WAREHOUSE_CONCRETE,
+                MathHelper.randomInt(11, 21)));
+        map[12][14].setBuilding(Building.of(BuildingType.WAREHOUSE_STEEL, MathHelper.randomInt(11, 21)));
+        map[2][16].setBuilding(Building.of(BuildingType.FACTORY_STEEL, MathHelper.randomInt(11, 21)));
+        map[3][16].setBuilding(Building.of(BuildingType.FACTORY_CONCRETE, MathHelper.randomInt(11, 21)));
+        map[4][16].setBuilding(Building.of(BuildingType.FACTORY_BRICK, MathHelper.randomInt(11, 21)));
+        map[5][16].setBuilding(Building.of(BuildingType.FACTORY_WOOD, MathHelper.randomInt(11, 21)));
+        map[6][16].setBuilding(Building.of(BuildingType.FACTORY_GLASS, MathHelper.randomInt(11, 21)));
+        map[8][16].setBuilding(Building.of(BuildingType.FACTORY_GLASS, MathHelper.randomInt(11, 21)));
+        map[9][16].setBuilding(Building.of(BuildingType.FACTORY_WOOD, MathHelper.randomInt(11, 21)));
+        map[10][16].setBuilding(Building.of(BuildingType.FACTORY_BRICK, MathHelper.randomInt(11, 21)));
+        map[11][16].setBuilding(Building.of(BuildingType.FACTORY_CONCRETE, MathHelper.randomInt(11, 21)));
+        map[12][16].setBuilding(Building.of(BuildingType.FACTORY_STEEL, MathHelper.randomInt(11, 21)));
+        map[6][17].setBuilding(Building.of(BuildingType.AIRPORT, MathHelper.randomInt(11, 21)));
+        map[7][17].setBuilding(Building.of(BuildingType.PORT, MathHelper.randomInt(11, 21)));
+        map[8][17].setBuilding(Building.of(BuildingType.NUCLEAR_PLANT, MathHelper.randomInt(11, 21)));
+        for (int i = 0; i < MAP_HEIGHT; i++) {
+            for (int j = 0; j < MAP_WIDTH; j++) {
+                if (map[i][j].getTile() == TileType.LAND && map[i][j].getBuilding() == null) {
+                    double seed = Math.random();
+                    if (seed < 0.05) {
+                        map[i][j].setTile(TileType.RUIN);
+                    } else if (seed < 0.15) {
+                        map[i][j].setTile(TileType.ROCK);
+                    } else if (seed < 0.40) {
+                        map[i][j].setTile(TileType.TREE);
+                    } else if (seed < 0.60) {
+                        map[i][j].setTile(TileType.TRASH);
+                    }
+                }
             }
         }
     }
