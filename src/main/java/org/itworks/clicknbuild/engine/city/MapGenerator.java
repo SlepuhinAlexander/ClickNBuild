@@ -94,7 +94,6 @@ public class MapGenerator {
     public static void generatePredefinedMap(Cell[][] map) {
         if (map == null) return;
         if (map.length != MAP_HEIGHT) throw new IllegalArgumentException();
-        BuildingType[] buildingTypes = BuildingType.values();
         for (int i = 0; i < MAP_HEIGHT; i++) {
             if (map[i] == null || map[i].length != MAP_WIDTH) throw new IllegalArgumentException();
             for (int j = 0; j < MAP_WIDTH; j++) {

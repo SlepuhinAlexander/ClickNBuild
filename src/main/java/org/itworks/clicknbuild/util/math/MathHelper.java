@@ -72,7 +72,7 @@ public class MathHelper {
         Objects.requireNonNull(jars);
         for (double jar : jars) if (jar < 0d) throw new IllegalArgumentException();
         double[] result = new double[jars.length];
-        if (amount <= 0d) return result;
+        if (amount <= 0d || jars.length == 0) return result;
         double sum = 0d;
         for (double jar : jars) sum += jar;
         if (amount >= sum) return jars.clone();

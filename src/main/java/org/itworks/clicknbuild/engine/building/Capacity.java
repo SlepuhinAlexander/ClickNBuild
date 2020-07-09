@@ -25,7 +25,7 @@ public final class Capacity extends BuildingAttribute {
                 ProfileManager.inst().getProfile().getPreferences().getDifficulty().gainsMultiplier);
         stats.getPack()
                 .keySet()
-                .forEach(resType -> pack.put(resType, new ResChunk(resType, 0, stats.get(resType))));
+                .forEach(resType -> pack.put(resType, new ResChunk(resType, stats.get(resType))));
         boundedStore.initValues(this);
         usedType = type;
         usedLevel = level;
@@ -41,6 +41,7 @@ public final class Capacity extends BuildingAttribute {
             if (local == null) return;
             local.setMax(local.getMax() * (1 + resChunk.getCurrent() / 100d));
         });
+        boundedStore.updateCapacity(this);
     }
 
     @Override

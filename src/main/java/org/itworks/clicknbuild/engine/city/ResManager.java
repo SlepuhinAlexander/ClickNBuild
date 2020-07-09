@@ -1,9 +1,14 @@
 package org.itworks.clicknbuild.engine.city;
 
+import com.google.common.util.concurrent.AtomicDouble;
+import org.itworks.clicknbuild.engine.Ticker;
+import org.itworks.clicknbuild.engine.Ticking;
 import org.itworks.clicknbuild.engine.building.Building;
 import org.itworks.clicknbuild.engine.building.BuildingAttrType;
+import org.itworks.clicknbuild.engine.res.ResCalculator;
 import org.itworks.clicknbuild.engine.res.ResChunk;
 import org.itworks.clicknbuild.engine.res.ResType;
+import org.itworks.clicknbuild.util.math.MathHelper;
 
 import java.util.Collection;
 import java.util.List;
@@ -22,13 +27,22 @@ import java.util.concurrent.ConcurrentSkipListMap;
  *     <li>regular distribution of resources into corresponding warehouses</li>
  * </ul>
  */
-public final class ResManager {
-    private static final int TICKS_PER_HOUR = 14400; // 4 ticks per second.
+public final class ResManager implements Ticking {
+    /**
+     * A divider to convert a production-per-hour building stats to production-per-game-tick
+     * An hour (in ms) divided by current ticking rate (or period, in ms).
+     * By default, 4 ticks per second.
+     */
+    private static final int TICKS_PER_HOUR = 60 * 60 * 1000 / Ticker.inst().getRate();
 
     private static volatile ResManager inst;
 
     /**
-     *
+     * Collection of all {@link CityAttribute}-s for all possible {@link BuildingAttrType}-s except for
+     * {@link BuildingAttrType#BUILD_COST} and {@link BuildingAttrType#JOB_PRICE}.
+     * Each {@link CityAttribute} holds the current total sum of each {@link ResType} that the entire City has.
+     * Each {@link CityAttribute} also collects links to all buildings in the entire City that have an effect on the
+     * given {@link BuildingAttrType} (for each {@link ResType} as well).
      */
     private final ConcurrentSkipListMap<BuildingAttrType, CityAttribute> attributes = new ConcurrentSkipListMap<>();
 
@@ -38,6 +52,8 @@ public final class ResManager {
      * Max value is immutable and unlimited (big enough).
      */
     private ResChunk totalExpEarned;
+
+    private AtomicDouble crimeLevel = new AtomicDouble(0);
 
     private ResManager() {
     }
@@ -148,6 +164,147 @@ public final class ResManager {
             CityAttribute cityAttribute = attributes.get(attrType);
             if (cityAttribute == null) continue;
             cityAttribute.clear();
+        }
+    }
+
+    public double getCrimeLevel() {
+        return crimeLevel.get();
+    }
+
+    private void setCrimeLevel(double value) {
+        crimeLevel.set(MathHelper.clamp(value, 0d, 1d));
+    }
+
+    @Override
+    public void tick() {
+        loop();
+    }
+
+    /**
+     * The heart of the game.
+     * Looping cycle happening each game tick.
+     * Here the game recalculates everything it has in the entire city: all productions, consumptions, distributions to
+     * storages and other effects.
+     * Here is also the place where the Player's actions (like finished job, construction, upgrade, or demolition)
+     * lead to actual results when the city recalculates everything for consistency.
+     */
+    private void loop() {
+        // Calculate total "booster" multipliers effects to all resources
+        get(BuildingAttrType.PRODUCTION_MUL).calculateTotal();
+        get(BuildingAttrType.JOB_REWARD_MUL).calculateTotal();
+        get(BuildingAttrType.SUPPLY_MUL).calculateTotal();
+        get(BuildingAttrType.CAPACITY_MUL).calculateTotal();
+
+        // Apply the calculated "booster" multipliers to ALL buildings they might affect
+        get(BuildingAttrType.PRODUCTION).applyMultipliers(get(BuildingAttrType.PRODUCTION_MUL).getTotal());
+        get(BuildingAttrType.JOB_REWARD).applyMultipliers(get(BuildingAttrType.JOB_REWARD_MUL).getTotal());
+        get(BuildingAttrType.SUPPLY).applyMultipliers(get(BuildingAttrType.SUPPLY_MUL).getTotal());
+        get(BuildingAttrType.CAPACITY).applyMultipliers(get(BuildingAttrType.CAPACITY_MUL).getTotal());
+        // Affected buildings would automatically apply their current productivity (to apply these multipliers not only
+        // to max limiters but to current values as well).
+
+        // Calculate total PRODUCTION of all resources.
+        get(BuildingAttrType.PRODUCTION).calculateTotal();
+
+        // Produce all the PRODUCTION resources per tick and STORE them.
+        get(BuildingAttrType.STORE).getTotal()
+                .add(ResCalculator.mul(get(BuildingAttrType.PRODUCTION).getTotal(), 1d / TICKS_PER_HOUR));
+
+        // Calculate total DEMAND of all resources.
+        get(BuildingAttrType.DEMAND).calculateTotal();
+
+        // Put total DEMAND of POWER_CONSUMPTION & JOB to HOLD of POWER_CONSUMPTION & JOB correspondingly
+        // and distribute it to buildings.
+        get(BuildingAttrType.HOLD).distribute(get(BuildingAttrType.DEMAND).getTotal(ResType.POWER_CONSUMPTION));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.POWER_CONSUMPTION);
+        get(BuildingAttrType.HOLD).distribute(get(BuildingAttrType.DEMAND).getTotal(ResType.JOB));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.JOB);
+
+        // Subtract the total DEMAND of UPKEEP from total STORE of MONEY
+        get(BuildingAttrType.STORE).getTotal(ResType.MONEY).sub(
+                get(BuildingAttrType.DEMAND).getTotal(ResType.UPKEEP).getCurrent() * ResType.UPKEEP.getPrice());
+
+        // Calculate total SUPPLY of all resources
+        get(BuildingAttrType.SUPPLY).calculateTotal();
+
+        // Distribute total SUPPLY of POWER to HOLD of POWER.
+        get(BuildingAttrType.HOLD).distribute(get(BuildingAttrType.SUPPLY).getTotal(ResType.POWER));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.POWER);
+
+        // Calculate surplus of POWER SUPPLY and turn it into HOLD of POWER_EXCESS
+        get(BuildingAttrType.HOLD).distribute(new ResChunk(ResType.POWER_EXCESS,
+                get(BuildingAttrType.SUPPLY).getTotal(ResType.POWER).getCurrent() -
+                get(BuildingAttrType.HOLD).getTotal(ResType.POWER).getCurrent(),
+                Integer.MAX_VALUE));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.POWER_EXCESS);
+
+        // Turn CITIZEN to WORKER and distribute them to HOLD of WORKER
+        get(BuildingAttrType.HOLD).distribute(new ResChunk(ResType.WORKER,
+                get(BuildingAttrType.STORE).getTotal(ResType.CITIZEN).getCurrent(), Integer.MAX_VALUE));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.WORKER);
+
+        // Calculate surplus of CITIZEN and turn it into HOLD of UNEMPLOYMENT
+        get(BuildingAttrType.HOLD).distribute(new ResChunk(ResType.UNEMPLOYMENT,
+                get(BuildingAttrType.STORE).getTotal(ResType.CITIZEN).getCurrent() -
+                get(BuildingAttrType.HOLD).getTotal(ResType.WORKER).getCurrent(),
+                Integer.MAX_VALUE));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.UNEMPLOYMENT);
+
+        // Calculate BENEFIT for all UNEMPLOYMENT
+        get(BuildingAttrType.HOLD).distribute(new ResChunk(ResType.BENEFIT,
+                get(BuildingAttrType.HOLD).getTotal(ResType.UNEMPLOYMENT).getCurrent() *
+                ResType.BENEFIT.getPrice(),
+                Integer.MAX_VALUE));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.BENEFIT);
+
+        // Pay the BENEFIT
+        get(BuildingAttrType.STORE).getTotal(ResType.MONEY).sub(
+                get(BuildingAttrType.HOLD).getTotal(ResType.BENEFIT).getCurrent());
+
+        // Turn CITIZEN to OBEDIENCE and distribute it to STORE of OBEDIENCE
+        get(BuildingAttrType.STORE).distribute(new ResChunk(ResType.OBEDIENCE,
+                get(BuildingAttrType.STORE).getTotal(ResType.CITIZEN).getCurrent(),
+                Integer.MAX_VALUE));
+        get(BuildingAttrType.STORE).calculateTotal(ResType.OBEDIENCE);
+
+        // Calculate surplus of CITIZEN and turn it into HOLD of CRIME
+        get(BuildingAttrType.HOLD).distribute(new ResChunk(ResType.CRIME,
+                get(BuildingAttrType.STORE).getTotal(ResType.CITIZEN).getCurrent() -
+                get(BuildingAttrType.STORE).getTotal(ResType.OBEDIENCE).getCurrent(),
+                Integer.MAX_VALUE));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.CRIME);
+        setCrimeLevel(get(BuildingAttrType.HOLD).getTotal(ResType.CRIME).getCurrent() /
+                      get(BuildingAttrType.STORE).getTotal(ResType.CITIZEN).getCurrent());
+
+        // Add EMIGRATION from crimeLevel to DEMAND of EMIGRATION
+        get(BuildingAttrType.DEMAND).getTotal(ResType.EMIGRATION).add(
+                get(BuildingAttrType.HOLD).getTotal(ResType.CRIME).getCurrent() / ResType.CRIME.getPrice());
+
+        // HOLD total EMIGRATION
+        get(BuildingAttrType.HOLD).distribute(get(BuildingAttrType.DEMAND).getTotal(ResType.EMIGRATION));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.EMIGRATION);
+
+        // EMIGRATE CITIZEN
+        get(BuildingAttrType.STORE).getTotal(ResType.CITIZEN)
+                .sub(get(BuildingAttrType.HOLD).getTotal(ResType.EMIGRATION).getCurrent() * 1 / TICKS_PER_HOUR);
+
+        // Distribute DEMAND of IGNITABILITY to STORE of IGNITABILITY
+        get(BuildingAttrType.STORE).distribute(get(BuildingAttrType.DEMAND).getTotal(ResType.IGNITABILITY));
+        get(BuildingAttrType.STORE).calculateTotal(ResType.IGNITABILITY);
+
+        // Calculate surplus of IGNITABILITY and turn it into FIRE_HAZARD
+        get(BuildingAttrType.HOLD).distribute(new ResChunk(ResType.FIRE_HAZARD,
+                get(BuildingAttrType.DEMAND).getTotal(ResType.IGNITABILITY).getCurrent() -
+                get(BuildingAttrType.STORE).getTotal(ResType.IGNITABILITY).getCurrent(),
+                Integer.MAX_VALUE));
+        get(BuildingAttrType.HOLD).calculateTotal(ResType.FIRE_HAZARD);
+
+        // Distribute what's left in STORE. Ignore surpluses.
+        ResType[] toDistribute = new ResType[]{ResType.ENERGY, ResType.STEEL, ResType.CONCRETE, ResType.BRICK,
+                ResType.WOOD, ResType.GLASS, ResType.MONEY, ResType.CITIZEN};
+        for (ResType resType : toDistribute) {
+            get(BuildingAttrType.STORE).distribute(get(BuildingAttrType.STORE).getTotal(resType));
+            get(BuildingAttrType.STORE).calculateTotal(resType);
         }
     }
 }

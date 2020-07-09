@@ -5,6 +5,7 @@ import org.itworks.clicknbuild.config.stats.BuildingDefStats;
 import org.itworks.clicknbuild.config.stats.BuildingDefaults;
 import org.itworks.clicknbuild.config.stats.ResStat;
 import org.itworks.clicknbuild.engine.city.Location;
+import org.itworks.clicknbuild.engine.city.ResManager;
 import org.itworks.clicknbuild.engine.profile.Difficulty;
 import org.itworks.clicknbuild.engine.res.ResPack;
 import org.itworks.clicknbuild.engine.res.ResType;
@@ -179,7 +180,7 @@ public final class Building {
 
     private Building init() {
         setExpEarned(new ResStat(ResType.EXPERIENCE));
-        setProductivity(0);
+        setProductivity(100d);
         attributes.put(BuildingAttrType.PRODUCTION, new Production());
         attributes.put(BuildingAttrType.PRODUCTION_MUL, new ProductionMul());
         attributes.put(BuildingAttrType.JOB_PRICE, new JobPrice());
@@ -260,8 +261,9 @@ public final class Building {
     }
 
     public void calculateProductivity() {
-        //TODO inject global criminal level
+        if (type == BuildingType.HEADQUARTER) return;
         double productivity = 100d;
+        productivity *= ResManager.inst().getCrimeLevel();
         ResPack hold = get(BuildingAttrType.HOLD);
         if (hold != null) {
             for (ResType type : hold.pack.keySet()) {

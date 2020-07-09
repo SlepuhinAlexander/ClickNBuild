@@ -65,6 +65,15 @@ public class CityAttribute {
         this.total = total;
     }
 
+    public ResChunk getTotal(ResType type) {
+        return total.get(Objects.requireNonNull(type));
+    }
+
+    public void setTotal(ResType type, ResChunk total) {
+        if (total == null) initTotal();
+        this.total.setCurrent(Objects.requireNonNull(type), Objects.requireNonNull(total).getCurrent());
+    }
+
     private void initBuildings() {
         buildings = new ConcurrentHashMap<>();
         ResType[] resTypes = ResType.values();
@@ -104,6 +113,11 @@ public class CityAttribute {
         for (int i = 0; i < distribution.length; i++) {
             storages.get(i).get(attrType).setCurrent(resChunk.type, distribution[i]);
         }
+    }
+
+    public void distribute() {
+        ResType[] resTypes = ResType.values();
+        for (ResType type : resTypes) distribute(getTotal(type));
     }
 
     public void applyMultipliers(ResPack multipliers) {

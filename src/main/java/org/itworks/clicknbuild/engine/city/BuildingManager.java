@@ -2,6 +2,7 @@ package org.itworks.clicknbuild.engine.city;
 
 import org.itworks.clicknbuild.config.ConfigLoader;
 import org.itworks.clicknbuild.config.Configs;
+import org.itworks.clicknbuild.config.stats.BuildingDefaults;
 import org.itworks.clicknbuild.engine.building.Building;
 import org.itworks.clicknbuild.engine.building.BuildingType;
 import org.itworks.clicknbuild.engine.exception.CannotBuildException;
@@ -34,6 +35,13 @@ public final class BuildingManager {
     private static volatile BuildingManager inst;
 
     public final Cell[][] map = new Cell[MAP_HEIGHT][MAP_WIDTH];
+
+    /**
+     * Collection of all {@link Building} currently existing in the game.
+     * Stored per {@link BuildingType} in the construction order.
+     * Elements ordering in the List should remain unchanged.
+     * Required to properly apply {@link BuildingDefaults#getCostMultiplier()} to construction and upgrade costs.
+     */
     public final ConcurrentHashMap<BuildingType, List<Building>> buildings = new ConcurrentHashMap<>();
 
     private BuildingManager() {

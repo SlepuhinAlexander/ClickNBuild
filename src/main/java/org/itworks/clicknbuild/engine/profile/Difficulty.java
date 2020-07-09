@@ -49,7 +49,7 @@ public enum Difficulty {
      *
      * @See BuildingDefaults#costMultiplier
      */
-    public final boolean useCostMultiplier;
+    public final boolean useBuildCostMultiplier;
 
     /**
      * A multiplier that would be applied to any positive ingame results or properties: resources production,
@@ -67,12 +67,12 @@ public enum Difficulty {
      */
     public final double costsMultiplier;
 
-    Difficulty(String name, Strings l10n, Strings desc, boolean useCostMultiplier, double gainsMultiplier,
+    Difficulty(String name, Strings l10n, Strings desc, boolean useBuildCostMultiplier, double gainsMultiplier,
                double costsMultiplier) {
         this.name = StringHelper.nonNull(name);
         this.l10n = Objects.requireNonNull(l10n);
         this.desc = Objects.requireNonNull(desc);
-        this.useCostMultiplier = useCostMultiplier;
+        this.useBuildCostMultiplier = useBuildCostMultiplier;
         this.gainsMultiplier = MathHelper.clamp(gainsMultiplier);
         this.costsMultiplier = MathHelper.clamp(costsMultiplier);
     }

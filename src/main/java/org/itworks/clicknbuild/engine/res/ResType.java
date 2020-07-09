@@ -107,7 +107,7 @@ public enum ResType {
             Strings.RES_CRIME,
             Images.RES_CRIME,
             false,
-            -1),
+            100),
     EMIGRATION("emigration",
             Strings.RES_EMIGRATION,
             Images.RES_EMIGRATION,

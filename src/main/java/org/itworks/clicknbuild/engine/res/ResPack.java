@@ -178,6 +178,12 @@ public class ResPack {
         return subAll(pack.pack.values());
     }
 
+    public ResPack mul(double multiplier) {
+        if (multiplier < 0) return this;
+        pack.values().forEach(resChunk -> mul(multiplier));
+        return this;
+    }
+
     public ResPack copy() {
         ResPack result = new ResPack();
         pack.values().forEach(res -> result.add(res.copy()));

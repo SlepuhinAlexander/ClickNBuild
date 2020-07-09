@@ -21,4 +21,23 @@ public final class ResCalculator {
         result.mul(multiplier);
         return result;
     }
+
+    public static ResPack sum(ResPack first, ResPack second) {
+        ResPack result = first == null ? new ResPack() : first.copy();
+        result.add(second);
+        return result;
+    }
+
+    public static ResPack diff(ResPack first, ResPack second) {
+        ResPack result = first == null ? new ResPack() : first.copy();
+        result.sub(second);
+        return result;
+    }
+
+    public static ResPack mul(ResPack pack, double multiplier) {
+        if (pack == null) return new ResPack();
+        ResPack result = pack.copy();
+        result.mul(multiplier);
+        return result;
+    }
 }
