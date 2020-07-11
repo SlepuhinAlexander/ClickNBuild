@@ -76,7 +76,7 @@ public final class GameSaveManager {
             ResManager.inst().get(BuildingAttrType.STORE).getTotal().add(resType, 2500000d / resType.getPrice());
         }
         ResManager.inst().get(BuildingAttrType.STORE).getTotal().add(ResType.ENERGY, 1000d);
-        ResManager.inst().get(BuildingAttrType.STORE).getTotal().add(ResType.CITIZEN, 300000d);
+        ResManager.inst().get(BuildingAttrType.STORE).getTotal().add(ResType.CITIZEN, 200000d);
         ResManager.inst().subscribe();
         Ticker.inst().start();
     }

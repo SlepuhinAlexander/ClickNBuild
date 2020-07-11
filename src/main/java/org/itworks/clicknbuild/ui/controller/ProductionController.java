@@ -14,7 +14,13 @@ import org.itworks.clicknbuild.engine.city.ResManager;
 import org.itworks.clicknbuild.engine.res.ResType;
 import org.itworks.clicknbuild.sources.*;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
+
 public final class ProductionController extends BasicController implements Ticking {
+    private final Map<Text, Supplier<String>> values = new HashMap<>();
+    private final Map<ProgressBar, Supplier<Double>> fills = new HashMap<>();
     @FXML
     private VBox rootNode;
     @FXML
@@ -99,17 +105,13 @@ public final class ProductionController extends BasicController implements Ticki
     private Text citizenValue;
     @FXML
     private Text citizenGain;
-    private ResType[] resTypes;
-    private ProgressBar[] fills;
-    private Text[] values;
-    private Text[] gains;
 
     @FXML
     private void initialize() {
         rootNode.getStylesheets().addAll(Sources.getCSS(CSSes.PRODUCTION));
         title.setText(Sources.getL10n(Strings.PRODUCTION));
 
-        resTypes = new ResType[]{ResType.ENERGY, ResType.MONEY, ResType.STEEL, ResType.CONCRETE,
+        ResType[] resTypes = new ResType[]{ResType.ENERGY, ResType.MONEY, ResType.STEEL, ResType.CONCRETE,
                 ResType.BRICK, ResType.WOOD, ResType.GLASS, ResType.CITIZEN};
         Strings[] l10ns = new Strings[]{Strings.RES_ENERGY, Strings.RES_MONEY, Strings.RES_STEEL, Strings.RES_CONCRETE,
                 Strings.RES_BRICK, Strings.RES_WOOD, Strings.RES_GLASS, Strings.RES_CITIZEN};
@@ -119,11 +121,11 @@ public final class ProductionController extends BasicController implements Ticki
                 resBrickBox, resWoodBox, resGlassBox, resCitizenBox};
         ImageView[] resources = new ImageView[]{resEnergy, resMoney, resSteel, resConcrete,
                 resBrick, resWood, resGlass, resCitizen};
-        fills = new ProgressBar[]{energyFill, moneyFill, steelFill, concreteFill,
+        ProgressBar[] bars = new ProgressBar[]{energyFill, moneyFill, steelFill, concreteFill,
                 brickFill, woodFill, glassFill, citizenFill};
-        values = new Text[]{energyValue, moneyValue, steelValue, concreteValue,
+        Text[] valuesTexts = new Text[]{energyValue, moneyValue, steelValue, concreteValue,
                 brickValue, woodValue, glassValue, citizenValue};
-        gains = new Text[]{energyGain, moneyGain, steelGain, concreteGain,
+        Text[] gains = new Text[]{energyGain, moneyGain, steelGain, concreteGain,
                 brickGain, woodGain, glassGain, citizenGain};
 
         for (int i = 0; i < resTypes.length; i++) {
@@ -134,6 +136,39 @@ public final class ProductionController extends BasicController implements Ticki
             tip.setShowDelay(Duration.valueOf("300ms"));
             tip.setHideDelay(Duration.valueOf("100ms"));
             Tooltip.install(resBoxes[i], tip);
+
+            final int index = i;
+            fills.put(bars[i], () ->
+                    (int) ResManager.inst().get(BuildingAttrType.STORE).getTotal(resTypes[index]).getCurrent() /
+                    ResManager.inst().get(BuildingAttrType.CAPACITY).getTotal(resTypes[index]).getCurrent()
+            );
+            values.put(valuesTexts[i], () ->
+                    (int) ResManager.inst().get(BuildingAttrType.STORE).getTotal(resTypes[index]).getCurrent()
+                    + Sources.getL10n(Strings.SEPARATOR)
+                    + (int) ResManager.inst().get(BuildingAttrType.CAPACITY).getTotal(resTypes[index]).getCurrent()
+            );
+            if (resTypes[i].equals(ResType.MONEY)) {
+                values.put(gains[i], () -> {
+                    double gain = ResManager.inst().get(BuildingAttrType.PRODUCTION)
+                            .getTotal(resTypes[index]).getCurrent();
+                    gain -= ResManager.inst().get(BuildingAttrType.DEMAND).getTotal(ResType.UPKEEP).getCurrent();
+                    gain -= ResManager.inst().get(BuildingAttrType.HOLD).getTotal(ResType.BENEFIT).getCurrent();
+                    return ((int) gain > 0d ? "+" : "") + (int) gain + Sources.getL10n(Strings.PER_HOUR);
+                });
+            } else if (resTypes[i].equals(ResType.CITIZEN)) {
+                values.put(gains[i], () -> {
+                    double gain = ResManager.inst().get(BuildingAttrType.PRODUCTION)
+                            .getTotal(resTypes[index]).getCurrent();
+                    gain -= ResManager.inst().get(BuildingAttrType.DEMAND).getTotal(ResType.EMIGRATION).getCurrent();
+                    return ((int) gain > 0d ? "+" : "") + (int) gain + Sources.getL10n(Strings.PER_HOUR);
+                });
+            } else {
+                values.put(gains[i], () -> {
+                    double gain = ResManager.inst().get(BuildingAttrType.PRODUCTION)
+                            .getTotal(resTypes[index]).getCurrent();
+                    return ((int) gain > 0d ? "+" : "") + (int) gain + Sources.getL10n(Strings.PER_HOUR);
+                });
+            }
         }
 
         updateValues();
@@ -147,21 +182,7 @@ public final class ProductionController extends BasicController implements Ticki
     }
 
     private void updateValues() {
-        String separator = Sources.getL10n(Strings.SEPARATOR);
-        for (int i = 0; i < resTypes.length; i++) {
-            double store = ResManager.inst().get(BuildingAttrType.STORE).getTotal(resTypes[i]).getCurrent();
-            double capacity = ResManager.inst().get(BuildingAttrType.CAPACITY).getTotal(resTypes[i]).getCurrent();
-            double gain = ResManager.inst().get(BuildingAttrType.PRODUCTION).getTotal(resTypes[i]).getCurrent();
-            if (resTypes[i] == ResType.MONEY) {
-                gain -= ResManager.inst().get(BuildingAttrType.DEMAND).getTotal(ResType.UPKEEP).getCurrent();
-                gain -= ResManager.inst().get(BuildingAttrType.HOLD).getTotal(ResType.BENEFIT).getCurrent();
-            }
-            if (resTypes[i] == ResType.CITIZEN) {
-                gain -= ResManager.inst().get(BuildingAttrType.HOLD).getTotal(ResType.EMIGRATION).getCurrent();
-            }
-            fills[i].setProgress(store / capacity);
-            values[i].setText((int) store + separator + (int) capacity);
-            gains[i].setText(((int) gain > 0d ? "+" : "") + (int) gain + Sources.getL10n(Strings.PER_HOUR));
-        }
+        values.forEach((text, stringSupplier) -> text.setText(stringSupplier.get()));
+        fills.forEach((bar, doubleSupplier) -> bar.setProgress(doubleSupplier.get()));
     }
 }

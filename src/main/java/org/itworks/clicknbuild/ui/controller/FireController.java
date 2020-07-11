@@ -13,7 +13,12 @@ import org.itworks.clicknbuild.engine.city.ResManager;
 import org.itworks.clicknbuild.engine.res.ResType;
 import org.itworks.clicknbuild.sources.*;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
+
 public final class FireController extends BasicController implements Ticking {
+    private final Map<Text, Supplier<String>> values = new HashMap<>();
     @FXML
     private VBox rootNode;
     @FXML
@@ -57,6 +62,14 @@ public final class FireController extends BasicController implements Ticking {
         ignitabilityTip.setHideDelay(Duration.valueOf("100ms"));
         Tooltip.install(resIgnitabilityBox, ignitabilityTip);
 
+        values.put(hazardLevel, () -> Sources.getL10n(Strings.FIRE_HAZARD_LEVEL) + ": "
+                                      + ((int) ResManager.inst().getFireHazardLevel())
+                                      + Sources.getL10n(Strings.PERCENT));
+        values.put(ignitabilityValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.STORE)
+                .getTotal(ResType.IGNITABILITY).getCurrent());
+        values.put(ignitabilityCapacity, () -> "" + (int) ResManager.inst().get(BuildingAttrType.CAPACITY)
+                .getTotal(ResType.IGNITABILITY).getCurrent());
+
         updateValues();
 
         subscribe();
@@ -68,11 +81,6 @@ public final class FireController extends BasicController implements Ticking {
     }
 
     private void updateValues() {
-        hazardLevel.setText(Sources.getL10n(Strings.FIRE_HAZARD_LEVEL) + ": " +
-                           ((int) ResManager.inst().getFireHazardLevel()) + "%");
-        ignitabilityValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.STORE)
-                .getTotal(ResType.IGNITABILITY).getCurrent());
-        ignitabilityCapacity.setText("" + (int) ResManager.inst().get(BuildingAttrType.CAPACITY)
-                .getTotal(ResType.IGNITABILITY).getCurrent());
+        values.forEach((text, stringSupplier) -> text.setText(stringSupplier.get()));
     }
 }

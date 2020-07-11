@@ -12,7 +12,7 @@
     <top>
         <HBox alignment="CENTER">
             <BorderPane.margin>
-                <Insets top="100"/>
+                <Insets top="50"/>
             </BorderPane.margin>
             <Text fx:id="title" styleClass="building__title" textAlignment="CENTER"/>
         </HBox>
@@ -37,10 +37,17 @@
             </HBox>
         </VBox>
     </left>
+    <center>
+        <VBox alignment="CENTER" styleClass="building__content" fx:id="content" spacing="5">
+            <BorderPane.margin>
+                <Insets left="100"/>
+            </BorderPane.margin>
+        </VBox>
+    </center>
     <bottom>
         <HBox alignment="CENTER">
             <BorderPane.margin>
-                <Insets bottom="100"/>
+                <Insets bottom="50"/>
             </BorderPane.margin>
             <Button fx:id="backBtn" onAction="#back" styleClass="building__button"/>
         </HBox>

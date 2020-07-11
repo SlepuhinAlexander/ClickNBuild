@@ -13,7 +13,12 @@ import org.itworks.clicknbuild.engine.city.ResManager;
 import org.itworks.clicknbuild.engine.res.ResType;
 import org.itworks.clicknbuild.sources.*;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
+
 public final class CrimeController extends BasicController implements Ticking {
+    private final Map<Text, Supplier<String>> values = new HashMap<>();
     @FXML
     private Text title;
     @FXML
@@ -63,6 +68,19 @@ public final class CrimeController extends BasicController implements Ticking {
             tip.setHideDelay(Duration.valueOf("100ms"));
             Tooltip.install(resBoxes[i], tip);
         }
+
+        values.put(crimeLevel, () -> Sources.getL10n(Strings.CRIME_LEVEL) + ": " +
+                                     ((int) ResManager.inst().getCrimeLevel()) + Sources.getL10n(Strings.PERCENT));
+        values.put(obedienceValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.STORE)
+                .getTotal(ResType.OBEDIENCE).getCurrent());
+        values.put(obedienceCapacity, () -> "" + (int) ResManager.inst().get(BuildingAttrType.CAPACITY)
+                .getTotal(ResType.OBEDIENCE).getCurrent());
+        values.put(crimeValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
+                .getTotal(ResType.CRIME).getCurrent());
+        values.put(emigrationValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
+                .getTotal(ResType.EMIGRATION).getCurrent() + Sources.getL10n(Strings.PER_HOUR));
+
+
         updateValues();
 
         subscribe();
@@ -74,15 +92,6 @@ public final class CrimeController extends BasicController implements Ticking {
     }
 
     private void updateValues() {
-        crimeLevel.setText(Sources.getL10n(Strings.CRIME_LEVEL) + ": " +
-                           ((int) ResManager.inst().getCrimeLevel()) + "%");
-        obedienceValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.STORE)
-                .getTotal(ResType.OBEDIENCE).getCurrent());
-        obedienceCapacity.setText("" + (int) ResManager.inst().get(BuildingAttrType.CAPACITY)
-                .getTotal(ResType.OBEDIENCE).getCurrent());
-        crimeValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
-                .getTotal(ResType.CRIME).getCurrent());
-        emigrationValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
-                .getTotal(ResType.EMIGRATION).getCurrent() + Sources.getL10n(Strings.PER_HOUR));
+        values.forEach((text, stringSupplier) -> text.setText(stringSupplier.get()));
     }
 }

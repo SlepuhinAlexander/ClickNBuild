@@ -13,7 +13,12 @@ import org.itworks.clicknbuild.engine.city.ResManager;
 import org.itworks.clicknbuild.engine.res.ResType;
 import org.itworks.clicknbuild.sources.*;
 
-public final class PowerController extends BasicController implements Ticking {
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
+
+public final class SupplyController extends BasicController implements Ticking {
+    private final Map<Text, Supplier<String>> values = new HashMap<>();
     @FXML
     private VBox rootNode;
     @FXML
@@ -40,28 +45,46 @@ public final class PowerController extends BasicController implements Ticking {
     private ImageView resPowerConsumption;
     @FXML
     private Text powerConsumptionValue;
+    @FXML
+    private StackPane resUpkeepBox;
+    @FXML
+    private ImageView resUpkeep;
+    @FXML
+    private Text upkeepValue;
 
     @FXML
     private void initialize() {
-        rootNode.getStylesheets().addAll(Sources.getCSS(CSSes.POWER));
-        title.setText(Sources.getL10n(Strings.POWER));
+        rootNode.getStylesheets().addAll(Sources.getCSS(CSSes.SUPPLY));
+        title.setText(Sources.getL10n(Strings.SUPPLY));
         separator.setText(Sources.getL10n(Strings.SEPARATOR));
         clarification.setText(Sources.getL10n(Strings.CLARIFICATION));
 
-        Strings[] l10ns = new Strings[]{Strings.RES_POWER_EXCESS, Strings.RES_POWER, Strings.RES_POWER_CONSUMPTION};
-        Images[] resImages = new Images[]{Images.RES_POWER_EXCESS, Images.RES_POWER, Images.RES_POWER_CONSUMPTION};
-        StackPane[] resBoxes = new StackPane[]{resPowerExcessBox, resPowerBox, resPowerConsumptionBox};
-        ImageView[] resources = new ImageView[]{resPowerExcess, resPower, resPowerConsumption};
+        Strings[] l10ns = new Strings[]{Strings.RES_POWER_EXCESS, Strings.RES_POWER, Strings.RES_POWER_CONSUMPTION,
+                Strings.RES_UPKEEP};
+        Images[] resImages = new Images[]{Images.RES_POWER_EXCESS, Images.RES_POWER, Images.RES_POWER_CONSUMPTION,
+                Images.RES_UPKEEP};
+        StackPane[] resBoxes = new StackPane[]{resPowerExcessBox, resPowerBox, resPowerConsumptionBox,
+                resUpkeepBox};
+        ImageView[] resources = new ImageView[]{resPowerExcess, resPower, resPowerConsumption, resUpkeep};
 
         for (int i = 0; i < resBoxes.length; i++) {
             resources[i].setImage(Sources.getImg(resImages[i], ImgHandler.Size.SMALL));
             Tooltip tip = new Tooltip();
-            tip.getStyleClass().addAll("power__tooltip");
+            tip.getStyleClass().addAll("supply__tooltip");
             tip.setText(Sources.getL10n(l10ns[i]));
             tip.setShowDelay(Duration.valueOf("300ms"));
             tip.setHideDelay(Duration.valueOf("100ms"));
             Tooltip.install(resBoxes[i], tip);
         }
+
+        values.put(powerExcessValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
+                .getTotal(ResType.POWER_EXCESS).getCurrent());
+        values.put(powerValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.SUPPLY)
+                .getTotal(ResType.POWER).getCurrent());
+        values.put(powerConsumptionValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.DEMAND)
+                .getTotal(ResType.POWER_CONSUMPTION).getCurrent());
+        values.put(upkeepValue, () -> (int) ResManager.inst().get(BuildingAttrType.DEMAND)
+                .getTotal(ResType.UPKEEP).getCurrent() + Sources.getL10n(Strings.PER_HOUR));
 
         updateValues();
 
@@ -74,11 +97,6 @@ public final class PowerController extends BasicController implements Ticking {
     }
 
     private void updateValues() {
-        powerExcessValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
-                .getTotal(ResType.POWER_EXCESS).getCurrent());
-        powerValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.SUPPLY)
-                .getTotal(ResType.POWER).getCurrent());
-        powerConsumptionValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
-                .getTotal(ResType.POWER).getCurrent());
+        values.forEach((text, stringSupplier) -> text.setText(stringSupplier.get()));
     }
 }

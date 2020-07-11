@@ -15,6 +15,9 @@ import org.itworks.clicknbuild.ui.SceneLoader;
 import org.itworks.clicknbuild.ui.Scenes;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
 
 public final class PlayerStatsController extends BasicController implements Ticking {
     @FXML
@@ -38,6 +41,8 @@ public final class PlayerStatsController extends BasicController implements Tick
     @FXML
     private Text name;
 
+    private final Map<Text, Supplier<String>> values = new HashMap<>();
+
     @FXML
     private void initialize() {
         rootNode.getStylesheets().addAll(Sources.getCSS(CSSes.PLAYER_STATS));
@@ -51,7 +56,7 @@ public final class PlayerStatsController extends BasicController implements Tick
         tipExperience.setShowDelay(Duration.valueOf("300ms"));
         tipExperience.setHideDelay(Duration.valueOf("100ms"));
         Tooltip.install(resExperienceBox, tipExperience);
-        valueExperience.setText("" + ((int) ResManager.inst().getTotalExpEarned().getCurrent()));
+        values.put(valueExperience, () -> "" + ((int) ResManager.inst().getTotalExpEarned().getCurrent()));
 
         resLevel.setImage(Sources.getImg(Images.PLAYER_EXPERIENCE_LEVEL, ImgHandler.Size.SMALL));
         Tooltip tipLevel = new Tooltip();
@@ -60,7 +65,7 @@ public final class PlayerStatsController extends BasicController implements Tick
         tipLevel.setShowDelay(Duration.valueOf("300ms"));
         tipLevel.setHideDelay(Duration.valueOf("100ms"));
         Tooltip.install(resLevelBox, tipLevel);
-        valueLevel.setText("1");
+        values.put(valueLevel, () -> "1"); // TODO update player level as well
 
         avatar.setImage(Sources.getImg(ProfileManager.inst().getProfile().getPreferences().getAvatar(),
                 ImgHandler.Size.BIG));
@@ -75,8 +80,7 @@ public final class PlayerStatsController extends BasicController implements Tick
     }
 
     private void updateValues() {
-        valueExperience.setText("" + ((int) ResManager.inst().getTotalExpEarned().getCurrent()));
-        // TODO update player level as well
+        values.forEach((text, stringSupplier) -> text.setText(stringSupplier.get()));
     }
 
     @FXML

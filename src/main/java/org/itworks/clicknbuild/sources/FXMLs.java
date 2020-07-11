@@ -16,7 +16,7 @@ public enum FXMLs {
     PLAYER_STATS("player_stats"),
     STATS("stats"),
     PRODUCTION("production"),
-    POWER("power"),
+    SUPPLY("supply"),
     JOB("job"),
     CRIME("crime"),
     FIRE("fire"),

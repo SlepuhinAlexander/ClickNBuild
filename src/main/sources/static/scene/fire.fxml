@@ -24,7 +24,7 @@
     </HBox>
     <HBox alignment="CENTER_LEFT" spacing="10">
         <VBox.margin>
-            <Insets left="10" bottom="65"/>
+            <Insets left="10" bottom="30"/>
         </VBox.margin>
         <HBox alignment="CENTER_LEFT" spacing="10">
             <StackPane fx:id="resIgnitabilityBox">

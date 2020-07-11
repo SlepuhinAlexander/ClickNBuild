@@ -17,7 +17,7 @@ public enum Scenes {
     PLAYER_STATS("player_stats", FXMLs.PLAYER_STATS, PlayerStatsController.class),
     STATS("stats", FXMLs.STATS, StatsController.class),
     PRODUCTION("production", FXMLs.PRODUCTION, ProductionController.class),
-    POWER("power", FXMLs.POWER, PowerController.class),
+    SUPPLY("supply", FXMLs.SUPPLY, SupplyController.class),
     JOB("job", FXMLs.JOB, JobController.class),
     CRIME("crime", FXMLs.CRIME, CrimeController.class),
     FIRE("fire", FXMLs.FIRE, FireController.class),

@@ -45,8 +45,8 @@ public final class ResManager implements Ticking {
      * given {@link BuildingAttrType} (for each {@link ResType} as well).
      */
     private final ConcurrentSkipListMap<BuildingAttrType, CityAttribute> attributes = new ConcurrentSkipListMap<>();
-    private AtomicDouble crimeLevel = new AtomicDouble(0);
-    private AtomicDouble fireHazardLevel = new AtomicDouble(0);
+    private final AtomicDouble crimeLevel = new AtomicDouble(0);
+    private final AtomicDouble fireHazardLevel = new AtomicDouble(0);
     /**
      * Sum of all {@link Building#getExpEarned()} in all currently existing {@link Building}-s.
      * Stored in current value.

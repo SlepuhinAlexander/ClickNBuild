@@ -1,8 +1,8 @@
-.power__root {
+.supply__root {
     -fx-background-color: white;
 }
 
-.power__tooltip {
+.supply__tooltip {
     -fx-background-color: white;
     -fx-background-radius: 5;
     -fx-text-fill: coral;
@@ -11,7 +11,7 @@
     -fx-padding: 5;
 }
 
-.power__text {
+.supply__text {
     -fx-fill: coral;
     -fx-font-size: 16;
     -fx-font-weight: 700;
@@ -19,7 +19,7 @@
     -fx-stroke-width: 0.5;
 }
 
-.power__title {
+.supply__title {
     -fx-font-size: 18;
     -fx-font-weight: 700;
     -fx-fill: coral;

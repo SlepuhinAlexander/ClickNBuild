@@ -13,7 +13,12 @@ import org.itworks.clicknbuild.engine.city.ResManager;
 import org.itworks.clicknbuild.engine.res.ResType;
 import org.itworks.clicknbuild.sources.*;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
+
 public final class JobController extends BasicController implements Ticking {
+    private final Map<Text, Supplier<String>> values = new HashMap<>();
     @FXML
     private Text title;
     @FXML
@@ -70,6 +75,16 @@ public final class JobController extends BasicController implements Ticking {
             tip.setHideDelay(Duration.valueOf("100ms"));
             Tooltip.install(resBoxes[i], tip);
         }
+
+        values.put(workerValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
+                .getTotal(ResType.WORKER).getCurrent());
+        values.put(jobValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
+                .getTotal(ResType.JOB).getCurrent());
+        values.put(unemploymentValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
+                .getTotal(ResType.UNEMPLOYMENT).getCurrent());
+        values.put(benefitValue, () -> "" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
+                .getTotal(ResType.BENEFIT).getCurrent() + Sources.getL10n(Strings.PER_HOUR));
+
         updateValues();
 
         subscribe();
@@ -81,13 +96,6 @@ public final class JobController extends BasicController implements Ticking {
     }
 
     private void updateValues() {
-        workerValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
-                .getTotal(ResType.WORKER).getCurrent());
-        jobValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
-                .getTotal(ResType.JOB).getCurrent());
-        unemploymentValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
-                .getTotal(ResType.UNEMPLOYMENT).getCurrent());
-        benefitValue.setText("" + (int) ResManager.inst().get(BuildingAttrType.HOLD)
-                .getTotal(ResType.BENEFIT).getCurrent() + Sources.getL10n(Strings.PER_HOUR));
+        values.forEach((text, stringSupplier) -> text.setText(stringSupplier.get()));
     }
 }

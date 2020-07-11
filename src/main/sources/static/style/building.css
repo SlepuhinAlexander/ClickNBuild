@@ -3,7 +3,7 @@
 }
 
 .building__title {
-    -fx-font-size: 32;
+    -fx-font-size: 48;
     -fx-font-weight: 700;
     -fx-fill: coral;
     -fx-stroke: black;
@@ -22,9 +22,9 @@
     -fx-background-color: white;
     -fx-background-radius: 5;
     -fx-text-fill: coral;
-    -fx-font-size: 20;
+    -fx-font-size: 16;
     -fx-font-weight: 700;
-    -fx-padding: 10;
+    -fx-padding: 5;
 }
 
 .building__button {
@@ -39,4 +39,24 @@
 }
 
 .building__image {
+}
+
+.building__content {
+    -fx-background-color: white
+}
+
+.building__progress_bar {
+    -fx-min-height: 36;
+    -fx-min-width: 200;
+    -fx-box-border: coral;
+    -fx-accent: wheat;
+    -fx-padding: 0;
+}
+
+.building__job_bar {
+    -fx-min-height: 50;
+    -fx-min-width: 400;
+    -fx-box-border: coral;
+    -fx-accent: wheat;
+    -fx-padding: 0;
 }

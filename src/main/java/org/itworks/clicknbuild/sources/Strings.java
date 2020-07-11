@@ -104,16 +104,30 @@ public enum Strings {
     CLARIFICATION("clarification"),
     LEVEL("level"),
     PER_HOUR("per_hour"),
-    STRUCTURE("structure"),
+    PERCENT("percent"),
 
     PLAYER("player"),
     PRODUCTION("production"),
-    POWER("power"),
+    SUPPLY("supply"),
     WORKERS("workers"),
     CRIME("crime"),
     CRIME_LEVEL("crime_level"),
     FIRE_HAZARD("fire_hazard"),
     FIRE_HAZARD_LEVEL("fire_hazard_level"),
+
+    STRUCTURE("structure"),
+    PRODUCTIVITY("productivity"),
+    UPKEEP("upkeep"),
+    SUPPLIES("supplies"),
+    GAIN("gain"),
+    GIVES_BONUS("gives_bonus"),
+    TO("to"),
+    CAPACITY("capacity"),
+    STORES("stores"),
+    ENSURES("ensures"),
+    JOB("job"),
+    GET("get"),
+    FOR("for"),
     ;
 
     final String value;

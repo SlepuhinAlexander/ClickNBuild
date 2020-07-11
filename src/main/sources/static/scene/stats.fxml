@@ -8,7 +8,7 @@
     <VBox spacing="10" styleClass="stats__root">
         <fx:include source="player_stats.fxml"/>
         <fx:include source="production.fxml"/>
-        <fx:include source="power.fxml"/>
+        <fx:include source="supply.fxml"/>
         <fx:include source="job.fxml"/>
         <fx:include source="crime.fxml"/>
         <fx:include source="fire.fxml"/>
