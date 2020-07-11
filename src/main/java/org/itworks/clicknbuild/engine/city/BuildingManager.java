@@ -77,7 +77,7 @@ public final class BuildingManager {
      *
      * @see Building#getOrdinal()
      */
-    private void reorder(BuildingType type) {
+    public void reorder(BuildingType type) {
         if (type == null) return;
         List<Building> buildingList = buildings.get(type);
         for (int i = 0; i < (buildingList == null ? 0 : buildingList.size()); i++) {
@@ -90,7 +90,7 @@ public final class BuildingManager {
      * Not registered buildings are unknown to the game.
      * Typically, a building is registered when its construction / upgrading is complete.
      */
-    private void register(Building building) {
+    public void register(Building building) {
         if (building == null) return;
         List<Building> buildingList = buildings.get(building.type);
         if (buildingList == null) {
@@ -114,7 +114,7 @@ public final class BuildingManager {
      * Removes thе given building from registered buildings (if it was actually registered).
      * Typically, a building is desisted when it is destroyed: demolished, burned down, etc.
      */
-    private void delist(Building building) {
+    public void delist(Building building) {
         if (building == null) return;
         List<Building> buildingList = buildings.get(building.type);
         if (buildingList == null) return;
@@ -218,7 +218,7 @@ public final class BuildingManager {
         building.setLocation(location);
         cell.setBuilding(building);
         register(building);
-        //TODO registering in Resource manager
+        ResManager.inst().register(building);
     }
 
     private void burn(int row, int col) {

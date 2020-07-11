@@ -98,7 +98,7 @@ public final class StatsLoader {
         for (TileModel loaded : tiles) {
             TileType tile = TileType.get(loaded.getType());
             if (tile == null) continue;
-            if (loaded.getStructure() != null) tile.setStructure(loaded.getStructure());
+            if (loaded.getStructure() != null) tile.setStructure(loaded.getStructure().intValue());
         }
     }
 }

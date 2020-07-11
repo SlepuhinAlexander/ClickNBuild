@@ -14,7 +14,7 @@ public final class Demand extends BuildingAttribute {
                 ProfileManager.inst().getProfile().getPreferences().getDifficulty().costsMultiplier);
         stats.getPack()
                 .keySet()
-                .forEach(resType -> pack.put(resType, new ResChunk(resType, stats.get(resType), stats.get(resType))));
+                .forEach(resType -> pack.put(resType, new ResChunk(resType, stats.get(resType))));
     }
 
     @Override

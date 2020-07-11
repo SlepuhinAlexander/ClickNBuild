@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox fx:id="rootNode" styleClass="job__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.itworks.clicknbuild.ui.controller.JobController"
+      prefWidth="440.0" spacing="10">
+    <HBox alignment="CENTER">
+        <Text fx:id="title" styleClass="job__title"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10" top="10"/>
+        </VBox.margin>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <StackPane fx:id="resWorkerBox">
+                <ImageView fx:id="resWorker"/>
+            </StackPane>
+            <Text fx:id="workerValue" styleClass="job__text"/>
+        </HBox>
+        <Text fx:id="separator" styleClass="job__text"/>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <StackPane fx:id="resJobBox">
+                <ImageView fx:id="resJob"/>
+            </StackPane>
+            <Text fx:id="jobValue" styleClass="job__text"/>
+        </HBox>
+    </HBox>
+    <HBox alignment="CENTER_LEFT">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <StackPane fx:id="resUnemploymentBox">
+                <ImageView fx:id="resUnemployment"/>
+            </StackPane>
+            <Text fx:id="unemploymentValue" styleClass="job__text"/>
+        </HBox>
+        <Text fx:id="clarification" styleClass="job__text"/>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <StackPane fx:id="resBenefitBox">
+                <ImageView fx:id="resBenefit"/>
+            </StackPane>
+            <Text fx:id="benefitValue" styleClass="job__text"/>
+        </HBox>
+    </HBox>
+</VBox>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<ScrollPane fx:id="rootNode" styleClass="stats__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="440.0" hbarPolicy="NEVER" fx:controller="org.itworks.clicknbuild.ui.controller.StatsController">
+    <VBox spacing="10" styleClass="stats__root">
+        <fx:include source="player_stats.fxml"/>
+        <fx:include source="production.fxml"/>
+        <fx:include source="power.fxml"/>
+        <fx:include source="job.fxml"/>
+        <fx:include source="crime.fxml"/>
+        <fx:include source="fire.fxml"/>
+    </VBox>
+</ScrollPane>

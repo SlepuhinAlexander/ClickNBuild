@@ -19,7 +19,7 @@ public final class ResChunk {
      * Used in multiple ways depending on context.
      * Cannot be negative.
      * <b>Always</b> limited by the <code>max</code> param of this object.
-     *
+     * <p>
      * In some use cases might be immutable and always equal to the corresponding <code>max</code> (which would be
      * immutable as well).
      */
@@ -36,8 +36,8 @@ public final class ResChunk {
         max = MathHelper.clamp(max);
         current = MathHelper.clamp(current, max);
         this.type = Objects.requireNonNull(type);
-        setCurrent(current);
         setMax(max);
+        setCurrent(current);
     }
 
     public ResChunk(ResType type, double currentAndMax) {
@@ -56,23 +56,23 @@ public final class ResChunk {
         return current.get();
     }
 
-    public double getMax() {
-        return max.get();
-    }
-
-    public ResChunk set(double amount) {
-        return setCurrent(amount);
-    }
-
     public ResChunk setCurrent(double amount) {
         current.set(MathHelper.clamp(amount, getMax()));
         return this;
+    }
+
+    public double getMax() {
+        return max.get();
     }
 
     public ResChunk setMax(double amount) {
         max.set(MathHelper.clamp(amount));
         current.set(MathHelper.clamp(current.get(), max.get()));
         return this;
+    }
+
+    public ResChunk set(double amount) {
+        return setCurrent(amount);
     }
 
     public ResChunk add(double delta) {
@@ -103,8 +103,14 @@ public final class ResChunk {
         return sub(res.get());
     }
 
+    public ResChunk mul(double multiplier) {
+        if (multiplier < 0d) return this;
+        setCurrent(getCurrent() * multiplier);
+        return this;
+    }
+
     public ResChunk copy() {
-        return new ResChunk(type, get(), getMax());
+        return new ResChunk(type, getCurrent(), getMax());
     }
 
     public ResStat toResStat() {

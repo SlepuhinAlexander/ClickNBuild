@@ -1,0 +1,42 @@
+.building__root {
+    -fx-background-color: white;
+}
+
+.building__title {
+    -fx-font-size: 32;
+    -fx-font-weight: 700;
+    -fx-fill: coral;
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+}
+
+.building__text {
+    -fx-fill: coral;
+    -fx-font-size: 24;
+    -fx-font-weight: 700;
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+}
+
+.building__tooltip {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-text-fill: coral;
+    -fx-font-size: 20;
+    -fx-font-weight: 700;
+    -fx-padding: 10;
+}
+
+.building__button {
+    -fx-background-color: ivory;
+    -fx-background-radius: 10;
+    -fx-border-width: 2;
+    -fx-border-color: coral;
+    -fx-border-radius: 10;
+    -fx-text-fill: coral;
+    -fx-font-size: 26;
+    -fx-font-weight: 700;
+}
+
+.building__image {
+}

@@ -99,6 +99,21 @@ public enum Strings {
     PROFILE_SELECTION_TITLE("profile_selection.title"),
 
     EDIT_PROFILE_TITLE("edit_profile.title"),
+
+    SEPARATOR("separator"),
+    CLARIFICATION("clarification"),
+    LEVEL("level"),
+    PER_HOUR("per_hour"),
+    STRUCTURE("structure"),
+
+    PLAYER("player"),
+    PRODUCTION("production"),
+    POWER("power"),
+    WORKERS("workers"),
+    CRIME("crime"),
+    CRIME_LEVEL("crime_level"),
+    FIRE_HAZARD("fire_hazard"),
+    FIRE_HAZARD_LEVEL("fire_hazard_level"),
     ;
 
     final String value;

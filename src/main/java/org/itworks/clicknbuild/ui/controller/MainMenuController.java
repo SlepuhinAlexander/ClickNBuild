@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
+import org.itworks.clicknbuild.engine.profile.GameSaveManager;
 import org.itworks.clicknbuild.engine.profile.ProfileManager;
 import org.itworks.clicknbuild.sources.CSSes;
 import org.itworks.clicknbuild.sources.ImgHandler;
@@ -54,8 +55,9 @@ public final class MainMenuController extends BasicController {
     }
 
     @FXML
-    private void startGame() {
-
+    private void startGame() throws IOException {
+        GameSaveManager.inst().load(ProfileManager.inst().getProfile().getGameSave());
+        SceneLoader.inst().load(Scenes.CITY_VIEW);
     }
 
     @FXML

@@ -11,6 +11,17 @@ public enum FXMLs {
     HELP_MENU("help_menu"),
     PROFILE_SELECTION("profile_selection"),
     EDIT_PROFILE("edit_profile"),
+    CITY_VIEW("city_view"),
+    MAP("map"),
+    PLAYER_STATS("player_stats"),
+    STATS("stats"),
+    PRODUCTION("production"),
+    POWER("power"),
+    JOB("job"),
+    CRIME("crime"),
+    FIRE("fire"),
+    BUILDING_VIEW("building_view"),
+    BUILDING("building"),
     ;
 
     final String value;

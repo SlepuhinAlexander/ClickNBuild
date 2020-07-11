@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox fx:id="rootNode" styleClass="power__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.itworks.clicknbuild.ui.controller.PowerController"
+      prefWidth="440.0" spacing="10">
+    <HBox alignment="CENTER">
+        <Text fx:id="title" styleClass="power__title"/>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10" top="10"/>
+        </VBox.margin>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <StackPane fx:id="resPowerExcessBox">
+                <ImageView fx:id="resPowerExcess"/>
+            </StackPane>
+            <Text fx:id="powerExcessValue" styleClass="power__text"/>
+        </HBox>
+        <Text fx:id="clarification" styleClass="power__text"/>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <StackPane fx:id="resPowerBox">
+                <ImageView fx:id="resPower"/>
+            </StackPane>
+            <Text fx:id="powerValue" styleClass="power__text"/>
+        </HBox>
+        <Text fx:id="separator" styleClass="power__text"/>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <StackPane fx:id="resPowerConsumptionBox">
+                <ImageView fx:id="resPowerConsumption"/>
+            </StackPane>
+            <Text fx:id="powerConsumptionValue" styleClass="power__text"/>
+        </HBox>
+    </HBox>
+</VBox>

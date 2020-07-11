@@ -45,15 +45,14 @@ public final class ResManager implements Ticking {
      * given {@link BuildingAttrType} (for each {@link ResType} as well).
      */
     private final ConcurrentSkipListMap<BuildingAttrType, CityAttribute> attributes = new ConcurrentSkipListMap<>();
-
+    private AtomicDouble crimeLevel = new AtomicDouble(0);
+    private AtomicDouble fireHazardLevel = new AtomicDouble(0);
     /**
      * Sum of all {@link Building#getExpEarned()} in all currently existing {@link Building}-s.
      * Stored in current value.
      * Max value is immutable and unlimited (big enough).
      */
     private ResChunk totalExpEarned;
-
-    private AtomicDouble crimeLevel = new AtomicDouble(0);
 
     private ResManager() {
     }
@@ -172,12 +171,22 @@ public final class ResManager implements Ticking {
     }
 
     private void setCrimeLevel(double value) {
-        crimeLevel.set(MathHelper.clamp(value, 0d, 1d));
+        crimeLevel.set(MathHelper.clamp(value, 0d, 100d));
+    }
+
+    public double getFireHazardLevel() {
+        return fireHazardLevel.get();
+    }
+
+    private void setFireHazardLevel(double value) {
+        fireHazardLevel.set(MathHelper.clamp(value, 0d, 100d));
     }
 
     @Override
     public void tick() {
         loop();
+        BuildingManager.inst().buildings.values().forEach(buildings ->
+                buildings.forEach(Building::calculateProductivity));
     }
 
     /**
@@ -189,6 +198,12 @@ public final class ResManager implements Ticking {
      * lead to actual results when the city recalculates everything for consistency.
      */
     private void loop() {
+        // Calculate total PRODUCTION of all resources
+        get(BuildingAttrType.PRODUCTION).calculateTotal();
+        get(BuildingAttrType.JOB_REWARD).calculateTotal();
+        get(BuildingAttrType.SUPPLY).calculateTotal();
+        get(BuildingAttrType.CAPACITY).calculateTotal();
+
         // Calculate total "booster" multipliers effects to all resources
         get(BuildingAttrType.PRODUCTION_MUL).calculateTotal();
         get(BuildingAttrType.JOB_REWARD_MUL).calculateTotal();
@@ -222,7 +237,8 @@ public final class ResManager implements Ticking {
 
         // Subtract the total DEMAND of UPKEEP from total STORE of MONEY
         get(BuildingAttrType.STORE).getTotal(ResType.MONEY).sub(
-                get(BuildingAttrType.DEMAND).getTotal(ResType.UPKEEP).getCurrent() * ResType.UPKEEP.getPrice());
+                get(BuildingAttrType.DEMAND).getTotal(ResType.UPKEEP).getCurrent() * ResType.UPKEEP.getPrice()
+                * 1d / TICKS_PER_HOUR);
 
         // Calculate total SUPPLY of all resources
         get(BuildingAttrType.SUPPLY).calculateTotal();
@@ -259,7 +275,7 @@ public final class ResManager implements Ticking {
 
         // Pay the BENEFIT
         get(BuildingAttrType.STORE).getTotal(ResType.MONEY).sub(
-                get(BuildingAttrType.HOLD).getTotal(ResType.BENEFIT).getCurrent());
+                get(BuildingAttrType.HOLD).getTotal(ResType.BENEFIT).getCurrent() * 1 / TICKS_PER_HOUR);
 
         // Turn CITIZEN to OBEDIENCE and distribute it to STORE of OBEDIENCE
         get(BuildingAttrType.STORE).distribute(new ResChunk(ResType.OBEDIENCE,
@@ -273,7 +289,7 @@ public final class ResManager implements Ticking {
                 get(BuildingAttrType.STORE).getTotal(ResType.OBEDIENCE).getCurrent(),
                 Integer.MAX_VALUE));
         get(BuildingAttrType.HOLD).calculateTotal(ResType.CRIME);
-        setCrimeLevel(get(BuildingAttrType.HOLD).getTotal(ResType.CRIME).getCurrent() /
+        setCrimeLevel(get(BuildingAttrType.HOLD).getTotal(ResType.CRIME).getCurrent() * 100d /
                       get(BuildingAttrType.STORE).getTotal(ResType.CITIZEN).getCurrent());
 
         // Add EMIGRATION from crimeLevel to DEMAND of EMIGRATION
@@ -286,7 +302,7 @@ public final class ResManager implements Ticking {
 
         // EMIGRATE CITIZEN
         get(BuildingAttrType.STORE).getTotal(ResType.CITIZEN)
-                .sub(get(BuildingAttrType.HOLD).getTotal(ResType.EMIGRATION).getCurrent() * 1 / TICKS_PER_HOUR);
+                .sub(get(BuildingAttrType.HOLD).getTotal(ResType.EMIGRATION).getCurrent() * 1d / TICKS_PER_HOUR);
 
         // Distribute DEMAND of IGNITABILITY to STORE of IGNITABILITY
         get(BuildingAttrType.STORE).distribute(get(BuildingAttrType.DEMAND).getTotal(ResType.IGNITABILITY));
@@ -298,6 +314,8 @@ public final class ResManager implements Ticking {
                 get(BuildingAttrType.STORE).getTotal(ResType.IGNITABILITY).getCurrent(),
                 Integer.MAX_VALUE));
         get(BuildingAttrType.HOLD).calculateTotal(ResType.FIRE_HAZARD);
+        setFireHazardLevel(get(BuildingAttrType.HOLD).getTotal(ResType.FIRE_HAZARD).getCurrent() * 100d /
+                           get(BuildingAttrType.DEMAND).getTotal(ResType.IGNITABILITY).getCurrent());
 
         // Distribute what's left in STORE. Ignore surpluses.
         ResType[] toDistribute = new ResType[]{ResType.ENERGY, ResType.STEEL, ResType.CONCRETE, ResType.BRICK,

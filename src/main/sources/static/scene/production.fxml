@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<VBox fx:id="rootNode" styleClass="production__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.itworks.clicknbuild.ui.controller.ProductionController"
+      prefWidth="440.0" spacing="10" alignment="CENTER_LEFT">
+    <HBox alignment="CENTER">
+        <Text fx:id="title" styleClass="production__title"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10" top="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resEnergyBox">
+            <ImageView fx:id="resEnergy"/>
+        </StackPane>
+        <StackPane>
+            <ProgressBar fx:id="energyFill" styleClass="production__progress_bar"/>
+            <Text fx:id="energyValue" styleClass="production__text"/>
+        </StackPane>
+        <Text fx:id="energyGain" styleClass="production__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resMoneyBox">
+            <ImageView fx:id="resMoney"/>
+        </StackPane>
+        <StackPane>
+            <ProgressBar fx:id="moneyFill" styleClass="production__progress_bar"/>
+            <Text fx:id="moneyValue" styleClass="production__text"/>
+        </StackPane>
+        <Text fx:id="moneyGain" styleClass="production__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resSteelBox">
+            <ImageView fx:id="resSteel"/>
+        </StackPane>
+        <StackPane>
+            <ProgressBar fx:id="steelFill" styleClass="production__progress_bar"/>
+            <Text fx:id="steelValue" styleClass="production__text"/>
+        </StackPane>
+        <Text fx:id="steelGain" styleClass="production__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resConcreteBox">
+            <ImageView fx:id="resConcrete"/>
+        </StackPane>
+        <StackPane>
+            <ProgressBar fx:id="concreteFill" styleClass="production__progress_bar"/>
+            <Text fx:id="concreteValue" styleClass="production__text"/>
+        </StackPane>
+        <Text fx:id="concreteGain" styleClass="production__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resBrickBox">
+            <ImageView fx:id="resBrick"/>
+        </StackPane>
+        <StackPane>
+            <ProgressBar fx:id="brickFill" styleClass="production__progress_bar"/>
+            <Text fx:id="brickValue" styleClass="production__text"/>
+        </StackPane>
+        <Text fx:id="brickGain" styleClass="production__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resWoodBox">
+            <ImageView fx:id="resWood"/>
+        </StackPane>
+        <StackPane>
+            <ProgressBar fx:id="woodFill" styleClass="production__progress_bar"/>
+            <Text fx:id="woodValue" styleClass="production__text"/>
+        </StackPane>
+        <Text fx:id="woodGain" styleClass="production__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resGlassBox">
+            <ImageView fx:id="resGlass"/>
+        </StackPane>
+        <StackPane>
+            <ProgressBar fx:id="glassFill" styleClass="production__progress_bar"/>
+            <Text fx:id="glassValue" styleClass="production__text"/>
+        </StackPane>
+        <Text fx:id="glassGain" styleClass="production__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resCitizenBox">
+            <ImageView fx:id="resCitizen"/>
+        </StackPane>
+        <StackPane>
+            <ProgressBar fx:id="citizenFill" styleClass="production__progress_bar"/>
+            <Text fx:id="citizenValue" styleClass="production__text"/>
+        </StackPane>
+        <Text fx:id="citizenGain" styleClass="production__text"/>
+    </HBox>
+</VBox>

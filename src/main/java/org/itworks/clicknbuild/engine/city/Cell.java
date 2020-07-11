@@ -33,9 +33,4 @@ public final class Cell {
     public void setBuilding(Building building) {
         this.building = building;
     }
-
-    @Override
-    public String toString() {
-        return tile.ordinal() + "";
-    }
 }

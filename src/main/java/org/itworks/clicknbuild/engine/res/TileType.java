@@ -21,9 +21,9 @@ public enum TileType {
 
     public final Images imgKey;
 
-    private double structure;
+    private int structure;
 
-    TileType(String type, Strings l10nKey, Images imgKey, double structure) {
+    TileType(String type, Strings l10nKey, Images imgKey, int structure) {
         this.type = StringHelper.nonNull(type);
         this.l10nKey = Objects.requireNonNull(l10nKey);
         this.imgKey = Objects.requireNonNull(imgKey);
@@ -42,11 +42,11 @@ public enum TileType {
         return tiles[ordinal];
     }
 
-    public double getStructure() {
+    public int getStructure() {
         return structure;
     }
 
-    public void setStructure(double structure) {
+    public void setStructure(int structure) {
         this.structure = MathHelper.clamp(structure);
     }
 }

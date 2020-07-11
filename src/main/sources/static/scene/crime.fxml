@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox fx:id="rootNode" styleClass="crime__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.itworks.clicknbuild.ui.controller.CrimeController"
+      prefWidth="440.0" spacing="10">
+    <HBox alignment="CENTER">
+        <Text fx:id="title" styleClass="crime__title"/>
+    </HBox>
+    <HBox alignment="CENTER">
+        <VBox.margin>
+            <Insets top="10"/>
+        </VBox.margin>
+        <Text fx:id="crimeLevel" styleClass="crime__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resObedienceBox">
+            <ImageView fx:id="resObedience"/>
+        </StackPane>
+        <Text fx:id="obedienceValue" styleClass="crime__text"/>
+        <Text fx:id="separator" styleClass="crime__text"/>
+        <Text fx:id="obedienceCapacity" styleClass="crime__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resCrimeBox">
+            <ImageView fx:id="resCrime"/>
+        </StackPane>
+        <Text fx:id="crimeValue" styleClass="crime__text"/>
+    </HBox>
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets left="10"/>
+        </VBox.margin>
+        <StackPane fx:id="resEmigrationBox">
+            <ImageView fx:id="resEmigration"/>
+        </StackPane>
+        <Text fx:id="emigrationValue" styleClass="crime__text"/>
+    </HBox>
+</VBox>

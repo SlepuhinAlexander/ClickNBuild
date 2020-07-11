@@ -12,6 +12,17 @@ public enum Scenes {
     HELP_MENU("help_menu", FXMLs.HELP_MENU, HelpMenuController.class),
     PROFILE_SELECTION("profile_selection", FXMLs.PROFILE_SELECTION, ProfileSelectionController.class),
     EDIT_PROFILE("edit_profile", FXMLs.EDIT_PROFILE, EditProfileController.class),
+    CITY_VIEW("city_view", FXMLs.CITY_VIEW, CityViewController.class),
+    MAP("map", FXMLs.MAP, MapController.class),
+    PLAYER_STATS("player_stats", FXMLs.PLAYER_STATS, PlayerStatsController.class),
+    STATS("stats", FXMLs.STATS, StatsController.class),
+    PRODUCTION("production", FXMLs.PRODUCTION, ProductionController.class),
+    POWER("power", FXMLs.POWER, PowerController.class),
+    JOB("job", FXMLs.JOB, JobController.class),
+    CRIME("crime", FXMLs.CRIME, CrimeController.class),
+    FIRE("fire", FXMLs.FIRE, FireController.class),
+    BUILDING_VIEW("building_view", FXMLs.BUILDING_VIEW, BuildingViewController.class),
+    BUILDING("building", FXMLs.BUILDING, BuildingController.class),
     ;
 
     /**

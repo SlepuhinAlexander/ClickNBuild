@@ -1,5 +1,6 @@
 package org.itworks.clicknbuild;
 
+import javafx.application.Platform;
 import javafx.stage.Stage;
 import org.itworks.clicknbuild.config.stats.StatsLoader;
 import org.itworks.clicknbuild.sources.*;
@@ -22,6 +23,10 @@ public final class GameLauncher {
         primaryStage.setTitle(Sources.getL10n(Strings.GAME_TITLE));
         primaryStage.getIcons().add(Sources.getImg(Images.BLD_HEADQUARTER, ImgHandler.Size.SMALL));
         primaryStage.setResizable(false);
+        primaryStage.setOnCloseRequest(t -> {
+            Platform.exit();
+            System.exit(0);
+        });
         SceneLoader.inst().show(Scenes.LANDING);
         primaryStage.show();
     }

@@ -3,6 +3,7 @@ package org.itworks.clicknbuild.ui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.itworks.clicknbuild.engine.Ticking;
 import org.itworks.clicknbuild.sources.FXMLHandler;
 import org.itworks.clicknbuild.sources.Sources;
 import org.itworks.clicknbuild.util.string.StringHelper;
@@ -63,6 +64,10 @@ public final class SceneLoader {
      */
     public void load(Scenes key) throws IOException {
         if (key == null) return;
+        scenes.keySet().forEach(scenesKey -> {
+            Object controller = Controllers.inst().get(scenesKey.controller);
+            if (controller instanceof Ticking) ((Ticking) controller).unsubscribe();
+        });
         Scene currentScene = stage.getScene();
         Scene scene;
         if (currentScene == null) {

@@ -263,7 +263,7 @@ public final class Building {
     public void calculateProductivity() {
         if (type == BuildingType.HEADQUARTER) return;
         double productivity = 100d;
-        productivity *= ResManager.inst().getCrimeLevel();
+        productivity *= 1 - ResManager.inst().getCrimeLevel() / 100d;
         ResPack hold = get(BuildingAttrType.HOLD);
         if (hold != null) {
             for (ResType type : hold.pack.keySet()) {

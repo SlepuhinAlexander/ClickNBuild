@@ -117,7 +117,7 @@ public class MapGenerator {
         for (int i = 2; i <= 12; i += 10) {
             for (int j = 3; j <= 9; j += 3) {
                 if (map[i][j].getBuilding() == null) {
-                    map[i][j].setBuilding(Building.of(BuildingType.POLICE, MathHelper.randomInt(11, 21)));
+                    map[i][j].setBuilding(Building.of(BuildingType.POLICE, MathHelper.randomInt(13, 21)));
                 }
             }
         }
@@ -130,14 +130,14 @@ public class MapGenerator {
         }
         for (int i = 2; i <= 12; i++) {
             if (map[i][2].getBuilding() == null) {
-                map[i][2].setBuilding(Building.of(BuildingType.APARTMENT, MathHelper.randomInt(1, 11)));
+                map[i][2].setBuilding(Building.of(BuildingType.APARTMENT, MathHelper.randomInt(5, 15)));
             }
         }
         for (int i = 2; i <= 12; i++) {
             for (int j = 4; j <= 7; j++) {
                 if (map[i][j].getBuilding() == null) {
                     map[i][j].setBuilding(Building.of(BuildingType.APARTMENT,
-                            MathHelper.randomInt(6, 21)));
+                            MathHelper.randomInt(8, 21)));
                 }
             }
         }
@@ -163,12 +163,12 @@ public class MapGenerator {
                 }
             }
         }
-        map[2][12].setBuilding(Building.of(BuildingType.FIRE_STATION, MathHelper.randomInt(15, 21)));
-        map[12][12].setBuilding(Building.of(BuildingType.FIRE_STATION, MathHelper.randomInt(15, 21)));
+        map[2][12].setBuilding(Building.of(BuildingType.FIRE_STATION, MathHelper.randomInt(18, 21)));
+        map[12][12].setBuilding(Building.of(BuildingType.FIRE_STATION, MathHelper.randomInt(18, 21)));
         for (int i = 2; i <= 12; i++) {
             if (map[i][13].getBuilding() == null) {
                 map[i][13].setBuilding(Building.of(BuildingType.POWER_PLANT,
-                        MathHelper.randomInt(11, 21)));
+                        MathHelper.randomInt(9, 15)));
             }
         }
         map[2][15].setBuilding(Building.of(BuildingType.WAREHOUSE, MathHelper.randomInt(11, 21)));
@@ -196,7 +196,7 @@ public class MapGenerator {
         map[12][16].setBuilding(Building.of(BuildingType.FACTORY_STEEL, MathHelper.randomInt(11, 21)));
         map[6][17].setBuilding(Building.of(BuildingType.AIRPORT, MathHelper.randomInt(11, 21)));
         map[7][17].setBuilding(Building.of(BuildingType.PORT, MathHelper.randomInt(11, 21)));
-        map[8][17].setBuilding(Building.of(BuildingType.NUCLEAR_PLANT, MathHelper.randomInt(11, 21)));
+        map[8][17].setBuilding(Building.of(BuildingType.NUCLEAR_PLANT, MathHelper.randomInt(5, 15)));
         for (int i = 0; i < MAP_HEIGHT; i++) {
             for (int j = 0; j < MAP_WIDTH; j++) {
                 if (map[i][j].getTile() == TileType.LAND && map[i][j].getBuilding() == null) {
@@ -211,6 +211,12 @@ public class MapGenerator {
                         map[i][j].setTile(TileType.TRASH);
                     }
                 }
+            }
+        }
+        for (int i = 0; i < MAP_HEIGHT; i++) {
+            for (int j = 0; j < MAP_WIDTH; j++) {
+                Building building = map[i][j].getBuilding();
+                if (building != null) building.setLocation(i, j);
             }
         }
     }

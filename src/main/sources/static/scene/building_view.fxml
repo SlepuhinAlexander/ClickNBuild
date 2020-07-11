@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane fx:id="rootNode" styleClass="building_view__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.itworks.clicknbuild.ui.controller.BuildingViewController">
+    <right>
+        <fx:include source="stats.fxml"/>
+    </right>
+    <center>
+        <fx:include source="building.fxml"/>
+    </center>
+</BorderPane>

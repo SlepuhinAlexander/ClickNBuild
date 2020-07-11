@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane fx:id="rootNode" styleClass="player_stats__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.itworks.clicknbuild.ui.controller.PlayerStatsController"
+            prefWidth="440.0">
+    <top>
+        <Text fx:id="title" styleClass="player_stats__title" BorderPane.alignment="TOP_CENTER"/>
+    </top>
+    <left>
+        <VBox spacing="10" >
+            <BorderPane.margin>
+                <Insets left="10" top="10"/>
+            </BorderPane.margin>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <StackPane fx:id="resExperienceBox">
+                    <ImageView fx:id="resExperience"/>
+                </StackPane>
+                <Text fx:id="valueExperience" styleClass="player_stats__text"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <StackPane fx:id="resLevelBox">
+                    <ImageView fx:id="resLevel"/>
+                </StackPane>
+                <Text fx:id="valueLevel" styleClass="player_stats__text"/>
+            </HBox>
+        </VBox>
+    </left>
+    <right>
+        <HBox alignment="CENTER" spacing="10">
+            <BorderPane.margin>
+                <Insets right="50" top="10"/>
+            </BorderPane.margin>
+            <Text fx:id="name" styleClass="player_stats__name" wrappingWidth="100" textAlignment="RIGHT"/>
+            <StackPane maxWidth="1" onMouseClicked="#toPlayerView" styleClass="player_stats__avatar">
+                <ImageView fx:id="avatar">
+                    <StackPane.margin>
+                        <Insets bottom="2" left="2" right="2" top="2"/>
+                    </StackPane.margin>
+                </ImageView>
+            </StackPane>
+        </HBox>
+    </right>
+</BorderPane>

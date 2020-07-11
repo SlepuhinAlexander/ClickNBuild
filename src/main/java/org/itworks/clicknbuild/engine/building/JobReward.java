@@ -18,7 +18,7 @@ public final class JobReward extends BuildingAttribute {
                 ProfileManager.inst().getProfile().getPreferences().getDifficulty().gainsMultiplier);
         stats.getPack()
                 .keySet()
-                .forEach(resType -> pack.put(resType, new ResChunk(resType, 0, stats.get(resType))));
+                .forEach(resType -> pack.put(resType, new ResChunk(resType, stats.get(resType))));
         usedType = type;
         usedLevel = level;
     }

@@ -180,13 +180,13 @@ public class ResPack {
 
     public ResPack mul(double multiplier) {
         if (multiplier < 0) return this;
-        pack.values().forEach(resChunk -> mul(multiplier));
+        pack.values().forEach(resChunk -> resChunk.mul(multiplier));
         return this;
     }
 
     public ResPack copy() {
         ResPack result = new ResPack();
-        pack.values().forEach(res -> result.add(res.copy()));
+        pack.values().forEach(resChunk -> result.put(resChunk.copy()));
         return result;
     }
 }

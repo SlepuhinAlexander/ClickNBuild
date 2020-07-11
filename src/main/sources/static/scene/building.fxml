@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane fx:id="rootNode" styleClass="building__root" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.itworks.clicknbuild.ui.controller.BuildingController"
+            prefHeight="960.0" prefWidth="1280.0">
+    <top>
+        <HBox alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="100"/>
+            </BorderPane.margin>
+            <Text fx:id="title" styleClass="building__title" textAlignment="CENTER"/>
+        </HBox>
+    </top>
+    <left>
+        <VBox alignment="CENTER_LEFT" spacing="10">
+            <BorderPane.margin>
+                <Insets left="100"/>
+            </BorderPane.margin>
+            <StackPane maxWidth="1" styleClass="building__image">
+                <ImageView fx:id="image">
+                    <StackPane.margin>
+                        <Insets bottom="5" left="5" right="5" top="5"/>
+                    </StackPane.margin>
+                </ImageView>
+            </StackPane>
+            <HBox alignment="CENTER">
+                <Text fx:id="level" styleClass="building__text"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Text fx:id="structure" styleClass="building__text"/>
+            </HBox>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="100"/>
+            </BorderPane.margin>
+            <Button fx:id="backBtn" onAction="#back" styleClass="building__button"/>
+        </HBox>
+    </bottom>
+</BorderPane>
